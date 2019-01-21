@@ -1,0 +1,32 @@
+Å´transitions⁄r[
+  {
+    "move":1,
+    "clas":0,
+    "name":"B-LOC",
+    "label":"LOC"
+  },
+  {
+    "move":2,
+    "clas":1,
+    "name":"I-LOC",
+    "label":"LOC"
+  },
+  {
+    "move":3,
+    "clas":2,
+    "name":"L-LOC",
+    "label":"LOC"
+  },
+  {
+    "move":4,
+    "clas":3,
+    "name":"U-LOC",
+    "label":"LOC"
+  },
+  {
+    "move":5,
+    "clas":4,
+    "name":"O",
+    "label":""
+  }
+]

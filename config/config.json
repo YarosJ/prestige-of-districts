@@ -1,0 +1,24 @@
+{
+  "apiPrefix": "http://localhost:5000",
+  "serverPort": "5000",
+  "endpoint": "/graphql",
+  "secret": "abvkhvbajhvabdfbvah",
+  "messageBroker": {
+    "PARSER_QUEUE_NAME": "parser_queue",
+    "NN_QUEUE_NAME": "nn_queue",
+    "API_QUEUE_NAME": "api_queue"
+  },
+  "db":{
+    "name": "techStore",
+    "host": "localhost",
+    "port": 27017
+  },
+  "admin": {
+    "name":"Yaroslaw",
+    "email":"jaroslawjuk@gmail.com"
+  },
+  "app": {
+    "name":"vacationSchedule",
+    "url":""
+  }
+}
