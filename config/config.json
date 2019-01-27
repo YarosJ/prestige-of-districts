@@ -8,8 +8,8 @@
     "NN_QUEUE_NAME": "nn_queue",
     "API_QUEUE_NAME": "api_queue"
   },
-  "db":{
-    "name": "techStore",
+  "db": {
+    "name": "parser",
     "host": "localhost",
     "port": 27017
   },

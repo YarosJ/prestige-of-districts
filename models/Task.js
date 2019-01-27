@@ -1,8 +1,10 @@
 import mongoose from 'mongoose';
+// import { messageBroker } from '../config/config';
 
 mongoose.Promise = require('bluebird');
 
 const { Schema } = mongoose;
+// const { PARSER_QUEUE_NAME } = messageBroker;
 
 /**
  * @description :: A model definition. Represents a database tasks.
@@ -26,16 +28,14 @@ const TaskSchema = new Schema({
   ],
 }, { usePushEach: true });
 
-TaskSchema.post('save', async (doc) => {
-  // ===> Changes ++ addTask
+TaskSchema.post('save', doc => {
+  console.log('--------------', typeof global.taskScheduler, '--------------');
+  global.taskScheduler.addTasks([doc]);
 });
 
-TaskSchema.post('remove', async (doc) => {
-  // ==> Changes ++ removeTask
-});
-
-TaskSchema.post('update', async (doc) => {
-  // ==> Changes ++ updateTask
+TaskSchema.post('remove', (doc) => {
+  console.log('--------------', typeof global.taskScheduler, '--------------');
+  global.taskScheduler.deleteTasks([doc.URL]);
 });
 
 export default mongoose.model('Task', TaskSchema);

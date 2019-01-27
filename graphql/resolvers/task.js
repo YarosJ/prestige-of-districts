@@ -25,7 +25,8 @@ export default {
       return addedListeners;
     },
     async removeTarget(parent, { URL }) {
-      const removedTarget = await TaskModel.findOne({ URL }).remove();
+      const removedTarget = await TaskModel.findOne({ URL });
+      await removedTarget.remove();
       pubSub.publish('TARGET_REMOVED', { targetRemoved: removedTarget });
       return removedTarget;
     },

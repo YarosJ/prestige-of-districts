@@ -1,0 +1,5 @@
+{
+  "PARSER_QUEUE_NAME": "parser_queue",
+  "NN_QUEUE_NAME": "nn_queue",
+  "API_QUEUE_NAME": "api_queue"
+}
