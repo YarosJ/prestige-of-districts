@@ -4,7 +4,7 @@
   "endpoint": "/graphql",
   "secret": "abvkhvbajhvabdfbvah",
   "messageBroker": {
-    "PARSER_QUEUE_NAME": "parser_queue",
+    "SCHEDULER_QUEUE_NAME": "parser_queue",
     "NN_QUEUE_NAME": "nn_queue",
     "API_QUEUE_NAME": "api_queue"
   },

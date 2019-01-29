@@ -1,10 +1,8 @@
 import mongoose from 'mongoose';
-// import { messageBroker } from '../config/config';
 
 mongoose.Promise = require('bluebird');
 
 const { Schema } = mongoose;
-// const { PARSER_QUEUE_NAME } = messageBroker;
 
 /**
  * @description :: A model definition. Represents a database tasks.
@@ -28,14 +26,25 @@ const TaskSchema = new Schema({
   ],
 }, { usePushEach: true });
 
-TaskSchema.post('save', doc => {
-  console.log('--------------', typeof global.taskScheduler, '--------------');
-  global.taskScheduler.addTasks([doc]);
+/**
+ * NEED ADAPTER!!!
+ */
+
+TaskSchema.post('save', (doc) => {
+  global.taskScheduler.addTasks([{
+    body: {
+      URL: doc.URL,
+      tagPath: doc.tagPath,
+    },
+    interval: doc.dataListeners[0].freq,
+  }]);
 });
 
 TaskSchema.post('remove', (doc) => {
-  console.log('--------------', typeof global.taskScheduler, '--------------');
-  global.taskScheduler.deleteTasks([doc.URL]);
+  global.taskScheduler.deleteTasks([{
+    URL: doc.URL,
+    tagPath: doc.tagPath,
+  }]);
 });
 
 export default mongoose.model('Task', TaskSchema);

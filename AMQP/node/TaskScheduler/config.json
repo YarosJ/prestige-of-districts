@@ -1,5 +1,4 @@
 {
-  "PARSER_QUEUE_NAME": "parser_queue",
-  "NN_QUEUE_NAME": "nn_queue",
-  "API_QUEUE_NAME": "api_queue"
+  "QUEUE_NAME": "scheduler_queue",
+  "HOST": "amqp://localhost"
 }
