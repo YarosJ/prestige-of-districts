@@ -50,7 +50,7 @@ export default class TaskScheduler {
   }
 
   /**
-   * Pushes tasks into the deletion list
+   * Pushes tasks into the deletion list.
    * @param {array} tasks - Tasks to delete
    */
   deleteTasks(tasks) {
@@ -59,7 +59,7 @@ export default class TaskScheduler {
   }
 
   /**
-   * Managing tasks in queue
+   * Managing tasks in queue.
    * @param callback
    * @private
    */
@@ -84,7 +84,7 @@ export default class TaskScheduler {
   }
 
   /**
-   * Delete item from deletions list
+   * Delete item from deletions list.
    * @param item
    * @private
    */
@@ -93,7 +93,7 @@ export default class TaskScheduler {
   }
 
   /**
-   * Send new task into the queue
+   * Send new task into the queue.
    * @param data
    * @private
    */

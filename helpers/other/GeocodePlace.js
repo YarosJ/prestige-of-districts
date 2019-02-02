@@ -7,5 +7,5 @@ const geocoder = NodeGeocoder({
 });
 
 export default async function (place) {
-  return await geocoder.geocode(place)
+  return await geocoder.geocode(place);
 }

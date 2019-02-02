@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import '../models/Task';
-import TaskScheduler from '../AMQP/node/TaskScheduler';
+import TaskScheduler from '../libs/TaskScheduler';
 import { PARSER_QUEUE_NAME } from '../config/config';
 
 const TaskModel = mongoose.model('Task');
