@@ -12,7 +12,7 @@ import json
 
 TRAIN_DATA = []
 
-config = json.loads(open('./kramvoda1.json').read())
+config = json.loads(open('./kramvoda_corpus.json').read())
 
 for docum in config:
     ents = []

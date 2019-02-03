@@ -14,16 +14,12 @@ const TaskSchema = new Schema({
     type: String,
     required: true,
   },
-  dataListeners: [
-    {
-      tags: [String],
-      dataListener: String,
-      freq: {
-        type: Number,
-        required: false,
-      },
-    },
-  ],
+  tagPaths: [String],
+  freq: {
+    type: Number,
+    required: false,
+  },
+  dataListeners: [String],
 }, { usePushEach: true });
 
 /**
@@ -34,16 +30,16 @@ TaskSchema.post('save', (doc) => {
   global.taskScheduler.addTasks([{
     body: {
       URL: doc.URL,
-      tagPath: doc.tagPath,
+      tagPaths: doc.tagPaths,
     },
-    interval: doc.dataListeners[0].freq,
+    interval: doc.freq,
   }]);
 });
 
 TaskSchema.post('remove', (doc) => {
   global.taskScheduler.deleteTasks([{
     URL: doc.URL,
-    tagPath: doc.tagPath,
+    tagPaths: doc.tagPaths,
   }]);
 });
 

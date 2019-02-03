@@ -1,0 +1,4 @@
+{
+  "QUEUE_NAME": "message_queue",
+  "HOST": "amqp://localhost"
+}

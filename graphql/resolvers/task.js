@@ -8,12 +8,16 @@ const pubSub = new PubSub();
 export default {
   Query: {
     tags() {
-      return ['LOC', 'PER'];
+      return ['LOC'];
     },
   },
   Mutation: {
-    async addTarget(parent, { URL, dataListeners }) {
-      const addedTarget = await new TaskModel({ URL, dataListeners }).save();
+    async addTarget(parent, {
+      URL, tagPaths, freq, dataListeners,
+    }) {
+      const addedTarget = await new TaskModel({
+        URL, tagPaths, freq, dataListeners,
+      }).save();
       pubSub.publish('TARGET_ADDED', { targetAdded: addedTarget });
       return addedTarget;
     },
@@ -33,15 +37,17 @@ export default {
     async removeListeners(parent, { URL, dataListeners }) {
       const task = await TaskModel.findOne({ URL });
       task.dataListeners = await task.dataListeners
-        .filter(l => !dataListeners.find(l.dataListener));
+        .filter(dataListener => !dataListeners.find(dataListener));
       const removedListeners = await task.save();
       pubSub.publish('LISTENER_REMOVED', { listenersRemoved: removedListeners });
       return removedListeners;
     },
-    async updateListener(parent, { URL, dataListener }) {
+    async updateListener(parent, {
+      URL, tagPaths, freq, dataListeners,
+    }) {
       const updatedListener = await TaskModel.findOneAndUpdate(
         { URL },
-        { dataListener },
+        { tagPaths, freq, dataListeners },
         { new: true },
       );
       pubSub.publish('LISTENER_UPDATED', { listenerUpdated: updatedListener });

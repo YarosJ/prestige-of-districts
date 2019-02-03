@@ -2,7 +2,7 @@
 
 ## License
 
-MIT License. Copyright 2018 Yaroslaw Zhuk
+MIT License. Copyright 2019 Yaroslaw Zhuk
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

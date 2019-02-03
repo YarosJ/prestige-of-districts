@@ -3,15 +3,15 @@
 #from __future__ import unicode_literals, print_function
 
 import json
-
 import spacy
+
 nlp = spacy.load('xx')
 
 train_data = []
 
 # ---------------------------------
 
-config = json.loads(open('../kramvoda1.json').read())
+config = json.loads(open('./kramvoda_corpus.json').read())
 
 for docum in config:
     fault = 1.87 if docum["categories"][0] == "FAULT" else 0

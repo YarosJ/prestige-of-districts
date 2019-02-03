@@ -4,9 +4,10 @@
   "endpoint": "/graphql",
   "secret": "abvkhvbajhvabdfbvah",
   "messageBroker": {
-    "SCHEDULER_QUEUE_NAME": "parser_queue",
-    "NN_QUEUE_NAME": "nn_queue",
-    "API_QUEUE_NAME": "api_queue"
+    "SCHEDULER_QUEUE_NAME": "scheduler_queue",
+    "NLP_QUEUE_NAME": "nlp_queue",
+    "API_QUEUE_NAME": "api_queue",
+    "HOST": "amqp://localhost"
   },
   "db": {
     "name": "parser",

@@ -3,6 +3,10 @@ import puppeteer from 'puppeteer';
 
 /**
  * Scraper class.
+ * Usage:
+ *  const scraper = await new Scraper();
+ *  console.log(await scraper.getText('http://www.kramvoda.com/index.php', ['.blog']));
+ *  scraper.close();
  */
 export default class Scraper {
   /**
@@ -30,11 +34,12 @@ export default class Scraper {
       results.push(...await this.page.evaluate((receivedTag) => {
         const result = [];
         // eslint-disable-next-line no-undef
-        document.querySelectorAll(receivedTag).forEach((element) => {
-          element.childNodes.forEach((childNode) => {
-            if (childNode.innerText) result.push(childNode.innerText);
+        document.querySelectorAll(receivedTag)
+          .forEach((element) => {
+            element.childNodes.forEach((childNode) => {
+              if (childNode.innerText) result.push(childNode.innerText);
+            });
           });
-        });
         return result;
       }, tag));
     });
