@@ -25,7 +25,6 @@ export default class AMQPChannel {
   /**
    * Consume messages form queue.
    * @param callback
-   * @private
    */
   consume(callback) {
     this.channel.consume(this.queueName, (msg) => {
@@ -36,7 +35,6 @@ export default class AMQPChannel {
   /**
    * Send new message into the queue.
    * @param data
-   * @private
    */
   sendToQueue(data) {
     const bufferData = data instanceof Buffer ? data : Buffer.from(JSON.stringify(data));

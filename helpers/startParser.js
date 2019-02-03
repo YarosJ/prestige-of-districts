@@ -19,7 +19,7 @@ export default async () => {
   }));
 
   const scraper = await new Scraper();
-  const nlpChannel = AMQPChannel({ queueName: NLP_QUEUE_NAME, host: HOST });
+  const nlpChannel = new AMQPChannel({ queueName: NLP_QUEUE_NAME, host: HOST });
   const scheduler = new TaskScheduler(queueTasks, {
     host: HOST, queueName: SCHEDULER_QUEUE_NAME,
   }, async (data) => {
