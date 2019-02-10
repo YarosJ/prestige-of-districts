@@ -11,7 +11,7 @@ train_data = []
 
 # ---------------------------------
 
-config = json.loads(open('./kramvoda_corpus.json').read())
+config = json.loads(open('./NER_kramvoda_corpus.json').read())
 
 for docum in config:
     fault = 1.87 if docum["categories"][0] == "FAULT" else 0
