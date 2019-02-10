@@ -6,6 +6,7 @@
   "messageBroker": {
     "SCHEDULER_QUEUE_NAME": "scheduler_queue",
     "NLP_QUEUE_NAME": "nlp_queue",
+    "NLP_OUTPUT_QUEUE_NAME": "nlp_output_queue",
     "API_QUEUE_NAME": "api_queue",
     "HOST": "amqp://localhost"
   },

@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import amqp from 'amqplib/callback_api';
+import amqp from 'amqplib';
 import { QUEUE_NAME, HOST } from './config';
 
 /**
@@ -13,13 +13,13 @@ export default class AMQPChannel {
   constructor(config) {
     this.queueName = config.queueName || QUEUE_NAME;
     this.host = config.host || HOST;
-    amqp.connect(this.host,
-      async (connectionErr, conn) => {
-        if (connectionErr) throw connectionErr;
-        const ch = await conn.createChannel();
-        ch.assertQueue(this.queueName, { durable: true });
-        this.channel = ch;
-      });
+    return (async () => {
+      const conn = await amqp.connect(this.host);
+      const ch = await conn.createChannel();
+      ch.assertQueue(this.queueName, { durable: true });
+      this.channel = ch;
+      return (this);
+    })();
   }
 
   /**
@@ -28,7 +28,7 @@ export default class AMQPChannel {
    */
   consume(callback) {
     this.channel.consume(this.queueName, (msg) => {
-      callback(JSON.parse(msg.content));
+      callback(msg.content.toString());
     }, { noAck: true });
   }
 

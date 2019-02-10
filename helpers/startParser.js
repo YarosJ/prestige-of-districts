@@ -5,7 +5,13 @@ import Scraper from '../libs/Scraper';
 import AMQPChannel from '../libs/AMQPChannel';
 import { messageBroker } from '../config/config';
 
-const { SCHEDULER_QUEUE_NAME, NLP_QUEUE_NAME, HOST } = messageBroker;
+const {
+  HOST,
+  SCHEDULER_QUEUE_NAME,
+  NLP_QUEUE_NAME,
+  NLP_OUTPUT_QUEUE_NAME,
+} = messageBroker;
+
 const TaskModel = mongoose.model('Task');
 
 export default async () => {
@@ -19,7 +25,10 @@ export default async () => {
   }));
 
   const scraper = await new Scraper();
-  const nlpChannel = new AMQPChannel({ queueName: NLP_QUEUE_NAME, host: HOST });
+  const nlpChannel = await new AMQPChannel({ queueName: NLP_QUEUE_NAME, host: HOST });
+  const nlpOutputChannel = await new AMQPChannel({ queueName: NLP_OUTPUT_QUEUE_NAME, host: HOST });
+  nlpOutputChannel.consume(data => console.log(data)); // Sanitize and geocode
+
   const scheduler = new TaskScheduler(queueTasks, {
     host: HOST, queueName: SCHEDULER_QUEUE_NAME,
   }, async (data) => {

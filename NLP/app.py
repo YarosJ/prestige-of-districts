@@ -1,16 +1,19 @@
 import libs.rabbitMQ.Consumer as consumerModule
+import libs.rabbitMQ.SendToQueue as sendToQueueModule
 import libs.NLP.NER.get_entities as get_entities
+
+sender = sendToQueueModule.SendToQueue()
+consumer = consumerModule.Consumer()
 
 
 def main():
-    consumer = consumerModule.Consumer()
     consumer.consume_messages(entities)
 
 
 def entities(data):
     text = data.decode("utf-8").replace('\\n', '\n')
     result_entities = get_entities.get_entities(input_string=text)
-    print(result_entities)  # Send result_entities to output queue
+    sender.send_message(result_entities)
 
 
 if __name__ == '__main__':
