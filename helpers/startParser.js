@@ -33,7 +33,7 @@ export default async () => {
     host: HOST, queueName: SCHEDULER_QUEUE_NAME,
   }, async (data) => {
     const parsedTextArray = await scraper.getText(data.URL, data.tagPaths);
-    parsedTextArray.forEach( text => nlpChannel.sendToQueue(text));
+    parsedTextArray.forEach(text => nlpChannel.sendToQueue(text));
   });
   global.taskScheduler = scheduler;
   return (scheduler);

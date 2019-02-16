@@ -16,7 +16,6 @@ def entities(data):
     result_cats = classificator.classify(input_string=text)
     result_entities = get_entities.get_entities(input_string=text)
     sender.send_message((text, result_cats, result_entities))
-    print((text, result_cats, result_entities))
 
 
 if __name__ == '__main__':

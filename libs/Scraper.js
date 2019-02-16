@@ -31,13 +31,13 @@ export default class Scraper {
     const results = [];
     await this._goTo(URL);
     await patches.forEach(async (tag) => {
-      results.push(...await this.page.evaluate((receivedTag) => {
-        const result = [];
+      results.push(await this.page.evaluate((receivedTag) => {
+        let result = '';
         // eslint-disable-next-line no-undef
         document.querySelectorAll(receivedTag)
           .forEach((element) => {
             element.childNodes.forEach((childNode) => {
-              if (childNode.innerText) result.push(childNode.innerText);
+              if (childNode.innerText) result += childNode.innerText;
             });
           });
         return result;
