@@ -6,7 +6,7 @@ class Consumer:
         self.queue_name = queue_name
         self.connection = pika.BlockingConnection(pika.ConnectionParameters(host=host_name))
         self.channel = self.connection.channel()
-        self.channel.queue_declare(queue=queue_name, durable=True)
+        self.channel.queue_declare(queue=queue_name, auto_delete=True, durable=True)
 
     def consume_messages(self, callback):
         self.channel.basic_consume(lambda ch, method, properties, body: callback(body), queue=self.queue_name)

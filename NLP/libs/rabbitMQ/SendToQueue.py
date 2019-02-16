@@ -6,7 +6,7 @@ class SendToQueue:
         self.queue_name = queue_name
         self.connection = pika.BlockingConnection(pika.ConnectionParameters(host=host_name))
         self.channel = self.connection.channel()
-        self.channel.queue_declare(queue=queue_name, durable=True)
+        self.channel.queue_declare(queue=queue_name, auto_delete=True, durable=True)
 
     def send_message(self, data):
         self.channel.basic_publish(exchange='',

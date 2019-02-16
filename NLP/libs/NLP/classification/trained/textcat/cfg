@@ -1,0 +1,11 @@
+{
+  "labels":[
+    "FAULT",
+    "INFO",
+    "TOXIC",
+    "WATER",
+    "ELECTRO",
+    "REPAIR"
+  ],
+  "pretrained_vectors":null
+}

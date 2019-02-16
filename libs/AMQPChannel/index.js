@@ -16,7 +16,7 @@ export default class AMQPChannel {
     return (async () => {
       const conn = await amqp.connect(this.host);
       const ch = await conn.createChannel();
-      ch.assertQueue(this.queueName, { durable: true });
+      ch.assertQueue(this.queueName, { durable: true, autoDelete: true });
       this.channel = ch;
       return (this);
     })();

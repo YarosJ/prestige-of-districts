@@ -27,7 +27,7 @@ export default class TaskScheduler {
       async (connectionErr, conn) => {
         if (connectionErr) throw connectionErr;
         const ch = await conn.createChannel();
-        ch.assertQueue(this.queueName, { durable: true });
+        ch.assertQueue(this.queueName, { durable: false });
         this.channel = ch;
         this.addTasks(tasks);
         this._taskManager(callback);

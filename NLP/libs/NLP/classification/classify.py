@@ -1,32 +1,11 @@
+#!/usr/bin/env python
 # coding: utf8
 
-#from __future__ import unicode_literals, print_function
-
+from __future__ import unicode_literals, print_function
 import spacy
 
-nlp = spacy.load('../TRAINED')
 
-input = u"""
-
-
-        . будет производиться хлорирование
-
-        водопроводных сетей пос. sdfdsfsdfd.
-
-         
-
-        Использование питьевой воды
-
-         с  8-00  до  19-00
-
-        категорически  запрещается!
-
-        Просим  Вас предостеречь несовершеннолетних детей.
-
-        После окончания хлорирования воду перед употреблением  сливать!
-        """
-
-doc = nlp(input)
-
-print(input)
-print(doc.cats)
+def classify(model_dir="./libs/NLP/classification/trained", input_string="Empty input string"):
+    nlp = spacy.load(model_dir)
+    doc = nlp(input_string)
+    return doc.cats

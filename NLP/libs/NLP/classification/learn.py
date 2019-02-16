@@ -1,41 +1,67 @@
+#!/usr/bin/env python
 # coding: utf8
 
-#from __future__ import unicode_literals, print_function
+from __future__ import unicode_literals, print_function
 
-import json
 import spacy
+import json
+import plac
+import random
+from pathlib import Path
+from train_data import train_data
 
-nlp = spacy.load('xx')
+config = json.loads(open('./corpuses/faults_classification_corpus.json').read())
 
-train_data = []
+TRAIN_DATA = train_data(config)
+LABELS = ('FAULT', 'INFO', 'TOXIC', 'WATER', 'ELECTRO', 'REPAIR')
 
-# ---------------------------------
 
-config = json.loads(open('./NER_kramvoda_corpus.json').read())
+@plac.annotations(
+    output_dir=("Optional output directory", "option", "o", Path),
+    n_iter=("Number of training iterations", "option", "n", int))
+def main(output_dir="./trained/", n_iter=1):
+    """Load the model, set up the pipeline and train the classificator."""
+    nlp = spacy.blank('xx')
 
-for docum in config:
-    fault = 1.87 if docum["categories"][0] == "FAULT" else 0
-    info = 1 if docum["categories"][0] == "INFO" else 0
-    toxic = 4.61 if docum["categories"][0] == "TOXIC" else 0
-    #print(fault, info, toxic)
-    train_data.append((docum["text"], {"cats": {"FAULT": fault, "INFO": info, "TOXIC": toxic}}))
+    # create the built-in pipeline components and add them to the pipeline
+    # nlp.create_pipe works for built-ins that are registered with spaCy
+    if 'textcat' not in nlp.pipe_names:
+        textcat = nlp.create_pipe('textcat')
+        nlp.add_pipe(textcat, last=True)
+        print("'textcat' not in nlp.pipe_names")
+    # otherwise, get it so we can add labels
+    else:
+        textcat = nlp.get_pipe('textcat')
 
-# ---------------------------------
+    for lbl in LABELS:
+        # add label
+        textcat.add_label(lbl)
+    nlp.vocab.vectors.name = 'spacy_classification_vectors'
 
-textcat = nlp.create_pipe('textcat')
-nlp.add_pipe(textcat, last=True)
-textcat.add_label('FAULT')
-textcat.add_label('INFO')
-textcat.add_label('TOXIC')
-optimizer = nlp.begin_training()
-for itn in range(1): # 10
-    for doc, gold in train_data:
-        print gold
-        nlp.update([doc], [gold], sgd=optimizer)
+    # get names of other pipes to disable them during training
+    other_pipes = [pipe for pipe in nlp.pipe_names if pipe != 'textcat']
+    with nlp.disable_pipes(*other_pipes):  # only train textcat
+        optimizer = nlp.begin_training()
+        for itn in range(n_iter):
+            random.shuffle(TRAIN_DATA)
+            for doc, gold in TRAIN_DATA:
+                nlp.update([doc], [gold], sgd=optimizer)
 
-nlp.to_disk('../TRAINED')
+    # save model to output directory
+    if output_dir is not None:
+        output_dir = Path(output_dir)
+        if not output_dir.exists():
+            output_dir.mkdir()
+        nlp.to_disk(output_dir)
+        print("Saved model to", output_dir)
 
-print "END"
+        # test the saved model
+        print("Loading from", output_dir)
+        nlp2 = spacy.load(output_dir)
+        for text, _ in TRAIN_DATA:
+            doc = nlp2(text)
+            print(doc, doc.cats)
 
-doc = nlp(u"По причине сокращения подачи воды КП «Компания «Вода Донбасса», фильтровальная станция 7.09.2018 продолжает работать по графику: с 05.00 - 10.00, 17.00 - 22.00. Аналогичный график работы будет осуществляться на выходные дни 8.09.2018 и 9.09.2018. Администрация КПП «КРАМАТОРСКИЙ ВОДОКАНАЛ» приносит извинения за временные неудобства,  просит произвести временный запас питьевой воды, а так же оплату долгов и текущих платежей. Городской администрацией принимаются все возможные меры в решении вопроса стабилизации водоснабжения города. Информация о режиме работы фильтровальной станции и графике подачи воды будет сообщена дополнительно. Администрация КПП «КРАМАТОРСКИЙ ВОДОКАНАЛ».")
-print(doc.cats)
+
+if __name__ == '__main__':
+    plac.call(main)
