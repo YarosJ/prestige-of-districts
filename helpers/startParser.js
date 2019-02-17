@@ -27,7 +27,7 @@ export default async () => {
   const scraper = await new Scraper();
   const nlpChannel = await new AMQPChannel({ queueName: NLP_QUEUE_NAME, host: HOST });
   const nlpOutputChannel = await new AMQPChannel({ queueName: NLP_OUTPUT_QUEUE_NAME, host: HOST });
-  nlpOutputChannel.consume(data => console.log(data)); // Sanitize and geocode
+  nlpOutputChannel.consume(data => console.log(JSON.parse(data))); // Sanitize and geocode
 
   const scheduler = new TaskScheduler(queueTasks, {
     host: HOST, queueName: SCHEDULER_QUEUE_NAME,
