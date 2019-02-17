@@ -7,19 +7,27 @@ import resolvers from './graphql/resolvers';
 import typeDefs from './graphql/schema';
 import mongooseConnect from './config/mongooseConnect';
 import startParser from './helpers/startParser';
+import spawnChildProcess from './helpers/spawnChildProcess';
 import { serverPort, endpoint } from './config/config.json';
+
+const debugServer = require('debug')('Server');
 
 const app = express();
 
 /**
- * Connecting middleware
+ * Connecting mongoose middleware
+ * and starting NLP and Parser
  */
-
 mongooseConnect(mongoose, process, () => {
-  console.log('Mongoose connected!');
+  spawnChildProcess('python3', ['./NLP/app.py'], 'NLP python');
+  // noinspection JSIgnoredPromiseFromCall
   startParser();
 });
 
+/**
+ * Using ApolloServer
+ * @type {ApolloServer}
+ */
 const server = new ApolloServer({
   typeDefs,
   resolvers,
@@ -29,16 +37,29 @@ const server = new ApolloServer({
   cacheControl: true,
 });
 
-server.applyMiddleware({ app, endpoint });
+/**
+ * Adding middleware
+ */
+server.applyMiddleware({
+  app,
+  endpoint,
+});
 
+/**
+ * Creating server and adding subscriptions
+ * @type {Server | Http2Server | Promise<any>}
+ */
 const httpServer = http.createServer(app);
 server.installSubscriptionHandlers(httpServer);
 
+/**
+ * Listening server port
+ */
 httpServer.listen(serverPort, () => {
-  console.log(
+  debugServer(
     `🚀 Server ready at http://localhost:${serverPort}${server.graphqlPath}`,
   );
-  console.log(
+  debugServer(
     `🚀 Subscriptions ready at ws://localhost:${serverPort}${
       server.subscriptionsPath
     }`,
