@@ -3,8 +3,9 @@ import '../models/Task';
 import TaskScheduler from '../libs/TaskScheduler';
 import Scraper from '../libs/Scraper';
 import AMQPChannel from '../libs/AMQPChannel';
-import processNLP from './processNLP';
+import actionFromNLP from './actionFromNLP';
 import config from '../config/config';
+import ActionDispatcher from './ActionDispatcher';
 
 // Get configs for message broker and scheduler
 const {
@@ -47,7 +48,11 @@ export default async () => {
     host: HOST,
   });
 
-  nlpOutputChannel.consume(data => processNLP(data)); // Process NLP results
+  nlpOutputChannel.consume((data) => {
+    // Get action with payload from NLP results
+    const action = actionFromNLP(data);
+    ActionDispatcher.dispatch(action);
+  });
 
   /**
    * Starting TaskScheduler with scraper

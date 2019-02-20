@@ -1,12 +1,7 @@
 import appConfig from '../config/config';
-import ActionDispatcher from './ActionDispatcher';
 
 const config = appConfig.NLP;
-
-function sortCategories(cats) {
-  const allCats = Object.keys(cats);
-  return allCats.sort((a, b) => cats[b] - cats[a]);
-}
+const sortCategories = cats => Object.keys(cats).sort((a, b) => cats[b] - cats[a]);
 
 export default (data) => {
   // Adapting received data for dispatcher
@@ -17,8 +12,8 @@ export default (data) => {
     result[t] = sortedCats.find(c => config[t].indexOf(c) !== -1);
   });
 
-  // Dispatch action
-  ActionDispatcher.dispatch({
+  // Return action with payload
+  return ({
     type: result.actions,
     payload: {
       service: result.services,
