@@ -3,10 +3,10 @@ import http from 'http';
 import { ApolloServer } from 'apollo-server-express';
 import { RedisCache } from 'apollo-server-cache-redis';
 import mongoose from 'mongoose';
-import resolvers from './graphql/resolvers';
-import typeDefs from './graphql/schema';
+import resolvers from './controllers/graphql/resolvers';
+import typeDefs from './controllers/graphql/schema';
 import mongooseConnect from './config/mongooseConnect';
-import startParser from './helpers/startParser';
+import startParser from './config/startParser';
 import spawnChildProcess from './helpers/spawnChildProcess';
 import { serverPort, endpoint } from './config/config.json';
 

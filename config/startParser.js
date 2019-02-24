@@ -3,9 +3,10 @@ import '../models/Task';
 import TaskScheduler from '../libs/TaskScheduler';
 import Scraper from '../libs/Scraper';
 import AMQPChannel from '../libs/AMQPChannel';
-import actionFromNLP from './actionFromNLP';
-import config from '../config/config';
-import ActionDispatcher from './ActionDispatcher';
+import actionFromNLP from '../helpers/actionFromNLP';
+import alreadyScraped from '../helpers/isAlreadyScraped';
+import ActionDispatcher from '../controllers/ActionDispatcher';
+import config from './config';
 
 // Get configs for message broker and scheduler
 const {
@@ -28,7 +29,7 @@ export default async () => {
   // Adapting tasks from DB for TaskScheduler
   const queueTasks = tasks.map(t => ({
     body: {
-      URL: t.URL,
+      URL: t.URL + '/index.php?start=3',
       tagPaths: t.tagPaths,
     },
     interval: t.freq,
@@ -64,7 +65,10 @@ export default async () => {
     // Parse text by URL and tags paths
     const parsedTextArray = await scraper.getText(data.URL, data.tagPaths);
     // Send array of parsed text to NLP
-    parsedTextArray.forEach(text => nlpChannel.sendToQueue(text));
+    parsedTextArray.forEach(async (text) => {
+      nlpChannel.sendToQueue(text); // Delete this string!!!
+      if (!await alreadyScraped(text)) nlpChannel.sendToQueue(text);
+    });
   });
   global.taskScheduler = scheduler; // making taskScheduler exemplar accessible for DB hooks
   return (scheduler);

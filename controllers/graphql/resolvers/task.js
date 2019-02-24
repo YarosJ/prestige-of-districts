@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import { PubSub } from 'apollo-server-express';
-import '../../models/Task';
+import '../../../models/Task';
 
 const TaskModel = mongoose.model('Task');
 const pubSub = new PubSub();
@@ -8,7 +8,7 @@ const pubSub = new PubSub();
 export default {
   Query: {
     tags() {
-      return ['LOC'];
+      return ['LOC']; // From config
     },
   },
   Mutation: {
