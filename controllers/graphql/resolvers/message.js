@@ -34,7 +34,7 @@ export default {
       // Geocode
       const geoLocated = await geocodeLocations(null, country, city);
       // Write to DB
-      console.log('INFO', { geoLocated, text, service });
+      console.log('INFO', { text, service, geoLocated: geoLocated[0] });
       // const addedMessage = await new MessageModel({
       //  text,
       //  service,

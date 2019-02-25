@@ -14,11 +14,16 @@
     "services": ["WATER", "ELECTRO"],
     "actions": ["FAULT", "REPAIR", "INFO", "TOXIC"]
   },
-  "geocoder": {
-    "provider": "here",
-    "appId": "vO6SCvegx2409pUQJAXd",
-    "appCode": "E4vgG5Zn2XY5m_HNdX1AnQ"
-  },
+  "geocoders": [
+    {
+      "provider": "openstreetmap"
+    },
+    {
+      "provider": "here",
+      "appId": "vO6SCvegx2409pUQJAXd",
+      "appCode": "E4vgG5Zn2XY5m_HNdX1AnQ"
+    }
+  ],
   "db": {
     "name": "parser",
     "host": "localhost",

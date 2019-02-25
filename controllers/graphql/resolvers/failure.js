@@ -39,7 +39,7 @@ export default {
       const geoLocated = await geocodeLocations(locations, country, city);
       // Write to DB
       console.log('FAILURE', {
-        geoLocated, text, service, failureType,
+        service, failureType, text, locations, geoLocated,
       });
       // const addedFailure = await new FailureModel({
       //   locations: geoLocated, text, service, failureType,

@@ -12,6 +12,5 @@ export default (text) => {
   Object.keys(patterns).map((pattern) => {
     result = result.replace(new RegExp(pattern, 'g'), patterns[pattern]);
   });
-  console.log('#########', result);
   return result;
 };

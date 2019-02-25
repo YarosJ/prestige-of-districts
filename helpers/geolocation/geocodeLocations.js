@@ -3,7 +3,8 @@ import replaceAbbreviations from './replaceAbbreviations';
 import config from '../../config/config';
 
 // initialize NodeGeocoder
-const geocoder = NodeGeocoder(config.geocoder);
+const geocoder1 = NodeGeocoder(config.geocoders[0]);
+const geocoder2 = NodeGeocoder(config.geocoders[1]);
 
 /**
  * Geocode given locations
@@ -13,16 +14,18 @@ const geocoder = NodeGeocoder(config.geocoder);
  * @returns {Promise<Array>}
  */
 export default async function (places, country = '', city = '') {
-  const parentLoc = await geocoder.geocode(`${country} ${city}`);
+  const parentLoc = await geocoder1.geocode(`${country} ${city}`);
   if (!places) return parentLoc;
   const { latitude, longitude } = parentLoc[0];
   const result = [];
   await Promise.all(places.map(async (place) => {
     const fullNamedPlace = replaceAbbreviations(place);
-    const geoLocated = await geocoder.geocode({ address: `${fullNamedPlace}, ${city}`, country });
-    await Promise.all(geoLocated.map(async (loc) => {
-      if (loc.latitude !== latitude && loc.longitude !== longitude) result.push(loc);
-    }));
+    let geoLocated = await geocoder1.geocode(`${fullNamedPlace}, ${city}, ${country}`);
+    if (geoLocated.length === 0) geoLocated = await geocoder2.geocode(`${fullNamedPlace}, ${city}, ${country}`);
+    if (geoLocated.length === 0) return;
+    if (geoLocated[0].latitude !== latitude && geoLocated[0].longitude !== longitude) {
+      result.push({ place, latitude: geoLocated[0].latitude, longitude: geoLocated[0].longitude });
+    }
   }));
   return result;
 }
