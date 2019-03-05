@@ -20,6 +20,8 @@ def entities(data):
         'text': text,
         'result_cats': result_cats,
         'result_entities': result_entities,
+        'city': '',
+        'country': '',
     }
     sender.send_message(json.dumps(result))
 
