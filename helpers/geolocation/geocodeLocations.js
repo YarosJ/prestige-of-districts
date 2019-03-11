@@ -2,8 +2,12 @@ import NodeGeocoder from 'node-geocoder';
 import replaceAbbreviations from './replaceAbbreviations';
 import config from '../../config/config';
 
+// Get default configs
+const { defaultCity, defaultCountry } = config.geolocation;
+const configGeocoders = config.geolocation.geocoders;
+
 // initialize NodeGeocoders
-const geocoders = config.geocoders.map((_, index) => NodeGeocoder(config.geocoders[index]));
+const geocoders = configGeocoders.map((_, index) => NodeGeocoder(configGeocoders[index]));
 
 /**
  * Geocode given locations
@@ -12,7 +16,7 @@ const geocoders = config.geocoders.map((_, index) => NodeGeocoder(config.geocode
  * @param city
  * @returns {Promise<Array>}
  */
-export default async function (places, country = '', city = '') {
+export default async function (places, country = defaultCountry, city = defaultCity) {
   const parentLoc = await geocoders[0].geocode(`${country} ${city}`);
   if (!places) return parentLoc;
   const { latitude, longitude } = parentLoc[0];

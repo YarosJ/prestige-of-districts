@@ -2,7 +2,7 @@
   "apiPrefix": "http://localhost:5000",
   "serverPort": "5000",
   "endpoint": "/graphql",
-  "secret": "abvkhvbajhvabdfbvah",
+  "secret": "atG98uGePHev96jj",
   "messageBroker": {
     "SCHEDULER_QUEUE_NAME": "scheduler_queue",
     "NLP_QUEUE_NAME": "nlp_queue",
@@ -12,18 +12,23 @@
   },
   "NLP": {
     "services": ["WATER", "ELECTRO"],
-    "actions": ["FAULT", "REPAIR", "INFO", "TOXIC"]
+    "actions": ["FAULT", "REPAIR", "INFO", "TOXIC"],
+    "supportedEntities": ["LOC"]
   },
-  "geocoders": [
-    {
-      "provider": "openstreetmap"
-    },
-    {
-      "provider": "here",
-      "appId": "vO6SCvegx2409pUQJAXd",
-      "appCode": "E4vgG5Zn2XY5m_HNdX1AnQ"
-    }
-  ],
+  "geolocation": {
+    "defaultCity": "Краматорск",
+    "defaultCountry": "Украина",
+    "geocoders": [
+      {
+        "provider": "openstreetmap"
+      },
+      {
+        "provider": "here",
+        "appId": "vO6SCvegx2409pUQJAXd",
+        "appCode": "E4vgG5Zn2XY5m_HNdX1AnQ"
+      }
+    ]
+  },
   "db": {
     "name": "parser",
     "host": "localhost",

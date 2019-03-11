@@ -31,6 +31,8 @@ export default async () => {
     body: {
       URL: t.URL + '/index.php?start=3',
       tagPaths: t.tagPaths,
+      city: t.city,
+      country: t.country,
     },
     interval: t.freq,
   }));
@@ -50,9 +52,8 @@ export default async () => {
   });
 
   nlpOutputChannel.consume((data) => {
-    // Get action with payload from NLP results
-    const action = actionFromNLP(data);
-    ActionDispatcher.dispatch(action);
+    // Get action with payload from NLP results and dispatch
+    ActionDispatcher.dispatch(actionFromNLP(data));
   });
 
   /**
@@ -64,10 +65,17 @@ export default async () => {
   }, async (data) => {
     // Parse text by URL and tags paths
     const parsedTextArray = await scraper.getText(data.URL, data.tagPaths);
-    // Send array of parsed text to NLP
+    // Send parsed text to NLP
     parsedTextArray.forEach(async (text) => {
-      nlpChannel.sendToQueue(text); // Delete this string!!!
-      if (!await alreadyScraped(text)) nlpChannel.sendToQueue(text);
+      if (true) { // !await alreadyScraped(text)
+        nlpChannel.sendToQueue({
+          text,
+          payload: {
+            city: data.city,
+            country: data.country,
+          },
+        });
+      }
     });
   });
   global.taskScheduler = scheduler; // making taskScheduler exemplar accessible for DB hooks

@@ -13,15 +13,15 @@ def main():
 
 
 def entities(data):
-    text = data.decode("utf-8").replace('\\n', '\n')
+    json_data = json.loads(data.decode("utf-8"))
+    text = json_data['text'].replace('\\n', '\n')
     result_cats = classificator.classify(input_string=text)
     result_entities = get_entities.get_entities(input_string=text)
     result = {
         'text': text,
         'result_cats': result_cats,
         'result_entities': result_entities,
-        'city': '',
-        'country': '',
+        'payload': json_data['payload'],
     }
     sender.send_message(json.dumps(result))
 

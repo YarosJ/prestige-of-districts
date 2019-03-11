@@ -6,7 +6,7 @@ export default gql`
   }
 
   extend type Mutation {
-    addTarget(URL: String!, tagPaths: [String], freq: Int, dataListeners: [String]): Target
+    addTarget(URL: String!, tagPaths: [String], freq: Int, city: String, country: String): Target
     addListeners(URL: String!, dataListeners: [String]): Target
     removeTarget(URL: String): Target
     removeListeners(URL: String!, dataListeners: [String!]): Target
@@ -25,6 +25,7 @@ export default gql`
     URL: String!
     tagPaths: [String]
     freq: Int
-    dataListeners: [String]
+    city: String
+    country: String
   }
 `;

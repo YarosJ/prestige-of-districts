@@ -19,6 +19,8 @@ export default (data) => {
       service: result.services,
       text: jsonData.text,
       entities: jsonData.result_entities,
+      city: jsonData.payload.city,
+      country: jsonData.payload.country,
     },
   });
 };

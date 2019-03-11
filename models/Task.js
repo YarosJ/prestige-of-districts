@@ -19,7 +19,14 @@ const TaskSchema = new Schema({
     type: Number,
     required: false,
   },
-  dataListeners: [String],
+  city: {
+    type: String,
+    required: false,
+  },
+  country: {
+    type: String,
+    required: false,
+  },
 }, { usePushEach: true });
 
 /**
@@ -31,6 +38,8 @@ TaskSchema.post('save', (doc) => {
     body: {
       URL: doc.URL,
       tagPaths: doc.tagPaths,
+      city: doc.city,
+      country: doc.country,
     },
     interval: doc.freq,
   }]);
@@ -40,6 +49,8 @@ TaskSchema.post('remove', (doc) => {
   global.taskScheduler.deleteTasks([{
     URL: doc.URL,
     tagPaths: doc.tagPaths,
+    city: doc.city,
+    country: doc.country,
   }]);
 });
 

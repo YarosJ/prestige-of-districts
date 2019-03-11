@@ -5,7 +5,7 @@
 const patterns = {
   '\Д+\/+\с': 'Детский сад',
   'ОШ': 'Школа',
-};
+}; // From config
 
 export default (text) => {
   let result = text;
