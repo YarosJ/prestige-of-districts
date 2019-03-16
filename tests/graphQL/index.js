@@ -6,7 +6,8 @@ import { assert } from 'chai';
 import mongooseConnect from '../../config/mongooseConnect';
 import typeDefs from '../../controllers/graphql/schema';
 import resolvers from '../../controllers/graphql/resolvers';
-import testTarget from './target';
+import testTarget from './task';
+import testFailure from './failure';
 
 const { createTestClient } = require('apollo-server-testing');
 
@@ -38,5 +39,7 @@ describe('start server', () => {
 });
 
 export default async () => {
-  await testTarget(createTestClient(server));
+  const testClient = createTestClient(server);
+  await testTarget(testClient);
+  await testFailure(testClient);
 };

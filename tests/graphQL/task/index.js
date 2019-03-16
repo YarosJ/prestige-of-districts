@@ -1,25 +1,20 @@
-import { describe } from 'mocha';
+// noinspection ES6CheckImport
 import { assert } from 'chai';
-import reqSchemas from './reqSchemas';
+import { describe } from 'mocha';
+import schemas from './schemas';
+import gqlResErrPartial from '../gqlResErrPartial';
 
-const schemas = reqSchemas; // I don't know why another way I get "reqSchemas not defined error"
+const reqSchemas = schemas; // I don't know why another way I get "reqSchemas not defined error"
 const {
   GET_TAGS, ADD_TARGET, REMOVE_TARGET, UPDATE_TARGET,
-} = schemas;
-
-const gqlResErrPartial = (res, _assert) => {
-  const { errors } = res;
-  if (errors) {
-    errors.forEach(e => _assert.fail(e));
-  } else _assert.isOk('everything');
-};
+} = reqSchemas;
 
 export default async ({ query, mutate }) => {
-  describe('target', () => {
+  describe('task', () => {
     // eslint-disable-next-line no-undef
     it('get target', async () => {
-      const getUserRes = await query({ query: GET_TAGS });
-      gqlResErrPartial(getUserRes, assert);
+      const getTargetRes = await query({ query: GET_TAGS });
+      gqlResErrPartial(getTargetRes, assert);
     });
 
     // eslint-disable-next-line no-undef

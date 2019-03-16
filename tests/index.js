@@ -1,3 +1,4 @@
-import tests from './graphQL';
+import testGraphQl from './graphQL';
 
-tests();
+// noinspection JSIgnoredPromiseFromCall
+testGraphQl();

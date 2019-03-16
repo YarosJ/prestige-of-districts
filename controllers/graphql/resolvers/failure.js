@@ -8,7 +8,7 @@ const pubSub = new PubSub();
 
 export default {
   Query: {
-    async failures({
+    async failures(parent, {
       latitude, longitude, service, failureType, date, range,
     }) {
       if (!range) {
@@ -38,9 +38,9 @@ export default {
       // Geocode
       const geoLocated = await geocodeLocations(locations, country, city);
       // Write to DB
-      console.log('FAILURE', {
-        service, failureType, text, locations, geoLocated,
-      });
+      // console.log('FAILURE', {
+      //   service, failureType, text, locations, geoLocated,
+      // });
       // const addedFailure = await new FailureModel({
       //   locations: geoLocated, text, service, failureType,
       // }).save();

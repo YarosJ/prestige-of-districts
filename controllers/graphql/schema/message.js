@@ -2,7 +2,7 @@ import { gql } from 'apollo-server-express';
 
 export default gql`
   extend type Query {
-    messages(latitude: String, longitude: String, date: String, range: RangeInput): [Message]
+    messages(latitude: Float, longitude: Float, date: String, range: RangeInput): [Message]
   }
 
   extend type Mutation {
@@ -16,7 +16,7 @@ export default gql`
   }
 
   type Message {
-    latitude: Int
-    longitude: Int
+    latitude: Float
+    longitude: Float
   }
 `;

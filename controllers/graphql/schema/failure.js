@@ -2,7 +2,7 @@ import { gql } from 'apollo-server-express';
 
 export default gql`
   extend type Query {
-    failures: [Failure]
+    failures(latitude: Float, longitude: Float, date: String, range: RangeInput): [Failure]
   }
 
   extend type Mutation {
@@ -19,7 +19,7 @@ export default gql`
     failureType: String!
     service: String!
     text: String!
-    latitude: Int
-    longitude: Int
+    latitude: Float
+    longitude: Float
   }
 `;

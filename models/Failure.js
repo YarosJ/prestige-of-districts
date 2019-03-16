@@ -23,8 +23,8 @@ const FailureSchema = new Schema({
     required: true,
   },
   locations: [{
-    latitude: String,
-    longitude: String,
+    latitude: Number,
+    longitude: Number,
   }],
 }, { usePushEach: true });
 

@@ -13,8 +13,8 @@ const MessageSchema = new Schema({
   text: String,
   service: String,
   locations: [{
-    latitude: String,
-    longitude: String,
+    latitude: Number,
+    longitude: Number,
   }],
 }, { usePushEach: true });
 
