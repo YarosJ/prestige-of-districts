@@ -34,24 +34,28 @@ const TaskSchema = new Schema({
  */
 
 TaskSchema.post('save', (doc) => {
-  global.taskScheduler.addTasks([{
-    body: {
+  if (global.taskScheduler) {
+    global.taskScheduler.addTasks([{
+      body: {
+        URL: doc.URL,
+        tagPaths: doc.tagPaths,
+        city: doc.city,
+        country: doc.country,
+      },
+      interval: doc.freq,
+    }]);
+  }
+});
+
+TaskSchema.post('remove', (doc) => {
+  if (global.taskScheduler) {
+    global.taskScheduler.deleteTasks([{
       URL: doc.URL,
       tagPaths: doc.tagPaths,
       city: doc.city,
       country: doc.country,
-    },
-    interval: doc.freq,
-  }]);
-});
-
-TaskSchema.post('remove', (doc) => {
-  global.taskScheduler.deleteTasks([{
-    URL: doc.URL,
-    tagPaths: doc.tagPaths,
-    city: doc.city,
-    country: doc.country,
-  }]);
+    }]);
+  }
 });
 
 export default mongoose.model('Task', TaskSchema);

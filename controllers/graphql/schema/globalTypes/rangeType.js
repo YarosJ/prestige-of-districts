@@ -1,7 +1,7 @@
 import { gql } from 'apollo-server-express';
 
 export default gql`
-  type Range {
+  input RangeInput {
     maxLatitude: Int
     minLatitude: Int
     maxLongitude: Int
