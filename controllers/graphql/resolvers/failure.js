@@ -1,20 +1,19 @@
 import mongoose from 'mongoose';
 import { PubSub } from 'apollo-server-express';
 import geocodeLocations from '../../../helpers/geolocation/geocodeLocations';
+import validate from '../../../helpers/graphQL/validateInput';
 import ISODate from '../../../helpers/ISODate';
 import '../../../models/Failure';
 
 const FailureModel = mongoose.model('Failure');
 const pubSub = new PubSub();
-const ALL_REGEXP = /./;
-const validate = input => input || ALL_REGEXP;
 
 export default {
   Query: {
     async failures(parent, {
       latitude, longitude, service, failureType, date, range,
     }) {
-      const dateISO = date ? new Date(date).toISOString() : ALL_REGEXP;
+      const dateISO = date ? new Date(date).toISOString() : /./;
       if (!range) {
         return FailureModel.find({
           happenedAt: dateISO,
@@ -53,17 +52,25 @@ export default {
       pubSub.publish('FAILURE_ADDED', { failureAdded: addedFailure });
       return addedFailure;
     },
-    async removeFailure(parent, { date, latitude, longitude }) {
-      if (!date) throw new Error('Date field must be provided!');
-      const query = {
-        happenedAt: ISODate(date),
-        'locations.latitude': latitude,
-        'locations.longitude': longitude,
-      };
-      const failures = await FailureModel.find(query);
-      await FailureModel.deleteMany(query);
-      pubSub.publish('FAILURE_REMOVED', { failureRemoved: failures[0] });
-      return failures[0];
+    async removeFailure(parent, {
+      date, latitude, longitude, id,
+    }) {
+      let failure;
+      if (id) {
+        failure = await FailureModel.findById(id);
+        await failure.remove();
+      } else {
+        if (!date) throw new Error('Date field must be provided!');
+        const query = {
+          happenedAt: ISODate(date),
+          'locations.latitude': latitude,
+          'locations.longitude': longitude,
+        };
+        failure = await FailureModel.findOne(query);
+        await FailureModel.deleteMany(query);
+      }
+      pubSub.publish('FAILURE_REMOVED', { failureRemoved: failure });
+      return failure;
     },
   },
   Subscription: {

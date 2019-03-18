@@ -6,8 +6,8 @@ export default gql`
   }
 
   extend type Mutation {
-    addMessage(parentLocation: String, locations: [String], failureType: String, service: String, text: String): Message
-    removeMessage(date: String): Message
+    addMessage(country: String, city: String, locations: [String], service: String, text: String, date: String): Message
+    removeMessage(date: String, latitude: Float, longitude: Float, id: String): Message
   }
 
   extend type Subscription {
@@ -16,7 +16,9 @@ export default gql`
   }
 
   type Message {
-    latitude: Float
-    longitude: Float
+    id: String!
+    service: String!
+    text: String!
+    locations: [Location]
   }
 `;

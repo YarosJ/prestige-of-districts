@@ -7,4 +7,9 @@ export default gql`
     maxLongitude: Float
     minLongitude: Float
   }
+
+  type Location {
+    latitude: Float
+    longitude: Float
+  }
 `;

@@ -10,8 +10,14 @@ const { Schema } = mongoose;
  */
 
 const MessageSchema = new Schema({
-  text: String,
-  service: String,
+  text: {
+    type: String,
+    required: true,
+  },
+  service: {
+    type: String,
+    required: true,
+  },
   locations: [{
     latitude: Number,
     longitude: Number,

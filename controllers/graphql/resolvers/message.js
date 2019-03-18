@@ -1,27 +1,33 @@
 import mongoose from 'mongoose';
 import { PubSub } from 'apollo-server-express';
-import '../../../models/Message';
 import geocodeLocations from '../../../helpers/geolocation/geocodeLocations';
+import validate from '../../../helpers/graphQL/validateInput';
+import ISODate from '../../../helpers/ISODate';
+import '../../../models/Message';
 
 const MessageModel = mongoose.model('Message');
 const pubSub = new PubSub();
 
 export default {
   Query: {
-    async messages({
-      latitude, longitude, date, range,
+    async messages(parent, {
+      latitude, longitude, service, date, range,
     }) {
+      const dateISO = date ? new Date(date).toISOString() : /./;
       if (!range) {
         return MessageModel.find({
-          date,
-          locations: { latitude, longitude },
+          happenedAt: dateISO,
+          service: validate(service),
+          'locations.latitude': latitude,
+          'locations.longitude': longitude,
         });
       }
       const {
         maxLatitude, minLatitude, maxLongitude, minLongitude,
       } = range;
       return MessageModel.find({
-        date,
+        happenedAt: dateISO,
+        service: validate(service),
         'locations.latitude': { $lte: maxLatitude, $gte: minLatitude },
         'locations.longitude': { $lte: maxLongitude, $gte: minLongitude },
       });
@@ -29,30 +35,39 @@ export default {
   },
   Mutation: {
     async addMessage(parent, {
-      country, city, text, service,
+      country, city, locations, service, text, date,
     }) {
       // Geocode
-      const geoLocated = await geocodeLocations(null, country, city);
+      const geoLocated = await geocodeLocations(locations, country, city);
       // Write to DB
-      console.log('INFO', { text, service, geoLocated: geoLocated[0] });
-      // const addedMessage = await new MessageModel({
-      //  text,
-      //  service,
-      //  locations: geoLocated,
-      // }).save();
-      // pubSub.publish('MESSAGE_ADDED', { messageAdded: addedMessage });
-      // return addedMessage;
+      const addedMessage = await new MessageModel({
+        locations: geoLocated,
+        text,
+        service,
+        happenedAt: ISODate(date),
+      }).save();
+      pubSub.publish('MESSAGE_ADDED', { messageAdded: addedMessage });
+      return addedMessage;
     },
     async removeMessage(parent, {
-      latitude, longitude, date,
+      date, latitude, longitude, id,
     }) {
-      const removedMessage = await MessageModel.findOne({
-        date,
-        locations: { latitude, longitude },
-      });
-      await removedMessage.remove();
-      pubSub.publish('MESSAGE_REMOVED', { messageRemoved: removedMessage });
-      return removedMessage;
+      let message;
+      if (id) {
+        message = await MessageModel.findById(id);
+        await message.remove();
+      } else {
+        if (!date) throw new Error('Date field must be provided!');
+        const query = {
+          happenedAt: ISODate(date),
+          'locations.latitude': latitude,
+          'locations.longitude': longitude,
+        };
+        message = await MessageModel.findOne(query);
+        await MessageModel.deleteMany(query);
+      }
+      pubSub.publish('MESSAGE_REMOVED', { messageRemoved: message });
+      return message;
     },
   },
   Subscription: {

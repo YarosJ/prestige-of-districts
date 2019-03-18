@@ -17,7 +17,7 @@ export default class ActionDispatcher {
   };
 
   /**
-   * Dispatcher method
+   * Dispatcher method, dispatches action
    * @param action
    * @returns {*|void}
    */

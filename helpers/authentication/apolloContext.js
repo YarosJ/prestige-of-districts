@@ -3,7 +3,7 @@
 import jwt from 'jsonwebtoken';
 import { AuthenticationError } from 'apollo-server-express';
 import gql from 'graphql-tag';
-import checkPermissions from './CheckPermissions';
+import checkPermissions from './checkPermissions';
 import { secret } from '../../config/config.json';
 
 /**

@@ -1,11 +1,10 @@
 import { gql } from 'apollo-server-express';
 
 export default {
-  GET_FAILURE: gql`
+  GET_MESSAGE: gql`
       query($latitude: Float, $longitude: Float, $date: String, $range: RangeInput) {
-          failures(latitude: $latitude, longitude: $longitude, date: $date, range: $range) {
+          messages(latitude: $latitude, longitude: $longitude, date: $date, range: $range) {
               id
-              failureType
               service
               text
               locations {
@@ -15,15 +14,12 @@ export default {
           }
       }
   `,
-  ADD_FAILURE: gql`
-      mutation($country: String, $city: String, 
-      $locations: [String], $failureType: String!, 
+  ADD_MESSAGE: gql`
+      mutation($country: String, $city: String, $locations: [String],
       $service: String!, $text: String!, $date: String) {
-           addFailure(country: $country, city: $city,
-           locations: $locations, failureType: $failureType, 
+           addMessage(country: $country, city: $city, locations: $locations,
            service: $service, text: $text, date: $date) {
               id
-              failureType
               service
               text
               locations {
@@ -33,11 +29,10 @@ export default {
           }
       }
   `,
-  REMOVE_FAILURE: gql`
+  REMOVE_MESSAGE: gql`
       mutation($date: String, $latitude: Float, $longitude: Float, $id: String) {
-          removeFailure(date: $date, latitude: $latitude, longitude: $longitude, id: $id) {
+          removeMessage(date: $date, latitude: $latitude, longitude: $longitude, id: $id) {
               id
-              failureType
               service
               text
               locations {

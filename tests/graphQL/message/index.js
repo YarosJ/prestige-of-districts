@@ -6,34 +6,33 @@ import gqlResErrPartial from '../gqlResErrPartial';
 
 const reqSchemas = schemas; // I don't know why another way I get "reqSchemas not defined error"
 const {
-  GET_FAILURE, ADD_FAILURE, REMOVE_FAILURE,
+  GET_MESSAGE, ADD_MESSAGE, REMOVE_MESSAGE,
 } = reqSchemas;
 
 const date = '2019.01.01';
 let geoLocation = {};
 
 export default async ({ query, mutate }) => {
-  const addFailureMutation = () => mutate({
-    mutation: ADD_FAILURE,
+  const addMessageMutation = () => mutate({
+    mutation: ADD_MESSAGE,
     variables: {
       date,
       country: 'Ukraine',
       city: 'Kiev',
       locations: ['Киев', 'Киевской области'],
-      failureType: 'FAULT',
       service: 'WATER',
       text: 'Киев — административный центр Киевской области',
     },
   });
 
-  describe('failure', () => {
+  describe('message', () => {
     describe('add', () => {
       // eslint-disable-next-line no-undef
       it('without errors', async () => {
-        const addFailureRes = await addFailureMutation();
-        gqlResErrPartial(addFailureRes, assert, (resp) => {
+        const addMessageRes = await addMessageMutation();
+        gqlResErrPartial(addMessageRes, assert, (resp) => {
           // eslint-disable-next-line prefer-destructuring
-          geoLocation = resp.addFailure.locations[0];
+          geoLocation = resp.addMessage.locations[0];
         });
       });
 
@@ -42,7 +41,7 @@ export default async ({ query, mutate }) => {
         // eslint-disable-next-line no-unused-expressions
         geoLocation
           ? assert.isOk('everything')
-          : assert.fail('Location in failure must be provided!');
+          : assert.fail('Location in message must be provided!');
       });
     });
 
@@ -52,8 +51,8 @@ export default async ({ query, mutate }) => {
         // eslint-disable-next-line no-undef
         it('without errors', async () => {
           const { latitude, longitude } = geoLocation;
-          const getFailureRes = await query({
-            query: GET_FAILURE,
+          const getMessageRes = await query({
+            query: GET_MESSAGE,
             variables: {
               date,
               range: {
@@ -64,14 +63,14 @@ export default async ({ query, mutate }) => {
               },
             },
           });
-          gqlResErrPartial(getFailureRes, assert, (resp) => {
+          gqlResErrPartial(getMessageRes, assert, (resp) => {
             response = resp;
           });
         });
 
         // eslint-disable-next-line no-undef
-        it('failures was found', async () => {
-          assert(response.failures.length > 0, "failures wasn't found");
+        it('messages was found', async () => {
+          assert(response.messages.length > 0, "messages wasn't found");
         });
       });
 
@@ -80,22 +79,22 @@ export default async ({ query, mutate }) => {
         // eslint-disable-next-line no-undef
         it('without errors', async () => {
           const { latitude, longitude } = geoLocation;
-          const getFailureRes = await query({
-            query: GET_FAILURE,
+          const getMessageRes = await query({
+            query: GET_MESSAGE,
             variables: {
               latitude,
               longitude,
               date,
             },
           });
-          gqlResErrPartial(getFailureRes, assert, (resp) => {
+          gqlResErrPartial(getMessageRes, assert, (resp) => {
             response = resp;
           });
         });
 
         // eslint-disable-next-line no-undef
-        it('failures was found', async () => {
-          assert(response.failures.length > 0, "failures wasn't found");
+        it('messages was found', async () => {
+          assert(response.messages.length > 0, "messages wasn't found");
         });
       });
     });
@@ -104,25 +103,25 @@ export default async ({ query, mutate }) => {
       // eslint-disable-next-line no-undef
       it('by date, latitude, longitude without errors', async () => {
         const { latitude, longitude } = geoLocation;
-        const removeFailureRes = await mutate({
-          mutation: REMOVE_FAILURE,
+        const removeMessageRes = await mutate({
+          mutation: REMOVE_MESSAGE,
           variables: { date, latitude, longitude },
         });
-        gqlResErrPartial(removeFailureRes, assert);
+        gqlResErrPartial(removeMessageRes, assert);
       });
 
       // eslint-disable-next-line no-undef
       it('by id without errors', async () => {
-        // Add new failure and get id
-        const addFailureRes = await addFailureMutation();
-        const { id } = addFailureRes.data.addFailure;
+        // Add new message and get id
+        const addMessageRes = await addMessageMutation();
+        const { id } = addMessageRes.data.addMessage;
 
-        // Remove by id failure
-        const removeFailureRes = await mutate({
-          mutation: REMOVE_FAILURE,
+        // Remove by id message
+        const removeMessageRes = await mutate({
+          mutation: REMOVE_MESSAGE,
           variables: { id },
         });
-        gqlResErrPartial(removeFailureRes, assert);
+        gqlResErrPartial(removeMessageRes, assert);
       });
     });
   });

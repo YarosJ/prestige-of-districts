@@ -10,7 +10,7 @@ const { Schema } = mongoose;
  */
 
 const FailureSchema = new Schema({
-  failureType: {
+  text: {
     type: String,
     required: true,
   },
@@ -18,7 +18,7 @@ const FailureSchema = new Schema({
     type: String,
     required: true,
   },
-  text: {
+  failureType: {
     type: String,
     required: true,
   },

@@ -2,7 +2,7 @@ import { gql } from 'apollo-server-express';
 import taskSchema from './task';
 import messageSchema from './message';
 import failureSchema from './failure';
-import rangeType from './globalTypes/rangeType';
+import globalTypes from './globalTypes';
 
 const linkSchema = gql`
   type Query {
@@ -18,4 +18,4 @@ const linkSchema = gql`
   }
 `;
 
-module.exports = [linkSchema, rangeType, taskSchema, messageSchema, failureSchema];
+module.exports = [linkSchema, globalTypes, taskSchema, messageSchema, failureSchema];
