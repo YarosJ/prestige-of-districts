@@ -1,6 +1,9 @@
-export default (res, _assert) => {
-  const { errors } = res;
+export default (res, _assert, cb) => {
+  const { errors, data } = res;
   if (errors) {
     errors.forEach(e => _assert.fail(e));
-  } else _assert.isOk('everything');
+  } else {
+    if (cb) cb(data);
+    _assert.isOk('everything');
+  }
 };

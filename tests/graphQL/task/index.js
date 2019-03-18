@@ -12,13 +12,13 @@ const {
 export default async ({ query, mutate }) => {
   describe('task', () => {
     // eslint-disable-next-line no-undef
-    it('get target', async () => {
+    it('get', async () => {
       const getTargetRes = await query({ query: GET_TAGS });
       gqlResErrPartial(getTargetRes, assert);
     });
 
     // eslint-disable-next-line no-undef
-    it('add target', async () => {
+    it('add', async () => {
       const addTargetRes = await mutate({
         mutation: ADD_TARGET,
         variables: {
@@ -30,7 +30,7 @@ export default async ({ query, mutate }) => {
     });
 
     // eslint-disable-next-line no-undef
-    it('update target', async () => {
+    it('update', async () => {
       const updateTargetRes = await mutate({
         mutation: UPDATE_TARGET,
         variables: {
@@ -43,7 +43,7 @@ export default async ({ query, mutate }) => {
     });
 
     // eslint-disable-next-line no-undef
-    it('remove target', async () => {
+    it('remove', async () => {
       const removeTargetRes = await mutate({
         mutation: REMOVE_TARGET,
         variables: { URL: 'www.testSite.com' },

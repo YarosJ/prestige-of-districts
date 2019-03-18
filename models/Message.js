@@ -16,6 +16,11 @@ const MessageSchema = new Schema({
     latitude: Number,
     longitude: Number,
   }],
+  happenedAt: {
+    type: String,
+    required: true,
+    default: new Date().toISOString(),
+  },
 }, { usePushEach: true });
 
 export default mongoose.model('Message', MessageSchema);

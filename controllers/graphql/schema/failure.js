@@ -6,8 +6,8 @@ export default gql`
   }
 
   extend type Mutation {
-    addFailure(country: String, city: String, locations: [String], failureType: String, service: String, text: String): Failure
-    removeFailure(date: String): Failure
+    addFailure(country: String, city: String, locations: [String], failureType: String!, service: String!, text: String!, date: String): Failure
+    removeFailure(date: String!, latitude: Float, longitude: Float): Failure
   }
 
   extend type Subscription {
@@ -15,11 +15,15 @@ export default gql`
     failureRemoved: Failure
   }
 
+  type Location {
+    latitude: Float
+    longitude: Float
+  }
+
   type Failure {
     failureType: String!
     service: String!
     text: String!
-    latitude: Float
-    longitude: Float
+    locations: [Location]
   }
 `;

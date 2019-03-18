@@ -5,7 +5,7 @@ mongoose.Promise = require('bluebird');
 const { Schema } = mongoose;
 
 /**
- * @description :: A model definition. Represents a database messages.
+ * @description :: A model definition. Represents a database failures.
  * @type {*|Mongoose.Schema}
  */
 
@@ -26,6 +26,11 @@ const FailureSchema = new Schema({
     latitude: Number,
     longitude: Number,
   }],
+  happenedAt: {
+    type: String,
+    required: true,
+    default: new Date().toISOString(),
+  },
 }, { usePushEach: true });
 
 export default mongoose.model('Failure', FailureSchema);

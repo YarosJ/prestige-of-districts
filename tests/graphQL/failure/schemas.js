@@ -7,30 +7,40 @@ export default {
               failureType
               service
               text
-              latitude
-              longitude
+              locations {
+                latitude
+                longitude
+              }
           }
       }
   `,
   ADD_FAILURE: gql`
-      mutation($country: String, $city: String, $locations: [String], $failureType: String, $service: String, $text: String) {
-          addFailure(country: $country, city: $city, locations: $locations, failureType: $failureType, service: $service, text: $text) {
+      mutation($country: String, $city: String, 
+      $locations: [String], $failureType: String!, 
+      $service: String!, $text: String!, $date: String) {
+           addFailure(country: $country, city: $city,
+           locations: $locations, failureType: $failureType, 
+           service: $service, text: $text, date: $date) {
               failureType
               service
               text
-              latitude
-              longitude
+              locations {
+                latitude
+                longitude
+              }
           }
       }
   `,
   REMOVE_FAILURE: gql`
-      mutation($date: String!) {
-          removeFailure(date: $date) {
+      mutation($date: String!, $latitude: Float, $longitude: Float) {
+          removeFailure(date: $date, latitude: $latitude, longitude: $longitude) {
               failureType
               service
               text
-              latitude
-              longitude
+              locations {
+                latitude
+                longitude
+              }
           }
       }
   `,
