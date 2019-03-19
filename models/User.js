@@ -5,10 +5,20 @@ const { Schema } = mongoose;
 const bcrypt = require('bcryptjs');
 
 /**
+ * Schema for target sub field
+ * @type {*|Mongoose.Schema}
+ */
+const targetSchema = new Schema({
+  tag: String,
+  latitude: Number,
+  longitude: Number,
+  radius: Number,
+});
+
+/**
  * @description :: A model definition.  Represents a database for users.
  * @type {*|Mongoose.Schema}
  */
-
 const UserSchema = new Schema({
   email: {
     type: String,
@@ -22,44 +32,33 @@ const UserSchema = new Schema({
     required: false, // Must be true!
     unique: false,
   },
-  projects: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Project',
-  }],
-  orders: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Order',
-  }],
-  hashedPassword: {
-    type: String,
-    required: true,
-  },
-  refreshToken: {
-    type: String,
-    required: false,
-  },
-  createdAt: { type: Date },
-  cart: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Project',
-    optional: true,
-    default: undefined,
-    unique: false,
-    required: true,
-  }],
+  hashedPassword: { type: String, required: true },
+  refreshToken: { type: String, required: false },
+  createdAt: { type: Date, default: Date.now },
+  targets: [targetSchema],
 }, { usePushEach: true });
 
-UserSchema.virtual('password')
-  .set(function (password) {
-    this.salt = bcrypt.genSaltSync(10);
-    this.hashedPassword = this.encryptPassword(password);
-  });
+// eslint-disable-next-line func-names
+UserSchema.virtual('password').set(function (password) {
+  this.salt = bcrypt.genSaltSync(10);
+  this.hashedPassword = this.encryptPassword(password);
+});
 
 UserSchema.methods = {
+  /**
+   * Encrypting given password
+   * @param password
+   * @returns {string|?string}
+   */
   encryptPassword(password) {
     return bcrypt.hashSync(password, this.salt);
   },
 
+  /**
+   * Comparing given password with hashed password
+   * @param password
+   * @returns {boolean}
+   */
   validPassword(password) {
     return bcrypt.compareSync(password, this.hashedPassword);
   },

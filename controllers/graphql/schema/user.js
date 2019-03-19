@@ -6,7 +6,7 @@ export default gql`
     user(id: ID!): User
     me(id: ID!): ProtectedUser
   }
-  
+
   extend type Mutation {
     signUp(email: String!, password: String!): User!
     signIn(email: String!, password: String!): Authorization!
@@ -15,34 +15,31 @@ export default gql`
     updateUser(id: ID!, email: String, previousPassword: String, newPassword: String, role: String): User!
     deleteUser(id: ID!): Boolean!
   }
-  
-  extend type Subscription {
-    userAdded: User!
-    userUpdated: User!
-    userDeleted: User!
+
+  type Target {
+    tag: String!,
+    latitude: Number,
+    longitude: Number,
+    radius: Number,
   }
-  
+
   type User {
     id: ID!
     email: String
     role: String
     password: String!
     createdAt: String!
-    projects: [Project]
-    cart: [Project]
-    orders: [Order]
+    targets: [Target]
   }
-  
+
   type ProtectedUser {
     id: ID!
     email: String
     role: String
     createdAt: String!
-    projects: [Project]
-    orders: [Order]
-    cart: [Project]
+    targets: [Target]
   }
-  
+
   type Authorization {
     refreshToken: String!
     accessToken: String!

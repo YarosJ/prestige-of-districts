@@ -1,8 +1,10 @@
 import { gql } from 'apollo-server-express';
+import globalTypes from './globalTypes';
 import taskSchema from './task';
 import messageSchema from './message';
 import failureSchema from './failure';
-import globalTypes from './globalTypes';
+import permissionSchema from './permission';
+import userSchema from './user';
 
 const linkSchema = gql`
   type Query {
@@ -18,4 +20,12 @@ const linkSchema = gql`
   }
 `;
 
-module.exports = [linkSchema, globalTypes, taskSchema, messageSchema, failureSchema];
+export default [
+  linkSchema,
+  globalTypes,
+  taskSchema,
+  messageSchema,
+  failureSchema,
+  permissionSchema,
+  userSchema,
+];

@@ -1,72 +1,76 @@
 /* eslint no-underscore-dangle: ["error", { "allow": ["_id"] }] */
-
 import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
-import { PubSub, UserInputError } from 'apollo-server-express';
-import { secret } from '../../config/config.json';
-import '../../models/User';
+import { UserInputError } from 'apollo-server-express';
+import { secret } from '../../../config/config.json';
+import paginate from '../../../helpers/graphQL/paginate';
+import '../../../models/User';
 
 const UserModel = mongoose.model('User');
-const pubSub = new PubSub();
-
-function paginate(cursor, limit) {
-  if(!cursor && !limit) return {};
-  if(!cursor) cursor = 1;
-  if(!limit) limit = 5;
-
-  return {
-    skip: limit * (cursor - 1),
-    limit,
-  };
-}
 
 export default {
   Query: {
+    /**
+     * Finds users and paginate by cursor and limit
+     * @param parent
+     * @param cursor
+     * @param limit
+     * @returns {*}
+     */
     users(parent, { cursor, limit }) {
       return UserModel.find({}, {
         role: 1, createdAt: 1, email: 1, dates: 1,
-      }, paginate(cursor, limit)).populate('projects').populate({
-        path: 'cart',
-        populate: { path: 'project' },
-      }).exec();
+      }, paginate(cursor, limit));
     },
+
+    /**
+     * Finds user by given id
+     * @param parent
+     * @param id
+     * @returns {Promise}
+     */
     user(parent, { id }) {
       return UserModel.findById(id, {
-        role: 1, createdAt: 1, email: 1, projects: 1, cart: 1,
-      }).populate('projects').populate({
-        path: 'cart',
-        populate: { path: 'project' },
-      }).exec();
-    },
-    me(parent, { id }) {
-      return UserModel.findById(id, {
-        role: 1, createdAt: 1, email: 1, dates: 1,
-      }).populate('dates').exec();
+        role: 1, createdAt: 1, email: 1, targets: 1,
+      });
     },
   },
+
   Mutation: {
-    async signUp(parent, { email, password }, context) {
+    /**
+     * Creates new user in DB
+     * @param parent
+     * @param email
+     * @param password
+     * @returns {Promise<*>}
+     */
+    async signUp(parent, { email, password }) {
       const user = new UserModel({
         email,
         password,
         role: 'user',
-        cart: [],
-        projects: [],
-        orders: [],
+        targets: [],
         createdAt: new Date(),
       });
-      const newUser = await user.save();
-      pubSub.publish('USER_ADDED', { userAdded: newUser });
-      return newUser;
+      return user.save();
     },
-    async signIn(parent, { email, password }, context) {
+
+    /**
+     * Checks given email and password and
+     * returns new access and refresh token
+     * @param parent
+     * @param email
+     * @param password
+     * @returns {Promise<{accessToken: *, refreshToken: *, user}>}
+     */
+    async signIn(parent, { email, password }) {
       const user = await UserModel.findOne({ email });
       if (!user) {
         throw new UserInputError('Incorrect email');
       } else if (!user.validPassword(password)) {
         throw new UserInputError('Incorrect password');
       } else {
-        const role = user.role;
+        const { role } = user;
         const _id = user._id.toString();
         const refreshToken = jwt.sign({ _id, role }, secret, { expiresIn: 420000 });
         const loggedUser = await UserModel.findOneAndUpdate({ _id },
@@ -79,14 +83,43 @@ export default {
         };
       }
     },
-    async refreshToken(parent, { refreshToken }, context) {
+
+    /**
+     * Returns new access token by refresh token
+     * @param parent
+     * @param refreshToken
+     * @returns {Promise<{accessToken: *}>}
+     */
+    async refreshToken(parent, { refreshToken }) {
       const { _id, role } = jwt.verify(refreshToken, secret);
       return { accessToken: jwt.sign({ _id, role }, secret, { expiresIn: 900 }) };
     },
-    async logOut(parent, { accessToken, refreshToken }, context) {
+
+    /**
+     * Adds access and refresh token to blacklist
+     * @param parent
+     * @param accessToken
+     * @param refreshToken
+     * @returns {Promise<boolean>}
+     */
+    async logOut(parent, { accessToken, refreshToken }) {
+      console.log({ accessToken, refreshToken });
       return true; // Add to blacklist
     },
-    async updateUser(parent, { id, role, previousPassword, newPassword }) {
+
+    /**
+     * Finds user by given id and
+     * update him by given params
+     * @param parent
+     * @param id
+     * @param role
+     * @param previousPassword
+     * @param newPassword
+     * @returns {Promise<void>}
+     */
+    async updateUser(parent, {
+      id, role, previousPassword, newPassword,
+    }) {
       let updatedUser = {};
       if (previousPassword && newPassword) {
         const user = await UserModel.findOne({ _id: id });
@@ -95,33 +128,30 @@ export default {
         } else if (!user.validPassword(previousPassword)) {
           throw new UserInputError('Incorrect password');
         } else {
-          updatedUser = await UserModel.findOneAndUpdate({_id: id}, {password: newPassword}, {new: true});
+          updatedUser = await UserModel.findOneAndUpdate(
+            { _id: id },
+            { password: newPassword },
+            { new: true },
+          );
         }
       } else {
-        await UserModel.findById(id).update({role});
+        await UserModel.findById(id).update({ role });
         updatedUser = await UserModel.findById(id).populate('projects').populate({
           path: 'cart',
           populate: { path: 'project' },
         });
       }
-      pubSub.publish('USER_UPDATED', { userUpdated: updatedUser });
       return updatedUser;
     },
+
+    /**
+     * Deletes user by given id
+     * @param parent
+     * @param id
+     * @returns {Promise<Query>}
+     */
     async deleteUser(parent, { id }) {
-      const deletedUser = await UserModel.findById(id).remove();
-      pubSub.publish('USER_DELETED', { userDeleted: deletedUser });
-      return deletedUser;
-    },
-  },
-  Subscription: {
-    userAdded: {
-      subscribe: () => pubSub.asyncIterator(['USER_ADDED']),
-    },
-    userUpdated: {
-      subscribe: () => pubSub.asyncIterator(['USER_UPDATED']),
-    },
-    userDeleted: {
-      subscribe: () => pubSub.asyncIterator(['USER_DELETED']),
+      return UserModel.findById(id).remove();
     },
   },
 };
