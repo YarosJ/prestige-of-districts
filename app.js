@@ -8,6 +8,7 @@ import typeDefs from './controllers/graphql/schema';
 import mongooseConnect from './config/mongooseConnect';
 import startParser from './config/startParser';
 import spawnChildProcess from './helpers/spawnChildProcess';
+import context from './helpers/authentication/apolloContext';
 import { serverPort, endpoint } from './config/config.json';
 
 const debugServer = require('debug')('Server');
@@ -31,6 +32,7 @@ mongooseConnect(mongoose, process, () => {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  context,
   cache: new RedisCache({
     host: '127.0.0.1',
   }),
