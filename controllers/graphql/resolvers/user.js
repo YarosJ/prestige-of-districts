@@ -92,7 +92,10 @@ export default {
      */
     async refreshToken(parent, { refreshToken }) {
       const { _id, role } = jwt.verify(refreshToken, secret);
-      return { accessToken: jwt.sign({ _id, role }, secret, { expiresIn: 900 }) };
+      return {
+        accessToken: jwt.sign({ _id, role }, secret, { expiresIn: 900 }),
+        refreshToken,
+      };
     },
 
     /**
@@ -120,7 +123,6 @@ export default {
     async updateUser(parent, {
       id, role, previousPassword, newPassword,
     }) {
-      let updatedUser = {};
       if (previousPassword && newPassword) {
         const user = await UserModel.findOne({ _id: id });
         if (!user) {
@@ -128,20 +130,12 @@ export default {
         } else if (!user.validPassword(previousPassword)) {
           throw new UserInputError('Incorrect password');
         } else {
-          updatedUser = await UserModel.findOneAndUpdate(
-            { _id: id },
-            { password: newPassword },
-            { new: true },
-          );
+          await user.update({ password: newPassword });
         }
       } else {
         await UserModel.findById(id).update({ role });
-        updatedUser = await UserModel.findById(id).populate('projects').populate({
-          path: 'cart',
-          populate: { path: 'project' },
-        });
       }
-      return updatedUser;
+      return UserModel.findById(id);
     },
 
     /**

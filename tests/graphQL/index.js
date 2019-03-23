@@ -9,6 +9,7 @@ import resolvers from '../../controllers/graphql/resolvers';
 import testTarget from './task';
 import testFailure from './failure';
 import testMessage from './message';
+import testUser from './user';
 
 const { createTestClient } = require('apollo-server-testing');
 
@@ -44,4 +45,5 @@ export default async () => {
   await testTarget(testClient);
   await testFailure(testClient);
   await testMessage(testClient);
+  await testUser(testClient);
 };

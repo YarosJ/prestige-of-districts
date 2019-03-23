@@ -1,4 +1,3 @@
-/* eslint no-underscore-dangle: ["error", { "allow": ["_id"] }] */
 import jwt from 'jsonwebtoken';
 import { AuthenticationError } from 'apollo-server-express';
 import gql from 'graphql-tag';
@@ -30,7 +29,7 @@ export default async ({ req, res, connection }) => {
 
   if (token) {
     try {
-      ({ _id, role } = jwt.verify(token, secret));
+      ({ role } = jwt.verify(token, secret));
     } catch (err) {
       if (err.name === 'TokenExpiredError' || err.name === 'JsonWebTokenError') {
         throw new AuthenticationError(err);

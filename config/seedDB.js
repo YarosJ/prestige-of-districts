@@ -1,21 +1,24 @@
 import mongoose from 'mongoose';
 import '../models/Permission';
 import '../models/User';
+import config from './config';
 
+const { email, password } = config.admin;
+const adminRole = config.admin.role;
 const PermissionModel = mongoose.model('Permission');
 const UserModel = mongoose.model('User');
 
 const roles = [
   {
     role: 'guest',
-    actions: ['signIn', 'signUp', 'refreshToken', 'messages', 'failures', 'user'],
+    actions: ['signIn', 'signUp', 'refreshToken', 'messages', 'failures'],
   },
   {
     role: 'user',
     actions:
       [
         'signIn', 'signUp', 'refreshToken', 'messages', 'failures', 'user',
-        'me', 'logOut', 'addFailure', 'removeFailure', 'addMessage', 'removeMessage',
+        'logOut', 'addFailure', 'removeFailure', 'addMessage', 'removeMessage',
       ],
   },
   {
@@ -23,7 +26,7 @@ const roles = [
     actions:
       [
         'signIn', 'signUp', 'refreshToken', 'messages', 'failures', 'user',
-        'me', 'logOut', 'addFailure', 'removeFailure', 'addMessage', 'removeMessage',
+        'logOut', 'addFailure', 'removeFailure', 'addMessage', 'removeMessage',
         'tags', 'addTarget', 'removeTarget', 'updateTarget', 'users',
       ],
   },
@@ -32,7 +35,7 @@ const roles = [
     actions:
       [
         'signIn', 'signUp', 'refreshToken', 'messages', 'failures', 'user',
-        'me', 'logOut', 'addFailure', 'removeFailure', 'addMessage', 'removeMessage',
+        'logOut', 'addFailure', 'removeFailure', 'addMessage', 'removeMessage',
         'tags', 'addTarget', 'removeTarget', 'updateTarget', 'users',
         'roles', 'actions', 'addRole', 'addAction', 'deleteRole', 'deleteAction', 'updateUser', 'deleteUser',
       ],
@@ -50,12 +53,9 @@ export default async () => {
 
   if (await UserModel.count() === 0) {
     const user = new UserModel({
-      email: 'jaroslawjuk@outlook.com',
-      password: '19981798',
-      role: 'superAdmin',
-      cart: [],
-      projects: [],
-      orders: [],
+      email,
+      password,
+      role: adminRole,
       createdAt: new Date(),
     });
     await user.save();

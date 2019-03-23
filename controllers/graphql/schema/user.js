@@ -4,7 +4,6 @@ export default gql`
   extend type Query {
     users(cursor: Int, limit: Int): [User!]
     user(id: ID!): User
-    me(id: ID!): ProtectedUser
   }
 
   extend type Mutation {
@@ -16,11 +15,11 @@ export default gql`
     deleteUser(id: ID!): Boolean!
   }
 
-  type Target {
+  type UserTarget {
     tag: String!,
-    latitude: Number,
-    longitude: Number,
-    radius: Number,
+    latitude: Float,
+    longitude: Float,
+    radius: Float,
   }
 
   type User {
@@ -29,7 +28,7 @@ export default gql`
     role: String
     password: String!
     createdAt: String!
-    targets: [Target]
+    targets: [UserTarget]
   }
 
   type ProtectedUser {
@@ -37,7 +36,7 @@ export default gql`
     email: String
     role: String
     createdAt: String!
-    targets: [Target]
+    targets: [UserTarget]
   }
 
   type Authorization {

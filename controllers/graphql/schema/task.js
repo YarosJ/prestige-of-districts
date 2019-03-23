@@ -6,12 +6,12 @@ export default gql`
   }
 
   extend type Mutation {
-    addTarget(URL: String!, tagPaths: [String], freq: Int, city: String, country: String): Target
-    removeTarget(URL: String): Target
-    updateTarget(URL: String!, tagPaths: [String], freq: Int, city: String, country: String): Target
+    addTarget(URL: String!, tagPaths: [String], freq: Int, city: String, country: String): TaskTarget
+    removeTarget(URL: String): TaskTarget
+    updateTarget(URL: String!, tagPaths: [String], freq: Int, city: String, country: String): TaskTarget
   }
 
-  type Target {
+  type TaskTarget {
     URL: String!
     tagPaths: [String]
     freq: Int

@@ -10,6 +10,7 @@ import startParser from './config/startParser';
 import spawnChildProcess from './helpers/spawnChildProcess';
 import context from './helpers/authentication/apolloContext';
 import { serverPort, endpoint } from './config/config.json';
+import seedDB from './config/seedDB';
 
 const debugServer = require('debug')('Server');
 
@@ -20,6 +21,7 @@ const app = express();
  * and starting NLP and Parser
  */
 mongooseConnect(mongoose, process, () => {
+  if (process.env.seedDB) seedDB();
   spawnChildProcess('python3', ['./NLP/app.py'], 'NLP python');
   // noinspection JSIgnoredPromiseFromCall
   startParser();
