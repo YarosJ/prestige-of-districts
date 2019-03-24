@@ -1,7 +1,9 @@
 import React from 'react';
 import { Router, Route } from 'react-router-dom';
-import Navigation from './Navigation/index';
-import Footer from './Footer';
+// import Navigation from './Navigation';
+import Landing from './Landing';
+import Map from './Map';
+// import Footer from './Footer';
 import SignUpPage from './Account/SignUp/index';
 import SignInPage from './Account/SignIn/index';
 import AccountPage from './Account/index';
@@ -22,8 +24,8 @@ class App extends React.Component {
     const { refetch, location } = this.props;
     return (
       <Router history={history}>
-        <div>
-          <Navigation ref={this.navRef} history={history} />
+        <div style={{ height: '100%' }}>
+          {/*<Navigation ref={this.navRef} history={history} />*/}
 
           {/* App routes: */}
 
@@ -31,9 +33,7 @@ class App extends React.Component {
             exact
             path={routes.LANDING}
             component={() => (
-              <div>
-                // MAP !!!
-              </div>
+              <Landing />
             )}
           />
           <Route
@@ -69,7 +69,7 @@ class App extends React.Component {
             path={routes.ACCESS_CONTROL}
             component={() => <Access history={history} refetch={refetch} />}
           />
-          <Footer />
+          {/*<Footer />*/}
         </div>
       </Router>
     );

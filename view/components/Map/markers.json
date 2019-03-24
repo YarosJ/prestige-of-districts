@@ -1,0 +1,36 @@
+[
+  {
+    "longitude": 37.5853,
+    "latitude": 48.7332,
+    "icon": "wasteYellow"
+  },
+  {
+    "longitude": 37.5843,
+    "latitude": 48.7312,
+    "icon": "barrelRed"
+  },
+  {
+    "longitude": 37.5843,
+    "latitude": 48.7322,
+    "icon": "wasteRed"
+  },
+  {
+    "longitude": 37.5871,
+    "latitude": 48.7129,
+    "icon": "barrelYellow"
+  }, {
+  "longitude": 37.5843,
+  "latitude": 48.7380,
+  "icon": "wasteRed"
+},
+  {
+    "longitude": 37.5861,
+    "latitude": 48.7139,
+    "icon": "wasteYellow"
+  },
+  {
+    "longitude": 37.5875,
+    "latitude": 48.7129,
+    "icon": "barrelRed"
+  }
+]

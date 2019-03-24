@@ -4,6 +4,11 @@ body {
   font-family: sans-serif;
 }
 
+#root {
+  height: 100%;
+    overflow: hidden;
+}
+
 .scalable-children-img img {
   max-width: 90% !important;
 }
