@@ -21,7 +21,10 @@ const app = express();
  * and starting NLP and Parser
  */
 mongooseConnect(mongoose, process, () => {
-  if (process.env.seedDB) seedDB();
+  if (process.env.seedDB) {
+    // noinspection JSIgnoredPromiseFromCall
+    seedDB();
+  }
   spawnChildProcess('python3', ['./NLP/app.py'], 'NLP python');
   // noinspection JSIgnoredPromiseFromCall
   startParser();

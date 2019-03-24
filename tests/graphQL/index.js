@@ -10,6 +10,7 @@ import testTarget from './task';
 import testFailure from './failure';
 import testMessage from './message';
 import testUser from './user';
+import testPermission from './permission';
 
 const { createTestClient } = require('apollo-server-testing');
 
@@ -42,8 +43,9 @@ describe('start server', () => {
 
 export default async () => {
   const testClient = createTestClient(server);
+  await testUser(testClient);
+  await testPermission(testClient);
   await testTarget(testClient);
   await testFailure(testClient);
   await testMessage(testClient);
-  await testUser(testClient);
 };

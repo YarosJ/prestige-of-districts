@@ -19,7 +19,7 @@ function getGraphQLAction(queryString) {
  * @returns {Function}
  */
 export default async ({ req, res, connection }) => {
-  // if (connection) return {};
+  if (connection) return {};
 
   let role;
   let allowed = false;
