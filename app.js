@@ -27,7 +27,7 @@ mongooseConnect(mongoose, process, () => {
   }
   spawnChildProcess('python3', ['./NLP/app.py'], 'NLP python');
   // noinspection JSIgnoredPromiseFromCall
-  startParser();
+  // startParser();
 });
 
 /**
