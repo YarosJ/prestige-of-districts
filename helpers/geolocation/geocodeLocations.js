@@ -17,7 +17,8 @@ const geocoders = configGeocoders.map((_, index) => NodeGeocoder(configGeocoders
  * @returns {Promise<Array>}
  */
 export default async function (places, country = defaultCountry, city = defaultCity) {
-  const parentLoc = await geocoders[0].geocode(`${country} ${city}`);
+  let parentLoc = await geocoders[0].geocode(`${country} ${city}`);
+  parentLoc = [{ ...parentLoc[0], locType: 'text' }];
   if (!places) return parentLoc;
   const { latitude, longitude } = parentLoc[0];
   const result = [];
@@ -29,10 +30,10 @@ export default async function (places, country = defaultCountry, city = defaultC
       if (push && geoLocated.length !== 0
           && geoLocated[0].latitude !== latitude
           && geoLocated[0].longitude !== longitude) {
-        result.push({ place, ...geoLocated[0] });
+        result.push({ place, ...geoLocated[0], locType: 'point' });
         push = false;
       }
     }));
   }));
-  return result;
+  return (result.length > 0 ? result : parentLoc);
 }

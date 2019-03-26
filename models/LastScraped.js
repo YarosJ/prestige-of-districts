@@ -11,6 +11,11 @@ const { Schema } = mongoose;
 
 const LastScrapedSchema = new Schema({
   text: [String],
+  dateToDelete: {
+    required: true,
+    type: Date,
+    default: Date.now,
+  },
 }, { usePushEach: true });
 
 export default mongoose.model('LastScraped', LastScrapedSchema);

@@ -19,13 +19,15 @@ const MessageSchema = new Schema({
     required: true,
   },
   locations: [{
+    place: String,
     latitude: Number,
     longitude: Number,
+    locType: String,
   }],
   happenedAt: {
-    type: String,
     required: true,
-    default: new Date().toISOString(),
+    type: Date,
+    default: Date.now,
   },
 }, { usePushEach: true });
 

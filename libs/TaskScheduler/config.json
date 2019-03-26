@@ -1,4 +1,0 @@
-{
-  "QUEUE_NAME": "scheduler_queue",
-  "HOST": "amqp://localhost"
-}

@@ -11,7 +11,7 @@ const pubSub = new PubSub();
 export default {
   Query: {
     async failures(parent, {
-      latitude, longitude, service, failureType, date, range,
+      latitude, longitude, service, failureType, date, range, locType,
     }) {
       const dateISO = date ? new Date(date).toISOString() : /./;
       if (!range) {
@@ -21,6 +21,7 @@ export default {
           failureType: validate(failureType),
           'locations.latitude': latitude,
           'locations.longitude': longitude,
+          'locations.locType': validate(locType),
         });
       }
       const {
@@ -32,6 +33,7 @@ export default {
         failureType: validate(failureType),
         'locations.latitude': { $lte: maxLatitude, $gte: minLatitude },
         'locations.longitude': { $lte: maxLongitude, $gte: minLongitude },
+        'locations.locType': validate(locType),
       });
     },
   },
@@ -49,11 +51,12 @@ export default {
         failureType,
         happenedAt: ISODate(date),
       }).save();
+      console.log('failure', addedFailure);
       pubSub.publish('FAILURE_ADDED', { failureAdded: addedFailure });
       return addedFailure;
     },
     async removeFailure(parent, {
-      date, latitude, longitude, id,
+      date, latitude, longitude, id, locType,
     }) {
       let failure;
       if (id) {
@@ -65,6 +68,7 @@ export default {
           happenedAt: ISODate(date),
           'locations.latitude': latitude,
           'locations.longitude': longitude,
+          'locations.locType': validate(locType),
         };
         failure = await FailureModel.findOne(query);
         await FailureModel.deleteMany(query);

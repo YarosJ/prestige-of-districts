@@ -9,7 +9,9 @@ export default gql`
   }
 
   type Location {
+    place: String
     latitude: Float
     longitude: Float
+    locType: String
   }
 `;

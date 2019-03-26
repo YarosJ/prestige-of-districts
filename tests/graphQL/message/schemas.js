@@ -8,8 +8,10 @@ export default {
               service
               text
               locations {
+                place
                 latitude
                 longitude
+                locType
               }
           }
       }
@@ -23,8 +25,10 @@ export default {
               service
               text
               locations {
+                place
                 latitude
                 longitude
+                locType
               }
           }
       }
@@ -36,8 +40,10 @@ export default {
               service
               text
               locations {
+                place
                 latitude
                 longitude
+                locType
               }
           }
       }

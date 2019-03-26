@@ -29,7 +29,7 @@ export default async () => {
   // Adapting tasks from DB for TaskScheduler
   const queueTasks = tasks.map(t => ({
     body: {
-      URL: t.URL + '/index.php?start=3',
+      URL: t.URL, // + '/index.php?start=3',
       tagPaths: t.tagPaths,
       city: t.city,
       country: t.country,
@@ -61,13 +61,14 @@ export default async () => {
    * @type {TaskScheduler}
    */
   const scheduler = new TaskScheduler(queueTasks, {
-    host: HOST, queueName: SCHEDULER_QUEUE_NAME,
+    precision: 5,
+    // host: HOST, queueName: SCHEDULER_QUEUE_NAME,
   }, async (data) => {
     // Parse text by URL and tags paths
     const parsedTextArray = await scraper.getText(data.URL, data.tagPaths);
     // Send parsed text to NLP
     parsedTextArray.forEach(async (text) => {
-      if (true) { // !await alreadyScraped(text)
+      if (!await alreadyScraped(text)) {
         nlpChannel.sendToQueue({
           text,
           payload: {

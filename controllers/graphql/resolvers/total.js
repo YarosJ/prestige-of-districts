@@ -1,26 +1,25 @@
 import mongoose from 'mongoose';
-import '../../models/Project';
-import '../../models/Order';
-import '../../models/User';
+import '../../../models/Failure';
+import '../../../models/Message';
+import '../../../models/User';
 
-mongoose.set('debug', true);
-const ProjectModel = mongoose.model('Project');
-const OrderModel = mongoose.model('Order');
+const FailureModel = mongoose.model('Failure');
+const MessageModel = mongoose.model('Message');
 const UserModel = mongoose.model('User');
 
 export default {
   Query: {
     async total(parent, { target }) {
       switch (target) {
-        case 'Projects':
-          return { count: await ProjectModel.count() };
-        case 'Orders':
-          return { count: await OrderModel.count() };
+        case 'Failures':
+          return { count: await FailureModel.count() };
+        case 'Messages':
+          return { count: await MessageModel.count() };
         case 'Users':
           return { count: await UserModel.count() };
         default:
           return { count: 0 };
       }
     },
-  }
+  },
 };

@@ -2,12 +2,12 @@ import { gql } from 'apollo-server-express';
 
 export default gql`
   extend type Query {
-    messages(latitude: Float, longitude: Float, date: String, range: RangeInput): [Message]
+    messages(latitude: Float, longitude: Float, date: String, range: RangeInput, locType: String): [Message]
   }
 
   extend type Mutation {
     addMessage(country: String, city: String, locations: [String], service: String, text: String, date: String): Message
-    removeMessage(date: String, latitude: Float, longitude: Float, id: String): Message
+    removeMessage(date: String, latitude: Float, longitude: Float, id: String, locType: String): Message
   }
 
   extend type Subscription {

@@ -11,7 +11,7 @@ const pubSub = new PubSub();
 export default {
   Query: {
     async messages(parent, {
-      latitude, longitude, service, date, range,
+      latitude, longitude, service, date, range, locType,
     }) {
       const dateISO = date ? new Date(date).toISOString() : /./;
       if (!range) {
@@ -20,6 +20,7 @@ export default {
           service: validate(service),
           'locations.latitude': latitude,
           'locations.longitude': longitude,
+          'locations.locType': validate(locType),
         });
       }
       const {
@@ -30,6 +31,7 @@ export default {
         service: validate(service),
         'locations.latitude': { $lte: maxLatitude, $gte: minLatitude },
         'locations.longitude': { $lte: maxLongitude, $gte: minLongitude },
+        'locations.locType': validate(locType),
       });
     },
   },
@@ -46,11 +48,12 @@ export default {
         service,
         happenedAt: ISODate(date),
       }).save();
+      console.log('message', addedMessage);
       pubSub.publish('MESSAGE_ADDED', { messageAdded: addedMessage });
       return addedMessage;
     },
     async removeMessage(parent, {
-      date, latitude, longitude, id,
+      date, latitude, longitude, id, locType,
     }) {
       let message;
       if (id) {
@@ -62,6 +65,7 @@ export default {
           happenedAt: ISODate(date),
           'locations.latitude': latitude,
           'locations.longitude': longitude,
+          'locations.locType': validate(locType),
         };
         message = await MessageModel.findOne(query);
         await MessageModel.deleteMany(query);
