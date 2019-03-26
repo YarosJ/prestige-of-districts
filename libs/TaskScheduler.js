@@ -7,7 +7,7 @@ import NodeCache from 'node-cache';
 export default class TaskScheduler {
   constructor(tasks, config, callback) {
     this.myCache = new NodeCache({
-      checkperiod: config.precision || 15,
+      checkperiod: config.precision || 15, // seconds
     });
     this.addTasks(tasks);
     this._taskManager(callback);

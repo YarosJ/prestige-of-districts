@@ -12,7 +12,6 @@ import config from './config';
 const {
   messageBroker: {
     HOST,
-    SCHEDULER_QUEUE_NAME,
     NLP_QUEUE_NAME,
     NLP_OUTPUT_QUEUE_NAME,
   },
@@ -52,23 +51,21 @@ export default async () => {
   });
 
   nlpOutputChannel.consume((data) => {
+    console.log(JSON.parse(data));
     // Get action with payload from NLP results and dispatch
-    ActionDispatcher.dispatch(actionFromNLP(data));
+    // ActionDispatcher.dispatch(actionFromNLP(data));
   });
 
   /**
    * Starting TaskScheduler with scraper
    * @type {TaskScheduler}
    */
-  const scheduler = new TaskScheduler(queueTasks, {
-    precision: 5,
-    // host: HOST, queueName: SCHEDULER_QUEUE_NAME,
-  }, async (data) => {
+  const scheduler = new TaskScheduler(queueTasks, { precision: 5 }, async (data) => {
     // Parse text by URL and tags paths
     const parsedTextArray = await scraper.getText(data.URL, data.tagPaths);
     // Send parsed text to NLP
     parsedTextArray.forEach(async (text) => {
-      if (!await alreadyScraped(text)) {
+      if (await alreadyScraped(text)) {
         nlpChannel.sendToQueue({
           text,
           payload: {

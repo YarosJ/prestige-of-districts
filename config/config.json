@@ -4,7 +4,6 @@
   "endpoint": "/graphql",
   "secret": "atG98uGePHev96jj",
   "messageBroker": {
-    "SCHEDULER_QUEUE_NAME": "scheduler_queue",
     "NLP_QUEUE_NAME": "nlp_queue",
     "NLP_OUTPUT_QUEUE_NAME": "nlp_output_queue",
     "API_QUEUE_NAME": "api_queue",
@@ -42,6 +41,6 @@
   },
   "app": {
     "name":"prestigeOfDistricts",
-    "url":""
+    "url":"https://github.com/YarosJ/prestige-of-districts"
   }
 }
