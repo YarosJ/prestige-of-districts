@@ -20,7 +20,7 @@ function getGraphQLAction(queryString) {
  */
 export default async ({ req, res, connection }) => {
   if (connection) return {};
-
+return(res);
   let role;
   let allowed = false;
   const { query } = req.body;

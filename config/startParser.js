@@ -51,9 +51,8 @@ export default async () => {
   });
 
   nlpOutputChannel.consume((data) => {
-    console.log(JSON.parse(data));
     // Get action with payload from NLP results and dispatch
-    // ActionDispatcher.dispatch(actionFromNLP(data));
+    ActionDispatcher.dispatch(actionFromNLP(data));
   });
 
   /**
@@ -65,7 +64,7 @@ export default async () => {
     const parsedTextArray = await scraper.getText(data.URL, data.tagPaths);
     // Send parsed text to NLP
     parsedTextArray.forEach(async (text) => {
-      if (await alreadyScraped(text)) {
+      if (!await alreadyScraped(text)) {
         nlpChannel.sendToQueue({
           text,
           payload: {

@@ -2,8 +2,8 @@ import { gql } from 'apollo-server-express';
 
 export default {
   GET_FAILURE: gql`
-      query($latitude: Float, $longitude: Float, $date: String, $range: RangeInput) {
-          failures(latitude: $latitude, longitude: $longitude, date: $date, range: $range) {
+      query($latitude: Float, $longitude: Float, $date: String, locRange: LocRangeInput) {
+          failures(latitude: $latitude, longitude: $longitude, date: $date, locRange: $locRange) {
               id
               failureType
               service

@@ -2,27 +2,18 @@ import React, { Component } from 'react';
 import {
   Icon, List, Menu, Segment, Sidebar,
 } from 'semantic-ui-react';
-import InputRange from 'react-input-range';
 import Map from '../Map';
 import 'react-input-range/lib/css/index.css';
 
 class Landing extends Component {
-  state = {
-    rangeValue: {
-      min: 2007,
-      max: 2015,
-    },
-  };
-
   render() {
-    const { rangeValue } = this.state;
-
     return (
       <div style={{
         display: 'flex',
         padding: 0,
-        height: '104.5%'
-      }}>
+        height: '104.5%',
+      }}
+      >
         <div
           style={{
             textAlign: 'center',
@@ -48,36 +39,20 @@ class Landing extends Component {
               />
             </List.Item>
             <List.Item style={{ marginBottom: '10px' }}>
-              <Icon name="chart line" size="large" color="teal"/>
+              <Icon name="chart line" size="large" color="teal" />
             </List.Item>
             <List.Item style={{ marginBottom: '10px' }}>
-              <Icon name="chart pie" size="large" color="blue"/>
+              <Icon name="chart pie" size="large" color="blue" />
             </List.Item>
           </List>
         </div>
         <div style={{
           padding: 0,
           width: '100%',
-          height: '100%'
-        }}>
-          <MapSidebar/>
-        </div>
-        <div style={{
-          position: 'fixed',
-          left: '50%',
-          transform: 'translateX(-45%)',
-          width: '70%',
-          bottom: '30px',
-          zIndex: 500,
-        }}>
-          <InputRange
-            maxValue={2019}
-            minValue={2000}
-            formatLabel={value => `${value} th`}
-            value={rangeValue}
-            onChange={value => this.setState({ rangeValue: value })}
-            onChangeComplete={value => console.log(value)}
-          />
+          height: '100%',
+        }}
+        >
+          <MapSidebar />
         </div>
       </div>
     );

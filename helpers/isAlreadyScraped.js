@@ -12,7 +12,7 @@ export default async (text) => {
   if (scrapped.length > 0) return true;
   await new LastScrapedModel({
     text,
-    dateToDelete: new Date(new Date().getTime() + 24 * 60 * 60 * 1000),
+    dateToDelete: new Date(new Date().getTime() + 3 * (24 * 60 * 60 * 1000)),
   }).save();
   return false;
 };

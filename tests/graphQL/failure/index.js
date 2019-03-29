@@ -56,7 +56,7 @@ export default async ({ query, mutate }) => {
             query: GET_FAILURE,
             variables: {
               date,
-              range: {
+              locRange: {
                 maxLatitude: latitude + 10.0001,
                 minLatitude: latitude - 10.0001,
                 maxLongitude: longitude + 10.0001,

@@ -11,10 +11,10 @@ const pubSub = new PubSub();
 export default {
   Query: {
     async messages(parent, {
-      latitude, longitude, service, date, range, locType,
+      latitude, longitude, service, date, locRange, locType,
     }) {
       const dateISO = date ? new Date(date).toISOString() : /./;
-      if (!range) {
+      if (!locRange) {
         return MessageModel.find({
           happenedAt: dateISO,
           service: validate(service),
@@ -25,7 +25,7 @@ export default {
       }
       const {
         maxLatitude, minLatitude, maxLongitude, minLongitude,
-      } = range;
+      } = locRange;
       return MessageModel.find({
         happenedAt: dateISO,
         service: validate(service),

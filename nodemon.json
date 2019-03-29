@@ -1,0 +1,3 @@
+{
+  "watch": ["app.js", "config/", "controllers/", "helpers/", "libs/", "models", "/tests"]
+}
