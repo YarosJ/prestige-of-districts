@@ -5,36 +5,6 @@ export const GET_USER = gql`
     user(id: $id) {
       id
       email
-      cart {
-        id
-        title
-        body
-        price
-        user {
-          id
-          email
-        }
-      }
-    }
-  }
-`;
-
-export const GET_ME = gql`
-  query($id: ID!) {
-    me(id: $id) {
-      id
-      email
-      role
-      createdAt
-      projects {
-        id
-      }
-      orders {
-        id
-      }
-      cart {
-        id
-      }
     }
   }
 `;

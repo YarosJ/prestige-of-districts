@@ -1,9 +1,6 @@
 import React from 'react';
 import { Router, Route } from 'react-router-dom';
-// import Navigation from './Navigation';
 import Landing from './Landing';
-import Map from './Map';
-// import Footer from './Footer';
 import SignUpPage from './Account/SignUp/index';
 import SignInPage from './Account/SignIn/index';
 import AccountPage from './Account/index';
@@ -25,7 +22,6 @@ class App extends React.Component {
     return (
       <Router history={history}>
         <div style={{ height: '100%' }}>
-          {/*<Navigation ref={this.navRef} history={history} />*/}
 
           {/* App routes: */}
 
@@ -33,7 +29,7 @@ class App extends React.Component {
             exact
             path={routes.LANDING}
             component={() => (
-              <Landing />
+              <Landing history={history} />
             )}
           />
           <Route

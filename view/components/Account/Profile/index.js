@@ -1,10 +1,12 @@
-import React, {Component, Fragment} from 'react';
-import {Mutation, Query} from 'react-apollo';
-import {Button, Form, Grid, Header, Image, Icon, Segment} from 'semantic-ui-react';
-import {GET_ME} from "../../../constants/queries";
-import Loading from "../../Loading";
-import ErrorMessage from "../../Error";
-import gql from "graphql-tag";
+import React, { Component, Fragment } from 'react';
+import { Mutation, Query } from 'react-apollo';
+import {
+  Button, Form, Grid, Header, Icon, Segment,
+} from 'semantic-ui-react';
+import gql from 'graphql-tag';
+import { GET_USER } from '../../../constants/queries';
+import Loading from '../../Loading';
+import ErrorMessage from '../../Error';
 
 const REFRESH_PASSWORD = gql`
   mutation($id: ID!, $previousPassword: String!, $newPassword: String!) {
@@ -24,20 +26,20 @@ class Profile extends Component {
   render() {
     return (
       <Query
-        query={GET_ME}
+        query={GET_USER}
         variables={{ id: localStorage.getItem('uId') }}
       >
         {({
-            data, loading, error
-          }) => {
-          const { me } = data;
-          if (loading || !me) {
+          data, loading, error,
+        }) => {
+          const { user } = data;
+          if (loading || !user) {
             return <Loading />;
           }
 
           return (
             <Fragment>
-              <RefreshPassword me={me}/>
+              <RefreshPassword me={user} />
             </Fragment>
           );
         }}
@@ -49,7 +51,7 @@ class Profile extends Component {
 class RefreshPassword extends Component {
   state = { ...INITIAL_STATE };
 
-  onChange = event => {
+  onChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
@@ -68,49 +70,58 @@ class RefreshPassword extends Component {
     return (
       <Mutation mutation={REFRESH_PASSWORD} variables={{ id: localStorage.getItem('uId'), previousPassword, newPassword }}>
         {(refresh, { data, loading, error }) => (
-          <div style={{ width: '90%', margin: 'auto', textAlign: 'center', marginTop: '50px' }}>
-            <Grid  columns={3}>
+          <div style={{
+            width: '90%', margin: 'auto', textAlign: 'center', marginTop: '50px',
+          }}
+          >
+            <Grid columns={3} style={{ color: "teal" }}>
               <Grid.Row>
                 <Grid.Column>
-                  <Icon name='envelope outline' /> { me.email }
+                  <Icon name="envelope outline" />
+                  { me.email }
                 </Grid.Column>
                 <Grid.Column>
-                  <Icon name='user outline' /> { me.role }
+                  <Icon name="user outline" />
+                  { me.role }
                 </Grid.Column>
                 <Grid.Column>
-                  <Icon name='clock outline' /> { new Date(me.createdAt).toLocaleDateString() }
+                  <Icon name="clock outline" />
+                  { new Date(me.createdAt).toLocaleDateString() }
                 </Grid.Column>
               </Grid.Row>
             </Grid>
 
-            <Grid textAlign='center' style={{ marginTop: '30px', marginBottom: '50px' }} verticalAlign='middle'>
+            <Grid textAlign="center" style={{ marginTop: '30px', marginBottom: '50px' }} verticalAlign="middle">
               <Grid.Column style={{ maxWidth: 450 }}>
-                <Header as='h2' color='teal' textAlign='center'>
+                <Header as="h2" color="teal" textAlign="center">
                   Change password:
                 </Header>
-                <Form size='large' onSubmit={event => this.onSubmit(event, refresh)}>
+                <Form size="large" onSubmit={event => this.onSubmit(event, refresh)}>
                   <Segment stacked>
                     <Form.Input
-                      fluid icon='lock'
-                      iconPosition='left'
-                      type='password'
-                      name='previousPassword'
+                      fluid
+                      icon="lock"
+                      iconPosition="left"
+                      type="password"
+                      name="previousPassword"
                       value={previousPassword}
                       onChange={this.onChange}
-                      placeholder="Previous password" />
+                      placeholder="Previous password"
+                    />
                     <Form.Input
                       fluid
-                      icon='lock'
-                      iconPosition='left'
-                      type='password'
-                      name='newPassword'
+                      icon="lock"
+                      iconPosition="left"
+                      type="password"
+                      name="newPassword"
                       value={newPassword}
                       onChange={this.onChange}
                       placeholder="New password"
                     />
                     <Button
-                      color='teal'
-                      fluid size='large'
+                      color="teal"
+                      fluid
+                      size="large"
                       disabled={isInvalid || loading}
                       type="submit"
                     >
