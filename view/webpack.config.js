@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+
 const BUILD_DIR = path.resolve(__dirname, 'public');
 const APP_DIR = path.resolve(__dirname, './');
 
@@ -11,7 +12,7 @@ const config = {
     publicPath: '/',
   },
   module: {
-      rules: [
+    rules: [
       {
         test: /\.(jpe?g|png|gif)$/i, // to support eg. background-image property
         loader: 'file-loader',
@@ -50,10 +51,10 @@ const config = {
             options: {
               modules: true,
               minimize: true,
-            }
+            },
           },
           { loader: 'less-loader' },
-        ]
+        ],
       }, {
         test: /\.css$/,
         loaders: ['style-loader', 'css-loader'],
@@ -69,7 +70,7 @@ const config = {
     historyApiFallback: true,
     contentBase: './public',
   },
-  plugins:  [
+  plugins: [
     new webpack.HotModuleReplacementPlugin(),
   ],
 };

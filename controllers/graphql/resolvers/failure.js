@@ -22,7 +22,7 @@ export default {
           'locations.latitude': latitude || { $type: 'number' },
           'locations.longitude': longitude || { $type: 'number' },
           'locations.locType': validate(locType),
-        });
+        }, null, {sort: {date: -1}});
       }
       const {
         maxLatitude, minLatitude, maxLongitude, minLongitude,

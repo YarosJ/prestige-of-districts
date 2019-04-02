@@ -13,13 +13,13 @@ export default {
     async messages(parent, {
       latitude, longitude, service, date, locRange, locType,
     }) {
-      const dateISO = date ? new Date(date).toISOString() : /./;
+      const dateISO = date ? new Date(date).toISOString() : { $type: 'date' };
       if (!locRange) {
         return MessageModel.find({
           happenedAt: dateISO,
           service: validate(service),
-          'locations.latitude': latitude,
-          'locations.longitude': longitude,
+          'locations.latitude': latitude || { $type: 'number' },
+          'locations.longitude': longitude || { $type: 'number' },
           'locations.locType': validate(locType),
         });
       }

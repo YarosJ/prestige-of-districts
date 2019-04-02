@@ -24,6 +24,23 @@ export const GET_FAILURE = gql`
               failureType
               service
               text
+              happenedAt
+              locations {
+                place
+                latitude
+                longitude
+                locType
+              }
+          }
+      }
+  `;
+
+export const GET_MESSAGES = gql`
+      query($latitude: Float, $longitude: Float, $date: String, $locRange: LocRangeInput, $dateRange: DateRangeInput) {
+          messages(latitude: $latitude, longitude: $longitude, date: $date, locRange: $locRange, dateRange: $dateRange) {
+              id
+              service
+              text
               locations {
                 place
                 latitude

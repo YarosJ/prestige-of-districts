@@ -22,5 +22,6 @@ export default gql`
     service: String!
     text: String!
     locations: [Location]
+    happenedAt: String!
   }
 `;

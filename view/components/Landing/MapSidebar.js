@@ -2,19 +2,32 @@ import React, { Component } from 'react';
 import {
   Icon, Segment, Sidebar, Menu,
 } from 'semantic-ui-react';
-import Map from '../Map';
+import HeatMap from '../Map/HeatMap/HeatMap';
+import HeatMap3D from '../Map/HeatMap3D/HeatMap3D';
+import PointMap from '../Map/PointMap/PointMap';
 
 class MapSidebar extends Component {
   state = {
     visible: false,
+    map: 'points',
   };
 
   handleShowClick = () => this.setState({ visible: true });
 
   handleSidebarHide = () => this.setState({ visible: false });
 
+  getMap = (map) => {
+    switch (map) {
+      case 'heat':
+        return <HeatMap />;
+      case 'heat3D':
+        return <HeatMap3D />;
+      default: return <PointMap />;
+    }
+  };
+
   render() {
-    const { visible } = this.state;
+    const { visible, map } = this.state;
 
     return (
       <Sidebar.Pushable as={Segment} style={{ border: 'none' }}>
@@ -32,9 +45,9 @@ class MapSidebar extends Component {
           visible={visible}
           width="wide"
         >
-          <Menu.Item as="a">Item 1</Menu.Item>
-          <Menu.Item as="a">Item 2</Menu.Item>
-          <Menu.Item as="a">Item 3</Menu.Item>
+          <Menu.Item as="a" onClick={() => this.setState({ map: 'points' })}>Points</Menu.Item>
+          <Menu.Item as="a" onClick={() => this.setState({ map: 'heat' })}>Heat Map</Menu.Item>
+          <Menu.Item as="a" onClick={() => this.setState({ map: 'heat3D' })}>Heat Map 3D</Menu.Item>
         </Sidebar>
 
         <Sidebar.Pusher
@@ -45,7 +58,7 @@ class MapSidebar extends Component {
           }}
         >
           <Segment basic style={{ height: '100%', padding: 0 }}>
-            <Map />
+            { this.getMap(map) }
             <div
               style={{
                 color: 'white',
