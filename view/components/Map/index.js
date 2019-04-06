@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import {
   Icon, Segment, Sidebar, Menu,
 } from 'semantic-ui-react';
-import HeatMap from '../Map/HeatMap/HeatMap';
-import HeatMap3D from '../Map/HeatMap3D/HeatMap3D';
-import PointMap from '../Map/PointMap/PointMap';
+import HeatMap from './HeatMap/HeatMap';
+import HeatMap3D from './HeatMap3D/HeatMap3D';
+import PointMap from './PointMap/PointMap';
 
-class MapSidebar extends Component {
+class Index extends Component {
   state = {
     visible: false,
     map: 'points',
@@ -69,7 +69,7 @@ class MapSidebar extends Component {
               }}
             >
               <Icon
-                name="bars"
+                name="block layout"
                 size="large"
                 color="pink"
                 onClick={this.handleShowClick}
@@ -83,4 +83,4 @@ class MapSidebar extends Component {
   }
 }
 
-export default MapSidebar;
+export default Index;

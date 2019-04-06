@@ -1,11 +1,13 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 import { Query } from 'react-apollo';
-import { Header, Divider, Container } from 'semantic-ui-react';
+import {
+  Divider, Container, Segment, Label, Icon,
+} from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 import { GET_FAILURE } from '../../constants/queries';
 import Loading from '../Loading';
-import Navigation from '../Landing/Navigation';
-import PropTypes from 'prop-types';
+import Footer from '../Footer';
 
 class Messages extends React.Component {
   render() {
@@ -21,27 +23,30 @@ class Messages extends React.Component {
 
           return (
             <div style={{
-              display: 'flex',
-              padding: 0,
-              height: '104.5%',
+              height: '100%',
+              width: '100%',
+              overflow: 'auto',
+              background: '#1a1c1d',
             }}
             >
-              <Navigation history={history} />
-              <div style={{
-                height: '100%',
-                width: '100%',
-                overflow: 'auto',
-                background: 'white',
-              }}
-              >
+              <Segment inverted>
                 {failures.map(f => (
-                  <Container text textAlign='justified' key={f.id}>
-                    <Header as="h3">{ f.service }</Header>
+                  <Container textAlign="justified" key={f.id} style={{ fontFamily: '"Exo 2", sans-serif' }}>
+                    <Label as="a" color="red" ribbon>
+                      { f.service }
+                    </Label>
                     <p>{ f.text }</p>
+                    <Label as="a" color="teal">
+                      <Icon name="calendar alternate" />
+                      { new Date(f.happenedAt).toDateString() }
+                    </Label>
                     <Divider section />
                   </Container>
                 ))}
-              </div>
+                <Container textAlign="justified">
+                  <Footer />
+                </Container>
+              </Segment>
             </div>
           );
         }}

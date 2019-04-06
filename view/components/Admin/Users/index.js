@@ -1,16 +1,17 @@
 import React, { Component, Fragment } from 'react';
-import {Mutation, Query} from 'react-apollo';
-import gql from "graphql-tag";
+import { Mutation, Query } from 'react-apollo';
+import gql from 'graphql-tag';
+import { Container, Icon, Segment, Table } from 'semantic-ui-react';
+import scrollIntoView from 'scroll-into-view';
+import ReactDOM from 'react-dom';
 import DeleteUser from './DeleteUser';
 import SelectRole from './SelectRole';
 import Loading from '../../Loading/index';
-import {Icon, Table} from 'semantic-ui-react';
 import { GET_USERS } from '../constants/queries';
-import checkPermission from "../helpers/checkPermission";
-import pagination, {changePagination} from "../../../helpers/pagination";
-import scrollIntoView from "scroll-into-view";
-import Pagination from "./Pagination";
-import ReactDOM from "react-dom";
+import checkPermission from '../helpers/checkPermission';
+import pagination, { changePagination } from '../../../helpers/pagination';
+import Pagination from '../helpers/Pagination';
+import Footer from '../../Footer';
 
 const UPDATE_USER = gql`
   mutation($id: ID!, $role: String) {
@@ -18,12 +19,6 @@ const UPDATE_USER = gql`
       id
       email
       role
-      cart {
-        id
-        title
-        body
-        price
-      }
     }
   }
 `;
@@ -48,7 +43,7 @@ class Users extends Component {
     const { cursor, limit } = this.state;
     const { history } = this.props;
 
-    checkPermission(history);
+    // checkPermission(history);
 
     return (
       <Query
@@ -56,7 +51,7 @@ class Users extends Component {
         variables={{ limit, cursor }}
       >
         {({
-          data, loading, error, fetchMore, subscribeToMore,
+          data, loading, error,
         }) => {
           const { users } = data;
           if (loading || !users) {
@@ -64,10 +59,15 @@ class Users extends Component {
           }
 
           return (
-            <Fragment>
+            <div style={{
+              height: '100%',
+              width: '100%',
+              overflow: 'auto',
+              background: '#1a1c1d',
+            }}
+            >
               <UsersList
                 users={users}
-                subscribeToMore={subscribeToMore}
                 limit={limit}
                 cursor={cursor}
               />
@@ -76,7 +76,10 @@ class Users extends Component {
                 limit={limit}
                 onPageChange={this.handlePaginationChange}
               />
-            </Fragment>
+              <Container text textAlign="justified">
+                <Footer />
+              </Container>
+            </div>
           );
         }}
       </Query>
@@ -88,12 +91,12 @@ class UsersList extends Component {
   render() {
     const { users, limit, cursor } = this.props;
     return (
-      <Table striped style={{ width: '98%', margin: 'auto' }}>
+      <Segment inverted>
+      <Table striped inverted>
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell>Email</Table.HeaderCell>
             <Table.HeaderCell>Role</Table.HeaderCell>
-            <Table.HeaderCell style={{ textAlign: 'center' }}>Cart Length</Table.HeaderCell>
             <Table.HeaderCell style={{ textAlign: 'center' }}>Delete user</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
@@ -104,7 +107,8 @@ class UsersList extends Component {
           ))}
         </Table.Body>
       </Table>
-    )
+      </Segment>
+    );
   }
 }
 
@@ -127,34 +131,33 @@ class UserItem extends Component {
         mutation={UPDATE_USER}
         variables={{ id, role }}
         update={
-          (proxy, {data: {updateUser}}) => {
-            const variables = limit ? {limit, cursor} : {cursor};
-            const data = proxy.readQuery({query: GET_USERS, variables});
-            data.users = data.users.map(u => {
+          (proxy, { data: { updateUser } }) => {
+            const variables = limit ? { limit, cursor } : { cursor };
+            const data = proxy.readQuery({ query: GET_USERS, variables });
+            data.users = data.users.map((u) => {
               if (u.id === updateUser.id) u.role = updateUser.role;
               return u;
             });
-            proxy.writeQuery({query: GET_USERS, variables, data});
+            proxy.writeQuery({ query: GET_USERS, variables, data });
           }
         }
       >
-        {(updateUser, {data, loading, error}) => (
+        {(updateUser, { data, loading, error }) => (
           <Table.Row>
             <Table.Cell>{user.email}</Table.Cell>
             <Table.Cell>
-              <SelectRole value={user.role} updateUser={this.update.bind(this, user.id, updateUser)}/>
+              <SelectRole value={user.role} updateUser={this.update.bind(this, user.id, updateUser)} />
             </Table.Cell>
-            <Table.Cell style={{ textAlign: 'center' }}>{user.cart.length}</Table.Cell>
             <Table.Cell style={{ textAlign: 'center' }}>
               <DeleteUser user={user} limit={limit} cursor={cursor}>
-                <Icon name='cancel' size='large'/>
+                <Icon name="cancel" size="large" />
               </DeleteUser>
             </Table.Cell>
           </Table.Row>
         )}
       </Mutation>
-    )
+    );
   }
-};
+}
 
 export default Users;

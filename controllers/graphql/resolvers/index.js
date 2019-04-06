@@ -3,6 +3,7 @@ import failureResolvers from './failure';
 import messageResolvers from './message';
 import permissionResolvers from './permission';
 import userResolvers from './user';
+import total from './total';
 
 export default [
   taskResolvers,
@@ -10,4 +11,5 @@ export default [
   messageResolvers,
   permissionResolvers,
   userResolvers,
+  total,
 ];

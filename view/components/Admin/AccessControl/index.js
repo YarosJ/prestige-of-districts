@@ -1,13 +1,16 @@
 import React from 'react';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
-import { Button, Input, Table, Icon, Header } from 'semantic-ui-react';
+import {
+  Button, Input, Table, Icon, Header, Container,
+} from 'semantic-ui-react';
 import Loading from '../../Loading';
 import AddRole from './AddRole';
 import DeleteRole from './DeleteRole';
 import AddRoleAction from './AddRoleAction';
 import DeleteRoleAction from './DeleteRoleAction';
 import checkPermission from '../helpers/checkPermission';
+import Footer from '../../Footer';
 
 const GET_ROLES = gql`
  query {
@@ -30,20 +33,32 @@ const AccessControl = ({ history }) => (
         return <Loading />;
       }
 
-      checkPermission(history);
+      // checkPermission(history);
 
       return (
-        <div>
-          <AddRole style={{ width: '85%', margin: 'auto', textAlign: 'center', marginBottom: '20px', }}>
-            <Input placeholder="role" value='user' style={{ marginRight: '5px' }}/>
-            <Button color='green'>
+        <div style={{
+          height: '100%',
+          width: '100%',
+          overflow: 'auto',
+          background: '#1a1c1d',
+          paddingTop: '20px',
+        }}
+        >
+          <AddRole style={{
+            width: '85%', margin: 'auto', textAlign: 'center', marginBottom: '20px',
+          }}
+          >
+            <Input placeholder="role" style={{ marginRight: '5px' }} inverted />
+            <Button color="green">
               Add Role
             </Button>
           </AddRole>
           {roles.map((role, key) => (
-            <Role key={key} role={role}>
-            </Role>
+            <Role key={key} role={role} />
           ))}
+          <Container text textAlign="justified">
+            <Footer />
+          </Container>
         </div>
       );
     }}
@@ -52,17 +67,17 @@ const AccessControl = ({ history }) => (
 
 const Role = ({ role, children }) => (
   <div style={{ width: '85%', margin: 'auto', marginBottom: '50px' }}>
-    <Table striped>
+    <Table striped inverted>
       <Table.Header>
         <Table.Row>
-          <Table.HeaderCell colSpan='2'>
-            <Header style={{ textAlign: 'center', marginBottom: '10px' }}>
+          <Table.HeaderCell colSpan="2">
+            <Header style={{ textAlign: 'center', marginBottom: '10px' }} inverted>
               {role.role}
             </Header>
             <div style={{ textAlign: 'center' }}>
               <AddRoleAction role={role}>
-                <Input placeholder="logIn" style={{ marginRight: '5px' }}/>
-                <Button primary color='green'>
+                <Input placeholder="logIn" style={{ marginRight: '5px' }} inverted />
+                <Button primary color="green">
                   Add action
                 </Button>
               </AddRoleAction>
@@ -85,10 +100,11 @@ const Role = ({ role, children }) => (
 
       <Table.Footer fullWidth>
         <Table.Row>
-          <Table.HeaderCell colSpan='2' style={{ textAlign: 'center' }}>
+          <Table.HeaderCell colSpan="2" style={{ textAlign: 'center' }}>
             <DeleteRole role={role}>
-              <Button icon labelPosition='left' size='small' color='red' >
-                <Icon name='user delete' /> Delete this role
+              <Button icon labelPosition="left" size="small" color="red">
+                <Icon name="user delete" />
+                Delete this role
               </Button>
             </DeleteRole>
           </Table.HeaderCell>
@@ -104,7 +120,7 @@ const Action = ({ role, action }) => (
     <Table.Cell style={{ textAlign: 'center' }}>{action}</Table.Cell>
     <Table.Cell style={{ textAlign: 'center' }}>
       <DeleteRoleAction action={action} role={role}>
-        <Icon name='cancel' size='large' />
+        <Icon name="cancel" size="large" />
       </DeleteRoleAction>
     </Table.Cell>
   </Table.Row>

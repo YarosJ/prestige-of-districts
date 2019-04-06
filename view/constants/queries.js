@@ -41,6 +41,7 @@ export const GET_MESSAGES = gql`
               id
               service
               text
+              happenedAt
               locations {
                 place
                 latitude

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Query } from 'react-apollo';
 import { Pagination, Container } from 'semantic-ui-react';
-import { GET_TOTAL } from '../../../../constants/queries';
+import { GET_TOTAL } from '../../../constants/queries';
 
 class Pgn extends Component {
   render() {
@@ -20,8 +20,9 @@ class Pgn extends Component {
           if (total) count = total.count;
 
           return (
-            <Container style={{ textAlign: 'center', marginBottom: '20px' }}>
+            <Container style={{ textAlign: 'center', marginTop: '30px' }}>
               <Pagination
+                inverted
                 activePage={cursor}
                 onPageChange={onPageChange}
                 totalPages={Math.ceil(count / limit)}

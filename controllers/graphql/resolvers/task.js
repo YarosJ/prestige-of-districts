@@ -9,6 +9,9 @@ export default {
     tags() {
       return config.NLP.supportedEntities;
     },
+    targets() {
+      return TaskModel.find();
+    },
   },
   Mutation: {
     async addTarget(parent, {

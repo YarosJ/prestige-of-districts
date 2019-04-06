@@ -6,16 +6,19 @@ export const GET_USERS = gql`
       id
       email
       role
-      cart {
-        id
-        title
-        body
-        price
-        user {
-          id
-          email
-        }
-      }
+    }
+  }
+`;
+
+export const GET_TARGETS = gql`
+  query {
+    targets {
+      id
+      URL
+      tagPaths
+      freq
+      city
+      country
     }
   }
 `;

@@ -19,7 +19,7 @@ const Charts = ({ history }) => (
       background: '#282226  drag: { scale: 1.1 },',
       paddingTop: '25px',
       paddingBottom: '30px',
-      width: '60px',
+      minWidth: '60px',
       boxShadow: '2px 5px 11px 0px rgba(0,0,0,0.75)',
     }}
   >

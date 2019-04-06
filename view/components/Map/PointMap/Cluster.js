@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
-class ClusterMap extends Component {
+class Cluster extends Component {
   mapRef = React.createRef();
 
   componentDidMount() {
@@ -134,10 +134,10 @@ class ClusterMap extends Component {
 
         // Populate the popup and set its coordinates
         // based on the feature found.
-        const popup = new mapboxgl.Popup()
+        new mapboxgl.Popup()
           .setLngLat(feature.geometry.coordinates)
           .setHTML(`
-              <div>
+              <div style="max-width: 400px">
                 <p>${feature.properties.failureType}</p>
                 <p>${feature.properties.text}</p>
               </div>
@@ -147,8 +147,9 @@ class ClusterMap extends Component {
       map.addControl(new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
         zoom: 14,
-        placeholder: "Enter search e.g. Lincoln Park"
+        placeholder: 'Enter search e.g. Lincoln Park',
       }));
+
       // Add zoom and rotation controls to the map.
       map.addControl(new mapboxgl.NavigationControl(), 'top-left');
 
@@ -163,8 +164,8 @@ class ClusterMap extends Component {
   }
 
   render() {
-    return (<div ref={this.mapRef} style={{ width: '100%', height: '100%' }} />);
+    return (<div ref={this.mapRef} style={{ width: '100%', height: '96%' }} />);
   }
 }
 
-export default ClusterMap;
+export default Cluster;

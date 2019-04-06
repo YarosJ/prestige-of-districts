@@ -19,6 +19,7 @@ export default gql`
     id: String!
     service: String!
     text: String!
+    happenedAt: String!
     locations: [Location]
   }
 `;

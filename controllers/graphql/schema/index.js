@@ -5,6 +5,7 @@ import messageSchema from './message';
 import failureSchema from './failure';
 import permissionSchema from './permission';
 import userSchema from './user';
+import total from './total';
 
 const linkSchema = gql`
   type Query {
@@ -28,4 +29,5 @@ export default [
   failureSchema,
   permissionSchema,
   userSchema,
+  total,
 ];

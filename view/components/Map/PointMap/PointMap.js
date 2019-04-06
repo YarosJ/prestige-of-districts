@@ -5,7 +5,7 @@ import InputRange from 'react-input-range';
 import { GET_FAILURE } from '../../../constants/queries';
 import Loading from '../../Loading/index';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import ClusterMap from './ClusterMap';
+import Cluster from './Cluster';
 
 export default class Map extends Component {
   state = {
@@ -64,7 +64,7 @@ export default class Map extends Component {
               return <Loading />;
             }
 
-            return (<ClusterMap data={failures} />);
+            return (<Cluster data={failures} />);
           }}
         </Query>
       </div>

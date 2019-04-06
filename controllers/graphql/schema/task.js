@@ -3,6 +3,7 @@ import { gql } from 'apollo-server-express';
 export default gql`
   extend type Query {
     tags: [String!]
+    targets: [TaskTarget]
   }
 
   extend type Mutation {
@@ -12,6 +13,7 @@ export default gql`
   }
 
   type TaskTarget {
+    id: ID!
     URL: String!
     tagPaths: [String]
     freq: Int

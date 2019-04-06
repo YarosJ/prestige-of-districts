@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: rgb(40, 34, 38) !important;
+  background: #202122 !important;
 }
 
 #root {
@@ -22,4 +22,10 @@ body {
 
 .dropdown-inverted:after {
   background: #282226 !important;
+}
+
+.mapboxgl-ctrl-geocoder {
+    transform: translateX(-48%);
+    left: 51%;
+    position: fixed !important;
 }
