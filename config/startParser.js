@@ -59,7 +59,7 @@ export default async () => {
    * Starting TaskScheduler with scraper
    * @type {TaskScheduler}
    */
-  const scheduler = new TaskScheduler(queueTasks, { precision: 500 }, async (data) => {
+  const scheduler = new TaskScheduler(queueTasks, { precision: 5 }, async (data) => {
     // Parse text by URL and tags paths
     const parsedTextArray = await scraper.getText(data.URL, data.tagPaths);
     // Send parsed text to NLP

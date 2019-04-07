@@ -1,11 +1,12 @@
-import React, { Component, Fragment } from 'react';
-import { Mutation, Query } from 'react-apollo';
+import React, { Component } from 'react';
+import { Query } from 'react-apollo';
 import {
-  Icon, Accordion, Segment, List, Container, Button,
+  Icon, Accordion, Segment, List, Container,
 } from 'semantic-ui-react';
 import scrollIntoView from 'scroll-into-view';
 import ReactDOM from 'react-dom';
-import Delete from './Delete';
+import AddTarget from './AddTarget';
+import DeleteTarget from './DeleteTarget';
 import Loading from '../../Loading/index';
 import { GET_TARGETS } from '../constants/queries';
 import checkPermission from '../helpers/checkPermission';
@@ -78,9 +79,9 @@ class Users extends Component {
                         <Icon name="dropdown" style={{ float: 'left' }} />
                         <div style={{ textAlign: 'center' }}>
                           {target.URL}
-                          <Delete target={target} limit={limit} cursor={cursor} style={{ float: 'right' }}>
+                          <DeleteTarget target={target} limit={limit} cursor={cursor} style={{ float: 'right' }}>
                             <Icon name="cancel" size="large" />
-                          </Delete>
+                          </DeleteTarget>
                         </div>
                       </Accordion.Title>
                       <Accordion.Content active={activeIndex === key}>
@@ -100,7 +101,7 @@ class Users extends Component {
                     </div>
                   ))}
                 </Accordion>
-                <Button content="Add" size="tiny" compact style={{ float: 'right', marginTop: '15px', marginBottom: '7px' }} />
+                <AddTarget />
               </Segment>
               <Pagination
                 cursor={cursor}
