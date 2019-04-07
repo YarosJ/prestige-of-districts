@@ -20,11 +20,13 @@ class Add extends Component {
 
   render() {
     const { open } = this.state;
-    const { header, children, buttonContent, initiateClose } = this.props;
+    const {
+      header, children, buttonContent, initiateClose, activateContent, style,
+    } = this.props;
     if (initiateClose) initiateClose(this.handleClose);
 
     return (
-      <div>
+      <div style={style}>
         <style>
           {`
           .ui.dimmer {
@@ -38,13 +40,21 @@ class Add extends Component {
         `}
         </style>
 
-        <Button
-          content={buttonContent}
-          size="tiny"
-          compact
-          style={{ float: 'right', marginTop: '15px', marginBottom: '7px' }}
-          onClick={this.handleOpen}
-        />
+        {activateContent
+          ? (
+            <div onClick={this.handleOpen}>
+              {activateContent}
+            </div>
+          )
+          : (
+            <Button
+              content={buttonContent}
+              size="tiny"
+              compact
+              style={{ float: 'right', marginTop: '15px', marginBottom: '7px' }}
+              onClick={this.handleOpen}
+            />
+          )}
 
         <TransitionablePortal
           open={open}

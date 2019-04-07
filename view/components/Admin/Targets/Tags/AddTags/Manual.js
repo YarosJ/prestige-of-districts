@@ -3,7 +3,7 @@ import {
   Button, Icon, Form,
 } from 'semantic-ui-react';
 import { Mutation } from 'react-apollo';
-import { ADD_TARGET, GET_TARGETS } from '../../constants/queries';
+import { ADD_TARGET, GET_TARGETS } from '../../../constants/queries';
 
 class Manual extends Component {
   state = {

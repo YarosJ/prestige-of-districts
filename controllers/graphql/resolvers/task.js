@@ -29,11 +29,13 @@ export default {
     async updateTarget(parent, {
       URL, tagPaths, freq, city, country,
     }) {
-      const updatedTarget = await TaskModel.findOne({ URL });
-      await updatedTarget.update({
-        tagPaths, freq, city, country,
-      });
-      return updatedTarget;
+      const oldTarget = await TaskModel.findOne({ URL });
+      return TaskModel.findOneAndUpdate({ URL }, {
+        tagPaths: tagPaths || oldTarget.tagPaths,
+        freq: freq || oldTarget.freq,
+        city: city || oldTarget.city,
+        country: country || oldTarget.country,
+      }, { new: true });
     },
   },
 };

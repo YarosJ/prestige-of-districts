@@ -32,6 +32,7 @@ export default class ActionDispatcher {
       service: action.payload.service,
       text: action.payload.text,
     };
+    console.log(args, action);
     return ((this.actions[action.type] || this.actions.default)(null, args));
   }
 }

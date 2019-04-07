@@ -3,32 +3,25 @@ import { Query } from 'react-apollo';
 import {
   Icon, Accordion, Segment, List, Container,
 } from 'semantic-ui-react';
-import scrollIntoView from 'scroll-into-view';
-import ReactDOM from 'react-dom';
+import posed from 'react-pose';
 import AddTarget from './AddTarget';
+import UpdateTarget from './UpdateTarget';
+import EditTags from './Tags/EditTags';
 import DeleteTarget from './DeleteTarget';
 import Loading from '../../Loading/index';
 import { GET_TARGETS } from '../constants/queries';
 import checkPermission from '../helpers/checkPermission';
-import pagination, { changePagination } from '../../../helpers/pagination';
-import Pagination from '../helpers/Pagination';
 import Footer from '../../Footer';
 
-class Users extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeIndex: 0,
-      cursor: 1,
-      limit: pagination().limit,
-    };
+const Hoverable = posed.div({
+  hoverable: true,
+  init: { scale: 1 },
+  hover: { scale: 1.2 },
+});
 
-    this.handlePaginationChange = this.handlePaginationChange.bind(this);
-  }
-
-  handlePaginationChange = (e, { activePage }) => {
-    scrollIntoView(ReactDOM.findDOMNode(document.getElementById('top-scroll')));
-    this.setState({ cursor: changePagination(activePage) });
+class Targets extends Component {
+  state = {
+    activeIndex: 0,
   };
 
   handleClick = (e, titleProps) => {
@@ -40,7 +33,6 @@ class Users extends Component {
   };
 
   render() {
-    const { cursor, limit } = this.state;
     const { history } = this.props;
 
     // checkPermission(history);
@@ -48,7 +40,6 @@ class Users extends Component {
     return (
       <Query
         query={GET_TARGETS}
-        variables={{ limit, cursor }}
       >
         {({
           data, loading, error, fetchMore, subscribeToMore,
@@ -75,21 +66,17 @@ class Users extends Component {
                         active={activeIndex === key}
                         index={key}
                         onClick={this.handleClick}
+                        style={{ color: 'deeppink' }}
                       >
-                        <Icon name="dropdown" style={{ float: 'left' }} />
-                        <div style={{ textAlign: 'center' }}>
-                          {target.URL}
-                          <DeleteTarget target={target} limit={limit} cursor={cursor} style={{ float: 'right' }}>
-                            <Icon name="cancel" size="large" />
-                          </DeleteTarget>
-                        </div>
+                        <Icon name="dropdown" />
+                        {target.URL}
                       </Accordion.Title>
                       <Accordion.Content active={activeIndex === key}>
                         <List>
                           <List.Item icon="map marker alternate" content={target.city || 'Not set'} />
                           <List.Item icon="map pin" content={target.country || 'Not set'} />
                           <List.Item icon="stopwatch" content={target.freq || 'Not set'} />
-                          {target.tagPaths.map((tag, key) => (
+                          {target.tagPaths && target.tagPaths.map((tag, key) => (
                             <List.Item
                               key={key}
                               icon="linkify"
@@ -97,17 +84,25 @@ class Users extends Component {
                             />
                           ))}
                         </List>
+                        <div style={{ display: 'flex' }}>
+                          <Hoverable style={{ margin: 'auto', marginRight: '40px', cursor: 'pointer' }}>
+                            <UpdateTarget target={target} />
+                          </Hoverable>
+                          <Hoverable style={{ cursor: 'pointer' }}>
+                            <EditTags target={target} />
+                          </Hoverable>
+                          <Hoverable style={{ margin: 'auto', marginLeft: '40px', cursor: 'pointer' }}>
+                            <DeleteTarget target={target}>
+                              <Icon name="cancel" size="large" color="red" />
+                            </DeleteTarget>
+                          </Hoverable>
+                        </div>
                       </Accordion.Content>
                     </div>
                   ))}
                 </Accordion>
                 <AddTarget />
               </Segment>
-              <Pagination
-                cursor={cursor}
-                limit={limit}
-                onPageChange={this.handlePaginationChange}
-              />
               <Container text textAlign="justified">
                 <Footer />
               </Container>
@@ -119,4 +114,4 @@ class Users extends Component {
   }
 }
 
-export default Users;
+export default Targets;

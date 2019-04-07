@@ -5,8 +5,8 @@ import {
   Form,
 } from 'semantic-ui-react';
 import Modal from '../../Modal';
-import ManualAddTag from './AddTags/Manual';
-import AutoAddTag from './AddTags/Auto';
+import ManualAddTag from './Tags/AddTags/Manual';
+import AutoAddTag from './Tags/AddTags/Auto';
 
 class AddTarget extends Component {
   state = {

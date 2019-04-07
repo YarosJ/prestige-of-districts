@@ -35,3 +35,16 @@ export const ADD_TARGET = gql`
         }
     }
 `;
+
+export const UPDATE_TARGET = gql`
+    mutation($URL: String!, $tagPaths: [String], $freq: Int, $city: String, $country: String) {
+        updateTarget(URL: $URL, tagPaths: $tagPaths, freq: $freq, city: $city, country: $country) {
+          id
+          URL
+          tagPaths
+          freq
+          city
+          country
+        }
+    }
+`;
