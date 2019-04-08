@@ -48,3 +48,21 @@ export const UPDATE_TARGET = gql`
         }
     }
 `;
+
+export const GET_SCREENSHOT = gql`
+  query($URL: String!) {
+    screenshot(URL: $URL) {
+      resultData
+      URL
+    }
+  }
+`;
+
+export const GET_SELECTOR = gql`
+  query($URL: String!, $x: String!, $y: String!) {
+    selector(URL: $URL, x: $x, y: $y) {
+      resultSelector
+      URL
+    }
+  }
+`;

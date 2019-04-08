@@ -5,6 +5,8 @@ import messageSchema from './message';
 import failureSchema from './failure';
 import permissionSchema from './permission';
 import userSchema from './user';
+import screenshot from './screenshot';
+import selector from './selector';
 import total from './total';
 
 const linkSchema = gql`
@@ -29,5 +31,7 @@ export default [
   failureSchema,
   permissionSchema,
   userSchema,
+  screenshot,
+  selector,
   total,
 ];

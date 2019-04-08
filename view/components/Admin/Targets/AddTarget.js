@@ -5,8 +5,8 @@ import {
   Form,
 } from 'semantic-ui-react';
 import Modal from '../../Modal';
-import ManualAddTag from './Tags/AddTags/Manual';
-import AutoAddTag from './Tags/AddTags/Auto';
+import AddTags from './Tags/AddTags';
+import GetSelector from './Tags/GetSelector';
 
 class AddTarget extends Component {
   state = {
@@ -15,16 +15,13 @@ class AddTarget extends Component {
     country: '',
     interval: 30000,
     step: 'Basics',
-    closeModal: false,
   };
 
   closeModal = null;
 
-  goChooseMethod = () => this.setState({ step: 'ChooseMethod' });
+  goAddTags = payload1 => this.setState({ step: 'AddTags', payload1 });
 
-  goManual = () => this.setState({ step: 'ManualAddTag' });
-
-  goAuto = () => this.setState({ step: 'AutoAddTag' });
+  goGetSelector = payload1 => this.setState({ step: 'GetSelector', payload1 });
 
   onChange = (event) => {
     const { name, value } = event.target;
@@ -33,18 +30,30 @@ class AddTarget extends Component {
 
   action = () => {
     const {
-      step, interval, country, city, URL,
+      step, interval, country, city, URL, payload1,
     } = this.state;
+
     switch (step) {
-      case 'ChooseMethod':
-        return <ChooseMethod manual={this.goManual} auto={this.goAuto} />;
-      case 'ManualAddTag':
-        return <ManualAddTag properties={this.state} closeModal={this.closeModal} />;
-      case 'AutoAddTag':
-        return <AutoAddTag />;
+      case 'AddTags':
+        return (
+          <AddTags
+            payload1={payload1}
+            getSelector={this.goGetSelector}
+            properties={this.state}
+            closeModal={this.closeModal}
+          />
+        );
+      case 'GetSelector':
+        return (
+          <GetSelector
+            URL={URL}
+            payload1={payload1}
+            onGetSelector={updatedFields => this.goAddTags(updatedFields)}
+          />
+        );
       default: return (
         <Basics
-          nextAction={this.goChooseMethod}
+          nextAction={this.goAddTags}
           city={city}
           country={country}
           interval={interval}
@@ -110,30 +119,6 @@ const Basics = ({
       <Icon name="right arrow" />
     </Button>
   </Form>
-);
-
-const ChooseMethod = ({ manual, auto }) => (
-  <div style={{ width: '100%', display: 'grid' }}>
-    <Button.Group style={{ margin: 'auto', marginBottom: '20px' }}>
-      <Button
-        style={{ width: '100px' }}
-        onClick={manual}
-      >
-      Manual
-      </Button>
-      <Button.Or />
-      <Button
-        positive
-        style={{ width: '100px' }}
-        onClick={auto}
-      >
-      Auto
-      </Button>
-    </Button.Group>
-    <p style={{ margin: 'auto' }}>
-      <a href="#">Learn More...</a>
-    </p>
-  </div>
 );
 
 export default AddTarget;

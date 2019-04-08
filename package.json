@@ -23,6 +23,7 @@
     "chai": "^4.2.0",
     "concurrently": "^3.5.1",
     "connect-mongo": "^2.0.1",
+    "crossdomain-selector": "^1.0.8",
     "debug": "^3.1.0",
     "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-react": "^7.12.4",

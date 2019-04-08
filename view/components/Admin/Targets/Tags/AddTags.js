@@ -3,11 +3,11 @@ import {
   Button, Icon, Form,
 } from 'semantic-ui-react';
 import { Mutation } from 'react-apollo';
-import { ADD_TARGET, GET_TARGETS } from '../../../constants/queries';
+import { ADD_TARGET, GET_TARGETS } from '../../constants/queries';
 
-class Manual extends Component {
+class AddTags extends Component {
   state = {
-    fields: ['TAG>PATH'],
+    fields: this.props.payload1.fields || ['TAG>PATH'],
   };
 
   onChange = (event, key) => {
@@ -31,8 +31,7 @@ class Manual extends Component {
 
   render() {
     const { fields } = this.state;
-    const { closeModal } = this.props;
-    const { properties } = this.props;
+    const { closeModal, getSelector, properties } = this.props;
     const {
       city, country, URL, interval,
     } = properties;
@@ -61,11 +60,22 @@ class Manual extends Component {
             {fields.map((value, key) => (
               <Form.Field key={key}>
                 <Form.Input
-                  action={{ icon: 'trash alternate outline', onClick: () => this.onDeleteField(key) }}
+                  action
                   placeholder="site.com"
                   value={value}
                   onChange={event => this.onChange(event, key)}
-                />
+                >
+                  <input />
+                  <Button
+                    icon="trash alternate outline"
+                    onClick={() => this.onDeleteField(key)}
+                  />
+                  <Button
+                    style={{ marginLeft: '5px' }}
+                    icon="hand point up"
+                    onClick={() => getSelector({ fields, key })}
+                  />
+                </Form.Input>
               </Form.Field>
             ))}
             <Button icon onClick={this.onAddField}>
@@ -82,4 +92,4 @@ class Manual extends Component {
   }
 }
 
-export default Manual;
+export default AddTags;
