@@ -4,10 +4,13 @@ import {
 } from 'semantic-ui-react';
 import { Mutation } from 'react-apollo';
 import { ADD_TARGET, GET_TARGETS } from '../../constants/queries';
+import GetSelector from './GetSelector';
 
 class AddTags extends Component {
   state = {
-    fields: this.props.payload1.fields || ['TAG>PATH'],
+    fields: ['TAG>PATH'],
+    gettingSelector: false,
+    editKey: 0,
   };
 
   onChange = (event, key) => {
@@ -29,12 +32,30 @@ class AddTags extends Component {
     this.setState({ fields });
   };
 
-  render() {
+  onGetSelector = (selector, editKey) => {
     const { fields } = this.state;
-    const { closeModal, getSelector, properties } = this.props;
+    fields[editKey] = selector;
+    this.setState({ gettingSelector: false, fields });
+  };
+
+  goGetSelectorFor = editKey => this.setState({ gettingSelector: true, editKey });
+
+  render() {
+    const { fields, gettingSelector, editKey } = this.state;
+    const { closeModal, properties, goBasics } = this.props;
     const {
       city, country, URL, interval,
     } = properties;
+
+    if (gettingSelector) {
+      return (
+        <GetSelector
+          URL={URL}
+          editKey={editKey}
+          onGetSelector={this.onGetSelector}
+        />
+      );
+    }
 
     return (
       <Mutation
@@ -73,17 +94,21 @@ class AddTags extends Component {
                   <Button
                     style={{ marginLeft: '5px' }}
                     icon="hand point up"
-                    onClick={() => getSelector({ fields, key })}
+                    onClick={() => this.goGetSelectorFor(key)}
                   />
                 </Form.Input>
               </Form.Field>
             ))}
-            <Button icon onClick={this.onAddField}>
+            <Button icon labelPosition="left" onClick={goBasics}>
+              Go Back
+              <Icon name="left arrow" />
+            </Button>
+            <Button icon onClick={this.onAddField} style={{ marginLeft: '10px', marginRight: '10px' }}>
               <Icon name="add" />
             </Button>
             <Button icon labelPosition="right" onClick={addTarget}>
               Confirm
-              <Icon name="right arrow" />
+              <Icon name="checkmark" />
             </Button>
           </Form>
         )}

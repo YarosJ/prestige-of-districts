@@ -3,7 +3,7 @@ import { Query, ApolloConsumer } from 'react-apollo';
 import { GET_SCREENSHOT, GET_SELECTOR } from '../../constants/queries';
 import Loading from '../../../Loading/index';
 
-export default ({ URL, onGetSelector, payload1 }) => (
+export default ({ URL, onGetSelector, editKey }) => (
   <Query
     query={GET_SCREENSHOT}
     variables={{ URL }}
@@ -29,9 +29,7 @@ export default ({ URL, onGetSelector, payload1 }) => (
                   query: GET_SELECTOR,
                   variables: { URL, x: e.pageX, y: e.pageY },
                 });
-                const { fields, key } = payload1;
-                fields[key] = response.data.selector.resultSelector;
-                onGetSelector({ fields, key });
+                onGetSelector(response.data.selector.resultSelector, editKey);
               }}
             />
           )}

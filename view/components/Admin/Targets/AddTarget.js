@@ -6,7 +6,6 @@ import {
 } from 'semantic-ui-react';
 import Modal from '../../Modal';
 import AddTags from './Tags/AddTags';
-import GetSelector from './Tags/GetSelector';
 
 class AddTarget extends Component {
   state = {
@@ -14,14 +13,14 @@ class AddTarget extends Component {
     city: '',
     country: '',
     interval: 30000,
-    step: 'Basics',
+    addingTags: false,
   };
 
   closeModal = null;
 
-  goAddTags = payload1 => this.setState({ step: 'AddTags', payload1 });
+  goAddTags = () => this.setState({ addingTags: true });
 
-  goGetSelector = payload1 => this.setState({ step: 'GetSelector', payload1 });
+  goBasics = () => this.setState({ addingTags: false });
 
   onChange = (event) => {
     const { name, value } = event.target;
@@ -30,43 +29,38 @@ class AddTarget extends Component {
 
   action = () => {
     const {
-      step, interval, country, city, URL, payload1,
+      addingTags, interval, country, city, URL,
     } = this.state;
 
-    switch (step) {
-      case 'AddTags':
-        return (
-          <AddTags
-            payload1={payload1}
-            getSelector={this.goGetSelector}
-            properties={this.state}
-            closeModal={this.closeModal}
-          />
-        );
-      case 'GetSelector':
-        return (
-          <GetSelector
-            URL={URL}
-            payload1={payload1}
-            onGetSelector={updatedFields => this.goAddTags(updatedFields)}
-          />
-        );
-      default: return (
-        <Basics
-          nextAction={this.goAddTags}
-          city={city}
-          country={country}
-          interval={interval}
-          URL={URL}
-          onChange={this.onChange}
+    if (addingTags) {
+      return (
+        <AddTags
+          properties={this.state}
+          goBasics={this.goBasics}
+          closeModal={this.closeModal}
         />
       );
     }
+    return (
+      <Basics
+        nextAction={this.goAddTags}
+        city={city}
+        country={country}
+        interval={interval}
+        URL={URL}
+        onChange={this.onChange}
+      />
+    );
   };
 
   render() {
     return (
-      <Modal header="Adding Target" buttonContent="Add" initiateClose={close => this.closeModal = close}>
+      <Modal
+        header="Adding Target"
+        buttonContent="Add New"
+        initiateClose={close => this.closeModal = close}
+        style={{ textAlign: 'center' }}
+      >
         { this.action() }
       </Modal>
     );

@@ -51,7 +51,7 @@ class Add extends Component {
               content={buttonContent}
               size="tiny"
               compact
-              style={{ float: 'right', marginTop: '15px', marginBottom: '7px' }}
+              style={{ marginTop: '15px', marginBottom: '20px' }}
               onClick={this.handleOpen}
             />
           )}
