@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Dropdown, Icon } from 'semantic-ui-react';
 import * as routes from '../../constants/routes';
-import SignOut from '../Account/SignOut';
+import SignOut from '../Account/SignOut/index';
 
 const ProfileControl = ({ signed, history }) => (
   signed

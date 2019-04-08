@@ -1,18 +1,18 @@
 import React from 'react';
 import { Router, Route } from 'react-router-dom';
-import Maps from './Map';
-import Charts from './Charts';
-import Messages from './Messages';
-import Failures from './Failures';
+import Maps from './Map/index';
+import Charts from './Charts/index';
+import Messages from './Messages/index';
+import Failures from './Failures/index';
 import SignUpPage from './Account/SignUp/index';
 import SignInPage from './Account/SignIn/index';
-import Profile from './Account/Profile';
-import Users from './Admin/Users';
-import Targets from './Admin/Targets';
-import Access from './Admin/AccessControl';
+import Profile from './Account/Profile/index';
+import Users from './Admin/Users/index';
+import Targets from './Admin/Targets/index';
+import Access from './Admin/AccessControl/index';
 import history from '../constants/history';
 import * as routes from '../constants/routes';
-import Navigation from './Navigation';
+import Navigation from './Navigation/index';
 
 class App extends React.Component {
   navRef = React.createRef();

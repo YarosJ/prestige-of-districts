@@ -11,8 +11,8 @@ import { onError } from 'apollo-link-error';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import gql from 'graphql-tag';
 import { createUploadLink } from 'apollo-upload-client';
-import App from './components';
-import { signOut } from './components/Account/SignOut';
+import App from './components/index';
+import { signOut } from './components/Account/SignOut/index';
 import './index.css';
 
 const uploadLink = createUploadLink({

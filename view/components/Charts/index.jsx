@@ -6,8 +6,7 @@ import {
   ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
 import { GET_FAILURE } from '../../constants/queries';
-import Navigation from '../Navigation/index';
-import Loading from '../Loading';
+import Loading from '../Loading/index';
 
 const Charts = ({ history }) => (
   <Query query={GET_FAILURE}>

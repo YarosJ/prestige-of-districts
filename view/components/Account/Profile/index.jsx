@@ -5,8 +5,8 @@ import {
 } from 'semantic-ui-react';
 import gql from 'graphql-tag';
 import { GET_USER } from '../../../constants/queries';
-import Loading from '../../Loading';
-import ErrorMessage from '../../Error';
+import Loading from '../../Loading/index';
+import ErrorMessage from '../../Error/index';
 
 const REFRESH_PASSWORD = gql`
   mutation($id: ID!, $previousPassword: String!, $newPassword: String!) {

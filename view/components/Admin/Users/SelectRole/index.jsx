@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import gql from "graphql-tag";
 import {Query} from "react-apollo";
-import Loading from "../../../Loading";
+import Loading from "../../../Loading/index";
 
 const GET_ROLES = gql`
  query {

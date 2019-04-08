@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
-import ErrorMessage from '../../../Error';
+import ErrorMessage from '../../../Error/index';
 
 const DELETE_ROLE = gql`
   mutation($role: String!) {

@@ -11,7 +11,7 @@ import DeleteTarget from './DeleteTarget';
 import Loading from '../../Loading/index';
 import { GET_TARGETS } from '../constants/queries';
 import checkPermission from '../helpers/checkPermission';
-import Footer from '../../Footer';
+import Footer from '../../Footer/index';
 
 const Hoverable = posed.div({
   hoverable: true,

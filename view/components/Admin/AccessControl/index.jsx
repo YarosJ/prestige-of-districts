@@ -4,13 +4,13 @@ import gql from 'graphql-tag';
 import {
   Button, Input, Table, Icon, Header, Container,
 } from 'semantic-ui-react';
-import Loading from '../../Loading';
-import AddRole from './AddRole';
-import DeleteRole from './DeleteRole';
-import AddRoleAction from './AddRoleAction';
-import DeleteRoleAction from './DeleteRoleAction';
+import Loading from '../../Loading/index';
+import AddRole from './AddRole/index';
+import DeleteRole from './DeleteRole/index';
+import AddRoleAction from './AddRoleAction/index';
+import DeleteRoleAction from './DeleteRoleAction/index';
 import checkPermission from '../helpers/checkPermission';
-import Footer from '../../Footer';
+import Footer from '../../Footer/index';
 
 const GET_ROLES = gql`
  query {

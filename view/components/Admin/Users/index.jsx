@@ -4,14 +4,14 @@ import gql from 'graphql-tag';
 import { Container, Icon, Segment, Table } from 'semantic-ui-react';
 import scrollIntoView from 'scroll-into-view';
 import ReactDOM from 'react-dom';
-import DeleteUser from './DeleteUser';
-import SelectRole from './SelectRole';
+import DeleteUser from './DeleteUser/index';
+import SelectRole from './SelectRole/index';
 import Loading from '../../Loading/index';
 import { GET_USERS } from '../constants/queries';
 import checkPermission from '../helpers/checkPermission';
 import pagination, { changePagination } from '../../../helpers/pagination';
 import Pagination from '../helpers/Pagination';
-import Footer from '../../Footer';
+import Footer from '../../Footer/index';
 
 const UPDATE_USER = gql`
   mutation($id: ID!, $role: String) {

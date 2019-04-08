@@ -6,8 +6,8 @@ import {
 } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { GET_FAILURE } from '../../constants/queries';
-import Loading from '../Loading';
-import Footer from '../Footer';
+import Loading from '../Loading/index';
+import Footer from '../Footer/index';
 
 class Messages extends React.Component {
   render() {
