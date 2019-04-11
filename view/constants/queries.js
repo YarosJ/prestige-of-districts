@@ -18,8 +18,8 @@ export const GET_TOTAL = gql`
 `;
 
 export const GET_FAILURE = gql`
-      query($latitude: Float, $longitude: Float, $date: String, $locRange: LocRangeInput, $dateRange: DateRangeInput) {
-          failures(latitude: $latitude, longitude: $longitude, date: $date, locRange: $locRange, dateRange: $dateRange) {
+      query($latitude: Float, $longitude: Float, $date: String, $locRange: LocRangeInput, $dateRange: DateRangeInput, $services: [String]) {
+          failures(latitude: $latitude, longitude: $longitude, date: $date, locRange: $locRange, dateRange: $dateRange, services: $services) {
               id
               failureType
               service
@@ -51,3 +51,9 @@ export const GET_MESSAGES = gql`
           }
       }
   `;
+
+export const GET_SERVICES = gql`
+  query {
+    services
+  }
+`;

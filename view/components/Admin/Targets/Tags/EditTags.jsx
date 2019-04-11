@@ -4,7 +4,7 @@ import {
   Form, Icon,
 } from 'semantic-ui-react';
 import { Mutation } from 'react-apollo';
-import Modal from '../../../Modal';
+import Modal from '../../../../helpers/Modal';
 import { GET_TARGETS, UPDATE_TARGET } from '../../constants/queries';
 
 class UpdateTarget extends Component {

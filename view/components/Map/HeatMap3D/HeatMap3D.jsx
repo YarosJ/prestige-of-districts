@@ -6,6 +6,7 @@ import DeckGL, { HexagonLayer } from 'deck.gl';
 import { Query } from 'react-apollo';
 import { GET_FAILURE } from '../../../constants/queries';
 import Loading from '../../Loading/index';
+import ChooseService from '../../../helpers/ChooseService';
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoieWFyb3NsYXciLCJhIjoiY2pqemJmYXJ2MWpnajNwbWt3NnB4NzhwMSJ9.ahTtWLV7SgP1rLtTJYSx2A';
 
@@ -44,6 +45,7 @@ export default class App extends Component {
     super(props);
     this.state = {
       elevationScale: elevationScale.min,
+      services: [],
     };
 
     this.startAnimationTimer = null;
@@ -66,6 +68,8 @@ export default class App extends Component {
   componentWillUnmount() {
     this._stopAnimate();
   }
+
+  handleServiceChange = (e, { value }) => this.setState({ services: value });
 
   _animate() {
     this._stopAnimate();
@@ -93,7 +97,7 @@ export default class App extends Component {
 
   _renderLayers(data) {
     const {
-      radius = 500, upperPercentile = 100, coverage = 1, onHover
+      radius = 500, upperPercentile = 100, coverage = 1, onHover,
     } = this.props;
 
     return [
@@ -117,11 +121,15 @@ export default class App extends Component {
   }
 
   render() {
+    const { services } = this.state;
     const { viewState, controller = true, baseMap = true } = this.props;
 
     return (
       <Query
         query={GET_FAILURE}
+        variables={{
+          services,
+        }}
       >
         {({ data, loading }) => {
           const { failures } = data;
@@ -133,21 +141,30 @@ export default class App extends Component {
           ))).flat();
 
           return (
-            <DeckGL
-              layers={this._renderLayers(fData)}
-              initialViewState={INITIAL_VIEW_STATE}
-              viewState={viewState}
-              controller={controller}
-            >
-              {baseMap && (
+            <div>
+              <ChooseService
+                handleChange={this.handleServiceChange}
+                value={services}
+                style={{
+                  position: 'fixed', top: '20px', left: '30px', zIndex: 10,
+                }}
+              />
+              <DeckGL
+                layers={this._renderLayers(fData)}
+                initialViewState={INITIAL_VIEW_STATE}
+                viewState={viewState}
+                controller={controller}
+              >
+                {baseMap && (
                 <StaticMap
                   reuseMaps
                   mapStyle="mapbox://styles/yaroslaw/cjty6msts01ey1go6qwtd0zf0"
                   preventStyleDiffing
                   mapboxApiAccessToken={MAPBOX_TOKEN}
                 />
-              )}
-            </DeckGL>
+                )}
+              </DeckGL>
+            </div>
           );
         }}
       </Query>

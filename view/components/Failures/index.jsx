@@ -8,13 +8,18 @@ import PropTypes from 'prop-types';
 import { GET_FAILURE } from '../../constants/queries';
 import Loading from '../Loading/index';
 import Footer from '../Footer/index';
+import ChooseService from '../../helpers/ChooseService';
 
 class Messages extends React.Component {
+  state = { services: [] };
+
+  handleServiceChange = (e, { value }) => this.setState({ services: value });
+
   render() {
-    const { history } = this.props;
+    const { services } = this.state;
 
     return (
-      <Query query={GET_FAILURE}>
+      <Query query={GET_FAILURE} variables={{ services }}>
         {({ data, loading }) => {
           const { failures } = data;
           if (loading || !failures) {
@@ -29,6 +34,7 @@ class Messages extends React.Component {
               background: '#1a1c1d',
             }}
             >
+              <ChooseService handleChange={this.handleServiceChange} value={services} />
               <Segment inverted>
                 {failures.map(f => (
                   <Container textAlign="justified" key={f.id} style={{ fontFamily: '"Exo 2", sans-serif' }}>

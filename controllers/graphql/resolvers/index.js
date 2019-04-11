@@ -1,4 +1,4 @@
-import taskResolvers from './task';
+import taskResolvers from './target';
 import failureResolvers from './failure';
 import messageResolvers from './message';
 import permissionResolvers from './permission';

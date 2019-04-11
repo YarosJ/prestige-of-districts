@@ -4,7 +4,7 @@ import {
   Icon,
   Form,
 } from 'semantic-ui-react';
-import Modal from '../../Modal';
+import Modal from '../../../helpers/Modal';
 import AddTags from './Tags/AddTags';
 
 class AddTarget extends Component {

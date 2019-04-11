@@ -9,6 +9,7 @@ import posed from 'react-pose';
 import Loading from '../../Loading/index';
 import { GET_FAILURE } from '../../../constants/queries';
 import heatmapLayer from './heatmapLayer';
+import ChooseService from '../../../helpers/ChooseService';
 
 const HEATMAP_SOURCE_ID = 'failures';
 const MAPBOX_TOKEN = 'pk.eyJ1IjoieWFyb3NsYXciLCJhIjoiY2pqemJmYXJ2MWpnajNwbWt3NnB4NzhwMSJ9.ahTtWLV7SgP1rLtTJYSx2A';
@@ -40,11 +41,14 @@ export default class Map extends Component {
       maxLongitude: 50,
       minLongitude: -50,
     },
+    services: [],
   };
 
   mapRef = React.createRef();
 
   getMap = () => (this.mapRef.current ? this.mapRef.current.getMap() : null);
+
+  handleServiceChange = (e, { value }) => this.setState({ services: value });
 
   handleMapLoaded = (failures) => {
     const features = failures.map(failure => failure.locations.map(loc => ({
@@ -62,7 +66,7 @@ export default class Map extends Component {
 
   render() {
     const { state } = this;
-    const { rangeValue, viewport } = state;
+    const { rangeValue, viewport, services } = state;
 
     return (
       <div style={{
@@ -95,6 +99,13 @@ export default class Map extends Component {
             />
           </Hoverable>
         </div>
+        <ChooseService
+          handleChange={this.handleServiceChange}
+          value={services}
+          style={{
+            position: 'fixed', top: '20px', left: '30px', zIndex: 10,
+          }}
+        />
         <div style={{
           position: 'fixed',
           left: '50%',
@@ -116,6 +127,7 @@ export default class Map extends Component {
         <Query
           query={GET_FAILURE}
           variables={{
+            services,
             locRange: state.locRange,
             dateRange: {
               maxDate: state.rangeValue.max,

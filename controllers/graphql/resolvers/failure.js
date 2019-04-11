@@ -11,25 +11,25 @@ const pubSub = new PubSub();
 export default {
   Query: {
     async failures(parent, {
-      latitude, longitude, service, failureType, date, locRange, locType, dateRange,
+      latitude, longitude, services, failureType, date, locRange, locType, dateRange,
     }) {
       const dateISO = date ? new Date(date).toISOString() : { $type: 'date' };
       if (!locRange) {
         return FailureModel.find({
           happenedAt: dateISO,
-          service: validate(service),
+          service: validate(services ? { $in: services } : null),
           failureType: validate(failureType),
           'locations.latitude': latitude || { $type: 'number' },
           'locations.longitude': longitude || { $type: 'number' },
           'locations.locType': validate(locType),
-        }, null, {sort: {date: -1}});
+        }, null, { sort: { date: -1 } });
       }
       const {
         maxLatitude, minLatitude, maxLongitude, minLongitude,
       } = locRange;
       return FailureModel.find({
         happenedAt: dateISO,
-        service: validate(service),
+        service: validate(services ? { $in: services } : null),
         failureType: validate(failureType),
         'locations.latitude': { $lte: maxLatitude, $gte: minLatitude },
         'locations.longitude': { $lte: maxLongitude, $gte: minLongitude },

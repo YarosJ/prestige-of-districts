@@ -9,6 +9,9 @@ export default {
     tags() {
       return config.NLP.supportedEntities;
     },
+    services() {
+      return config.NLP.services;
+    },
     targets() {
       return TaskModel.find();
     },
