@@ -7,7 +7,7 @@
     "NLP_QUEUE_NAME": "nlp_queue",
     "NLP_OUTPUT_QUEUE_NAME": "nlp_output_queue",
     "API_QUEUE_NAME": "api_queue",
-    "HOST": "amqp://localhost"
+    "HOST": "amqp://rabbitmq"
   },
   "NLP": {
     "services": ["WATER", "ELECTRO"],
@@ -30,7 +30,7 @@
   },
   "db": {
     "name": "parser",
-    "host": "localhost",
+    "host": "mongo",
     "port": 27017
   },
   "admin": {

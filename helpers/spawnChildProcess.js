@@ -10,6 +10,7 @@ const debugChildProcess = require('debug')('ChildProcess');
  * @returns {ChildProcess}
  */
 export default (command, app, name = "Node's") => {
+  console.log( process.env.PATH );
   const childProcess = spawn(command, app);
   debugChildProcess(`${name} child process spawned`);
 

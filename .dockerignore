@@ -1,0 +1,10 @@
+.git
+.gitignore
+.idea
+README.md
+docker-compose.yml
+package-lock.json
+node_modules
+tests
+view/node_modules
+NLP/.idea

@@ -15,7 +15,11 @@ export default class Scraper {
    */
   constructor() {
     return (async () => {
-      this.browser = await puppeteer.launch({ headless: true });
+      this.browser = await puppeteer.launch({
+        executablePath: '/usr/bin/chromium-browser',
+        headless: true,
+        args: ['--no-sandbox'],
+      });
       this.page = await this.browser.newPage();
       return this;
     })();

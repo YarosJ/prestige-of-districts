@@ -47,21 +47,27 @@ const Charts = ({ history }) => (
           <Icon name="dont" size="large" color="pink" />
         </Hoverable>
       </List.Item>
+      {!!localStorage.getItem('uId') && (
       <List.Item style={{ marginBottom: '10px' }} onClick={() => history.push(routes.USERS)}>
         <Hoverable>
           <Icon name="address card" size="large" color="pink" />
         </Hoverable>
       </List.Item>
+      )}
+      {!!localStorage.getItem('uId') && (
       <List.Item style={{ marginBottom: '10px' }} onClick={() => history.push(routes.TARGETS)}>
         <Hoverable>
           <Icon name="map signs" size="large" color="pink" />
         </Hoverable>
       </List.Item>
+      )}
+      {!!localStorage.getItem('uId') && (
       <List.Item style={{ marginBottom: '10px' }} onClick={() => history.push(routes.ACCESS_CONTROL)}>
         <Hoverable>
           <Icon name="unlock alternate" size="large" color="pink" />
         </Hoverable>
       </List.Item>
+      )}
     </List>
   </div>
 );

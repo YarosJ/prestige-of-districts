@@ -2,7 +2,7 @@ import pika
 
 
 class SendToQueue:
-    def __init__(self, queue_name="nlp_output_queue", host_name="localhost"):
+    def __init__(self, queue_name="nlp_output_queue", host_name="rabbitmq"):
         self.queue_name = queue_name
         self.connection = pika.BlockingConnection(pika.ConnectionParameters(host=host_name))
         self.channel = self.connection.channel()

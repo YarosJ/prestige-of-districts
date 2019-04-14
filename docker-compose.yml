@@ -1,0 +1,64 @@
+version: "3"
+
+services:
+  rabbitmq:
+    # There is a prebuilt RabbitMQ image; see
+    # https://hub.docker.com/_/rabbitmq/ for details.
+    # This variant is built on Alpine Linux (it's smaller) and includes
+    # the management UI.
+    image: rabbitmq:3.7-rc
+
+    # These ports are exposed on the host; 'hostport:containerport'.
+    # You could connect to this server from outside with the *host's*
+    # DNS name or IP address and port 5672 (the left-hand side of the
+    # colon).
+
+    ports:
+      # The standard AMQP protocol port
+      - 5672:5672
+      # HTTP management UI
+      - 15672:15672
+    restart: always
+
+  api:
+    build: .
+    environment:
+      - REDIS_HOST=162.242.195.82
+      - DEBUG_COLORS
+      - DEBUG=mongoose,ChildProcess,Server
+      - seedDB
+    command: npm run server
+    volumes:
+      - .:/app
+    ports:
+      - 5000:5000
+    depends_on:
+      - rabbitmq
+      - mongo
+      - redis
+      - nlp
+
+  nlp:
+    build: ./NLP
+    command: python3 app.py
+    volumes:
+      - ./NLP:/app/NLP
+    links:
+      - rabbitmq
+    depends_on:
+      - rabbitmq
+    restart: on-failure
+
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+    restart: always
+
+  redis:
+    image: redis
+    extra_hosts:
+      - "localhost:162.242.195.82"
+    ports:
+      - 6379:6379
+    restart: always
