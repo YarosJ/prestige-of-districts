@@ -51,6 +51,7 @@ export default async () => {
   });
 
   nlpOutputChannel.consume((data) => {
+    console.log(data);
     // Get action with payload from NLP results and dispatch
     ActionDispatcher.dispatch(actionFromNLP(data));
   });

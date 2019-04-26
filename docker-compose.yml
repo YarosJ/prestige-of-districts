@@ -23,13 +23,14 @@ services:
   api:
     build: .
     environment:
-      - REDIS_HOST=162.242.195.82
+      - REDIS_HOST=redis
       - DEBUG_COLORS
       - DEBUG=mongoose,ChildProcess,Server
       - seedDB
     command: npm run server
     volumes:
       - .:/app
+      - /app/node_modules/
     ports:
       - 5000:5000
     depends_on:

@@ -21,7 +21,7 @@ TRAIN_DATA = train_data(kramvoda, electro)
     n_iter=("Number of training iterations", "option", "n", int))
 def main(output_dir="./trained/", n_iter=1):
     """Load the model, set up the pipeline and train the entity recognizer."""
-    nlp = spacy.blank('xx')  # load existing spaCy model
+    nlp = spacy.load('xx_ent_wiki_sm')  # load existing spaCy model
 
     # create the built-in pipeline components and add them to the pipeline
     # nlp.create_pipe works for built-ins that are registered with spaCy

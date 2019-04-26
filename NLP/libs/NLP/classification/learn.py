@@ -21,7 +21,7 @@ LABELS = ('FAULT', 'INFO', 'TOXIC', 'WATER', 'ELECTRO', 'REPAIR')
     n_iter=("Number of training iterations", "option", "n", int))
 def main(output_dir="./trained/", n_iter=1):
     """Load the model, set up the pipeline and train the classificator."""
-    nlp = spacy.blank('xx')
+    nlp = spacy.load('xx_ent_wiki_sm')
 
     # create the built-in pipeline components and add them to the pipeline
     # nlp.create_pipe works for built-ins that are registered with spaCy
