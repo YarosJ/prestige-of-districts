@@ -47,7 +47,7 @@ export default class Scraper {
         return result;
       }, tag));
     });
-    await this.page.waitFor(2000);
+    await this.page.waitFor(5000);
     return results;
   }
 

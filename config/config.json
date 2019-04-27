@@ -17,16 +17,16 @@
   "geolocation": {
     "defaultCity": "Краматорск",
     "defaultCountry": "Украина",
-    "geocoders": [
-      {
-        "provider": "openstreetmap"
+    "geocoders": {
+      "openstreetmap": {
+        "polygon": 1,
+        "addressdetails": 1
       },
-      {
-        "provider": "here",
+      "here": {
         "appId": "vO6SCvegx2409pUQJAXd",
         "appCode": "E4vgG5Zn2XY5m_HNdX1AnQ"
       }
-    ]
+    }
   },
   "db": {
     "name": "parser",

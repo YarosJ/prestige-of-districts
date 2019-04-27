@@ -1,5 +1,6 @@
 import express from 'express';
 import http from 'http';
+import path from 'path';
 import { ApolloServer } from 'apollo-server-express';
 import { RedisCache } from 'apollo-server-cache-redis';
 import mongoose from 'mongoose';
@@ -26,6 +27,13 @@ mongooseConnect(mongoose, process, () => {
   }
   // noinspection JSIgnoredPromiseFromCall
   startParser();
+  app.use(express.static(path.join(__dirname, './view/public')));
+  app.use((req, res) => {
+    const contentType = req.headers['content-type'];
+    if (contentType && contentType.indexOf('application/json') > -1) {
+      res.status(404).json({ message: 'Resource not found' });
+    } else res.sendFile(path.join(__dirname, './view/public/index.html'));
+  });
 });
 
 /**

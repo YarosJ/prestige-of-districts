@@ -7,4 +7,5 @@ package-lock.json
 node_modules
 tests
 view/node_modules
+view/package-lock.json
 NLP/.idea

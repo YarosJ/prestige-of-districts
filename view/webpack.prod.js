@@ -1,7 +1,9 @@
 const webpack = require('webpack');
 const path = require('path');
+
 const BUILD_DIR = path.resolve(__dirname, 'public');
 const APP_DIR = path.resolve(__dirname, './');
+
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const config = {
@@ -51,10 +53,10 @@ const config = {
             options: {
               modules: true,
               minimize: true,
-            }
+            },
           },
           { loader: 'less-loader' },
-        ]
+        ],
       }, {
         test: /\.css$/,
         loaders: ['style-loader', 'css-loader'],
@@ -62,20 +64,14 @@ const config = {
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.jsx', '.js'],
   },
   devServer: {
-    hot: true,
     publicPath: '/',
     historyApiFallback: true,
     contentBase: './public',
   },
-  plugins:  [
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production'),
-    }),
-
-    new webpack.optimize.OccurrenceOrderPlugin(),
+  plugins: [
     new UglifyJsPlugin({
       sourceMap: true,
     }),
