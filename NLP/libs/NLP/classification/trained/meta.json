@@ -1,35 +1,20 @@
 {
   "lang":"xx",
-  "pipeline":[
-    "ner",
-    "textcat"
-  ],
-  "accuracy":{
-    "token_acc":100.0,
-    "ents_p":78.4780013171,
-    "ents_r":78.618027608,
-    "uas":0.0,
-    "tags_acc":0.0,
-    "ents_f":78.5479520569,
-    "las":0.0
-  },
-  "name":"ent_wiki_sm",
-  "license":"CC BY-SA 3.0",
-  "author":"Explosion AI",
-  "url":"https://explosion.ai",
-  "notes":"Because the model is trained on Wikipedia, it may perform inconsistently on many genres, such as social media text.",
+  "name":"model",
+  "version":"0.0.0",
+  "spacy_version":">=2.0.13",
+  "description":"",
+  "author":"",
+  "email":"",
+  "url":"",
+  "license":"",
   "vectors":{
     "width":0,
     "vectors":0,
     "keys":0,
     "name":"spacy_classification_vectors"
   },
-  "sources":[
-    "Wikipedia"
-  ],
-  "version":"2.0.0",
-  "spacy_version":">=2.0.0a18",
-  "parent_package":"spacy",
-  "email":"contact@explosion.ai",
-  "description":"Multi-lingual CNN trained on Nothman et al. (2013) Wikipedia corpus. Assigns named entities. Supports identification of PER, LOC, ORG and MISC entities for English, German, Spanish, French, Italian, Portuguese and Russian."
+  "pipeline":[
+    "textcat"
+  ]
 }

@@ -2,6 +2,9 @@ import sanitizeLocation from '../helpers/geolocation/sanitizeLocation';
 import failureResolvers from './graphql/resolvers/failure';
 import messageResolvers from './graphql/resolvers/message';
 
+const { addFailure } = failureResolvers.Mutation;
+const { addMessage } = messageResolvers.Mutation;
+
 /**
  * ActionDispatcher static class
  * dispatch actions
@@ -9,10 +12,10 @@ import messageResolvers from './graphql/resolvers/message';
 export default class ActionDispatcher {
   // Directing actions
   static actions = {
-    FAULT: failureResolvers.Mutation.addFailure,
-    TOXIC: failureResolvers.Mutation.addFailure,
-    REPAIR: messageResolvers.Mutation.addMessage,
-    INFO: messageResolvers.Mutation.addMessage,
+    FAULT: addFailure,
+    TOXIC: addFailure,
+    REPAIR: addMessage,
+    INFO: addMessage,
     default: () => null, // Unexpected action
   };
 
@@ -24,13 +27,16 @@ export default class ActionDispatcher {
   static dispatch(action) {
     const entities = Object.keys(action.payload.entities);
     const sanitizedLocations = entities.map(e => sanitizeLocation(e));
+    const {
+      country, city, service, text,
+    } = action.payload;
     const args = {
-      country: action.payload.country,
-      city: action.payload.city,
+      country,
+      city,
       locations: sanitizedLocations,
       failureType: action.type,
-      service: action.payload.service,
-      text: action.payload.text,
+      service,
+      text,
     };
 
     return ((this.actions[action.type] || this.actions.default)(null, args));

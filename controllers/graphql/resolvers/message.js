@@ -48,7 +48,7 @@ export default {
         service,
         happenedAt: ISODate(date),
       }).save();
-      // console.log('message', addedMessage, locations, text);
+      // console.log('message', addedMessage, locations);
       pubSub.publish('MESSAGE_ADDED', { messageAdded: addedMessage });
       return addedMessage;
     },

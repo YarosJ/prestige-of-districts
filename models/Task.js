@@ -19,6 +19,10 @@ const TaskSchema = new Schema({
     type: Number,
     required: false,
   },
+  service: {
+    type: String,
+    required: false,
+  },
   city: {
     type: String,
     required: false,

@@ -18,10 +18,10 @@ export default {
   },
   Mutation: {
     async addTarget(parent, {
-      URL, tagPaths, freq, city, country,
+      URL, tagPaths, freq, city, country, service,
     }) {
       return new TaskModel({
-        URL, tagPaths, freq, city, country,
+        URL, tagPaths, freq, city, country, service,
       }).save();
     },
     async removeTarget(parent, { URL }) {

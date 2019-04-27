@@ -32,6 +32,7 @@ export default async () => {
       tagPaths: t.tagPaths,
       city: t.city,
       country: t.country,
+      service: t.service,
     },
     interval: t.freq,
   }));
@@ -70,6 +71,7 @@ export default async () => {
           payload: {
             city: data.city,
             country: data.country,
+            service: data.service,
           },
         });
       }
