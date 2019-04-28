@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
-import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 class Cluster extends Component {
   mapRef = React.createRef();
@@ -19,9 +18,9 @@ class Cluster extends Component {
     mapboxgl.accessToken = 'pk.eyJ1IjoieWFyb3NsYXciLCJhIjoiY2pqemJmYXJ2MWpnajNwbWt3NnB4NzhwMSJ9.ahTtWLV7SgP1rLtTJYSx2A';
     const map = new mapboxgl.Map({
       container: this.mapRef.current,
-      style: 'mapbox://styles/mapbox/dark-v10',
+      style: 'mapbox://styles/mapbox/streets-v10',
       center: [37.49276, 48.74877],
-      zoom: 10,
+      zoom: 14,
     });
 
     map.on('load', () => {
@@ -143,12 +142,6 @@ class Cluster extends Component {
               </div>
           `).addTo(map);
       });
-
-      map.addControl(new MapboxGeocoder({
-        accessToken: mapboxgl.accessToken,
-        zoom: 14,
-        placeholder: 'Enter search e.g. Lincoln Park',
-      }));
 
       // Add zoom and rotation controls to the map.
       map.addControl(new mapboxgl.NavigationControl(), 'top-left');

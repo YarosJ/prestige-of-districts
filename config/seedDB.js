@@ -2,9 +2,19 @@ import mongoose from 'mongoose';
 import '../models/Permission';
 import '../models/User';
 import config from './config';
+import messages from '../NLP/libs/NLP/classification/corpuses/faults_classification_corpus';
+import AMQPChannel from '../libs/AMQPChannel';
 
 const { email, password } = config.admin;
 const adminRole = config.admin.role;
+const { defaultCity, defaultCountry } = config.geolocation;
+const {
+  messageBroker: {
+    HOST,
+    NLP_QUEUE_NAME,
+  },
+} = config;
+
 const PermissionModel = mongoose.model('Permission');
 const UserModel = mongoose.model('User');
 
@@ -60,4 +70,20 @@ export default async () => {
     });
     await user.save();
   }
+
+  // Initialise nlpChannel message broker
+  const nlpChannel = await new AMQPChannel({
+    queueName: NLP_QUEUE_NAME,
+    host: HOST,
+  });
+
+  console.log(messages);
+  messages.forEach(m => nlpChannel.sendToQueue({
+    text: m.text,
+    payload: {
+      city: defaultCity,
+      country: defaultCountry,
+      service: m.categories[1],
+    },
+  }));
 };

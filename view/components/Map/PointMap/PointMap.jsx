@@ -19,7 +19,7 @@ export default class Map extends Component {
       maxLongitude: 50,
       minLongitude: -50,
     },
-    services: [],
+    services: ['WATER', 'ELECTRO'],
   };
 
   handleServiceChange = (e, { value }) => this.setState({ services: value });
@@ -38,7 +38,11 @@ export default class Map extends Component {
           handleChange={this.handleServiceChange}
           value={services}
           style={{
-            position: 'fixed', top: '20px', left: '30px', zIndex: 10,
+            transform: 'translateX(-48%)',
+            left: '51%',
+            top: '20px',
+            position: 'fixed',
+            zIndex: 10,
           }}
         />
         <div style={{

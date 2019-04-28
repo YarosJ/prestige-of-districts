@@ -51,7 +51,7 @@ export default {
         failureType,
         happenedAt: ISODate(date),
       }).save();
-      // console.log('failure', addedFailure, locations);
+      console.log('failure', addedFailure, locations);
       pubSub.publish('FAILURE_ADDED', { failureAdded: addedFailure });
       return addedFailure;
     },

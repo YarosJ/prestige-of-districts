@@ -146,7 +146,11 @@ export default class App extends Component {
                 handleChange={this.handleServiceChange}
                 value={services}
                 style={{
-                  position: 'fixed', top: '20px', left: '30px', zIndex: 10,
+                  transform: 'translateX(-48%)',
+                  left: '51%',
+                  top: '20px',
+                  position: 'fixed',
+                  zIndex: 10,
                 }}
               />
               <DeckGL

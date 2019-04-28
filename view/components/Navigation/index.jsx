@@ -21,6 +21,7 @@ const Charts = ({ history }) => (
       paddingBottom: '30px',
       minWidth: '60px',
       boxShadow: '2px 5px 11px 0px rgba(0,0,0,0.75)',
+      zIndex: 10,
     }}
   >
     <List selection verticalAlign="middle">

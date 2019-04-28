@@ -34,7 +34,15 @@ class Messages extends React.Component {
               background: '#1a1c1d',
             }}
             >
-              <ChooseService handleChange={this.handleServiceChange} value={services} />
+              <ChooseService
+                handleChange={this.handleServiceChange}
+                value={services}
+                style={{
+                  transform: 'translateX(-48%)',
+                  left: '51%',
+                  marginTop: '20px',
+                }}
+              />
               <Segment inverted>
                 {failures.map(f => (
                   <Container textAlign="justified" key={f.id} style={{ fontFamily: '"Exo 2", sans-serif' }}>

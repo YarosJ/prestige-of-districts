@@ -23,9 +23,3 @@ body {
 .dropdown-inverted:after {
   background: #282226 !important;
 }
-
-.mapboxgl-ctrl-geocoder {
-    transform: translateX(-48%);
-    left: 51%;
-    position: fixed !important;
-}

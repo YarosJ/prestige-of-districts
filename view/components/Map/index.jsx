@@ -45,9 +45,18 @@ class Index extends Component {
           visible={visible}
           width="wide"
         >
-          <Menu.Item as="a" onClick={() => this.setState({ map: 'points' })}>Points</Menu.Item>
-          <Menu.Item as="a" onClick={() => this.setState({ map: 'heat' })}>Heat Map</Menu.Item>
-          <Menu.Item as="a" onClick={() => this.setState({ map: 'heat3D' })}>Heat Map 3D</Menu.Item>
+          <Menu.Item as="a" onClick={() => this.setState({ map: 'points' })}>
+            <p>Points</p>
+            <img src="maps/pointmap-white.png" alt="" style={{ width: '100%' }} />
+          </Menu.Item>
+          <Menu.Item as="a" onClick={() => this.setState({ map: 'heat' })}>
+              <p>Heat Map</p>
+              <img src="maps/heatmap-satellite.png" alt="" style={{ width: '100%' }} />
+          </Menu.Item>
+          <Menu.Item as="a" onClick={() => this.setState({ map: 'heat3D' })}>
+              <p>Heat Map 3D</p>
+              <img src="maps/3d-map.png" alt="" style={{ width: '100%' }} />
+          </Menu.Item>
         </Sidebar>
 
         <Sidebar.Pusher

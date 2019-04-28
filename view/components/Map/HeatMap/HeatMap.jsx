@@ -1,11 +1,9 @@
-/* global navigator */
 import React, { Component } from 'react';
-import MapGL, {NavigationControl} from 'react-map-gl';
+import MapGL from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { Query } from 'react-apollo';
-import { Icon } from 'semantic-ui-react';
 import InputRange from 'react-input-range';
-import posed from 'react-pose';
+import mapboxgl from 'mapbox-gl';
 import Loading from '../../Loading/index';
 import { GET_FAILURE } from '../../../constants/queries';
 import heatmapLayer from './heatmapLayer';
@@ -14,14 +12,6 @@ import ChooseService from '../../../helpers/ChooseService';
 const HEATMAP_SOURCE_ID = 'failures';
 const MAPBOX_TOKEN = 'pk.eyJ1IjoieWFyb3NsYXciLCJhIjoiY2pqemJmYXJ2MWpnajNwbWt3NnB4NzhwMSJ9.ahTtWLV7SgP1rLtTJYSx2A';
 
-const Hoverable = posed.div({
-  hoverable: true,
-  pressable: true,
-  init: { scale: 1, opacity: 0.7 },
-  hover: { opacity: 1 },
-  press: { scale: 0.8 },
-});
-
 export default class Map extends Component {
   state = {
     viewport: {
@@ -29,7 +19,7 @@ export default class Map extends Component {
       height: 400,
       latitude: 48.74877,
       longitude: 37.49276,
-      zoom: 13,
+      zoom: 14,
     },
     rangeValue: {
       min: 2007,
@@ -41,7 +31,7 @@ export default class Map extends Component {
       maxLongitude: 50,
       minLongitude: -50,
     },
-    services: [],
+    services: ['WATER', 'ELECTRO'],
   };
 
   mapRef = React.createRef();
@@ -62,6 +52,17 @@ export default class Map extends Component {
     const map = this.getMap();
     map.addSource(HEATMAP_SOURCE_ID, { type: 'geojson', data: { type: 'FeatureCollection', features } });
     map.addLayer(heatmapLayer('heatmap-layer', HEATMAP_SOURCE_ID));
+
+    // Add zoom and rotation controls to the map.
+    map.addControl(new mapboxgl.NavigationControl(), 'top-left');
+
+    // Add geolocate control to the map.
+    map.addControl(new mapboxgl.GeolocateControl({
+      positionOptions: {
+        enableHighAccuracy: true,
+      },
+      trackUserLocation: true,
+    }), 'top-left');
   };
 
   render() {
@@ -74,36 +75,15 @@ export default class Map extends Component {
         width: '100%',
       }}
       >
-        <div style={{
-          position: 'fixed',
-          left: '50px',
-          top: '32px',
-          zIndex: 500,
-        }}
-        >
-          <Hoverable>
-            <Icon
-              name="crosshairs"
-              color="pink"
-              style={{ fontSize: '40px', cursor: 'pointer' }}
-              onClick={() => navigator.geolocation.getCurrentPosition((position) => {
-                const { longitude, latitude } = position.coords;
-                this.setState({
-                  viewport: {
-                    latitude,
-                    longitude,
-                    zoom: 13,
-                  },
-                });
-              })}
-            />
-          </Hoverable>
-        </div>
         <ChooseService
           handleChange={this.handleServiceChange}
           value={services}
           style={{
-            position: 'fixed', top: '20px', left: '30px', zIndex: 10,
+            transform: 'translateX(-48%)',
+            left: '51%',
+            top: '20px',
+            position: 'fixed',
+            zIndex: 10,
           }}
         />
         <div style={{
@@ -147,15 +127,11 @@ export default class Map extends Component {
                 ref={this.mapRef}
                 width="100%"
                 height="100%"
-                mapStyle="mapbox://styles/mapbox/dark-v9"
+                mapStyle="mapbox://styles/mapbox/satellite-streets-v11"
                 mapboxApiAccessToken={MAPBOX_TOKEN}
                 onLoad={() => this.handleMapLoaded(failures)}
                 onViewportChange={v => this.setState({ viewport: v })}
-              >
-                <div style={{ position: 'absolute', left: '7px' }}>
-                  <NavigationControl onViewportChange={v => this.setState({ viewport: v })} />
-                </div>
-              </MapGL>
+              />
             );
           }}
         </Query>
