@@ -11,7 +11,7 @@
   "main": "app.js",
   "graphdoc": {
     "endpoint": "http://localhost:5000/graphql",
-    "output": "./graphDoc"
+    "output": "./PdGraphDoc"
   },
   "dependencies": {
     "@babel/runtime": "^7.3.4",
