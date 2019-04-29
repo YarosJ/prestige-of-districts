@@ -27,6 +27,7 @@ services:
       - DEBUG_COLORS
       - DEBUG=mongoose,ChildProcess,Server
       - seedDB=false
+      - UML=true
     command: npm run server
     volumes:
       - .:/app
@@ -53,7 +54,7 @@ services:
   mongo:
     image: mongo
     ports:
-      - 27017:27017
+      - 27018:27017
     restart: always
 
   redis:

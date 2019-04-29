@@ -77,7 +77,6 @@ export default async () => {
     host: HOST,
   });
 
-  console.log(messages);
   messages.forEach(m => nlpChannel.sendToQueue({
     text: m.text,
     payload: {

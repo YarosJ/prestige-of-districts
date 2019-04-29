@@ -5,10 +5,6 @@ import messageResolvers from './graphql/resolvers/message';
 const { addFailure } = failureResolvers.Mutation;
 const { addMessage } = messageResolvers.Mutation;
 
-/**
- * ActionDispatcher static class
- * dispatch actions
- */
 export default class ActionDispatcher {
   // Directing actions
   static actions = {

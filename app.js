@@ -12,6 +12,8 @@ import context from './helpers/authentication/apolloContext';
 import { serverPort, endpoint } from './config/config.json';
 import seedDB from './config/seedDB';
 
+const { express: voyagerMiddleware } = require('graphql-voyager/middleware');
+
 const debugServer = require('debug')('Server');
 
 const app = express();
@@ -27,6 +29,17 @@ mongooseConnect(mongoose, process, () => {
   }
   // noinspection JSIgnoredPromiseFromCall
   startParser();
+
+  if (process.env.UML) {
+    // UML diagrams of graphql API
+    app.use('/voyager', voyagerMiddleware({
+      endpointUrl: '/graphql',
+      displayOptions: {
+        sortByAlphabet: true,
+      },
+    }));
+  }
+
   app.use(express.static(path.join(__dirname, './view/public')));
   app.use((req, res) => {
     const contentType = req.headers['content-type'];
@@ -37,7 +50,7 @@ mongooseConnect(mongoose, process, () => {
 });
 
 /**
- * Using ApolloServer
+ * creating ApolloServer
  * @type {ApolloServer}
  */
 const server = new ApolloServer({
@@ -74,10 +87,15 @@ httpServer.listen(serverPort, () => {
     `🚀 Server ready at http://localhost:${serverPort}${server.graphqlPath}`,
   );
   debugServer(
-    `🚀 Subscriptions ready at ws://localhost:${serverPort}${
+    `🔌 Subscriptions ready at ws://localhost:${serverPort}${
       server.subscriptionsPath
     }`,
   );
+  if (process.env.UML) {
+    debugServer(
+      `🗂 GraphQL UML diagrams ready at http://localhost:${serverPort}/voyager`,
+    );
+  }
 });
 
 module.exports = app;
