@@ -55,18 +55,16 @@ class Targets extends Component {
               height: '100%',
               width: '100%',
               overflow: 'auto',
-              background: '#1a1c1d',
             }}
             >
-              <Segment inverted>
-                <Accordion inverted>
+              <Segment>
+                <Accordion>
                   {targets.map((target, key) => (
                     <div key={key} style={{ display: 'inline' }}>
                       <Accordion.Title
                         active={activeIndex === key}
                         index={key}
                         onClick={this.handleClick}
-                        style={{ color: 'deeppink' }}
                       >
                         <Icon name="dropdown" />
                         {target.URL}

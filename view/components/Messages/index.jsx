@@ -26,10 +26,9 @@ class Messages extends React.Component {
               height: '100%',
               width: '100%',
               overflow: 'auto',
-              background: '#1a1c1d',
             }}
             >
-              <Segment inverted>
+              <Segment>
                 {messages.map(m => (
                   <Container textAlign="justified" key={m.id} style={{ fontFamily: '"Exo 2", sans-serif' }}>
                     <Label as="a" color="red" ribbon>

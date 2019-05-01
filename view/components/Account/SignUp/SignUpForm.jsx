@@ -59,51 +59,46 @@ class SignUpForm extends Component {
         variables={{ email, password }}
       >
         {(signUp, { loading, error }) => (
-          <Form
-            style={{ marginTop: '30px', marginBottom: '50px' }}
-            size="large"
-            onSubmit={event => this.onSubmit(event, signUp)}
-          >
-            <Form.Input
-              fluid
-              icon="user"
-              iconPosition="left"
-              name="email"
-              value={email}
-              onChange={this.onChange}
-              type="text"
-              placeholder="Email Address"
-            />
-            <Form.Input
-              fluid
-              icon="lock"
-              iconPosition="left"
-              name="password"
-              value={password}
-              onChange={this.onChange}
-              type="password"
-              placeholder="Password"
-            />
-            <Form.Input
-              fluid
-              icon="lock"
-              iconPosition="left"
-              name="passwordConfirmation"
-              value={passwordConfirmation}
-              onChange={this.onChange}
-              type="password"
-              placeholder="Confirm Password"
-            />
+          <Form onSubmit={event => this.onSubmit(event, signUp)}>
+            <div style={{ textAlign: 'left', marginBottom: '20px' }}>
+              <Form.Input
+                icon="user"
+                iconPosition="left"
+                label="Email or Username"
+                name="email"
+                value={email}
+                onChange={this.onChange}
+                type="text"
+                placeholder="Email or Username"
+              />
+              <Form.Input
+                icon="lock"
+                iconPosition="left"
+                label="Password"
+                type="password"
+                name="password"
+                value={password}
+                onChange={this.onChange}
+                placeholder="Password"
+              />
+              <Form.Input
+                icon="lock"
+                iconPosition="left"
+                label="Confirm Password"
+                type="password"
+                name="passwordConfirmation"
+                value={passwordConfirmation}
+                onChange={this.onChange}
+                placeholder="Confirm Password"
+              />
+            </div>
             <Button
-              color="teal"
-              fluid
-              size="large"
-              disabled={isInvalid || loading}
+              size="mini"
+              content="Confirm"
+              primary
               type="submit"
-            >
-              Подтвердить
-            </Button>
-
+              disabled={isInvalid || loading}
+            />
             {error && <ErrorMessage error={error} />}
           </Form>
         )}

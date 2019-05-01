@@ -26,7 +26,7 @@ services:
       - REDIS_HOST=redis
       - DEBUG_COLORS
       - DEBUG=mongoose,ChildProcess,Server
-      - seedDB=false
+      - seedDB=true
       - UML=true
     command: npm run server
     volumes:

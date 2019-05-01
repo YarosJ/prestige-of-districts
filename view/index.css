@@ -2,7 +2,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: #202122 !important;
 }
 
 #root {
@@ -12,14 +11,4 @@ body {
 
 .scalable-children-img img {
   max-width: 90% !important;
-}
-
-.dropdown-inverted {
-  box-shadow: 5px 6px 16px 3px rgba(0,0,0,0.75) !important;
-  border-radius: 2px !important;
-  background: #282226 !important;
-}
-
-.dropdown-inverted:after {
-  background: #282226 !important;
 }

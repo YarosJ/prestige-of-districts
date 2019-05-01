@@ -40,7 +40,6 @@ const AccessControl = ({ history }) => (
           height: '100%',
           width: '100%',
           overflow: 'auto',
-          background: '#1a1c1d',
           paddingTop: '20px',
         }}
         >
@@ -48,7 +47,7 @@ const AccessControl = ({ history }) => (
             width: '85%', margin: 'auto', textAlign: 'center', marginBottom: '20px',
           }}
           >
-            <Input placeholder="role" style={{ marginRight: '5px' }} inverted />
+            <Input placeholder="role" style={{ marginRight: '5px' }} />
             <Button color="green">
               Add Role
             </Button>
@@ -67,16 +66,16 @@ const AccessControl = ({ history }) => (
 
 const Role = ({ role, children }) => (
   <div style={{ width: '85%', margin: 'auto', marginBottom: '50px' }}>
-    <Table striped inverted>
+    <Table striped>
       <Table.Header>
         <Table.Row>
           <Table.HeaderCell colSpan="2">
-            <Header style={{ textAlign: 'center', marginBottom: '10px' }} inverted>
+            <Header style={{ textAlign: 'center', marginBottom: '10px' }}>
               {role.role}
             </Header>
             <div style={{ textAlign: 'center' }}>
               <AddRoleAction role={role}>
-                <Input placeholder="logIn" style={{ marginRight: '5px' }} inverted />
+                <Input placeholder="logIn" style={{ marginRight: '5px' }} />
                 <Button primary color="green">
                   Add action
                 </Button>

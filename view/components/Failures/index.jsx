@@ -4,7 +4,6 @@ import { Query } from 'react-apollo';
 import {
   Divider, Container, Segment, Label, Icon,
 } from 'semantic-ui-react';
-import PropTypes from 'prop-types';
 import { GET_FAILURE } from '../../constants/queries';
 import Loading from '../Loading/index';
 import Footer from '../Footer/index';
@@ -31,7 +30,6 @@ class Messages extends React.Component {
               height: '100%',
               width: '100%',
               overflow: 'auto',
-              background: '#1a1c1d',
             }}
             >
               <ChooseService
@@ -43,7 +41,7 @@ class Messages extends React.Component {
                   marginTop: '20px',
                 }}
               />
-              <Segment inverted>
+              <Segment>
                 {failures.map(f => (
                   <Container textAlign="justified" key={f.id} style={{ fontFamily: '"Exo 2", sans-serif' }}>
                     <Label as="a" color="red" ribbon>
@@ -68,13 +66,5 @@ class Messages extends React.Component {
     );
   }
 }
-
-Messages.propTypes = {
-  history: PropTypes.objectOf(PropTypes.any),
-};
-
-Messages.defaultProps = {
-  history: {},
-};
 
 export default Messages;

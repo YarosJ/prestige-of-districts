@@ -63,7 +63,6 @@ class Users extends Component {
               height: '100%',
               width: '100%',
               overflow: 'auto',
-              background: '#1a1c1d',
             }}
             >
               <UsersList
@@ -91,8 +90,8 @@ class UsersList extends Component {
   render() {
     const { users, limit, cursor } = this.props;
     return (
-      <Segment inverted>
-      <Table striped inverted>
+      <Segment>
+      <Table striped>
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell>Email</Table.HeaderCell>

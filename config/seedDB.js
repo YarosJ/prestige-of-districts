@@ -21,13 +21,13 @@ const UserModel = mongoose.model('User');
 const roles = [
   {
     role: 'guest',
-    actions: ['signIn', 'signUp', 'refreshToken', 'messages', 'failures'],
+    actions: ['signIn', 'signUp', 'refreshToken', 'messages', 'failures', 'services', '__schema'],
   },
   {
     role: 'user',
     actions:
       [
-        'signIn', 'signUp', 'refreshToken', 'messages', 'failures', 'user',
+        'signIn', 'signUp', 'refreshToken', 'messages', 'failures', 'user', 'services', '__schema',
         'logOut', 'addFailure', 'removeFailure', 'addMessage', 'removeMessage',
       ],
   },
@@ -35,7 +35,7 @@ const roles = [
     role: 'admin',
     actions:
       [
-        'signIn', 'signUp', 'refreshToken', 'messages', 'failures', 'user',
+        'signIn', 'signUp', 'refreshToken', 'messages', 'failures', 'user', 'services', '__schema',
         'logOut', 'addFailure', 'removeFailure', 'addMessage', 'removeMessage',
         'tags', 'addTarget', 'removeTarget', 'updateTarget', 'users',
       ],
@@ -44,7 +44,7 @@ const roles = [
     role: 'superAdmin',
     actions:
       [
-        'signIn', 'signUp', 'refreshToken', 'messages', 'failures', 'user',
+        'signIn', 'signUp', 'refreshToken', 'messages', 'failures', 'user', 'services', '__schema',
         'logOut', 'addFailure', 'removeFailure', 'addMessage', 'removeMessage',
         'tags', 'addTarget', 'removeTarget', 'updateTarget', 'users',
         'roles', 'actions', 'addRole', 'addAction', 'deleteRole', 'deleteAction', 'updateUser', 'deleteUser',
@@ -53,6 +53,7 @@ const roles = [
 ];
 
 export default async () => {
+  await PermissionModel.remove()
   if (await PermissionModel.count() === 0) {
     roles.map(async (r) => {
       const { role, actions } = r;

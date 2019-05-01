@@ -40,7 +40,7 @@ return(res);
     allowed = await checkPermissions(action, role);
     console.log(role, token, allowed);
   } else allowed = await checkPermissions(action, 'guest');
-
+console.log(action, role, allowed)
   if (!allowed) throw new AuthenticationError('Access Denied');
 
   return res;

@@ -22,7 +22,6 @@ export default ({ cursor, limit, onPageChange }) => (
         }}
         >
           <Pagination
-            inverted
             activePage={cursor}
             onPageChange={onPageChange}
             totalPages={Math.ceil(count / limit)}

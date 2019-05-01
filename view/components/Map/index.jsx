@@ -36,7 +36,6 @@ class Index extends Component {
           animation="overlay"
           direction="right"
           icon="labeled"
-          inverted
           onClick={this.handleSidebarHide}
           onHide={() => {
             this.handleSidebarHide();
@@ -50,12 +49,12 @@ class Index extends Component {
             <img src="maps/pointmap-white.png" alt="" style={{ width: '100%' }} />
           </Menu.Item>
           <Menu.Item as="a" onClick={() => this.setState({ map: 'heat' })}>
-              <p>Heat Map</p>
-              <img src="maps/heatmap-satellite.png" alt="" style={{ width: '100%' }} />
+            <p>Heat Map</p>
+            <img src="maps/heatmap-satellite.png" alt="" style={{ width: '100%' }} />
           </Menu.Item>
           <Menu.Item as="a" onClick={() => this.setState({ map: 'heat3D' })}>
-              <p>Heat Map 3D</p>
-              <img src="maps/3d-map.png" alt="" style={{ width: '100%' }} />
+            <p>Heat Map 3D</p>
+            <img src="maps/3d-map.png" alt="" style={{ width: '100%' }} />
           </Menu.Item>
         </Sidebar>
 
@@ -70,7 +69,6 @@ class Index extends Component {
             { this.getMap(map) }
             <div
               style={{
-                color: 'white',
                 position: 'fixed',
                 right: '25px',
                 top: '30px',
@@ -80,7 +78,7 @@ class Index extends Component {
               <Icon
                 name="block layout"
                 size="large"
-                color="pink"
+                color="blue"
                 onClick={this.handleShowClick}
                 style={{ cursor: 'pointer' }}
               />

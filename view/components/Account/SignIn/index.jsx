@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import {
-  Grid, Header, Icon, Form, Button, Segment, Divider,
+  Grid, Image, Form, Button, Segment, Header,
 } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import * as routes from '../../../constants/routes';
@@ -52,21 +52,43 @@ class SignInPage extends Component {
   render() {
     const { email, password } = this.state;
     const { history } = this.props;
-    const isInvalid = password === '' || email === '';
 
     return (
       <Mutation mutation={SIGN_IN} variables={{ email, password }}>
         {(signIn, { loading, error }) => (
-          <div style={{ height: '100%', width: '100%', overflow: 'auto' }}>
-            <div className="login-form" style={{ margin: '80px 45px 80px 45px' }}>
-              <Header as="h2" icon textAlign="center" inverted>
-                <Icon name="map outline" circular style={{ border: 'solid rgb(224, 225, 226)' }} />
-                <Header.Content>Prestige Of Districts</Header.Content>
-              </Header>
-              <Segment style={{ boxShadow: '5px 6px 16px 3px rgba(0,0,0,0.75)' }}>
-                <Grid columns={2} relaxed="very" stackable>
-                  <Grid.Column>
-                    <Form onSubmit={async event => this.onSubmit(event, signIn)}>
+          <div style={{ margin: '80px 45px 80px 45px', display: 'flex' }}>
+            <Segment
+              style={{
+                boxShadow: 'rgba(0, 0, 0, 0.75) 0px 0px 7px -4px',
+                borderRadius: 0,
+                maxWidth: '850px',
+                margin: 'auto',
+              }}
+            >
+              <Grid columns={2}>
+                <Grid.Column style={{ padding: 0 }} width={9}>
+                  <Image
+                    src="maps/pointmap-white.png"
+                    style={{
+                      height: '100%',
+                      objectFit: 'cover',
+                    }}
+                  />
+                </Grid.Column>
+                <Grid.Column
+                  width={7}
+                  style={{ textAlign: 'center' }}
+                >
+                  <Image
+                    src="map.png"
+                    style={{
+                      width: '55px',
+                      margin: 'auto',
+                    }}
+                  />
+                  <Header>Log in to your account</Header>
+                  <Form onSubmit={async event => this.onSubmit(event, signIn)}>
+                    <div style={{ textAlign: 'left', marginBottom: '20px' }}>
                       <Form.Input
                         icon="user"
                         iconPosition="left"
@@ -87,31 +109,26 @@ class SignInPage extends Component {
                         onChange={this.onChange}
                         placeholder="Password"
                       />
-
+                    </div>
+                    <Button.Group size="mini">
                       <Button
                         content="Login"
                         primary
-                        disabled={isInvalid || loading}
                         type="submit"
                       />
-                    </Form>
-                  </Grid.Column>
+                      <Button.Or />
+                      <Button
+                        content="Sign up"
+                        primary
+                        onClick={() => history.push(routes.SIGN_UP)}
+                      />
+                    </Button.Group>
+                  </Form>
+                </Grid.Column>
 
-                  {error && <ErrorMessage error={error} />}
-
-                  <Grid.Column verticalAlign="middle">
-                    <Button
-                      content="Sign up"
-                      icon="signup"
-                      size="big"
-                      onClick={() => history.push(routes.SIGN_UP)}
-                    />
-                  </Grid.Column>
-                </Grid>
-
-                <Divider vertical>Or</Divider>
-              </Segment>
-            </div>
+                {error && <ErrorMessage error={error} />}
+              </Grid>
+            </Segment>
           </div>
         )}
       </Mutation>
