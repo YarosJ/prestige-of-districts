@@ -21,7 +21,7 @@ class Add extends Component {
   render() {
     const { open } = this.state;
     const {
-      header, children, buttonContent, initiateClose, activateContent, style,
+      header, children, buttonContent, buttonSize, initiateClose, activateContent, style, windowStyle,
     } = this.props;
     if (initiateClose) initiateClose(this.handleClose);
 
@@ -49,7 +49,7 @@ class Add extends Component {
           : (
             <Button
               content={buttonContent}
-              size="tiny"
+              size={buttonSize || "tiny"}
               compact
               style={{ marginTop: '15px', marginBottom: '20px' }}
               onClick={this.handleOpen}
@@ -65,6 +65,7 @@ class Add extends Component {
             open
             onClose={this.handleClose}
             closeIcon
+            style={windowStyle || {}}
           >
             <Modal.Header>
               { header }
