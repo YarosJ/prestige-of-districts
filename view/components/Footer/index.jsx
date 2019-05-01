@@ -10,8 +10,8 @@ import {
   Segment,
 } from 'semantic-ui-react';
 
-export default () => (
-  <Segment vertical style={{ padding: '5em 0em' }}>
+export default ({ style={} }) => (
+  <Segment vertical style={{ padding: '5em 0em', ...style }}>
     <Container>
       <Grid divided stackable>
         <Grid.Row>

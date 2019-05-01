@@ -36,6 +36,7 @@ class App extends React.Component {
             padding: 0,
             width: '100%',
             height: '100%',
+            overflow: 'auto',
           }}
           >
 

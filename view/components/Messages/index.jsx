@@ -25,19 +25,33 @@ class Messages extends React.Component {
             <div style={{
               height: '100%',
               width: '100%',
-              overflow: 'auto',
             }}
             >
-              <Segment>
-                <Header as='h2'>
-                  <Icon name='settings' />
+              <Container
+                textAlign="justified"
+                style={{
+                  fontFamily: '"Exo 2", sans-serif',
+                  padding: '19px',
+                }}
+              >
+                <Header
+                    color="blue"
+                  as="h2"
+                  style={{
+                    marginBottom: '35px',
+                    marginTop: '10px',
+                  }}
+                >
+                  <Icon name="bell outline" />
                   <Header.Content>
-                    Account Settings
-                    <Header.Subheader>Manage your preferences</Header.Subheader>
+                    Messages
+                    <Header.Subheader>
+                      All messages from the last week are shown here
+                    </Header.Subheader>
                   </Header.Content>
                 </Header>
                 {messages.map(m => (
-                  <Container textAlign="justified" key={m.id} style={{ fontFamily: '"Exo 2", sans-serif' }}>
+                  <div key={m.id}>
                     <Label as="a" color="red" ribbon>
                       { m.service }
                     </Label>
@@ -47,11 +61,9 @@ class Messages extends React.Component {
                       { new Date(m.happenedAt).toDateString() }
                     </Label>
                     <Divider section />
-                  </Container>
+                  </div>
                 ))}
-              </Segment>
-              <Container textAlign="justified">
-                <Footer />
+                <Footer style={{ marginTop: '-40px' }} />
               </Container>
             </div>
           );

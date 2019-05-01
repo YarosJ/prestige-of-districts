@@ -2,7 +2,7 @@
 import React from 'react';
 import { Query } from 'react-apollo';
 import {
-  Divider, Container, Segment, Label, Icon,
+  Divider, Container, Segment, Label, Icon, Header,
 } from 'semantic-ui-react';
 import { GET_FAILURE } from '../../constants/queries';
 import Loading from '../Loading/index';
@@ -32,18 +32,41 @@ class Messages extends React.Component {
               overflow: 'auto',
             }}
             >
-              <ChooseService
-                handleChange={this.handleServiceChange}
-                value={services}
+              <Container
+                textAlign="justified"
                 style={{
-                  transform: 'translateX(-48%)',
-                  left: '51%',
-                  marginTop: '20px',
+                  fontFamily: '"Exo 2", sans-serif',
+                  padding: '19px',
                 }}
-              />
-              <Segment>
+              >
+                <Header
+                  color="blue"
+                  as="h2"
+                  style={{
+                    marginBottom: '35px',
+                    marginTop: '10px',
+                  }}
+                >
+                  <Icon name="bullhorn" />
+                  <Header.Content>
+                    Failures
+                    <Header.Subheader>
+                      Choose service to watch failures from the last week here
+                    </Header.Subheader>
+                  </Header.Content>
+                </Header>
+                <ChooseService
+                  handleChange={this.handleServiceChange}
+                  value={services}
+                  style={{
+                    transform: 'translateX(-48%)',
+                    left: '51%',
+                    marginTop: '20px',
+                    marginBottom: '20px',
+                  }}
+                />
                 {failures.map(f => (
-                  <Container textAlign="justified" key={f.id} style={{ fontFamily: '"Exo 2", sans-serif' }}>
+                  <div key={f.id}>
                     <Label as="a" color="red" ribbon>
                       { f.service }
                     </Label>
@@ -53,12 +76,10 @@ class Messages extends React.Component {
                       { new Date(f.happenedAt).toDateString() }
                     </Label>
                     <Divider section />
-                  </Container>
+                  </div>
                 ))}
-                <Container textAlign="justified">
-                  <Footer />
-                </Container>
-              </Segment>
+                <Footer />
+              </Container>
             </div>
           );
         }}

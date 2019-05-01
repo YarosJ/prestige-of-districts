@@ -11,17 +11,12 @@ const ProfileControl = ({ signed, history }) => (
     {signed
       ? (
         <Dropdown.Menu>
-          <Dropdown.Item>
-            <Icon name="settings" size="large" color={iconColor} />
-            Settings
-          </Dropdown.Item>
           <Dropdown.Item
             onClick={() => history.push(routes.PROFILE)}
           >
-            <Icon name="address card" size="large" color={iconColor} />
-            Profile
+            <Icon name="settings" size="large" color={iconColor} />
+            Settings
           </Dropdown.Item>
-          <Dropdown.Divider />
           <Dropdown.Item>
             <SignOut>
               <Icon name="sign out" size="large" color={iconColor} />
