@@ -6,7 +6,7 @@ import Messages from './Messages/index';
 import Failures from './Failures/index';
 import SignUpPage from './Account/SignUp/index';
 import SignInPage from './Account/SignIn/index';
-import Profile from './Account/Profile/index';
+import Profile from './Account';
 import Users from './Admin/Users/index';
 import Targets from './Admin/Targets/index';
 import Access from './Admin/AccessControl/index';

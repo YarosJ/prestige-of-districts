@@ -33,11 +33,11 @@ const ProfileControl = ({ signed, history }) => (
         <Dropdown.Menu>
           <Dropdown.Item onClick={() => history.push(routes.SIGN_IN)}>
             <Icon name="sign in" size="large" color={iconColor} />
-            Войти
+            Sign In
           </Dropdown.Item>
           <Dropdown.Item onClick={() => history.push(routes.SIGN_UP)}>
             <Icon name="sign in" size="large" color={iconColor} />
-            Регистрация
+            Sign Up
           </Dropdown.Item>
         </Dropdown.Menu>
       )}

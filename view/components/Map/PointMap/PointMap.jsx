@@ -38,7 +38,7 @@ export default class Map extends Component {
           handleChange={this.handleServiceChange}
           value={services}
           style={{
-            transform: 'translateX(-48%)',
+            transform: 'translateX(-60%)',
             left: '51%',
             top: '20px',
             position: 'fixed',
@@ -48,7 +48,7 @@ export default class Map extends Component {
         <div style={{
           position: 'fixed',
           left: '50%',
-          transform: 'translateX(-45%)',
+          transform: 'translateX(-55%)',
           width: '70%',
           bottom: '70px',
           zIndex: 500,

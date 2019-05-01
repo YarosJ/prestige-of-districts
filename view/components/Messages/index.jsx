@@ -29,6 +29,13 @@ class Messages extends React.Component {
             }}
             >
               <Segment>
+                <Header as='h2'>
+                  <Icon name='settings' />
+                  <Header.Content>
+                    Account Settings
+                    <Header.Subheader>Manage your preferences</Header.Subheader>
+                  </Header.Content>
+                </Header>
                 {messages.map(m => (
                   <Container textAlign="justified" key={m.id} style={{ fontFamily: '"Exo 2", sans-serif' }}>
                     <Label as="a" color="red" ribbon>

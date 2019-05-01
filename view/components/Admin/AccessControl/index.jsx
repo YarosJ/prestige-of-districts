@@ -65,7 +65,7 @@ const AccessControl = ({ history }) => (
 );
 
 const Role = ({ role, children }) => (
-  <div style={{ width: '85%', margin: 'auto', marginBottom: '50px' }}>
+  <div style={{ width: '85%', maxWidth: '673px', margin: 'auto', marginBottom: '50px' }}>
     <Table striped>
       <Table.Header>
         <Table.Row>

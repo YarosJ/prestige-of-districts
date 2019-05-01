@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  Icon, Segment, Sidebar, Menu,
+  Icon, Segment, Sidebar, Menu, Header, Button,
 } from 'semantic-ui-react';
 import HeatMap from './HeatMap/HeatMap';
 import HeatMap3D from './HeatMap3D/HeatMap3D';
@@ -43,17 +43,36 @@ class Index extends Component {
           vertical
           visible={visible}
           width="wide"
+          style={{ textAlign: 'left', padding: '10px', overflow: 'auto' }}
         >
+          <Button
+            labelPosition="left"
+            icon="left chevron"
+            size="mini"
+            primary
+            content="Close"
+            style={{ margin: '10px' }}
+          />
           <Menu.Item as="a" onClick={() => this.setState({ map: 'points' })}>
-            <p>Points</p>
+            <Header as="h4" color="blue">
+                Points
+            </Header>
             <img src="maps/pointmap-white.png" alt="" style={{ width: '100%' }} />
           </Menu.Item>
           <Menu.Item as="a" onClick={() => this.setState({ map: 'heat' })}>
-            <p>Heat Map</p>
+            <Header as="h4" color="blue">
+                Heat Map
+            </Header>
             <img src="maps/heatmap-satellite.png" alt="" style={{ width: '100%' }} />
           </Menu.Item>
-          <Menu.Item as="a" onClick={() => this.setState({ map: 'heat3D' })}>
-            <p>Heat Map 3D</p>
+          <Menu.Item
+            as="a"
+            onClick={() => this.setState({ map: 'heat3D' })}
+            style={{ marginBottom: '50px' }}
+          >
+            <Header as="h4" color="blue">
+                Heat Map 3D
+            </Header>
             <img src="maps/3d-map.png" alt="" style={{ width: '100%' }} />
           </Menu.Item>
         </Sidebar>

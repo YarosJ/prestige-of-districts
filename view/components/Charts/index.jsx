@@ -1,79 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import 'react-input-range/lib/css/index.css';
-import { Query } from 'react-apollo';
-import {
-  ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
-} from 'recharts';
-import { GET_FAILURE } from '../../constants/queries';
-import Loading from '../Loading/index';
-import ChooseService from '../../helpers/ChooseService';
+import AreaChart from './AreaChart';
 
-export default class Charts extends Component {
-  state = {
-    services: [],
-  };
+const services = ['WATER', 'ELECTRO'];
 
-  handleServiceChange = (e, { value }) => this.setState({ services: value });
-
-  render() {
-    const { services } = this.state;
-
-    return (
-      <Query query={GET_FAILURE} variables={{ services }}>
-        {({ loading, error, data }) => {
-          const { failures } = data;
-          if (loading || !failures) {
-            return <Loading />;
-          }
-          if (error) return `Error! ${error.message}`;
-
-          return (
-            <div style={{
-              width: '100%',
-              height: '100%',
-              paddingBottom: '100px',
-              paddingTop: '10px',
-              textAlign: 'center',
-            }}
-            >
-              <ChooseService
-                handleChange={this.handleServiceChange}
-                value={services}
-                style={{ marginBottom: '15px' }}
-              />
-              <ResponsiveContainer style={{ background: '#202122' }}>
-                <LineChart
-                  width={730}
-                  height={250}
-                  data={failures.map((failure) => {
-                    const date = Date.parse(failure.happenedAt);
-                    const similar = failures
-                      .filter(f => (Math.abs(Date.parse(f.happenedAt) - date) < 86300000));
-                    return ({
-                      name: new Date(date).toDateString(),
-                      uv: similar.length,
-                    });
-                  })}
-                  margin={{
-                    top: 5,
-                    right: 30,
-                    left: 20,
-                    bottom: 5,
-                  }}
-                >
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="name" />
-                  <YAxis />
-                  <Tooltip />
-                  <Legend />
-                  <Line type="monotone" dataKey="pv" stroke="blue" />
-                  <Line type="monotone" dataKey="uv" stroke="red" />
-                </LineChart>
-              </ResponsiveContainer>
-            </div>
-          );
-        }}
-      </Query>
-    );
-  }
-}
+export default () => (
+  <div style={{
+    width: '100%',
+    height: '100%',
+    paddingBottom: '30px',
+    paddingTop: '30px',
+    textAlign: 'center',
+    overflow: 'auto',
+  }}
+  >
+    {services.map((service, key) => <AreaChart key={key} services={[service]} />)}
+  </div>
+);
