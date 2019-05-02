@@ -2,7 +2,7 @@
 import React from 'react';
 import { Query } from 'react-apollo';
 import {
-  Header, Divider, Container, Segment, Label, Icon,
+  Header, Divider, Container, Label, Icon,
 } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { GET_MESSAGES } from '../../constants/queries';
@@ -35,7 +35,7 @@ class Messages extends React.Component {
                 }}
               >
                 <Header
-                    color="blue"
+                  color="blue"
                   as="h2"
                   style={{
                     marginBottom: '35px',

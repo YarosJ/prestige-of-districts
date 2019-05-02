@@ -55,52 +55,51 @@ class Targets extends Component {
               height: '100%',
               width: '100%',
               overflow: 'auto',
+              paddingTop: '40px',
             }}
             >
-              <Segment>
-                <Accordion>
-                  {targets.map((target, key) => (
-                    <div key={key} style={{ display: 'inline' }}>
-                      <Accordion.Title
-                        active={activeIndex === key}
-                        index={key}
-                        onClick={this.handleClick}
-                      >
-                        <Icon name="dropdown" />
-                        {target.URL}
-                      </Accordion.Title>
-                      <Accordion.Content active={activeIndex === key}>
-                        <List>
-                          <List.Item icon="map marker alternate" content={target.city || 'Not set'} />
-                          <List.Item icon="map pin" content={target.country || 'Not set'} />
-                          <List.Item icon="stopwatch" content={target.freq || 'Not set'} />
-                          {target.tagPaths && target.tagPaths.map((tag, key) => (
-                            <List.Item
-                              key={key}
-                              icon="linkify"
-                              content={tag}
-                            />
-                          ))}
-                        </List>
-                        <div style={{ display: 'flex' }}>
-                          <Hoverable style={{ margin: 'auto', marginRight: '40px', cursor: 'pointer' }}>
-                            <UpdateTarget target={target} />
-                          </Hoverable>
-                          <Hoverable style={{ cursor: 'pointer' }}>
-                            <EditTags target={target} />
-                          </Hoverable>
-                          <Hoverable style={{ margin: 'auto', marginLeft: '40px', cursor: 'pointer' }}>
-                            <DeleteTarget target={target}>
-                              <Icon name="cancel" size="large" color="red" />
-                            </DeleteTarget>
-                          </Hoverable>
-                        </div>
-                      </Accordion.Content>
-                    </div>
-                  ))}
-                </Accordion>
-                <AddTarget />
-              </Segment>
+              <Accordion>
+                {targets.map((target, key) => (
+                  <div key={key} style={{ display: 'inline' }}>
+                    <Accordion.Title
+                      active={activeIndex === key}
+                      index={key}
+                      onClick={this.handleClick}
+                    >
+                      <Icon name="dropdown" />
+                      {target.URL}
+                    </Accordion.Title>
+                    <Accordion.Content active={activeIndex === key}>
+                      <List>
+                        <List.Item icon="map marker alternate" content={target.city || 'Not set'} />
+                        <List.Item icon="map pin" content={target.country || 'Not set'} />
+                        <List.Item icon="stopwatch" content={target.freq || 'Not set'} />
+                        {target.tagPaths && target.tagPaths.map((tag, key) => (
+                          <List.Item
+                            key={key}
+                            icon="linkify"
+                            content={tag}
+                          />
+                        ))}
+                      </List>
+                      <div style={{ display: 'flex' }}>
+                        <Hoverable style={{ margin: 'auto', marginRight: '40px', cursor: 'pointer' }}>
+                          <UpdateTarget target={target} />
+                        </Hoverable>
+                        <Hoverable style={{ cursor: 'pointer' }}>
+                          <EditTags target={target} />
+                        </Hoverable>
+                        <Hoverable style={{ margin: 'auto', marginLeft: '40px', cursor: 'pointer' }}>
+                          <DeleteTarget target={target}>
+                            <Icon name="cancel" size="large" color="red" />
+                          </DeleteTarget>
+                        </Hoverable>
+                      </div>
+                    </Accordion.Content>
+                  </div>
+                ))}
+              </Accordion>
+              <AddTarget />
               <Container text textAlign="justified">
                 <Footer />
               </Container>

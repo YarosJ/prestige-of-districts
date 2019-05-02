@@ -1,7 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import { Mutation, Query } from 'react-apollo';
 import gql from 'graphql-tag';
-import { Container, Icon, Segment, Table } from 'semantic-ui-react';
+import {
+  Container, Icon, Segment, Table,
+} from 'semantic-ui-react';
 import scrollIntoView from 'scroll-into-view';
 import ReactDOM from 'react-dom';
 import DeleteUser from './DeleteUser/index';
@@ -90,13 +92,24 @@ class UsersList extends Component {
   render() {
     const { users, limit, cursor } = this.props;
     return (
-      <Segment>
-      <Table striped>
+      <Table basic="very" style={{ padding: '5%' }}>
         <Table.Header>
           <Table.Row>
-            <Table.HeaderCell>Email</Table.HeaderCell>
-            <Table.HeaderCell>Role</Table.HeaderCell>
-            <Table.HeaderCell style={{ textAlign: 'center' }}>Delete user</Table.HeaderCell>
+            <Table.HeaderCell
+              style={{ color: '#2185d0' }}
+            >
+              Email
+            </Table.HeaderCell>
+            <Table.HeaderCell
+              style={{ color: '#2185d0' }}
+            >
+              Role
+            </Table.HeaderCell>
+            <Table.HeaderCell
+              style={{ textAlign: 'center', color: '#2185d0' }}
+            >
+              Delete user
+            </Table.HeaderCell>
           </Table.Row>
         </Table.Header>
 
@@ -106,7 +119,6 @@ class UsersList extends Component {
           ))}
         </Table.Body>
       </Table>
-      </Segment>
     );
   }
 }

@@ -44,11 +44,33 @@ const AccessControl = ({ history }) => (
         }}
         >
           <AddRole style={{
-            width: '85%', margin: 'auto', textAlign: 'center', marginBottom: '20px',
+            width: '85%',
+            margin: 'auto',
+            textAlign: 'center',
+            marginBottom: '50px',
+            display: 'flex',
+            maxWidth: '700px',
           }}
           >
-            <Input placeholder="role" style={{ marginRight: '5px' }} />
-            <Button color="green">
+            <Header
+              color="blue"
+              as="h2"
+              style={{
+                margin: 'auto',
+                marginBottom: '35px',
+                marginTop: '10px',
+              }}
+            >
+              <Icon name="pencil alternate" />
+              <Header.Content>
+                  Access control
+                <Header.Subheader>
+                    You can edit roles or create new role:
+                </Header.Subheader>
+              </Header.Content>
+            </Header>
+            <Input placeholder="role" style={{ marginRight: '5px', margin: 'auto' }} size="mini" />
+            <Button color="blue" size="mini" style={{ margin: 'auto' }}>
               Add Role
             </Button>
           </AddRole>
@@ -65,18 +87,21 @@ const AccessControl = ({ history }) => (
 );
 
 const Role = ({ role, children }) => (
-  <div style={{ width: '85%', maxWidth: '673px', margin: 'auto', marginBottom: '50px' }}>
-    <Table striped>
+  <div style={{
+    width: '85%', maxWidth: '673px', margin: 'auto', marginBottom: '50px',
+  }}
+  >
+    <Table basic="very">
       <Table.Header>
         <Table.Row>
           <Table.HeaderCell colSpan="2">
-            <Header style={{ textAlign: 'center', marginBottom: '10px' }}>
+            <Header style={{ textAlign: 'center', marginBottom: '10px', color: '#2185d0' }}>
               {role.role}
             </Header>
             <div style={{ textAlign: 'center' }}>
               <AddRoleAction role={role}>
-                <Input placeholder="logIn" style={{ marginRight: '5px' }} />
-                <Button primary color="green">
+                <Input placeholder="logIn" style={{ marginRight: '5px' }} size="mini" />
+                <Button primary color="green" size="mini">
                   Add action
                 </Button>
               </AddRoleAction>
@@ -101,7 +126,7 @@ const Role = ({ role, children }) => (
         <Table.Row>
           <Table.HeaderCell colSpan="2" style={{ textAlign: 'center' }}>
             <DeleteRole role={role}>
-              <Button icon labelPosition="left" size="small" color="red">
+              <Button icon labelPosition="left" size="mini" color="red">
                 <Icon name="user delete" />
                 Delete this role
               </Button>
