@@ -1,8 +1,8 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { Mutation, Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import {
-  Container, Icon, Segment, Table,
+  Container, Icon, Table,
 } from 'semantic-ui-react';
 import scrollIntoView from 'scroll-into-view';
 import ReactDOM from 'react-dom';

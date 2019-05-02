@@ -5,8 +5,8 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 export default class DateRange extends Component {
   state = {
     rangeValue: {
-      min: 2007,
-      max: 2015,
+      min: 2012,
+      max: 2017,
     },
   };
 
@@ -17,7 +17,7 @@ export default class DateRange extends Component {
     return (
       <InputRange
         maxValue={2019}
-        minValue={2000}
+        minValue={2010}
         formatLabel={value => `${value} th`}
         value={rangeValue}
         onChange={value => this.setState({ rangeValue: value })}

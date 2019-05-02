@@ -22,14 +22,8 @@ export default class Map extends Component {
       zoom: 14,
     },
     rangeValue: {
-      min: 2007,
-      max: 2015,
-    },
-    locRange: {
-      maxLatitude: 50,
-      minLatitude: -50,
-      maxLongitude: 50,
-      minLongitude: -50,
+      min: 2012,
+      max: 2017,
     },
     services: ['WATER', 'ELECTRO'],
   };
@@ -102,10 +96,9 @@ export default class Map extends Component {
           query={GET_FAILURE}
           variables={{
             services,
-            locRange: state.locRange,
             dateRange: {
-              maxDate: state.rangeValue.max,
-              minDate: state.rangeValue.min,
+              maxDate: rangeValue.max,
+              minDate: rangeValue.min,
             },
           }}
         >

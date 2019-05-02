@@ -7,7 +7,6 @@ import { Query } from 'react-apollo';
 import { GET_FAILURE } from '../../../constants/queries';
 import Loading from '../../Loading/index';
 import ChooseService from '../../../helpers/ChooseService';
-import DateRange from "../DateRange";
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoieWFyb3NsYXciLCJhIjoiY2pqemJmYXJ2MWpnajNwbWt3NnB4NzhwMSJ9.ahTtWLV7SgP1rLtTJYSx2A';
 
@@ -45,10 +44,6 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      rangeValue: {
-        min: 2007,
-        max: 2015,
-      },
       elevationScale: elevationScale.min,
       services: ['WATER', 'ELECTRO'],
     };
@@ -126,19 +121,13 @@ export default class App extends Component {
   }
 
   render() {
-    const { services, rangeValue } = this.state;
+    const { services } = this.state;
     const { viewState, controller = true, baseMap = true } = this.props;
 
     return (
       <Query
         query={GET_FAILURE}
-        variables={{
-          services,
-          dateRange: {
-            maxDate: rangeValue.max,
-            minDate: rangeValue.min,
-          },
-        }}
+        variables={{ services }}
       >
         {({ data, loading }) => {
           const { failures } = data;
@@ -163,17 +152,6 @@ export default class App extends Component {
                   zIndex: 10,
                 }}
               />
-              <div style={{
-                position: 'fixed',
-                left: '50%',
-                transform: 'translateX(-55%)',
-                width: '70%',
-                bottom: '70px',
-                zIndex: 500,
-              }}
-              >
-                <DateRange handleChange={value => this.setState({ rangeValue: value })} />
-              </div>
               <DeckGL
                 layers={this._renderLayers(fData)}
                 initialViewState={INITIAL_VIEW_STATE}

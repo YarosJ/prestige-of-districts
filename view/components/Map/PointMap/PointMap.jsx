@@ -10,14 +10,8 @@ import ChooseService from '../../../helpers/ChooseService';
 export default class Map extends Component {
   state = {
     rangeValue: {
-      min: 2007,
-      max: 2015,
-    },
-    locRange: {
-      maxLatitude: 50,
-      minLatitude: -50,
-      maxLongitude: 50,
-      minLongitude: -50,
+      min: 2012,
+      max: 2017,
     },
     services: ['WATER', 'ELECTRO'],
   };
@@ -26,7 +20,7 @@ export default class Map extends Component {
 
   render() {
     const { state } = this;
-    const { services, locRange, rangeValue } = state;
+    const { services, rangeValue } = state;
 
     return (
       <div style={{
@@ -61,7 +55,6 @@ export default class Map extends Component {
           query={GET_FAILURE}
           variables={{
             services,
-            locRange,
             dateRange: {
               maxDate: rangeValue.max,
               minDate: rangeValue.min,
