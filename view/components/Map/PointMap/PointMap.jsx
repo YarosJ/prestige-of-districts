@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Query } from 'react-apollo';
-import InputRange from 'react-input-range';
+import DateRange from '../DateRange';
 import { GET_FAILURE } from '../../../constants/queries';
 import Loading from '../../Loading/index';
 import 'mapbox-gl/dist/mapbox-gl.css';
@@ -55,15 +55,7 @@ export default class Map extends Component {
           zIndex: 500,
         }}
         >
-          <InputRange
-            maxValue={2019}
-            minValue={2000}
-            formatLabel={value => `${value} th`}
-            value={rangeValue}
-            onChange={value => this.setState({ rangeValue: value })}
-            onChangeComplete={() => console.log(state)}
-            interactive
-          />
+          <DateRange handleChange={value => this.setState({ rangeValue: value })} />
         </div>
         <Query
           query={GET_FAILURE}

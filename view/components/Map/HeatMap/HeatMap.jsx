@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import MapGL from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { Query } from 'react-apollo';
-import InputRange from 'react-input-range';
 import mapboxgl from 'mapbox-gl';
 import Loading from '../../Loading/index';
 import { GET_FAILURE } from '../../../constants/queries';
 import heatmapLayer from './heatmapLayer';
 import ChooseService from '../../../helpers/ChooseService';
+import DateRange from '../DateRange';
 
 const HEATMAP_SOURCE_ID = 'failures';
 const MAPBOX_TOKEN = 'pk.eyJ1IjoieWFyb3NsYXciLCJhIjoiY2pqemJmYXJ2MWpnajNwbWt3NnB4NzhwMSJ9.ahTtWLV7SgP1rLtTJYSx2A';
@@ -96,14 +96,7 @@ export default class Map extends Component {
           zIndex: 500,
         }}
         >
-          <InputRange
-            maxValue={2019}
-            minValue={2000}
-            formatLabel={value => `${value} th`}
-            value={rangeValue}
-            onChange={value => this.setState({ rangeValue: value })}
-            onChangeComplete={() => console.log(this.state)}
-          />
+          <DateRange handleChange={value => this.setState({ rangeValue: value })} />
         </div>
         <Query
           query={GET_FAILURE}
