@@ -10,7 +10,7 @@ const renderLabel = label => ({
   icon: 'check',
 });
 
-export default ({ handleChange, value, style }) => (
+export default ({ handleChange, value, style, multiple }) => (
   <Query
     query={GET_SERVICES}
   >
@@ -29,7 +29,7 @@ export default ({ handleChange, value, style }) => (
           placeholder="Choose an option"
           selection
           compact
-          multiple
+          multiple={!!multiple}
           value={value}
           renderLabel={renderLabel}
         />

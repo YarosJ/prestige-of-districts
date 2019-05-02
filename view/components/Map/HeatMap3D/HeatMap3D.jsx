@@ -45,7 +45,7 @@ export default class App extends Component {
     super(props);
     this.state = {
       elevationScale: elevationScale.min,
-      services: [],
+      services: ['WATER', 'ELECTRO'],
     };
 
     this.startAnimationTimer = null;
@@ -143,6 +143,7 @@ export default class App extends Component {
           return (
             <div>
               <ChooseService
+                multiple
                 handleChange={this.handleServiceChange}
                 value={services}
                 style={{
@@ -162,7 +163,7 @@ export default class App extends Component {
                 {baseMap && (
                 <StaticMap
                   reuseMaps
-                  mapStyle="mapbox://styles/yaroslaw/cjty6msts01ey1go6qwtd0zf0"
+                  mapStyle="mapbox://styles/mapbox/navigation-preview-day-v4"
                   preventStyleDiffing
                   mapboxApiAccessToken={MAPBOX_TOKEN}
                 />

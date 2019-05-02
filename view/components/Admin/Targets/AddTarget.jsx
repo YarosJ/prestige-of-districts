@@ -6,12 +6,14 @@ import {
 } from 'semantic-ui-react';
 import Modal from '../../../helpers/Modal';
 import AddTags from './Tags/AddTags';
+import ChooseService from '../../../helpers/ChooseService';
 
 class AddTarget extends Component {
   state = {
     URL: '',
     city: '',
     country: '',
+    service: '',
     interval: 30000,
     addingTags: false,
   };
@@ -27,9 +29,11 @@ class AddTarget extends Component {
     this.setState({ [name]: value });
   };
 
+  handleServiceChange = (e, { value }) => this.setState({ service: value });
+
   action = () => {
     const {
-      addingTags, interval, country, city, URL,
+      addingTags, interval, country, service, city, URL,
     } = this.state;
 
     if (addingTags) {
@@ -46,8 +50,10 @@ class AddTarget extends Component {
         nextAction={this.goAddTags}
         city={city}
         country={country}
+        service={service}
         interval={interval}
         URL={URL}
+        handleServiceChange={this.handleServiceChange}
         onChange={this.onChange}
       />
     );
@@ -58,6 +64,8 @@ class AddTarget extends Component {
       <Modal
         header="Adding Target"
         buttonContent="Add New"
+        buttonSize="medium"
+        buttonColor="blue"
         initiateClose={close => this.closeModal = close}
         style={{ textAlign: 'center' }}
       >
@@ -68,7 +76,7 @@ class AddTarget extends Component {
 }
 
 const Basics = ({
-  nextAction, onChange, URL, city, country, interval,
+  nextAction, onChange, handleServiceChange, URL, city, country, service, interval,
 }) => (
   <Form>
     <Form.Field>
@@ -97,6 +105,13 @@ const Basics = ({
         value={country}
         onChange={onChange}
         placeholder="Ukraine"
+      />
+    </Form.Field>
+    <Form.Field>
+      <label>Service</label>
+      <ChooseService
+        handleChange={handleServiceChange}
+        value={service}
       />
     </Form.Field>
     <Form.Field>

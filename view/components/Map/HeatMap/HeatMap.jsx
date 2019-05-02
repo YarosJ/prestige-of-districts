@@ -76,6 +76,7 @@ export default class Map extends Component {
       }}
       >
         <ChooseService
+          multiple
           handleChange={this.handleServiceChange}
           value={services}
           style={{

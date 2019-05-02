@@ -55,7 +55,7 @@ class Targets extends Component {
               height: '100%',
               width: '100%',
               overflow: 'auto',
-              paddingTop: '40px',
+              padding: '40px',
             }}
             >
               <Accordion>

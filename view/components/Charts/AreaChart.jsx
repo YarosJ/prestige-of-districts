@@ -44,8 +44,8 @@ export default class AreaChartComponent extends PureComponent {
                 <Brush style={{ marginTop: '50px' }} />
                 <defs>
                   <linearGradient id="splitColor" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset={offset} stopColor="green" stopOpacity={1} />
                     <stop offset={offset} stopColor="red" stopOpacity={1} />
+                    <stop offset={offset} stopColor="green" stopOpacity={1} />
                   </linearGradient>
                 </defs>
                 <Area type="monotone" dataKey="uv" stroke="#000" fill="url(#splitColor)" />

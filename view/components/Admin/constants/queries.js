@@ -24,8 +24,8 @@ export const GET_TARGETS = gql`
 `;
 
 export const ADD_TARGET = gql`
-    mutation($URL: String!, $tagPaths: [String], $freq: Int, $city: String, $country: String) {
-        addTarget(URL: $URL, tagPaths: $tagPaths, freq: $freq, city: $city, country: $country) {
+    mutation($URL: String!, $tagPaths: [String], $freq: Int, $city: String, $country: String, $service: String!) {
+        addTarget(URL: $URL, tagPaths: $tagPaths, freq: $freq, city: $city, country: $country, service: $service) {
           id
           URL
           tagPaths

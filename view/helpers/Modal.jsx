@@ -21,7 +21,7 @@ class Add extends Component {
   render() {
     const { open } = this.state;
     const {
-      header, children, buttonContent, buttonSize, initiateClose, activateContent, style, windowStyle,
+      header, children, buttonContent, buttonSize, buttonColor, initiateClose, activateContent, style, windowStyle,
     } = this.props;
     if (initiateClose) initiateClose(this.handleClose);
 
@@ -49,7 +49,8 @@ class Add extends Component {
           : (
             <Button
               content={buttonContent}
-              size={buttonSize || "tiny"}
+              color={buttonColor}
+              size={buttonSize || 'tiny'}
               compact
               style={{ marginTop: '15px', marginBottom: '20px' }}
               onClick={this.handleOpen}

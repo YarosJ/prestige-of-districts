@@ -44,7 +44,7 @@ class AddTags extends Component {
     const { fields, gettingSelector, editKey } = this.state;
     const { closeModal, properties, goBasics } = this.props;
     const {
-      city, country, URL, interval,
+      city, country, URL, interval, service
     } = properties;
 
     if (gettingSelector) {
@@ -64,6 +64,7 @@ class AddTags extends Component {
           city,
           country,
           URL,
+          service,
           freq: interval,
           tagPaths: fields,
         }}

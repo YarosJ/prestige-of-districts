@@ -2,7 +2,7 @@
 import React from 'react';
 import { Query } from 'react-apollo';
 import {
-  Divider, Container, Segment, Label, Icon, Header,
+  Divider, Container, Label, Icon, Header,
 } from 'semantic-ui-react';
 import { GET_FAILURE } from '../../constants/queries';
 import Loading from '../Loading/index';
@@ -56,6 +56,7 @@ class Messages extends React.Component {
                   </Header.Content>
                 </Header>
                 <ChooseService
+                  multiple
                   handleChange={this.handleServiceChange}
                   value={services}
                   style={{
