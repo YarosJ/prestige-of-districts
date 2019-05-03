@@ -7,7 +7,11 @@ export default {
   Query: {
     async selector(parent, { URL, x, y }) {
       const result = {
-        resultSelector: await getSelector(URL, [x, y], true),
+        resultSelector: await getSelector({
+          site: URL,
+          coordinates: [x, y],
+          docker: true,
+        }),
         URL,
       };
       pubSub.publish('SELECTOR_RECEIVED', { selectorReceived: result });

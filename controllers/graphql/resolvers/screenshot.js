@@ -6,7 +6,7 @@ const pubSub = new PubSub();
 export default {
   Query: {
     async screenshot(parent, { URL }) {
-      const result = { resultData: await makeScreenshot(URL, true), URL };
+      const result = { resultData: await makeScreenshot({ site: URL, docker: true }), URL };
       pubSub.publish('SCREENSHOT_RECEIVED', { screenshotReceived: result });
       return result;
     },
