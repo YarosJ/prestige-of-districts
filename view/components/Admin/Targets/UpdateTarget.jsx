@@ -75,7 +75,7 @@ class UpdateTarget extends Component {
                   placeholder="30000"
                 />
               </Form.Field>
-              <Button icon labelPosition="right" onClick={updateTarget}>
+              <Button primary onClick={updateTarget}>
                 Submit
               </Button>
             </Form>

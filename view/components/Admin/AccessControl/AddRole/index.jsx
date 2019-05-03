@@ -21,6 +21,22 @@ const GET_ROLES = gql`
   }
 `;
 
+const findInputNode = (target) => {
+  let input = null;
+
+  target.childNodes.forEach((n) => {
+    if (!n || input) return null;
+    if (n.nodeName === 'INPUT') {
+      input = n;
+      return null;
+    }
+    if (n.childNodes) input = findInputNode(n);
+    return null;
+  });
+
+  return input;
+};
+
 class AddRole extends Component {
   constructor(props) {
     super(props);
@@ -31,8 +47,7 @@ class AddRole extends Component {
     this.submitAdd = async (e, addRole) => {
       const { target, currentTarget } = e;
       if (target.nodeName === 'BUTTON') {
-        console.log(currentTarget.childNodes[0].value);
-        await this.setState({ role: currentTarget.childNodes[0].value });
+        await this.setState({ role: findInputNode(currentTarget).value });
         addRole();
       }
     };
