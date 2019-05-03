@@ -37,8 +37,10 @@ class AddTarget extends Component {
     } = this.state;
 
     if (addingTags) {
+      const { apolloClient } = this.props;
       return (
         <AddTags
+          apolloClient={apolloClient}
           properties={this.state}
           goBasics={this.goBasics}
           closeModal={this.closeModal}

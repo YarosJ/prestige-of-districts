@@ -22,7 +22,7 @@ class App extends React.Component {
   };
 
   render() {
-    const { refetch, location } = this.props;
+    const { refetch, location, apolloClient } = this.props;
     return (
       <Router history={history}>
         <div style={{
@@ -101,7 +101,13 @@ class App extends React.Component {
             <Route
               exact
               path={routes.TARGETS}
-              component={() => <Targets history={history} refetch={refetch} />}
+              component={() => (
+                <Targets
+                  history={history}
+                  apolloClient={apolloClient}
+                  refetch={refetch}
+                />
+              )}
             />
           </div>
         </div>

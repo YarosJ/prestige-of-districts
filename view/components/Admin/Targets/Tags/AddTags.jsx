@@ -1,16 +1,17 @@
+/* global document */
+
 import React, { Component } from 'react';
 import {
   Button, Icon, Form,
 } from 'semantic-ui-react';
 import { Mutation } from 'react-apollo';
+import ReactDOM from 'react-dom';
 import { ADD_TARGET, GET_TARGETS } from '../../constants/queries';
 import GetSelector from './GetSelector';
 
 class AddTags extends Component {
   state = {
     fields: ['TAG>PATH'],
-    gettingSelector: false,
-    editKey: 0,
   };
 
   onChange = (event, key) => {
@@ -35,27 +36,29 @@ class AddTags extends Component {
   onGetSelector = (selector, editKey) => {
     const { fields } = this.state;
     fields[editKey] = selector;
-    this.setState({ gettingSelector: false, fields });
+    this.setState({ fields });
   };
 
-  goGetSelectorFor = editKey => this.setState({ gettingSelector: true, editKey });
+  goGetSelectorFor = (editKey, URL) => {
+    const { apolloClient } = this.props;
+
+    ReactDOM.render(
+      <GetSelector
+        apolloClient={apolloClient}
+        URL={URL}
+        editKey={editKey}
+        onGetSelector={this.onGetSelector}
+      />,
+      document.getElementById('screenshot'),
+    );
+  };
 
   render() {
-    const { fields, gettingSelector, editKey } = this.state;
+    const { fields } = this.state;
     const { closeModal, properties, goBasics } = this.props;
     const {
       city, country, URL, interval, service
     } = properties;
-
-    if (gettingSelector) {
-      return (
-        <GetSelector
-          URL={URL}
-          editKey={editKey}
-          onGetSelector={this.onGetSelector}
-        />
-      );
-    }
 
     return (
       <Mutation
@@ -95,7 +98,7 @@ class AddTags extends Component {
                   <Button
                     style={{ marginLeft: '5px' }}
                     icon="hand point up"
-                    onClick={() => this.goGetSelectorFor(key)}
+                    onClick={() => this.goGetSelectorFor(key, URL)}
                   />
                 </Form.Input>
               </Form.Field>

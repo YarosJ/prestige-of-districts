@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Query } from 'react-apollo';
 import {
-  Icon, Accordion, Segment, List, Container,
+  Icon, Accordion, List, Container,
 } from 'semantic-ui-react';
 import posed from 'react-pose';
 import AddTarget from './AddTarget';
@@ -42,13 +42,15 @@ class Targets extends Component {
         query={GET_TARGETS}
       >
         {({
-          data, loading, error, fetchMore, subscribeToMore,
+          data, loading, error,
         }) => {
           const { targets } = data;
           if (loading || !targets) {
             return <Loading />;
           }
+
           const { activeIndex } = this.state;
+          const { apolloClient } = this.props;
 
           return (
             <div style={{
@@ -99,7 +101,7 @@ class Targets extends Component {
                   </div>
                 ))}
               </Accordion>
-              <AddTarget />
+              <AddTarget apolloClient={apolloClient} />
               <Container text textAlign="justified">
                 <Footer />
               </Container>
