@@ -1,4 +1,3 @@
 {
-  "presets": ["@babel/preset-env"],
-  "plugins": ["emotion"]
+  "presets": ["@babel/preset-env"]
 }

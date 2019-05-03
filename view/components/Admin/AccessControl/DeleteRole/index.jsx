@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import ErrorMessage from '../../../Error/index';
+import confirmDialog from '../../../../helpers/confirmDialog';
 
 const DELETE_ROLE = gql`
   mutation($role: String!) {
@@ -39,7 +40,7 @@ class DeleteRole extends Component {
         update={
           (proxy, { data: { deleteRole } }) => {
             const data = proxy.readQuery({ query: GET_ROLES });
-            data.roles = data.roles.filter((role) => role.role !== deleteRole.role);
+            data.roles = data.roles.filter(role => role.role !== deleteRole.role);
             proxy.writeQuery({
               query: GET_ROLES,
               data,
@@ -47,8 +48,11 @@ class DeleteRole extends Component {
           }
         }
       >
-        {(deleteRole, { data, loading, error }) => (
-          <div onClick={deleteRole}>
+        {(deleteRole, { error }) => (
+          <div onClick={async () => {
+            await confirmDialog({ action: 'role', onConfirm: deleteRole });
+          }}
+          >
             { this.props.children }
             { error && <ErrorMessage error={error} /> }
           </div>

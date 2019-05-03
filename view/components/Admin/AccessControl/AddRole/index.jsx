@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
+import Swal from 'sweetalert2';
 import ErrorMessage from '../../../Error/index';
 
 const ADD_ROLE = gql`
@@ -48,7 +49,13 @@ class AddRole extends Component {
       const { target, currentTarget } = e;
       if (target.nodeName === 'BUTTON') {
         await this.setState({ role: findInputNode(currentTarget).value });
-        addRole();
+        await addRole();
+        await Swal.fire({
+          type: 'success',
+          title: 'New role has been added',
+          showConfirmButton: false,
+          timer: 1000,
+        });
       }
     };
   }

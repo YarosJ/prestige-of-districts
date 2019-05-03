@@ -2,6 +2,8 @@ import React from 'react';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import { GET_USERS } from '../../constants/queries';
+import confirmDialog from '../../../../helpers/confirmDialog';
+import ErrorMessage from '../../../Error';
 
 const DELETE_USER = gql`
   mutation($id: ID!) {
@@ -31,9 +33,12 @@ const UserDelete = ({ user, limit, cursor, children }) => (
       });
     }}
   >
-    {(deleteUser, { data, loading, error }) => (
-      <div onClick={deleteUser}>
+    {(deleteUser, { error }) => (
+      <div onClick={async () => {
+        await confirmDialog({ action: 'user', onConfirm: deleteUser });
+      }}>
         {children}
+        { error && <ErrorMessage error={error} /> }
       </div>
     )}
   </Mutation>
