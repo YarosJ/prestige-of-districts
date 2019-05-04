@@ -28,12 +28,13 @@ const AccessControl = ({ history }) => (
     {({
       data, loading, error,
     }) => {
+      checkPermission({ history, redirect: true });
+
       const { roles } = data;
+
       if (loading || !roles) {
         return <Loading />;
       }
-
-      checkPermission({ history, redirect: true });
 
       return (
         <div style={{
