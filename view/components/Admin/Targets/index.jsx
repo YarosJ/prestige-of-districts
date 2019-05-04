@@ -10,7 +10,7 @@ import EditTags from './Tags/EditTags';
 import DeleteTarget from './DeleteTarget';
 import Loading from '../../Loading/index';
 import { GET_TARGETS } from '../constants/queries';
-import checkPermission from '../helpers/checkPermission';
+import checkPermission from '../../../helpers/checkPermission';
 import Footer from '../../Footer/index';
 
 const Hoverable = posed.div({
@@ -35,7 +35,7 @@ class Targets extends Component {
   render() {
     const { history } = this.props;
 
-    // checkPermission(history);
+    checkPermission({ history, redirect: true });
 
     return (
       <Query

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 import Maps from './Map/index';
 import Charts from './Charts/index';
 import Messages from './Messages/index';
@@ -13,6 +13,7 @@ import Access from './Admin/AccessControl/index';
 import history from '../constants/history';
 import * as routes from '../constants/routes';
 import Navigation from './Navigation/index';
+import Terminal from './Error/Terminal';
 
 class App extends React.Component {
   navRef = React.createRef();
@@ -41,74 +42,98 @@ class App extends React.Component {
           >
 
             {/* App routes: */}
+            <Switch>
+              <Route
+                exact
+                path={routes.LANDING}
+                component={() => (
+                  <Maps history={history} />
+                )}
+              />
+              <Route
+                exact
+                path={routes.CHARTS}
+                component={() => (
+                  <Charts history={history} />
+                )}
+              />
+              <Route
+                exact
+                path={routes.MESSAGES}
+                component={() => (
+                  <Messages history={history} />
+                )}
+              />
+              <Route
+                exact
+                path={routes.FAILURES}
+                component={() => (
+                  <Failures history={history} />
+                )}
+              />
+              <Route
+                exact
+                path={routes.PROFILE}
+                component={Profile}
+              />
+              <Route
+                exact
+                path={routes.SIGN_UP}
+                component={() => <SignUpPage refetch={refetch} />}
+              />
+              <Route
+                exact
+                path={routes.SIGN_IN}
+                component={() => <SignInPage refetch={refetch} />}
+              />
 
-            <Route
-              exact
-              path={routes.LANDING}
-              component={() => (
-                <Maps history={history} />
-              )}
-            />
-            <Route
-              exact
-              path={routes.CHARTS}
-              component={() => (
-                <Charts history={history} />
-              )}
-            />
-            <Route
-              exact
-              path={routes.MESSAGES}
-              component={() => (
-                <Messages history={history} />
-              )}
-            />
-            <Route
-              exact
-              path={routes.FAILURES}
-              component={() => (
-                <Failures history={history} />
-              )}
-            />
-            <Route
-              exact
-              path={routes.PROFILE}
-              component={Profile}
-            />
-            <Route
-              exact
-              path={routes.SIGN_UP}
-              component={() => <SignUpPage refetch={refetch} />}
-            />
-            <Route
-              exact
-              path={routes.SIGN_IN}
-              component={() => <SignInPage refetch={refetch} />}
-            />
+              {/* Admin panel routes: */}
 
-            {/* Admin panel routes: */}
+              <Route
+                exact
+                path={routes.USERS}
+                component={() => <Users history={history} refetch={refetch} />}
+              />
+              <Route
+                exact
+                path={routes.ACCESS_CONTROL}
+                component={() => <Access history={history} refetch={refetch} />}
+              />
+              <Route
+                exact
+                path={routes.TARGETS}
+                component={() => (
+                  <Targets
+                    history={history}
+                    apolloClient={apolloClient}
+                    refetch={refetch}
+                  />
+                )}
+              />
 
-            <Route
-              exact
-              path={routes.USERS}
-              component={() => <Users history={history} refetch={refetch} />}
-            />
-            <Route
-              exact
-              path={routes.ACCESS_CONTROL}
-              component={() => <Access history={history} refetch={refetch} />}
-            />
-            <Route
-              exact
-              path={routes.TARGETS}
-              component={() => (
-                <Targets
-                  history={history}
-                  apolloClient={apolloClient}
-                  refetch={refetch}
+              {/* Handle 403 */}
+
+              <Route
+                exact
+                path={routes.FORBIDDEN}
+                component={() => (
+                  <Terminal
+                    code={403}
+                    message="Access denied 403!"
+                  />
+                )}
+              />
+
+              {/* Handle 404 */}
+
+              <Route component={() => (
+                <Terminal
+                  code={404}
+                  message="Page not found 404!"
                 />
               )}
-            />
+              />
+            </Switch>
           </div>
         </div>
       </Router>

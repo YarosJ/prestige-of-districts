@@ -10,7 +10,7 @@ import DeleteUser from './DeleteUser/index';
 import SelectRole from './SelectRole/index';
 import Loading from '../../Loading/index';
 import { GET_USERS } from '../constants/queries';
-import checkPermission from '../helpers/checkPermission';
+import checkPermission from '../../../helpers/checkPermission';
 import pagination, { changePagination } from '../../../helpers/pagination';
 import Pagination from '../helpers/Pagination';
 import Footer from '../../Footer/index';
@@ -45,7 +45,7 @@ class Users extends Component {
     const { cursor, limit } = this.state;
     const { history } = this.props;
 
-    // checkPermission(history);
+    checkPermission({ history, redirect: true });
 
     return (
       <Query

@@ -9,7 +9,7 @@ import AddRole from './AddRole/index';
 import DeleteRole from './DeleteRole/index';
 import AddRoleAction from './AddRoleAction/index';
 import DeleteRoleAction from './DeleteRoleAction/index';
-import checkPermission from '../helpers/checkPermission';
+import checkPermission from '../../../helpers/checkPermission';
 import Footer from '../../Footer/index';
 
 const GET_ROLES = gql`
@@ -33,7 +33,7 @@ const AccessControl = ({ history }) => (
         return <Loading />;
       }
 
-      // checkPermission(history);
+      checkPermission({ history, redirect: true });
 
       return (
         <div style={{

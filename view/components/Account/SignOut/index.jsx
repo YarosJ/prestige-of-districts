@@ -1,3 +1,5 @@
+/* global localStorage */
+
 import React from 'react';
 import { ApolloConsumer } from 'react-apollo';
 import PropTypes from 'prop-types';
@@ -9,7 +11,7 @@ const signOut = async (client) => {
   localStorage.setItem('refreshToken', '');
   localStorage.setItem('role', '');
   await localStorage.setItem('uId', '');
-  client.resetStore();
+  await client.clearStore();
   history.push(routes.LANDING);
 };
 

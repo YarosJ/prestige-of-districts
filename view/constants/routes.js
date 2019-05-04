@@ -17,3 +17,9 @@ export const FAILURES = '/failures';
 export const USERS = '/users';
 export const ACCESS_CONTROL = '/access';
 export const TARGETS = '/targets';
+
+/**
+ * Admin panel routes
+ * @type {string}
+ */
+export const FORBIDDEN = '/403';
