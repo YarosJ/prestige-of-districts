@@ -7,3 +7,13 @@ package-lock.json
 node_modules
 tests
 PdGraphDoc
+view/package.json
+view/.babelrc
+view/.eslintrc.json
+view/components
+view/config.json
+view/constants
+view/helpers
+view/index.jsx
+view/webpack.config.js
+view/webpack.prod.js

@@ -5,7 +5,9 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 export default class DateRange extends Component {
   state = {
     rangeValue: {
+      // eslint-disable-next-line react/destructuring-assignment
       min: this.props.initMin || 2012,
+      // eslint-disable-next-line react/destructuring-assignment
       max: this.props.initMax || new Date().getFullYear(),
     },
   };
