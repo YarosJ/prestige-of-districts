@@ -1,3 +1,5 @@
+/* global localStorage */
+
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { Mutation } from 'react-apollo';
@@ -39,10 +41,10 @@ class SignInPage extends Component {
     const { history } = this.props;
     signIn().then(async ({ data }) => {
       await this.setState({ ...INITIAL_STATE });
-      localStorage.setItem('accessToken', data.signIn.accessToken);
-      localStorage.setItem('refreshToken', data.signIn.refreshToken);
-      localStorage.setItem('uId', data.signIn.user.id);
-      localStorage.setItem('role', data.signIn.user.role);
+      await localStorage.setItem('accessToken', data.signIn.accessToken);
+      await localStorage.setItem('refreshToken', data.signIn.refreshToken);
+      await localStorage.setItem('uId', data.signIn.user.id);
+      await localStorage.setItem('role', data.signIn.user.role);
       history.push(routes.LANDING);
     });
 

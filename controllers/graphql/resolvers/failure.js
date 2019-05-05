@@ -3,6 +3,7 @@ import { PubSub } from 'apollo-server-express';
 import geocodeLocations from '../../../helpers/geolocation/geocodeLocations';
 import validate from '../../../helpers/graphQL/validateInput';
 import ISODate from '../../../helpers/ISODate';
+import dateQueryFromRange from './partials/dateQueryFromRange';
 import '../../../models/Failure';
 
 const FailureModel = mongoose.model('Failure');
@@ -11,12 +12,12 @@ const pubSub = new PubSub();
 export default {
   Query: {
     async failures(parent, {
-      latitude, longitude, services, failureType, date, locRange, locType, dateRange,
+      latitude, longitude, services, failureType, locRange, locType, dateRange,
     }) {
-      const dateISO = date ? new Date(date).toISOString() : { $type: 'date' };
+      const happenedAt = dateQueryFromRange(dateRange);
       if (!locRange) {
         return FailureModel.find({
-          happenedAt: dateISO,
+          happenedAt,
           service: validate(services ? { $in: services } : null),
           failureType: validate(failureType),
           'locations.latitude': latitude || { $type: 'number' },
@@ -28,7 +29,7 @@ export default {
         maxLatitude, minLatitude, maxLongitude, minLongitude,
       } = locRange;
       return FailureModel.find({
-        happenedAt: dateISO,
+        happenedAt,
         service: validate(services ? { $in: services } : null),
         failureType: validate(failureType),
         'locations.latitude': { $lte: maxLatitude, $gte: minLatitude },

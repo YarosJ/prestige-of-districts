@@ -21,13 +21,13 @@ const UserModel = mongoose.model('User');
 const roles = [
   {
     role: 'guest',
-    actions: ['signIn', 'signUp', 'refreshToken', 'messages', 'failures', 'services', '__schema'],
+    actions: ['signIn', 'signUp', 'refreshToken', 'messages', 'failures', 'services', '__schema', 'total'],
   },
   {
     role: 'user',
     actions:
       [
-        'signIn', 'signUp', 'refreshToken', 'messages', 'failures', 'user', 'services', '__schema',
+        'signIn', 'signUp', 'refreshToken', 'messages', 'failures', 'user', 'services', '__schema', 'total',
         'logOut', 'addFailure', 'removeFailure', 'addMessage', 'removeMessage',
       ],
   },
@@ -35,18 +35,18 @@ const roles = [
     role: 'admin',
     actions:
       [
-        'signIn', 'signUp', 'refreshToken', 'messages', 'failures', 'user', 'services', '__schema',
+        'signIn', 'signUp', 'refreshToken', 'messages', 'failures', 'user', 'services', '__schema', 'total',
         'logOut', 'addFailure', 'removeFailure', 'addMessage', 'removeMessage',
-        'tags', 'addTarget', 'removeTarget', 'updateTarget', 'users',
+        'tags', 'targets', 'addTarget', 'removeTarget', 'updateTarget', 'users',
       ],
   },
   {
     role: 'superAdmin',
     actions:
       [
-        'signIn', 'signUp', 'refreshToken', 'messages', 'failures', 'user', 'services', '__schema',
+        'signIn', 'signUp', 'refreshToken', 'messages', 'failures', 'user', 'services', '__schema', 'total',
         'logOut', 'addFailure', 'removeFailure', 'addMessage', 'removeMessage',
-        'tags', 'addTarget', 'removeTarget', 'updateTarget', 'users',
+        'tags', 'targets', 'addTarget', 'removeTarget', 'updateTarget', 'users',
         'roles', 'actions', 'addRole', 'addAction', 'deleteRole', 'deleteAction', 'updateUser', 'deleteUser',
       ],
   },

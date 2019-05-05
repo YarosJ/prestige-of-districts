@@ -3,6 +3,7 @@ import { PubSub } from 'apollo-server-express';
 import geocodeLocations from '../../../helpers/geolocation/geocodeLocations';
 import validate from '../../../helpers/graphQL/validateInput';
 import ISODate from '../../../helpers/ISODate';
+import dateQueryFromRange from './partials/dateQueryFromRange';
 import '../../../models/Message';
 
 const MessageModel = mongoose.model('Message');
@@ -11,12 +12,12 @@ const pubSub = new PubSub();
 export default {
   Query: {
     async messages(parent, {
-      latitude, longitude, service, date, locRange, locType,
+      latitude, longitude, service, locRange, locType, dateRange,
     }) {
-      const dateISO = date ? new Date(date).toISOString() : { $type: 'date' };
+      const happenedAt = dateQueryFromRange(dateRange);
       if (!locRange) {
         return MessageModel.find({
-          happenedAt: dateISO,
+          happenedAt,
           service: validate(service),
           'locations.latitude': latitude || { $type: 'number' },
           'locations.longitude': longitude || { $type: 'number' },
@@ -27,7 +28,7 @@ export default {
         maxLatitude, minLatitude, maxLongitude, minLongitude,
       } = locRange;
       return MessageModel.find({
-        happenedAt: dateISO,
+        happenedAt,
         service: validate(service),
         'locations.latitude': { $lte: maxLatitude, $gte: minLatitude },
         'locations.longitude': { $lte: maxLongitude, $gte: minLongitude },

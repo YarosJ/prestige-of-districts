@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import MapGL from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { Query } from 'react-apollo';
+import moment from 'moment';
 import mapboxgl from 'mapbox-gl';
 import Loading from '../../Loading/index';
-import { GET_FAILURE } from '../../../constants/queries';
+import { GET_FAILURES } from '../../../constants/queries';
 import heatmapLayer from './heatmapLayer';
 import ChooseService from '../../../helpers/ChooseService';
 import DateRange from '../DateRange';
@@ -93,11 +94,13 @@ export default class Map extends Component {
           <DateRange handleChange={value => this.setState({ rangeValue: value })} />
         </div>
         <Query
-          query={GET_FAILURE}
+          query={GET_FAILURES}
           variables={{
             services,
             dateRange: {
-              maxDate: rangeValue.max,
+              maxDate: moment([rangeValue.max])
+                .add(1, 'year')
+                .subtract(1, 'days'),
               minDate: rangeValue.min,
             },
           }}

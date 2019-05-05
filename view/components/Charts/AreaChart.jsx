@@ -3,7 +3,7 @@ import {
   AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Brush,
 } from 'recharts';
 import { Query } from 'react-apollo';
-import { GET_FAILURE } from '../../constants/queries';
+import { GET_FAILURES } from '../../constants/queries';
 import Loading from '../Loading';
 
 const offset = 0.5;
@@ -12,7 +12,7 @@ export default class AreaChartComponent extends PureComponent {
   render() {
     const { services } = this.props;
     return (
-      <Query query={GET_FAILURE} variables={{ services }}>
+      <Query query={GET_FAILURES} variables={{ services }}>
         {({ loading, error, data }) => {
           const { failures } = data;
 

@@ -7,9 +7,9 @@ import * as routes from '../../../constants/routes';
 import history from '../../../constants/history';
 
 const signOut = async (client) => {
-  localStorage.setItem('accessToken', '');
-  localStorage.setItem('refreshToken', '');
-  localStorage.setItem('role', '');
+  await localStorage.setItem('accessToken', '');
+  await localStorage.setItem('refreshToken', '');
+  await localStorage.setItem('role', '');
   await localStorage.setItem('uId', '');
   await client.clearStore();
   history.push(routes.LANDING);

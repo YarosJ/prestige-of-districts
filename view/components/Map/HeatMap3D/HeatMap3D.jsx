@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { StaticMap } from 'react-map-gl';
 import DeckGL, { HexagonLayer } from 'deck.gl';
 import { Query } from 'react-apollo';
-import { GET_FAILURE } from '../../../constants/queries';
+import { GET_FAILURES } from '../../../constants/queries';
 import Loading from '../../Loading/index';
 import ChooseService from '../../../helpers/ChooseService';
 
@@ -126,7 +126,7 @@ export default class App extends Component {
 
     return (
       <Query
-        query={GET_FAILURE}
+        query={GET_FAILURES}
         variables={{ services }}
       >
         {({ data, loading }) => {

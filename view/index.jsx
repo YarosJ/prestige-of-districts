@@ -1,4 +1,4 @@
-/* global document */
+/* global document, localStorage */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ApolloProvider } from 'react-apollo';
@@ -7,7 +7,6 @@ import { getMainDefinition } from 'apollo-utilities';
 import { ApolloLink, split, execute } from 'apollo-link';
 import { setContext } from 'apollo-link-context';
 import { HttpLink } from 'apollo-link-http';
-// import { WebSocketLink } from 'apollo-link-ws';
 import { onError } from 'apollo-link-error';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import gql from 'graphql-tag';
@@ -23,13 +22,6 @@ const uploadLink = createUploadLink({
 const httpLink = new HttpLink({
   uri: 'http://localhost:5000/graphql',
 });
-
-// const wsLink = new WebSocketLink({
-//   uri: 'ws://localhost:5000/graphql',
-//   options: {
-//     reconnect: true,
-//   },
-// });
 
 const terminatingLink = split(
   ({ query }) => {
@@ -62,12 +54,13 @@ const authLink = setContext((_, { headers }) => {
 const errorLink = onError(({ graphQLErrors, networkError }) => {
   if (graphQLErrors) {
     graphQLErrors.forEach(({ message }) => {
+      let operation;
       switch (message) {
         case 'NOT_AUTHENTICATED':
           signOut(client);
           break;
         case 'Context creation failed: TokenExpiredError: jwt expired':
-          const operation = {
+          operation = {
             query: gql`
             mutation($refreshToken: String!) {
               refreshToken(refreshToken: $refreshToken) {
@@ -97,7 +90,7 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
     }
   }
 });
-4
+
 const client = new ApolloClient({
   link: ApolloLink.from([authLink, errorLink, terminatingLink]),
   cache: new InMemoryCache(),

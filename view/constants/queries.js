@@ -5,7 +5,15 @@ export const GET_USER = gql`
     user(id: $id) {
       id
       email
+      role
+      createdAt
     }
+  }
+`;
+
+export const GET_SERVICES = gql`
+  query {
+    services
   }
 `;
 
@@ -17,9 +25,9 @@ export const GET_TOTAL = gql`
   }
 `;
 
-export const GET_FAILURE = gql`
-      query($latitude: Float, $longitude: Float, $date: String, $locRange: LocRangeInput, $dateRange: DateRangeInput, $services: [String]) {
-          failures(latitude: $latitude, longitude: $longitude, date: $date, locRange: $locRange, dateRange: $dateRange, services: $services) {
+export const GET_FAILURES = gql`
+      query($latitude: Float, $longitude: Float, $locRange: LocRangeInput, $dateRange: DateRangeInput, $services: [String]) {
+          failures(latitude: $latitude, longitude: $longitude, locRange: $locRange, dateRange: $dateRange, services: $services) {
               id
               failureType
               service
@@ -36,8 +44,8 @@ export const GET_FAILURE = gql`
   `;
 
 export const GET_MESSAGES = gql`
-      query($latitude: Float, $longitude: Float, $date: String, $locRange: LocRangeInput, $dateRange: DateRangeInput) {
-          messages(latitude: $latitude, longitude: $longitude, date: $date, locRange: $locRange, dateRange: $dateRange) {
+      query($latitude: Float, $longitude: Float, $locRange: LocRangeInput, $dateRange: DateRangeInput) {
+          messages(latitude: $latitude, longitude: $longitude, locRange: $locRange, dateRange: $dateRange) {
               id
               service
               text
@@ -51,9 +59,3 @@ export const GET_MESSAGES = gql`
           }
       }
   `;
-
-export const GET_SERVICES = gql`
-  query {
-    services
-  }
-`;

@@ -1,10 +1,11 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 import { Query } from 'react-apollo';
+import moment from 'moment';
 import {
   Divider, Container, Label, Icon, Header,
 } from 'semantic-ui-react';
-import { GET_FAILURE } from '../../constants/queries';
+import { GET_FAILURES } from '../../constants/queries';
 import Loading from '../Loading/index';
 import Footer from '../Footer/index';
 import ChooseService from '../../helpers/ChooseService';
@@ -18,7 +19,16 @@ class Messages extends React.Component {
     const { services } = this.state;
 
     return (
-      <Query query={GET_FAILURE} variables={{ services }}>
+      <Query
+        query={GET_FAILURES}
+        variables={{
+          services,
+          dateRange: {
+            maxDate: moment(),
+            minDate: moment().subtract(1, 'months'),
+          },
+        }}
+      >
         {({ data, loading }) => {
           const { failures } = data;
           if (loading || !failures) {
