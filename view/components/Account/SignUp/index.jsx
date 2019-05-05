@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Grid, Header, Icon, Image, Segment,
+  Grid, Header, Image, Segment,
 } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import SignUpForm from './SignUpForm';

@@ -5,12 +5,11 @@ import moment from 'moment';
 import {
   Container, Divider, Header, Icon, Label,
 } from 'semantic-ui-react';
-import PropTypes from 'prop-types';
 import { GET_MESSAGES } from '../../constants/queries';
 import Loading from '../Loading/index';
 import Footer from '../Footer/index';
 
-const Messages = ({ history }) => (
+const Messages = () => (
   <Query
     query={GET_MESSAGES}
     variables={{
@@ -75,13 +74,5 @@ const Messages = ({ history }) => (
     }}
   </Query>
 );
-
-Messages.propTypes = {
-  history: PropTypes.objectOf(PropTypes.any),
-};
-
-Messages.defaultProps = {
-  history: {},
-};
 
 export default Messages;

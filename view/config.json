@@ -1,0 +1,12 @@
+{
+  "uploadLink": "http://localhost:5000/graphql",
+  "httpLink": "http://localhost:5000/graphql",
+  "mapboxgl": {
+    "accessToken": "pk.eyJ1IjoieWFyb3NsYXciLCJhIjoiY2pqemJmYXJ2MWpnajNwbWt3NnB4NzhwMSJ9.ahTtWLV7SgP1rLtTJYSx2A",
+    "styles": {
+      "pointmap": "mapbox://styles/mapbox/streets-v10",
+      "heatmap": "mapbox://styles/mapbox/satellite-streets-v11",
+      "heatmap3D": "mapbox://styles/mapbox/navigation-preview-day-v4"
+    }
+  }
+}

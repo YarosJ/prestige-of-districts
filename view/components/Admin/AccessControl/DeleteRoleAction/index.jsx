@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import ErrorMessage from '../../../Error/index';
@@ -21,47 +21,43 @@ const GET_ROLES = gql`
   }
 `;
 
-class DeleteRoleAction extends Component {
-  render() {
-    return (
-      <Mutation
-        mutation={DELETE_ROLE_ACTION}
-        variables={{ role: this.props.role.role, action: this.props.action }}
-        optimisticResponse={
-          {
-            deleteAction: {
-              role: this.props.role.role,
-              actions: this.props.role.actions.filter(item => this.props.action !== item),
-              __typename: 'Permission',
-            },
-          }
-        }
-        update={
-          (proxy, { data: { deleteAction } }) => {
-            const data = proxy.readQuery({ query: GET_ROLES });
+const DeleteRoleAction = ({ role, action, children }) => (
+  <Mutation
+    mutation={DELETE_ROLE_ACTION}
+    variables={{ role: role.role, action }}
+    optimisticResponse={
+      {
+        deleteAction: {
+          role: role.role,
+          actions: role.actions.filter(item => action !== item),
+          __typename: 'Permission',
+        },
+      }
+    }
+    update={
+      (proxy, { data: { deleteAction } }) => {
+        const data = proxy.readQuery({ query: GET_ROLES });
 
-            data.roles.map((role) => {
-              if (role.role === deleteAction.role) {
-                role.actions = deleteAction.actions;
-              }
-            });
-
-            proxy.writeQuery({
-              query: GET_ROLES,
-              data,
-            });
+        data.roles.map((r) => {
+          if (r.role === deleteAction.role) {
+            r.actions = deleteAction.actions;
           }
-        }
-      >
-        {(deleteAction, { data, loading, error }) => (
-          <div onClick={deleteAction}>
-            { this.props.children }
-            { error && <ErrorMessage error={error} /> }
-          </div>
-        )}
-      </Mutation>
-    );
-  }
-}
+        });
+
+        proxy.writeQuery({
+          query: GET_ROLES,
+          data,
+        });
+      }
+    }
+  >
+    {(deleteAction, { data, loading, error }) => (
+      <div onClick={deleteAction}>
+        {children}
+        {error && <ErrorMessage error={error} />}
+      </div>
+    )}
+  </Mutation>
+);
 
 export default DeleteRoleAction;

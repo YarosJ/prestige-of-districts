@@ -23,7 +23,7 @@ class App extends React.Component {
   };
 
   render() {
-    const { refetch, location, apolloClient } = this.props;
+    const { refetch, apolloClient } = this.props;
     return (
       <Router history={history}>
         <div style={{
@@ -42,6 +42,7 @@ class App extends React.Component {
           >
 
             {/* App routes: */}
+
             <Switch>
               <Route
                 exact

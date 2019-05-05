@@ -7,8 +7,7 @@ import { Query } from 'react-apollo';
 import { GET_FAILURES } from '../../../constants/queries';
 import Loading from '../../Loading/index';
 import ChooseService from '../../../helpers/ChooseService';
-
-const MAPBOX_TOKEN = 'pk.eyJ1IjoieWFyb3NsYXciLCJhIjoiY2pqemJmYXJ2MWpnajNwbWt3NnB4NzhwMSJ9.ahTtWLV7SgP1rLtTJYSx2A';
+import config from '../../../config.json';
 
 export const INITIAL_VIEW_STATE = {
   latitude: 48.74877,
@@ -161,9 +160,9 @@ export default class App extends Component {
                 {baseMap && (
                 <StaticMap
                   reuseMaps
-                  mapStyle="mapbox://styles/mapbox/navigation-preview-day-v4"
+                  mapStyle={config.mapboxgl.styles.heatmap3D}
                   preventStyleDiffing
-                  mapboxApiAccessToken={MAPBOX_TOKEN}
+                  mapboxApiAccessToken={config.mapboxgl.accessToken}
                 />
                 )}
               </DeckGL>

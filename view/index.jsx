@@ -13,14 +13,15 @@ import gql from 'graphql-tag';
 import { createUploadLink } from 'apollo-upload-client';
 import App from './components/index';
 import { signOut } from './components/Account/SignOut/index';
+import config from './config.json';
 import './index.css';
 
 const uploadLink = createUploadLink({
-  uri: 'http://localhost:5000/graphql',
+  uri: config.uploadLink,
 });
 
 const httpLink = new HttpLink({
-  uri: 'http://localhost:5000/graphql',
+  uri: config.httpLink,
 });
 
 const terminatingLink = split(
@@ -30,7 +31,6 @@ const terminatingLink = split(
       kind === 'OperationDefinition' && operation === 'subscription'
     );
   },
-  // wsLink,
   uploadLink,
   httpLink,
 );
@@ -72,18 +72,18 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
 
           execute(httpLink, operation).subscribe({
             next: result => localStorage.setItem('accessToken', result.data.refreshToken.accessToken),
-            error: error => console.log(`JWT refresh error: ${error}`),
-            complete: () => console.log('JWT has been refreshed!'),
+            error: error => console.info(`JWT refresh error: ${error}`),
+            complete: () => console.info('JWT has been refreshed!'),
           });
           break;
         default:
-          console.log('GraphQL error', message);
+          console.error('GraphQL error', message);
       }
     });
   }
 
   if (networkError) {
-    console.log('Network error', networkError);
+    console.error('Network error', networkError);
 
     if (networkError.statusCode === 401) {
       signOut(client);

@@ -1,3 +1,5 @@
+/* global localStorage */
+
 import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
 import {
@@ -39,7 +41,7 @@ class RefreshPassword extends Component {
 
       return (
         <Mutation mutation={REFRESH_PASSWORD} variables={{ id: localStorage.getItem('uId'), previousPassword, newPassword }}>
-          {(refresh, { data, loading, error }) => (
+          {(refresh, { loading, error }) => (
             <div style={{
               width: '100%', margin: 'auto', textAlign: 'center',
             }}

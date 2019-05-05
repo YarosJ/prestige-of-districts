@@ -9,9 +9,9 @@ import { GET_FAILURES } from '../../../constants/queries';
 import heatmapLayer from './heatmapLayer';
 import ChooseService from '../../../helpers/ChooseService';
 import DateRange from '../DateRange';
+import config from '../../../config.json';
 
 const HEATMAP_SOURCE_ID = 'failures';
-const MAPBOX_TOKEN = 'pk.eyJ1IjoieWFyb3NsYXciLCJhIjoiY2pqemJmYXJ2MWpnajNwbWt3NnB4NzhwMSJ9.ahTtWLV7SgP1rLtTJYSx2A';
 
 export default class Map extends Component {
   state = {
@@ -117,8 +117,8 @@ export default class Map extends Component {
                 ref={this.mapRef}
                 width="100%"
                 height="100%"
-                mapStyle="mapbox://styles/mapbox/satellite-streets-v11"
-                mapboxApiAccessToken={MAPBOX_TOKEN}
+                mapStyle={config.mapboxgl.styles.heatmap}
+                mapboxApiAccessToken={config.mapboxgl.accessToken}
                 onLoad={() => this.handleMapLoaded(failures)}
                 onViewportChange={v => this.setState({ viewport: v })}
               />

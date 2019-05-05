@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
+import config from '../../../config.json';
 
 class Cluster extends Component {
   mapRef = React.createRef();
@@ -15,10 +16,10 @@ class Cluster extends Component {
       },
     }))).flat();
 
-    mapboxgl.accessToken = 'pk.eyJ1IjoieWFyb3NsYXciLCJhIjoiY2pqemJmYXJ2MWpnajNwbWt3NnB4NzhwMSJ9.ahTtWLV7SgP1rLtTJYSx2A';
+    mapboxgl.accessToken = config.mapboxgl.accessToken;
     const map = new mapboxgl.Map({
       container: this.mapRef.current,
-      style: 'mapbox://styles/mapbox/streets-v10',
+      style: config.mapboxgl.styles.heatmap,
       center: [37.49276, 48.74877],
       zoom: 14,
     });
