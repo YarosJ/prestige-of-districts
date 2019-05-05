@@ -1,7 +1,8 @@
+/* global localStorage */
+
 const [LIMIT, CURSOR] = ['15', '0'];
 
 function currentPagination() {
-  // localStorage.setItem('cursor', '0');
   return {
     limit: localStorage.getItem('limit') || LIMIT,
     cursor: localStorage.getItem('cursor') || CURSOR,

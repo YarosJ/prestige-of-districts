@@ -21,7 +21,15 @@ class Add extends Component {
   render() {
     const { open } = this.state;
     const {
-      header, children, buttonContent, buttonSize, buttonColor, initiateClose, activateContent, style, windowStyle,
+      header,
+      children,
+      buttonContent,
+      buttonSize,
+      buttonColor,
+      initiateClose,
+      activateContent,
+      style,
+      windowStyle,
     } = this.props;
     if (initiateClose) initiateClose(this.handleClose);
 

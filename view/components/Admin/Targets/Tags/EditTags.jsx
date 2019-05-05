@@ -52,7 +52,6 @@ class UpdateTarget extends Component {
           update={
             (proxy, { data: { updateTarget } }) => {
               const dataToUpdate = { ...proxy.readQuery({ query: GET_TARGETS }) };
-              console.log(dataToUpdate, updateTarget);
               dataToUpdate.targets = dataToUpdate.targets
                 .map(t => (t.URL === updateTarget.URL ? updateTarget : t));
               proxy.writeQuery({ query: GET_TARGETS, data: dataToUpdate });

@@ -3,6 +3,7 @@
 
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import logger from 'loglevel';
 import { Query, ApolloConsumer, ApolloProvider } from 'react-apollo';
 import { GET_SCREENSHOT, GET_SELECTOR } from '../../constants/queries';
 import Loading from '../../../Loading/index';
@@ -21,7 +22,7 @@ class GetSelector extends Component {
         });
         onGetSelector(response.data.selector.resultSelector, editKey);
       } catch (e) {
-        console.log(e);
+        logger.error(e);
       }
       // eslint-disable-next-line react/no-find-dom-node
       ReactDOM.unmountComponentAtNode(ReactDOM.findDOMNode(this).parentNode);

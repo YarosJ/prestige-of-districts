@@ -11,7 +11,7 @@ const signOut = async (client) => {
   await localStorage.setItem('refreshToken', '');
   await localStorage.setItem('role', '');
   await localStorage.setItem('uId', '');
-  await client.clearStore();
+  if (client) await client.clearStore();
   history.push(routes.LANDING);
 };
 

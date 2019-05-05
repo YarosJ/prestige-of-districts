@@ -1,6 +1,9 @@
 /* global document, localStorage */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
+import gql from 'graphql-tag';
+import logger from 'loglevel';
 import { ApolloProvider } from 'react-apollo';
 import { ApolloClient } from 'apollo-client';
 import { getMainDefinition } from 'apollo-utilities';
@@ -9,7 +12,6 @@ import { setContext } from 'apollo-link-context';
 import { HttpLink } from 'apollo-link-http';
 import { onError } from 'apollo-link-error';
 import { InMemoryCache } from 'apollo-cache-inmemory';
-import gql from 'graphql-tag';
 import { createUploadLink } from 'apollo-upload-client';
 import App from './components/index';
 import { signOut } from './components/Account/SignOut/index';
@@ -57,7 +59,7 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
       let operation;
       switch (message) {
         case 'NOT_AUTHENTICATED':
-          signOut(client);
+          signOut();
           break;
         case 'Context creation failed: TokenExpiredError: jwt expired':
           operation = {
@@ -72,21 +74,21 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
 
           execute(httpLink, operation).subscribe({
             next: result => localStorage.setItem('accessToken', result.data.refreshToken.accessToken),
-            error: error => console.info(`JWT refresh error: ${error}`),
-            complete: () => console.info('JWT has been refreshed!'),
+            error: error => logger.info(`JWT refresh error: ${error}`),
+            complete: () => logger.info('JWT has been refreshed!'),
           });
           break;
         default:
-          console.error('GraphQL error', message);
+          logger.error('GraphQL error', message);
       }
     });
   }
 
   if (networkError) {
-    console.error('Network error', networkError);
+    logger.error('Network error', networkError);
 
     if (networkError.statusCode === 401) {
-      signOut(client);
+      signOut();
     }
   }
 });
