@@ -38,6 +38,7 @@ const hereGeocoder = async ({ place, city, country }) => {
  * @constructor
  */
 const OSMGeocoder = async ({ place, city, country }) => {
+  await new Promise(res => setTimeout(res, 3000)); // To prevent 429 (too many requests) error
   const parentLoc = await axios.get(encodeURI(`https://nominatim.openstreetmap.org/search?q=${city}, ${country}&format=json`));
   const { lat, lon } = parentLoc.data[0];
   const result = await axios.get(encodeURI(`https://nominatim.openstreetmap.org/search?q=${place}, ${city}, ${country}&format=json&polygon=1&addressdetails=1`));

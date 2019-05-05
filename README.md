@@ -1,5 +1,37 @@
-# README
- API documentation: https://yarosj.github.io/PdGraphDoc/
+# Prestige of districts
+  There will be screenshot
+## About this app
+  ...
+
+### Navigation:
+
+* [Documentation](#documentation)
+* [Dependencies](#dependencies)
+* [Installation](#installation)
+* [Configuration](#configuration)
+
+## Documentation
+
+ [API documentation you can find here.](https://yarosj.github.io/PdGraphDoc/)
+
+## Dependencies:
+
+This application requires `npm` version `x.x.x` or higher,  `node.js` version `x.x.x` or higher, Webpack version `x.x.x`, and ...
+
+## Installation:
+
+The first step is to install dependencies:
+
+```sh
+$ npm i
+```
+
+Then ...
+
+## Configuration
+
+Config variables can be passed in an ...
+
 ## License
 
 MIT License. Copyright 2019 Yaroslaw Zhuk

@@ -20,7 +20,11 @@ export default async () => {
     host: HOST,
   });
 
-  messages.forEach(m => nlpChannel.sendToQueue({
+  debugFailures('🚧 Start seeding failures');
+
+  const shuffledMessages = messages.sort(() => Math.random() - 0.5);
+
+  shuffledMessages.forEach(m => nlpChannel.sendToQueue({
     text: m.text,
     payload: {
       city: defaultCity,
@@ -28,5 +32,4 @@ export default async () => {
       service: m.categories[1],
     },
   }));
-  debugFailures('Seeding failures...');
 };
