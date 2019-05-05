@@ -12,7 +12,7 @@ export default class Map extends Component {
   state = {
     rangeValue: {
       min: 2012,
-      max: 2017,
+      max: new Date().getFullYear(),
     },
     services: ['WATER', 'ELECTRO'],
   };
@@ -50,7 +50,11 @@ export default class Map extends Component {
           zIndex: 500,
         }}
         >
-          <DateRange handleChange={value => this.setState({ rangeValue: value })} />
+          <DateRange
+            initMax={rangeValue.max}
+            initMin={rangeValue.min}
+            handleChange={value => this.setState({ rangeValue: value })}
+          />
         </div>
         <Query
           query={GET_FAILURES}

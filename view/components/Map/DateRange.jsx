@@ -5,8 +5,8 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 export default class DateRange extends Component {
   state = {
     rangeValue: {
-      min: 2012,
-      max: 2017,
+      min: this.props.initMin || 2012,
+      max: this.props.initMax || new Date().getFullYear(),
     },
   };
 

@@ -19,7 +19,7 @@ class Cluster extends Component {
     mapboxgl.accessToken = config.mapboxgl.accessToken;
     const map = new mapboxgl.Map({
       container: this.mapRef.current,
-      style: config.mapboxgl.styles.heatmap,
+      style: config.mapboxgl.styles.pointmap,
       center: [37.49276, 48.74877],
       zoom: 14,
     });
