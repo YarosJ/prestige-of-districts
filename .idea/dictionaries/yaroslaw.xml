@@ -2,7 +2,9 @@
   <dictionary name="yaroslaw">
     <words>
       <w>aardvarksay</w>
+      <w>amqp</w>
       <w>axios</w>
+      <w>containerport</w>
       <w>cowsay</w>
       <w>dimmable</w>
       <w>dragonsay</w>
@@ -12,6 +14,7 @@
       <w>geojson</w>
       <w>geolocate</w>
       <w>heatmap</w>
+      <w>hostport</w>
       <w>hoverable</w>
       <w>linkify</w>
       <w>mapbox</w>

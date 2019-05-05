@@ -24,9 +24,12 @@ services:
     build: .
     environment:
       - REDIS_HOST=redis
-      - DEBUG_COLORS
-      - DEBUG=mongoose,ChildProcess,Server
-      - seedDB=true
+      - DEBUG_COLORS=true
+      - DEBUG=mongoose,ChildProcess,Server,seedDB
+      - seedAccessControl=true
+      - seedAdmin=true
+      - seedFailures=true
+      - permanentSeed=true # if you give true all users and accessControl will be deleted
       - UML=true
     command: npm run server
     volumes:

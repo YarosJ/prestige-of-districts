@@ -5,7 +5,7 @@ import puppeteer from 'puppeteer';
  * Scraper class.
  * Usage:
  *  const scraper = await new Scraper();
- *  console.log(await scraper.getText('http://www.kramvoda.com/index.php', ['.blog']));
+ *  const text = await scraper.getText('http://www.kramvoda.com/index.php', ['.blog']);
  *  scraper.close();
  */
 export default class Scraper {

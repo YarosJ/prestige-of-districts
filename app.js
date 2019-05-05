@@ -23,11 +23,7 @@ const app = express();
  * and starting NLP and Parser
  */
 mongooseConnect(mongoose, process, () => {
-  if (process.env.seedDB) {
-    // noinspection JSIgnoredPromiseFromCall
-    seedDB();
-  }
-  // noinspection JSIgnoredPromiseFromCall
+  seedDB();
   startParser();
 
   if (process.env.UML) {
