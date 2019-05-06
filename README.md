@@ -72,9 +72,6 @@ Config variables can be passed in an `docker-compose.yml`.
 
 ## About
 
-  This application uses Docker to automate the deployment and management.
-  You can get detailed information about the Docker installation [here](https://docs.docker.com/install/).
-  
   This application is written on the Node.js platform (Express.js + ApolloServer).
   Learn more about Apollo [here](https://www.apollographql.com/).
   
@@ -89,7 +86,13 @@ Config variables can be passed in an `docker-compose.yml`.
   
   For processing, classifying and extracting entities from the received text, [SpaCy](https://spacy.io/) library in python is used.
   This library includes convolutional neural network models for tagging parts of speech, analyzing dependencies, and recognizing named entities (NER).
-  SpaCy package structure:
+  SpaCy package structure is displayed on image 3. Learn more about SpaCy architecture you can [there](https://spacy.io/api).
+  
+   <p align="center">
+      <img src="https://i.imgur.com/w9uFhOj.png" width="70%" />
+   </p>
+   <p align="center">Image 3 - SpaCy package structure.</p>
+   <br/>
   
   Since the Ukrainian and Russian languages ​​are not supported, the model was trained on the data of municipal services of the city of Kramatorsk.
   
