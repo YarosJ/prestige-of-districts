@@ -4,26 +4,55 @@
    
 ### Navigation:
 
-* [Installation](#installation)
+* [Dependencies](#dependencies)
+* [How to use](#how-to-use)
 * [Configuration](#configuration)
 * [Documentation](#documentation)
 * [About](#about)
 
-## Installation:
+## Dependencies:
 
-https://docs.docker.com/install/
+This application requires `docker` version  `18.06.3-ce` or higher and `docker-compose` version `1.24.0` or higher:
 
-The first step is to install dependencies:
+* How to install Docker read [there](https://docs.docker.com/install/).
+* How to install Docker Compose read [there](https://docs.docker.com/compose/install/).
+
+If you want to edit client app you need in `npm` version `5.5.1` or higher,  `Node.js` version `8.11.2` or higher and `Webpack` version `3.2.1` or higher.
+Then you can install dependencies. To do this, you need to go to the directory `/view` and enter the following command in the terminal:
 
 ```sh
 $ npm i
 ```
 
-Then ...
+## How to use:
+
+To start app you need in running Docker.
+
+Before starting you need to [build](https://docs.docker.com/compose/reference/build/) app:
+
+```sh
+docker-compose build
+```
+
+Then start up your application:
+
+> __Important!__ If you run docker with sudo you should run docker-compose with sudo too.
+
+```sh
+docker-compose up
+```
+
+Enter `http://localhost:5000` in a browser to see the application running.
+
+If you want to explore GraphQL API with [GraphiQL](https://github.com/graphql/graphiql) enter `http://localhost:5000/graphql`.
+
+If you want to watch interactive graph of GraphQL API enter `http://localhost:5000/voyager`.
+
+>If you have trouble with ports you can change them in `docker-compose.yml`.
 
 ## Configuration
 
-Config variables can be passed in an ...
+Config variables can be passed in an `docker-compose.yml`.
 
 ## Documentation
 
@@ -54,23 +83,22 @@ Config variables can be passed in an ...
   
   The result of the text analysis (extraction of entities) is transmitted through the message broker to the geocoder where it finds the coordinates of the entities (locations)
   
-  Results are displayed on the heatmap, pointmap and 3D heatmap on the client.
+  Results are displayed on the heatmap (Image 1), pointmap (Image 2) and 3D heatmap on the client.
 
-  Heatmap example:
+   <br/>
    <p align="center">
      <img src="https://i.imgur.com/U8m0MIF.png" width="90%" />
    </p>
+   <p align="center">Image 1 - Heatmap example.</p>
+   <br/>
 
-  Pointmap example:
    <p align="center">
      <img src="https://i.imgur.com/iCM7IHa.png" width="90%" />
    </p>
-       
+   <p align="center">Image 1 - Pointmap example.</p>
+   <br/>
+    
   The client application is written in ReactJS, using ApolloGQL to communicate with the server. Failures are displayed on maps (point map heat map and 3D heatmap). For maps, the MapboxGl and DeckGl libraries are used. As the UI component Library is used SemanticUI.
-
-## Dependencies:
-
-This application requires `npm` version `x.x.x` or higher,  `node.js` version `x.x.x` or higher, Webpack version `x.x.x`, and ...
 
 
 ## License
