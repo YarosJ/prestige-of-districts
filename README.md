@@ -1,7 +1,7 @@
   <p align="center">
-    <a href="https://imgur.com/kvJ4IWe"><img src="https://i.imgur.com/kvJ4IWe.png" title="source: imgur.com" /></a>
+    <a href="https://github.com/YarosJ/prestige-of-districts"><img src="https://i.imgur.com/kvJ4IWe.png" title="source: imgur.com" /></a>
   </p>
-   
+
 ### Navigation:
 
 * [Dependencies](#dependencies)
