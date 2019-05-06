@@ -5,6 +5,7 @@
       <w>amqp</w>
       <w>axios</w>
       <w>containerport</w>
+      <w>convolutional</w>
       <w>cowsay</w>
       <w>dimmable</w>
       <w>dragonsay</w>
@@ -16,6 +17,7 @@
       <w>heatmap</w>
       <w>hostport</w>
       <w>hoverable</w>
+      <w>kramatorsk</w>
       <w>linkify</w>
       <w>mapbox</w>
       <w>mapboxgl</w>

@@ -1,24 +1,17 @@
-# Prestige of districts
-  There will be screenshot
-## About this app
-  ...
-
+  <p align="center">
+    <a href="https://imgur.com/kvJ4IWe"><img src="https://i.imgur.com/kvJ4IWe.png" title="source: imgur.com" /></a>
+  </p>
+   
 ### Navigation:
 
-* [Documentation](#documentation)
-* [Dependencies](#dependencies)
 * [Installation](#installation)
 * [Configuration](#configuration)
-
-## Documentation
-
- [API documentation you can find here.](https://yarosj.github.io/PdGraphDoc/)
-
-## Dependencies:
-
-This application requires `npm` version `x.x.x` or higher,  `node.js` version `x.x.x` or higher, Webpack version `x.x.x`, and ...
+* [Documentation](#documentation)
+* [About](#about)
 
 ## Installation:
+
+https://docs.docker.com/install/
 
 The first step is to install dependencies:
 
@@ -31,6 +24,54 @@ Then ...
 ## Configuration
 
 Config variables can be passed in an ...
+
+## Documentation
+
+ [API documentation you can find here.](https://yarosj.github.io/PdGraphDoc/)
+
+## About
+
+  This application uses Docker to automate the deployment and management.
+  You can get detailed information about the Docker installation [here](https://docs.docker.com/install/).
+  
+  This application is written on the Node.js platform (Express.js + ApolloServer).
+  Learn more about Apollo [here](https://www.apollographql.com/).
+  
+  [MongoDB](https://www.mongodb.com/) is used as a database.
+  [Redis](https://redis.io/) is used for caching on server.
+  
+  For client-server communication uses [GraphQL](https://graphql.org/learn/) - query language with open source software, developed by Facebook.
+  
+  For “web scraping” uses the [Puppeteer](https://github.com/GoogleChrome/puppeteer) - “Headless Google Chrome”.
+  
+  A multi-protocol message broker - [RabbitMQ](https://www.rabbitmq.com/tutorials/tutorial-one-python.html) is used to communicate between the Node.js and Python processes.
+  
+  For processing, classifying and extracting entities from the received text, [SpaCy](https://spacy.io/) library in python is used.
+  This library includes convolutional neural network models for tagging parts of speech, analyzing dependencies, and recognizing named entities (NER).
+  SpaCy package structure:
+  
+  Since the Ukrainian and Russian languages ​​are not supported, the model was trained on the data of municipal services of the city of Kramatorsk.
+  
+  The result of the text analysis (extraction of entities) is transmitted through the message broker to the geocoder where it finds the coordinates of the entities (locations)
+  
+  Results are displayed on the heatmap, pointmap and 3D heatmap on the client.
+
+  Heatmap example:
+   <p align="center">
+     <img src="https://i.imgur.com/U8m0MIF.png" width="90%" />
+   </p>
+
+  Pointmap example:
+   <p align="center">
+     <img src="https://i.imgur.com/iCM7IHa.png" width="90%" />
+   </p>
+       
+  The client application is written in ReactJS, using ApolloGQL to communicate with the server. Failures are displayed on maps (point map heat map and 3D heatmap). For maps, the MapboxGl and DeckGl libraries are used. As the UI component Library is used SemanticUI.
+
+## Dependencies:
+
+This application requires `npm` version `x.x.x` or higher,  `node.js` version `x.x.x` or higher, Webpack version `x.x.x`, and ...
+
 
 ## License
 
