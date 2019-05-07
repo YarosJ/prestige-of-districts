@@ -29,6 +29,8 @@ services:
       - seedAccessControl=true
       - seedAdmin=true
       - seedFailures=true
+      - failuresController=true
+      - messagesController=true
       - permanentSeed=true # if you give true all users and accessControl will be deleted
       - UML=true
     command: npm run server

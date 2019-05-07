@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e48be22d-a086-484b-9a46-2a2d4e5401ca" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NLP/libs/NLP/classification/corpuses/faults_classification_corpus.json" beforeDir="false" afterPath="$PROJECT_DIR$/NLP/libs/NLP/classification/corpuses/faults_classification_corpus.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/seedDB/failures.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/seedDB/failures.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/ActionDispatcher.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ActionDispatcher.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/graphql/resolvers/failure.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/graphql/resolvers/failure.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/graphql/resolvers/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/graphql/resolvers/message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/geolocation/geocodeLocations.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/geolocation/geocodeLocations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/components/Charts/AreaChart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Charts/AreaChart.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,17 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/NLP/libs/NLP/classification/corpuses/faults_classification_corpus.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="514">
-              <caret line="95" column="13" lean-forward="true" selection-start-line="95" selection-start-column="13" selection-end-line="95" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -62,8 +49,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/controllers/graphql/schema/failure.js" />
-        <option value="$PROJECT_DIR$/controllers/graphql/resolvers/partials/dateQueryFromRange.js" />
         <option value="$PROJECT_DIR$/controllers/graphql/schema/message.js" />
         <option value="$PROJECT_DIR$/view/components/Admin/AccessControl/index.jsx" />
         <option value="$PROJECT_DIR$/view/helpers/previousMonthDate.js" />
@@ -96,8 +81,6 @@
         <option value="$PROJECT_DIR$/config/seedDB/accessControl.js" />
         <option value="$PROJECT_DIR$/config/seedDB/admin.js" />
         <option value="$PROJECT_DIR$/config/seedDB/index.js" />
-        <option value="$PROJECT_DIR$/docker-compose.yml" />
-        <option value="$PROJECT_DIR$/helpers/geolocation/geocodeLocations.js" />
         <option value="$PROJECT_DIR$/view/config.json" />
         <option value="$PROJECT_DIR$/view/components/Map/PointMap/Cluster.jsx" />
         <option value="$PROJECT_DIR$/view/components/Map/HeatMap/HeatMap.jsx" />
@@ -113,6 +96,10 @@
         <option value="$PROJECT_DIR$/controllers/graphql/resolvers/failure.js" />
         <option value="$PROJECT_DIR$/controllers/graphql/resolvers/message.js" />
         <option value="$PROJECT_DIR$/NLP/libs/NLP/classification/corpuses/faults_classification_corpus.json" />
+        <option value="$PROJECT_DIR$/helpers/geolocation/geocodeLocations.js" />
+        <option value="$PROJECT_DIR$/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/view/components/Charts/index.jsx" />
+        <option value="$PROJECT_DIR$/view/components/Charts/AreaChart.jsx" />
       </list>
     </option>
   </component>
@@ -129,6 +116,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -136,57 +124,16 @@
               <item name="prestige-of-districts" type="b2602c69:ProjectViewProjectNode" />
               <item name="prestige-of-districts" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="prestige-of-districts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="prestige-of-districts" type="462c0819:PsiDirectoryNode" />
-              <item name="NLP" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="prestige-of-districts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="prestige-of-districts" type="462c0819:PsiDirectoryNode" />
-              <item name="NLP" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="prestige-of-districts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="prestige-of-districts" type="462c0819:PsiDirectoryNode" />
-              <item name="NLP" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-              <item name="NLP" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="prestige-of-districts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="prestige-of-districts" type="462c0819:PsiDirectoryNode" />
-              <item name="NLP" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-              <item name="NLP" type="462c0819:PsiDirectoryNode" />
-              <item name="classification" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="prestige-of-districts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="prestige-of-districts" type="462c0819:PsiDirectoryNode" />
-              <item name="NLP" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-              <item name="NLP" type="462c0819:PsiDirectoryNode" />
-              <item name="classification" type="462c0819:PsiDirectoryNode" />
-              <item name="corpuses" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="prestige-of-districts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="prestige-of-districts" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/crossdomain-selector/README.md" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../crossdomain-selector/README.md" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.jscs" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -249,37 +196,16 @@
       <workItem from="1557127266561" duration="14186000" />
       <workItem from="1557162772557" duration="6723000" />
       <workItem from="1557212911989" duration="1214000" />
+      <workItem from="1557226132370" duration="2329000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="235165000" />
+    <option name="totallyTimeSpent" value="237494000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49919224" weight="0.24720775" />
-      <window_info id="Structure" order="1" sideWeight="0.50080776" side_tool="true" weight="0.24944155" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="TypeScript" order="0" />
-      <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.631664" />
-      <window_info anchor="bottom" id="Run" order="3" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32956383" />
-      <window_info anchor="bottom" id="GraphQL" order="12" weight="0.32956383" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
-    <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49919224" visible="true" weight="0.24720775" />
       <window_info id="Structure" order="1" sideWeight="0.50080776" side_tool="true" weight="0.24944155" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -299,32 +225,12 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout-to-restore>
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/view/helpers/Modal.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/helpers/pagination.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/helpers/validate.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -503,23 +409,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helpers/geolocation/geocodeLocations.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="40" column="94" selection-start-line="40" selection-start-column="55" selection-end-line="40" selection-end-column="94" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/config.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -666,13 +555,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/helpers/ISODate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/ActionDispatcher.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
@@ -702,30 +584,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/graphql/resolvers/message.js">
+    <entry file="file://$PROJECT_DIR$/NLP/libs/NLP/classification/corpuses/faults_classification_corpus.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="53" column="23" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
+        <state relative-caret-position="185">
+          <caret line="1425" column="3" lean-forward="true" selection-start-line="1425" selection-start-column="3" selection-end-line="1425" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helpers/geolocation/geocodeLocations.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="40" column="44" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helpers/ISODate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/graphql/resolvers/failure.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="56" column="23" selection-start-line="56" selection-start-column="23" selection-end-line="56" selection-end-column="23" />
+        <state relative-caret-position="231">
+          <caret line="11" column="47" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="47" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NLP/libs/NLP/classification/corpuses/faults_classification_corpus.json">
+    <entry file="file://$PROJECT_DIR$/controllers/graphql/resolvers/message.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="95" column="13" lean-forward="true" selection-start-line="95" selection-start-column="13" selection-end-line="95" selection-end-column="13" />
+        <state relative-caret-position="105">
+          <caret line="11" column="47" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="32" column="31" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/components/Charts/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/components/Charts/AreaChart.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="43" column="70" lean-forward="true" selection-start-line="43" selection-start-column="70" selection-end-line="43" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import {
-  AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Brush,
+  AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Brush, Legend,
 } from 'recharts';
 import { Query } from 'react-apollo';
 import { GET_FAILURES } from '../../constants/queries';
@@ -41,6 +41,7 @@ export default class AreaChartComponent extends PureComponent {
                 <XAxis dataKey="name" />
                 <YAxis />
                 <Tooltip />
+                <Legend verticalAlign="top" height={36} content={() => services[0]} />
                 <Brush style={{ marginTop: '50px' }} />
                 <defs>
                   <linearGradient id="splitColor" x1="0" y1="0" x2="0" y2="1">
