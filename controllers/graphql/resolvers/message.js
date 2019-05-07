@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import debug from 'debug';
 import { PubSub } from 'apollo-server-express';
 import geocodeLocations from '../../../helpers/geolocation/geocodeLocations';
 import validate from '../../../helpers/graphQL/validateInput';
@@ -8,6 +9,7 @@ import '../../../models/Message';
 
 const MessageModel = mongoose.model('Message');
 const pubSub = new PubSub();
+const debugMessages = debug('messagesController');
 
 export default {
   Query: {
@@ -49,7 +51,7 @@ export default {
         service,
         happenedAt: ISODate(date),
       }).save();
-      console.log('message', addedMessage, locations);
+      debugMessages('➕ Added new message:', addedMessage);
       pubSub.publish('MESSAGE_ADDED', { messageAdded: addedMessage });
       return addedMessage;
     },

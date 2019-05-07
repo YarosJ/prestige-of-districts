@@ -86,31 +86,31 @@ Config variables can be passed in an `docker-compose.yml`.
   
   For processing, classifying and extracting entities from the received text, [SpaCy](https://spacy.io/) library in python is used.
   This library includes convolutional neural network models for tagging parts of speech, analyzing dependencies, and recognizing named entities (NER).
-  SpaCy package structure is displayed on image 3. Learn more about SpaCy architecture you can [there](https://spacy.io/api).
+  SpaCy package structure is displayed on image 1. Learn more about SpaCy architecture you can [there](https://spacy.io/api).
   
    <p align="center">
       <img src="https://i.imgur.com/w9uFhOj.png" width="70%" />
    </p>
-   <p align="center">Image 3 - SpaCy package structure.</p>
+   <p align="center">Image 1 - SpaCy package structure.</p>
    <br/>
   
   Since the Ukrainian and Russian languages ​​are not supported, the model was trained on the data of municipal services of the city of Kramatorsk.
   
   The result of the text analysis (extraction of entities) is transmitted through the message broker to the geocoder where it finds the coordinates of the entities (locations)
   
-  Results are displayed on the heatmap (Image 1), pointmap (Image 2) and 3D heatmap on the client.
+  Results are displayed on the heatmap (Image 2), pointmap (Image 3) and 3D heatmap on the client.
 
    <p align="center">
       <img src="https://i.imgur.com/iCM7IHa.png" width="90%" />
    </p>
-   <p align="center">Image 1 - Pointmap example.</p>
+   <p align="center">Image 2 - Pointmap example.</p>
    <br/>
 
    <br/>
    <p align="center">
       <img src="https://i.imgur.com/U8m0MIF.png" width="90%" />
    </p>
-   <p align="center">Image 2 - Heatmap example.</p>
+   <p align="center">Image 3 - Heatmap example.</p>
    <br/>
 
   The client application is written in ReactJS, using ApolloGQL to communicate with the server. Failures are displayed on maps (point map heat map and 3D heatmap). For maps, the MapboxGl and DeckGl libraries are used. As the UI component Library is used SemanticUI.

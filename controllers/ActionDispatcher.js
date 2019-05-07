@@ -24,7 +24,7 @@ export default class ActionDispatcher {
     const entities = Object.keys(action.payload.entities);
     const sanitizedLocations = entities.map(e => sanitizeLocation(e));
     const {
-      country, city, service, text,
+      country, city, service, text, date,
     } = action.payload;
     const args = {
       country,
@@ -33,6 +33,7 @@ export default class ActionDispatcher {
       failureType: action.type,
       service,
       text,
+      date,
     };
 
     return ((this.actions[action.type] || this.actions.default)(null, args));

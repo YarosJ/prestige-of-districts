@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import debug from 'debug';
 import { PubSub } from 'apollo-server-express';
 import geocodeLocations from '../../../helpers/geolocation/geocodeLocations';
 import validate from '../../../helpers/graphQL/validateInput';
@@ -8,6 +9,7 @@ import '../../../models/Failure';
 
 const FailureModel = mongoose.model('Failure');
 const pubSub = new PubSub();
+const debugFailures = debug('failuresController');
 
 export default {
   Query: {
@@ -52,7 +54,7 @@ export default {
         failureType,
         happenedAt: ISODate(date),
       }).save();
-      console.log('failure', addedFailure, locations);
+      debugFailures('➕ Added new failure:', addedFailure);
       pubSub.publish('FAILURE_ADDED', { failureAdded: addedFailure });
       return addedFailure;
     },

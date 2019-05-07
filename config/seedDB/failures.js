@@ -30,6 +30,7 @@ export default async () => {
       city: defaultCity,
       country: defaultCountry,
       service: m.categories[1],
+      date: m.date,
     },
   }));
 };
