@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import InputRange from 'react-input-range';
-import 'mapbox-gl/dist/mapbox-gl.css';
 
 export default class DateRange extends Component {
   state = {
@@ -18,8 +17,8 @@ export default class DateRange extends Component {
 
     return (
       <InputRange
-        maxValue={2019}
-        minValue={2010}
+        maxValue={new Date().getFullYear() || 2019}
+        minValue={2014}
         formatLabel={value => `${value} th`}
         value={rangeValue}
         onChange={value => this.setState({ rangeValue: value })}

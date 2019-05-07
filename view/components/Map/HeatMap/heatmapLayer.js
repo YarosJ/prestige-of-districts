@@ -12,7 +12,7 @@ export default (id, source) => {
         ['linear'],
         ['get', 'mag'],
         1, 0,
-        30, 1,
+        130, 1,
       ],
       // Increase the heatmap color weight weight by zoom level
       // heatmap-intensity is a multiplier on top of heatmap-weight
@@ -26,17 +26,17 @@ export default (id, source) => {
       // Color ramp for heatmap.  Domain is 0 (low) to 1 (high).
       // Begin color ramp at 0-stop with a 0-transparancy color
       // to create a blur-like effect.
-      'heatmap-color': [
-        'interpolate',
-        ['linear'],
-        ['heatmap-density'],
-        0, 'rgba(33,102,172,0)',
-        0.25, 'rgb(103,169,207)',
-        0.5, 'rgb(209,229,240)',
-        0.8, 'rgb(253,219,199)',
-        1, 'rgb(239,138,98)',
-        2, 'rgb(178,24,43)',
-      ],
+      // 'heatmap-color': [
+      //   'interpolate',
+      //   ['linear'],
+      //   ['heatmap-density'],
+      //   0, 'rgba(33,102,172,0)',
+      //   0.25, 'rgb(103,169,207)',
+      //   0.5, 'rgb(209,229,240)',
+      //   0.8, 'rgb(253,219,199)',
+      //   1, 'rgb(239,138,98)',
+      //   2, 'rgb(178,24,43)',
+      // ],
       // Transition from heatmap to circle layer by zoom level
       'heatmap-opacity': [
         'interpolate',

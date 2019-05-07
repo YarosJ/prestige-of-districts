@@ -15,6 +15,7 @@ export default (data) => {
       entities: jsonData.result_entities,
       city: jsonData.payload.city,
       country: jsonData.payload.country,
+      date: jsonData.payload.date,
     },
   });
 };

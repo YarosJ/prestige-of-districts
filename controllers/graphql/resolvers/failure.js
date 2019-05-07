@@ -25,7 +25,7 @@ export default {
           'locations.latitude': latitude || { $type: 'number' },
           'locations.longitude': longitude || { $type: 'number' },
           'locations.locType': validate(locType),
-        }, null, { sort: { date: -1 } });
+        }, null, { sort: { happenedAt: 1 } });
       }
       const {
         maxLatitude, minLatitude, maxLongitude, minLongitude,
@@ -37,7 +37,7 @@ export default {
         'locations.latitude': { $lte: maxLatitude, $gte: minLatitude },
         'locations.longitude': { $lte: maxLongitude, $gte: minLongitude },
         'locations.locType': validate(locType),
-      });
+      }, null, { sort: { happenedAt: 1 } });
     },
   },
   Mutation: {

@@ -5,6 +5,7 @@ import {
 import HeatMap from './HeatMap/HeatMap';
 import HeatMap3D from './HeatMap3D/HeatMap3D';
 import PointMap from './PointMap/PointMap';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 class Index extends Component {
   state = {

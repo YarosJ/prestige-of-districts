@@ -26,6 +26,7 @@ export default class ActionDispatcher {
     const {
       country, city, service, text, date,
     } = action.payload;
+
     const args = {
       country,
       city,

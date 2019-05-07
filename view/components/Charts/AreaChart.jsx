@@ -11,6 +11,7 @@ const offset = 0.5;
 export default class AreaChartComponent extends PureComponent {
   render() {
     const { services } = this.props;
+
     return (
       <Query query={GET_FAILURES} variables={{ services }}>
         {({ loading, error, data }) => {
@@ -19,15 +20,18 @@ export default class AreaChartComponent extends PureComponent {
           if (loading || !failures) return <Loading />;
           if (error) return `Error! ${error.message}`;
 
-          const adaptedData = failures.map((failure) => {
-            const date = Date.parse(failure.happenedAt);
-            const similar = failures
-              .filter(f => (Math.abs(Date.parse(f.happenedAt) - date) < 86300000));
-            return ({
-              name: new Date(date).toDateString(),
-              uv: similar.length,
-            });
+          const countedFailures = {};
+          failures.forEach((i) => {
+            // const dt = new Date(i.happenedAt).toDateString();
+            const dt = new Date(i.happenedAt).getFullYear().toString();
+            if (countedFailures[dt]) {
+              countedFailures[dt].uv = (countedFailures[dt].uv || 0) + 1;
+            } else {
+              countedFailures[dt] = { name: dt, uv: 1 };
+            }
           });
+
+          const adaptedData = Object.values(countedFailures);
 
           return (
             <ResponsiveContainer>

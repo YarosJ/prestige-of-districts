@@ -11,7 +11,7 @@ import ChooseService from '../../../helpers/ChooseService';
 export default class Map extends Component {
   state = {
     rangeValue: {
-      min: 2012,
+      min: 2014,
       max: new Date().getFullYear(),
     },
     services: ['WATER', 'ELECTRO'],

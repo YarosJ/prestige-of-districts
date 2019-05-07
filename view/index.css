@@ -11,6 +11,12 @@ body.dimmed.dimmable {
   overflow: hidden;
 }
 
+.input-range__label-container {
+  font-size: small;
+  font-weight: 600;
+  color: #223392;
+}
+
 #screenshot {
   position: absolute;
   z-index: 1005;
