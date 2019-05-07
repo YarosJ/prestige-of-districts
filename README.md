@@ -108,7 +108,7 @@ Config variables can be passed in an `docker-compose.yml`.
 
    <br/>
    <p align="center">
-      <img src="https://i.imgur.com/U8m0MIF.png" width="90%" />
+      <img src="https://i.imgur.com/eMQrKfn.png" width="90%" />
    </p>
    <p align="center">Image 3 - Heatmap example.</p>
    <br/>
