@@ -1,10 +1,10 @@
 const webpack = require('webpack');
 const path = require('path');
-
-const BUILD_DIR = path.resolve(__dirname, 'public');
-const APP_DIR = path.resolve(__dirname, './');
-
+const CompressionPlugin = require('compression-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
+const BUILD_DIR = path.resolve(__dirname, 'public/build');
+const APP_DIR = path.resolve(__dirname, './');
 
 const config = {
   entry: `${APP_DIR}/index.jsx`,
@@ -66,14 +66,15 @@ const config = {
   resolve: {
     extensions: ['.jsx', '.js'],
   },
-  devServer: {
-    publicPath: '/',
-    historyApiFallback: true,
-    contentBase: './public',
-  },
   plugins: [
     new UglifyJsPlugin({
       sourceMap: true,
+    }),
+    new CompressionPlugin({
+      algorithm: 'gzip',
+      test: /\.(js|css|html|svg)$/,
+      minRatio: 0.8,
+      deleteOriginalAssets: true,
     }),
   ],
 };

@@ -3,17 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="e48be22d-a086-484b-9a46-2a2d4e5401ca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/ActionDispatcher.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ActionDispatcher.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/graphql/resolvers/failure.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/graphql/resolvers/failure.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/actionFromNLP.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/actionFromNLP.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Charts/AreaChart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Charts/AreaChart.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Map/DateRange.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Map/DateRange.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Map/HeatMap/HeatMap.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Map/HeatMap/HeatMap.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Map/HeatMap/heatmapLayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Map/HeatMap/heatmapLayer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Map/PointMap/PointMap.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Map/PointMap/PointMap.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Map/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Map/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/view/.babelrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/components/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/view/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/public/client.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/webpack.prod.js" beforeDir="false" afterPath="$PROJECT_DIR$/view/webpack.prod.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,12 +23,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/view/components/Map/HeatMap/heatmapLayer.js">
+        <entry file="file://$PROJECT_DIR$/view/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="28" column="2" lean-forward="true" selection-start-line="28" selection-start-column="2" selection-end-line="43" selection-end-column="11" />
+            <state relative-caret-position="147">
+              <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -67,13 +65,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/helpers/authentication/apolloContext.js" />
-        <option value="$PROJECT_DIR$/config/seedDB.js" />
-        <option value="$PROJECT_DIR$/helpers/authentication/checkPermissions.js" />
         <option value="$PROJECT_DIR$/view/helpers/nextMonthDate.js" />
         <option value="$PROJECT_DIR$/view/helpers/nextDayDate.js" />
         <option value="$PROJECT_DIR$/view/components/Failures/index.jsx" />
-        <option value="$PROJECT_DIR$/view/components/index.jsx" />
         <option value="$PROJECT_DIR$/view/components/Messages/index.jsx" />
         <option value="$PROJECT_DIR$/view/components/Account/RefreshPassword.jsx" />
         <option value="$PROJECT_DIR$/view/components/Account/index.jsx" />
@@ -91,13 +85,11 @@
         <option value="$PROJECT_DIR$/view/index.jsx" />
         <option value="$PROJECT_DIR$/libs/Scraper.js" />
         <option value="$PROJECT_DIR$/config/seedDB/seedDB.js" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/config/seedDB/accessControl.js" />
         <option value="$PROJECT_DIR$/config/seedDB/admin.js" />
         <option value="$PROJECT_DIR$/config/seedDB/index.js" />
         <option value="$PROJECT_DIR$/view/config.json" />
         <option value="$PROJECT_DIR$/view/components/Map/PointMap/Cluster.jsx" />
-        <option value="$PROJECT_DIR$/view/package.json" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/.dockerignore" />
         <option value="$PROJECT_DIR$/view/helpers/checkPermission.js" />
@@ -114,10 +106,16 @@
         <option value="$PROJECT_DIR$/view/components/Map/index.jsx" />
         <option value="$PROJECT_DIR$/view/index.css" />
         <option value="$PROJECT_DIR$/view/components/Map/PointMap/PointMap.jsx" />
-        <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/controllers/graphql/resolvers/failure.js" />
         <option value="$PROJECT_DIR$/view/components/Charts/AreaChart.jsx" />
         <option value="$PROJECT_DIR$/view/components/Map/HeatMap/heatmapLayer.js" />
+        <option value="$PROJECT_DIR$/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/view/.babelrc" />
+        <option value="$PROJECT_DIR$/view/components/index.jsx" />
+        <option value="$PROJECT_DIR$/view/package.json" />
+        <option value="$PROJECT_DIR$/view/webpack.prod.js" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/view/public/index.html" />
       </list>
     </option>
   </component>
@@ -145,46 +143,13 @@
             <path>
               <item name="prestige-of-districts" type="b2602c69:ProjectViewProjectNode" />
               <item name="prestige-of-districts" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="prestige-of-districts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="prestige-of-districts" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="graphql" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="prestige-of-districts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="prestige-of-districts" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="graphql" type="462c0819:PsiDirectoryNode" />
-              <item name="resolvers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="prestige-of-districts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="prestige-of-districts" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="prestige-of-districts" type="b2602c69:ProjectViewProjectNode" />
               <item name="prestige-of-districts" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="prestige-of-districts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="prestige-of-districts" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Map" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="prestige-of-districts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="prestige-of-districts" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Map" type="462c0819:PsiDirectoryNode" />
-              <item name="HeatMap" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -259,12 +224,13 @@
       <workItem from="1557162772557" duration="6723000" />
       <workItem from="1557212911989" duration="1214000" />
       <workItem from="1557226132370" duration="4527000" />
-      <workItem from="1557238859162" duration="7959000" />
+      <workItem from="1557238859162" duration="10138000" />
+      <workItem from="1557293381267" duration="13641000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="247651000" />
+    <option name="totallyTimeSpent" value="263471000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="6" />
@@ -295,28 +261,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/view/components/Messages/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#42#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/components/Admin/Targets/Tags/GetSelector.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-884">
-          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#129#170#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/components/Account/SignOut/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -354,16 +298,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
           <caret line="100" column="21" lean-forward="true" selection-start-line="100" selection-start-column="21" selection-end-line="100" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/components/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="924">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -493,13 +427,6 @@
         <state relative-caret-position="-1008" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/webpack.prod.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1124">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -514,23 +441,6 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="36" column="34" lean-forward="true" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -649,16 +559,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/components/Map/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -676,13 +576,6 @@
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1449">
-          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
         </state>
       </provider>
     </entry>
@@ -718,8 +611,72 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/view/components/Map/HeatMap/heatmapLayer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="28" column="2" lean-forward="true" selection-start-line="28" selection-start-column="2" selection-end-line="43" selection-end-column="11" />
+        <state relative-caret-position="220">
+          <caret line="24" column="8" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/.babelrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/components/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/components/Map/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/webpack.prod.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
         </state>
       </provider>
     </entry>

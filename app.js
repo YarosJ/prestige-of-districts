@@ -36,7 +36,16 @@ mongooseConnect(mongoose, process, () => {
     }));
   }
 
+  app.get('*.js', (req, res, next) => {
+    req.url += '.gz';
+    res.set('Content-Encoding', 'gzip');
+    res.set('Content-Type', 'text/javascript');
+    next();
+  });
+
   app.use(express.static(path.join(__dirname, './view/public')));
+  app.use(express.static(path.join(__dirname, './view/public/build')));
+
   app.use((req, res) => {
     const contentType = req.headers['content-type'];
     if (contentType && contentType.indexOf('application/json') > -1) {

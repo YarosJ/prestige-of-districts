@@ -1,19 +1,69 @@
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
-import Maps from './Map/index';
-import Charts from './Charts/index';
-import Messages from './Messages/index';
-import Failures from './Failures/index';
-import SignUpPage from './Account/SignUp/index';
-import SignInPage from './Account/SignIn/index';
-import Profile from './Account';
-import Users from './Admin/Users/index';
-import Targets from './Admin/Targets/index';
-import Access from './Admin/AccessControl/index';
+import Loadable from 'react-loadable';
 import history from '../constants/history';
 import * as routes from '../constants/routes';
-import Navigation from './Navigation/index';
-import Terminal from './Error/Terminal';
+import Loading from './Loading';
+
+const Maps = Loadable({
+  loader: () => import('./Map/index'),
+  loading: Loading,
+});
+
+const Charts = Loadable({
+  loader: () => import('./Charts/index'),
+  loading: Loading,
+});
+
+const Messages = Loadable({
+  loader: () => import('./Messages/index'),
+  loading: Loading,
+});
+
+const Failures = Loadable({
+  loader: () => import('./Failures/index'),
+  loading: Loading,
+});
+
+const SignUpPage = Loadable({
+  loader: () => import('./Account/SignUp/index'),
+  loading: Loading,
+});
+
+const SignInPage = Loadable({
+  loader: () => import('./Account/SignIn/index'),
+  loading: Loading,
+});
+
+const Profile = Loadable({
+  loader: () => import('./Account'),
+  loading: Loading,
+});
+
+const Users = Loadable({
+  loader: () => import('./Admin/Users/index'),
+  loading: Loading,
+});
+
+const Targets = Loadable({
+  loader: () => import('./Admin/Targets/index'),
+  loading: Loading,
+});
+
+const Access = Loadable({
+  loader: () => import('./Admin/AccessControl/index'),
+  loading: Loading,
+});
+
+const Navigation = Loadable({
+  loader: () => import('./Navigation/index'),
+  loading: Loading,
+});
+
+const Terminal = Loadable({
+  loader: () => import('./Error/Terminal'),
+  loading: Loading,
+});
 
 class App extends React.Component {
   navRef = React.createRef();
