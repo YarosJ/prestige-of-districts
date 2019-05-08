@@ -3,15 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e48be22d-a086-484b-9a46-2a2d4e5401ca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/view/.babelrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/view/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/public/client.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/webpack.prod.js" beforeDir="false" afterPath="$PROJECT_DIR$/view/webpack.prod.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/components/Error/Terminal/animalSay.js" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Error/Terminal/animalSay.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/view/webpack.config.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,17 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/view/public/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -57,6 +40,7 @@
       <find>MAPBOX_TOKEN</find>
       <find>scrollIntoView</find>
       <find>role</find>
+      <find>BUILD_DIR</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -65,10 +49,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/view/helpers/nextMonthDate.js" />
-        <option value="$PROJECT_DIR$/view/helpers/nextDayDate.js" />
-        <option value="$PROJECT_DIR$/view/components/Failures/index.jsx" />
-        <option value="$PROJECT_DIR$/view/components/Messages/index.jsx" />
         <option value="$PROJECT_DIR$/view/components/Account/RefreshPassword.jsx" />
         <option value="$PROJECT_DIR$/view/components/Account/index.jsx" />
         <option value="$PROJECT_DIR$/view/components/Account/SignUp/index.jsx" />
@@ -112,10 +92,14 @@
         <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/view/.babelrc" />
         <option value="$PROJECT_DIR$/view/components/index.jsx" />
-        <option value="$PROJECT_DIR$/view/package.json" />
         <option value="$PROJECT_DIR$/view/webpack.prod.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/view/public/index.html" />
+        <option value="$PROJECT_DIR$/view/components/Error/Terminal/animalSay.js" />
+        <option value="$PROJECT_DIR$/view/devServer.js" />
+        <option value="$PROJECT_DIR$/view/package.json" />
+        <option value="$PROJECT_DIR$/view/public/dev.html" />
+        <option value="$PROJECT_DIR$/view/webpack.config.js" />
       </list>
     </option>
   </component>
@@ -149,7 +133,22 @@
               <item name="prestige-of-districts" type="b2602c69:ProjectViewProjectNode" />
               <item name="prestige-of-districts" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="prestige-of-districts" type="b2602c69:ProjectViewProjectNode" />
+              <item name="prestige-of-districts" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Error" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="prestige-of-districts" type="b2602c69:ProjectViewProjectNode" />
+              <item name="prestige-of-districts" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Error" type="462c0819:PsiDirectoryNode" />
+              <item name="Terminal" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -160,7 +159,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../crossdomain-selector/README.md" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/view/public" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.jscs" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -175,12 +174,15 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/view/public" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/view/public/dev" />
       <recent name="$PROJECT_DIR$/config/seedDB" />
       <recent name="$PROJECT_DIR$/view/helpers" />
       <recent name="$PROJECT_DIR$/view/components/Error/Terminal" />
       <recent name="$PROJECT_DIR$/view/helpers/dialogs" />
-      <recent name="$PROJECT_DIR$/view/components/Account" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -225,16 +227,15 @@
       <workItem from="1557212911989" duration="1214000" />
       <workItem from="1557226132370" duration="4527000" />
       <workItem from="1557238859162" duration="10138000" />
-      <workItem from="1557293381267" duration="13641000" />
+      <workItem from="1557293381267" duration="21651000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="263471000" />
+    <option name="totallyTimeSpent" value="271481000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49919224" visible="true" weight="0.24720775" />
       <window_info id="Structure" order="1" sideWeight="0.50080776" side_tool="true" weight="0.24944155" />
@@ -261,28 +262,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/view/components/Account/SignOut/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#27#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/components/Account/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#27#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/components/Account/SignIn/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1901">
@@ -300,16 +279,6 @@
           <caret line="100" column="21" lean-forward="true" selection-start-line="100" selection-start-column="21" selection-end-line="100" selection-end-column="21" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="30" lean-forward="true" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -405,9 +374,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="97">
@@ -421,11 +387,6 @@
     <entry file="file://$PROJECT_DIR$/view/Dockerfile" />
     <entry file="file://$PROJECT_DIR$/.dockerignore">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1008" />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -649,13 +610,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="451">
@@ -666,17 +620,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/webpack.prod.js">
+    <entry file="file://$PROJECT_DIR$/view/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
+        <state relative-caret-position="2079">
+          <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#37#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="37" column="34" lean-forward="true" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+        <state relative-caret-position="441">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/public/dev/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/webpack.prod.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="14" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1596">
+          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/components/Error/Terminal/animalSay.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>

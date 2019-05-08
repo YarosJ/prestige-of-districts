@@ -1,13 +1,11 @@
 const webpack = require('webpack');
 const path = require('path');
 
-const BUILD_DIR = path.resolve(__dirname, 'public');
 const APP_DIR = path.resolve(__dirname, './');
 
 const config = {
   entry: `${APP_DIR}/index.jsx`,
   output: {
-    path: BUILD_DIR,
     filename: 'client.min.js',
     publicPath: '/',
   },
@@ -68,7 +66,7 @@ const config = {
     hot: true,
     publicPath: '/',
     historyApiFallback: true,
-    contentBase: './public',
+    contentBase: ['./public/dev', './public'],
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),

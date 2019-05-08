@@ -22,11 +22,9 @@ export const aardvarksay = message => `
  `;
 
 export const tuxsay = message => `
- _______________________
-    < ${message}  >
- -----------------------
-   \\
-    \\
+${message}
+     \\
+      \\
         .--.
        |o_o |
        |:_/ |
