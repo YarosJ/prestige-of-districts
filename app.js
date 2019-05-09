@@ -26,7 +26,7 @@ mongooseConnect(mongoose, process, () => {
   seedDB();
   startParser();
 
-  if (process.env.UML) {
+  if (process.env.UML === 'true') {
     // UML diagrams of graphql API
     app.use('/voyager', voyagerMiddleware({
       endpointUrl: '/graphql',
@@ -96,7 +96,7 @@ httpServer.listen(serverPort, () => {
       server.subscriptionsPath
     }`,
   );
-  if (process.env.UML) {
+  if (process.env.UML === 'true') {
     debugServer(
       `🗂 GraphQL UML diagrams ready at http://localhost:${serverPort}/voyager`,
     );
