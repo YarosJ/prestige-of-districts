@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
+import PropTypes from 'prop-types';
 import config from '../../../config.json';
 
 class Cluster extends Component {
@@ -7,6 +8,7 @@ class Cluster extends Component {
 
   componentDidMount() {
     const { data } = this.props;
+
     const featuresData = data.map(failure => failure.locations.map(loc => ({
       type: 'Feature',
       properties: { mag: 5, failureType: failure.failureType, text: failure.text },
@@ -17,6 +19,7 @@ class Cluster extends Component {
     }))).flat();
 
     mapboxgl.accessToken = config.mapboxgl.accessToken;
+
     const map = new mapboxgl.Map({
       container: this.mapRef.current,
       style: config.mapboxgl.styles.pointmap,
@@ -161,5 +164,20 @@ class Cluster extends Component {
     return (<div ref={this.mapRef} style={{ width: '100%', height: '96%' }} />);
   }
 }
+
+Cluster.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.shape({
+    failureType: PropTypes.string,
+    text: PropTypes.string,
+    locations: PropTypes.arrayOf(PropTypes.shape({
+      longitude: PropTypes.number,
+      latitude: PropTypes.number,
+    })),
+  })),
+};
+
+Cluster.defaultProps = {
+  data: [],
+};
 
 export default Cluster;

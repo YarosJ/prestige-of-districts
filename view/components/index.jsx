@@ -1,6 +1,7 @@
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
+import PropTypes from 'prop-types';
 import history from '../constants/history';
 import * as routes from '../constants/routes';
 import Loading from './Loading';
@@ -68,12 +69,8 @@ const Terminal = Loadable({
 class App extends React.Component {
   navRef = React.createRef();
 
-  refetchCart = () => {
-    this.navRef.current.refetchCart();
-  };
-
   render() {
-    const { refetch, apolloClient } = this.props;
+    const { apolloClient } = this.props;
     return (
       <Router history={history}>
         <div style={{
@@ -130,12 +127,12 @@ class App extends React.Component {
               <Route
                 exact
                 path={routes.SIGN_UP}
-                component={() => <SignUpPage refetch={refetch} />}
+                component={() => <SignUpPage />}
               />
               <Route
                 exact
                 path={routes.SIGN_IN}
-                component={() => <SignInPage refetch={refetch} />}
+                component={() => <SignInPage />}
               />
 
               {/* Admin panel routes: */}
@@ -143,12 +140,12 @@ class App extends React.Component {
               <Route
                 exact
                 path={routes.USERS}
-                component={() => <Users history={history} refetch={refetch} />}
+                component={() => <Users history={history} />}
               />
               <Route
                 exact
                 path={routes.ACCESS_CONTROL}
-                component={() => <Access history={history} refetch={refetch} />}
+                component={() => <Access history={history} />}
               />
               <Route
                 exact
@@ -157,7 +154,6 @@ class App extends React.Component {
                   <Targets
                     history={history}
                     apolloClient={apolloClient}
-                    refetch={refetch}
                   />
                 )}
               />
@@ -191,5 +187,13 @@ class App extends React.Component {
     );
   }
 }
+
+App.propTypes = {
+  apolloClient: PropTypes.objectOf(PropTypes.any),
+};
+
+App.defaultProps = {
+  apolloClient: null,
+};
 
 export default App;

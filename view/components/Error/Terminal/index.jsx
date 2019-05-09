@@ -1,5 +1,6 @@
 import React from 'react';
 import Terminal from 'terminal-in-react';
+import PropTypes from 'prop-types';
 import { aardvarksay, dragonsay, tuxsay } from './animalSay';
 
 const directError = ({ code, message }) => {
@@ -13,7 +14,7 @@ const directError = ({ code, message }) => {
   }
 };
 
-export default ({ code, message }) => (
+const TerminalComponent = ({ code, message }) => (
   <div
     style={{
       minWidth: 'max-content',
@@ -48,3 +49,15 @@ export default ({ code, message }) => (
     />
   </div>
 );
+
+TerminalComponent.propTypes = {
+  code: PropTypes.number,
+  message: PropTypes.string,
+};
+
+TerminalComponent.defaultProps = {
+  code: null,
+  message: 'You should pass message',
+};
+
+export default TerminalComponent;
