@@ -26,7 +26,7 @@ services:
       - REDIS_HOST=redis
       - DEBUG_COLORS=true
       - DEBUG=mongoose,ChildProcess,Server,seedDB,failuresController,messagesController
-      - seedAccessControl=true
+      - seedAccessControl=false
       - seedAdmin=false
       - seedFailures=false
       - permanentSeed=true # if you give true all users and accessControl will be deleted
