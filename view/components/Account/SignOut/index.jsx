@@ -1,16 +1,18 @@
-/* global localStorage */
-
 import React from 'react';
 import { ApolloConsumer } from 'react-apollo';
 import PropTypes from 'prop-types';
+import localStorageSet from '../../../helpers/localStorageSet';
 import * as routes from '../../../constants/routes';
 import history from '../../../constants/history';
 
 const signOut = async (client) => {
-  await localStorage.setItem('accessToken', '');
-  await localStorage.setItem('refreshToken', '');
-  await localStorage.setItem('role', '');
-  await localStorage.setItem('uId', '');
+  await localStorageSet([
+    { key: 'accessToken', value: '' },
+    { key: 'refreshToken', value: '' },
+    { key: 'role', value: '' },
+    { key: 'uId', value: '' },
+  ]);
+
   if (client) await client.clearStore();
   history.push(routes.LANDING);
 };
@@ -18,7 +20,12 @@ const signOut = async (client) => {
 const SignOutButton = ({ children }) => (
   <ApolloConsumer>
     {client => (
-      <div onClick={() => signOut(client)}>
+      <div
+        role="button"
+        tabIndex="-1"
+        onClick={() => signOut(client)}
+        onKeyPress={() => signOut(client)}
+      >
         {children}
         Sign Out
       </div>

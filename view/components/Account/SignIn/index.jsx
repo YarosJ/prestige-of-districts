@@ -1,5 +1,3 @@
-/* global localStorage */
-
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { Mutation } from 'react-apollo';
@@ -8,6 +6,7 @@ import {
   Grid, Image, Form, Button, Segment, Header,
 } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
+import localStorageSet from '../../../helpers/localStorageSet';
 import * as routes from '../../../constants/routes';
 import ErrorMessage from '../../Error/index';
 
@@ -41,10 +40,13 @@ class SignInPage extends Component {
     const { history } = this.props;
     signIn().then(async ({ data }) => {
       await this.setState({ ...INITIAL_STATE });
-      await localStorage.setItem('accessToken', data.signIn.accessToken);
-      await localStorage.setItem('refreshToken', data.signIn.refreshToken);
-      await localStorage.setItem('uId', data.signIn.user.id);
-      await localStorage.setItem('role', data.signIn.user.role);
+      await localStorageSet([
+        { key: 'accessToken', value: data.signIn.accessToken },
+        { key: 'refreshToken', value: data.signIn.refreshToken },
+        { key: 'role', value: data.signIn.user.role },
+        { key: 'uId', value: data.signIn.user.id },
+      ]);
+
       history.push(routes.LANDING);
     });
 
@@ -57,7 +59,7 @@ class SignInPage extends Component {
 
     return (
       <Mutation mutation={SIGN_IN} variables={{ email, password }}>
-        {(signIn, { loading, error }) => (
+        {(signIn, { error }) => (
           <div style={{ margin: '80px 45px 80px 45px', display: 'flex' }}>
             <Segment
               style={{

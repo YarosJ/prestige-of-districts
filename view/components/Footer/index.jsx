@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Container,
   Grid,
@@ -7,7 +8,7 @@ import {
   Segment,
 } from 'semantic-ui-react';
 
-export default ({ style = {} }) => (
+const Footer = ({ style }) => (
   <Segment vertical style={{ padding: '5em 0em', ...style }}>
     <Container>
       <Grid divided stackable>
@@ -43,3 +44,13 @@ export default ({ style = {} }) => (
     </Container>
   </Segment>
 );
+
+Footer.propTypes = {
+  style: PropTypes.objectOf(PropTypes.any),
+};
+
+Footer.defaultProps = {
+  style: {},
+};
+
+export default Footer;

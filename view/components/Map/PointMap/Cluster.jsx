@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
-import { failuresPropTypes } from '../../../constants/propTypes';
+import { failuresPropType } from '../../../constants/propTypes';
 import config from '../../../config.json';
 
 class Cluster extends Component {
@@ -166,7 +166,7 @@ class Cluster extends Component {
 }
 
 Cluster.propTypes = {
-  data: failuresPropTypes,
+  data: failuresPropType,
 };
 
 Cluster.defaultProps = {

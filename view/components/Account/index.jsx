@@ -15,7 +15,7 @@ const Profile = () => (
     variables={{ id: localStorage.getItem('uId') }}
   >
     {({
-      data, loading, error,
+      data, loading,
     }) => {
       const { user } = data;
       if (loading || !user) {

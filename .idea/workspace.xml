@@ -2,13 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e48be22d-a086-484b-9a46-2a2d4e5401ca" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/yaroslaw.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/yaroslaw.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/graphQL/failure/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/graphQL/failure/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/spawnChildProcess.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/view/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/components/Account/SignIn/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Account/SignIn/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/components/Account/SignOut/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Account/SignOut/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/components/Account/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Account/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/components/Admin/AccessControl/AddRole/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Admin/AccessControl/AddRole/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/components/Admin/AccessControl/AddRoleAction/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Admin/AccessControl/AddRoleAction/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/components/Admin/AccessControl/DeleteRole/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Admin/AccessControl/DeleteRole/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/components/Admin/AccessControl/DeleteRoleAction/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Admin/AccessControl/DeleteRoleAction/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/components/Admin/AccessControl/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Admin/AccessControl/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/components/Charts/AreaChart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Charts/AreaChart.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/components/Charts/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Charts/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/components/Failures/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Failures/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/components/Footer/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Footer/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Map/HeatMap/heatmapLayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Map/HeatMap/heatmapLayer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/components/Map/HeatMap3D/HeatMap3D.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Map/HeatMap3D/HeatMap3D.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/components/Map/PointMap/Cluster.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Map/PointMap/Cluster.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/components/Map/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Map/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/constants/propTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/view/constants/propTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/view/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,13 +35,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/view/components/Map/HeatMap3D/HeatMap3D.jsx">
+        <entry file="file://$PROJECT_DIR$/view/components/Admin/AccessControl/AddRole/index.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1313">
-              <caret line="131" lean-forward="true" selection-start-line="131" selection-end-line="131" />
+            <state relative-caret-position="168">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#62#103#0" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -57,12 +69,13 @@
       <find>window</find>
       <find>MAPBOX_TOKEN</find>
       <find>scrollIntoView</find>
-      <find>role</find>
       <find>BUILD_DIR</find>
       <find>refetch</find>
       <find>data</find>
       <find>elevationScale</find>
       <find>viewState</find>
+      <find>role</find>
+      <find>action</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -71,35 +84,17 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/view/helpers/Modal.jsx" />
-        <option value="$PROJECT_DIR$/view/helpers/pagination.js" />
-        <option value="$PROJECT_DIR$/view/components/Admin/Targets/Tags/GetSelector.jsx" />
-        <option value="$PROJECT_DIR$/view/components/Admin/Targets/Tags/EditTags.jsx" />
-        <option value="$PROJECT_DIR$/view/components/Account/SignOut/index.jsx" />
-        <option value="$PROJECT_DIR$/view/index.jsx" />
-        <option value="$PROJECT_DIR$/libs/Scraper.js" />
-        <option value="$PROJECT_DIR$/config/seedDB/seedDB.js" />
-        <option value="$PROJECT_DIR$/config/seedDB/accessControl.js" />
-        <option value="$PROJECT_DIR$/config/seedDB/admin.js" />
-        <option value="$PROJECT_DIR$/view/config.json" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/.dockerignore" />
-        <option value="$PROJECT_DIR$/view/helpers/checkPermission.js" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/controllers/graphql/resolvers/message.js" />
         <option value="$PROJECT_DIR$/NLP/libs/NLP/classification/corpuses/faults_classification_corpus.json" />
         <option value="$PROJECT_DIR$/helpers/geolocation/geocodeLocations.js" />
-        <option value="$PROJECT_DIR$/view/components/Charts/index.jsx" />
         <option value="$PROJECT_DIR$/config/seedDB/failures.js" />
         <option value="$PROJECT_DIR$/helpers/actionFromNLP.js" />
         <option value="$PROJECT_DIR$/controllers/ActionDispatcher.js" />
         <option value="$PROJECT_DIR$/view/components/Map/HeatMap/HeatMap.jsx" />
-        <option value="$PROJECT_DIR$/view/components/Map/index.jsx" />
         <option value="$PROJECT_DIR$/view/index.css" />
         <option value="$PROJECT_DIR$/view/components/Map/PointMap/PointMap.jsx" />
         <option value="$PROJECT_DIR$/controllers/graphql/resolvers/failure.js" />
-        <option value="$PROJECT_DIR$/view/components/Charts/AreaChart.jsx" />
         <option value="$PROJECT_DIR$/view/.babelrc" />
         <option value="$PROJECT_DIR$/view/webpack.prod.js" />
         <option value="$PROJECT_DIR$/view/public/index.html" />
@@ -116,12 +111,30 @@
         <option value="$PROJECT_DIR$/view/components/index.jsx" />
         <option value="$PROJECT_DIR$/view/components/Map/DateRange.jsx" />
         <option value="$PROJECT_DIR$/view/components/Map/HeatMap/heatmapLayer.js" />
-        <option value="$PROJECT_DIR$/view/components/Footer/index.jsx" />
         <option value="$PROJECT_DIR$/view/propTypes/failures.js" />
         <option value="$PROJECT_DIR$/view/propTypes/propTypes.js" />
-        <option value="$PROJECT_DIR$/view/components/Map/PointMap/Cluster.jsx" />
-        <option value="$PROJECT_DIR$/view/constants/propTypes.js" />
         <option value="$PROJECT_DIR$/view/components/Map/HeatMap3D/HeatMap3D.jsx" />
+        <option value="$PROJECT_DIR$/view/components/Failures/index.jsx" />
+        <option value="$PROJECT_DIR$/view/components/Footer/index.jsx" />
+        <option value="$PROJECT_DIR$/view/components/Charts/AreaChart.jsx" />
+        <option value="$PROJECT_DIR$/view/components/Charts/index.jsx" />
+        <option value="$PROJECT_DIR$/view/components/Map/index.jsx" />
+        <option value="$PROJECT_DIR$/view/components/Account/index.jsx" />
+        <option value="$PROJECT_DIR$/view/helpers/writeToLocalStorage.js" />
+        <option value="$PROJECT_DIR$/view/helpers/localStorageSet.js" />
+        <option value="$PROJECT_DIR$/view/components/Account/SignOut/index.jsx" />
+        <option value="$PROJECT_DIR$/view/components/Account/SignIn/index.jsx" />
+        <option value="$PROJECT_DIR$/view/components/Map/PointMap/Cluster.jsx" />
+        <option value="$PROJECT_DIR$/view/.eslintrc.json" />
+        <option value="$PROJECT_DIR$/view/components/Admin/AccessControl/Action.jsx" />
+        <option value="$PROJECT_DIR$/view/components/Admin/AccessControl/index.jsx" />
+        <option value="$PROJECT_DIR$/view/helpers/findInputNode.js" />
+        <option value="$PROJECT_DIR$/view/constants/propTypes.js" />
+        <option value="$PROJECT_DIR$/view/components/Admin/AccessControl/AddRole/index.jsx" />
+        <option value="$PROJECT_DIR$/view/components/Admin/AccessControl/AddRoleAction/index.jsx" />
+        <option value="$PROJECT_DIR$/view/components/Admin/AccessControl/DeleteRole/index.jsx" />
+        <option value="$PROJECT_DIR$/view/components/Admin/AccessControl/DeleteRoleAction/index.jsx" />
+        <option value="$PROJECT_DIR$/view/components/Admin/AccessControl/Role.jsx" />
       </list>
     </option>
   </component>
@@ -167,15 +180,7 @@
               <item name="prestige-of-districts" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Map" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="prestige-of-districts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="prestige-of-districts" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Map" type="462c0819:PsiDirectoryNode" />
-              <item name="PointMap" type="462c0819:PsiDirectoryNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="prestige-of-districts" type="b2602c69:ProjectViewProjectNode" />
@@ -273,16 +278,15 @@
       <workItem from="1557238859162" duration="10138000" />
       <workItem from="1557293381267" duration="22265000" />
       <workItem from="1557383213623" duration="1761000" />
-      <workItem from="1557469961207" duration="1909000" />
+      <workItem from="1557469961207" duration="19544000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="287210000" />
+    <option name="totallyTimeSpent" value="304845000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49919224" visible="true" weight="0.24720775" />
       <window_info id="Structure" order="1" sideWeight="0.50080776" side_tool="true" weight="0.24944155" />
@@ -309,176 +313,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.dockerignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="28" column="25" lean-forward="true" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/helpers/checkPermission.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="21">
-            <caret line="88" column="49" selection-start-line="88" selection-start-column="49" selection-end-line="88" selection-end-column="49" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NLP/libs/NLP/classification/corpuses/faults_classification_corpus.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="1425" column="3" lean-forward="true" selection-start-line="1425" selection-start-column="3" selection-end-line="1425" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helpers/geolocation/geocodeLocations.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="40" column="44" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helpers/ISODate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/graphql/resolvers/message.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="11" column="47" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/components/Charts/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NLP/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-176" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/startParser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helpers/actionFromNLP.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/ActionDispatcher.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
-          <folding>
-            <element signature="e#0#71#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/helpers/ChooseService.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/graphql/resolvers/partials/dateQueryFromRange.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/graphql/resolvers/failure.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="39" column="35" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/.babelrc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2079">
-          <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#37#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/public/dev/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/webpack.prod.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -530,20 +364,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/.eslintrc.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="37" column="34" lean-forward="true" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/helpers/confirmDialog.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -551,28 +371,146 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/components/Account/SignIn/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1638">
-          <caret line="130" column="22" selection-start-line="130" selection-start-column="17" selection-end-line="130" selection-end-column="22" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#27#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/components/Error/Terminal/animalSay.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
+        <state relative-caret-position="-347">
           <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/components/index.jsx">
+    <entry file="file://$PROJECT_DIR$/view/components/Charts/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="68" column="6" selection-start-line="68" selection-start-column="6" selection-end-line="68" selection-end-column="6" />
+        <state relative-caret-position="399">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/components/Charts/AreaChart.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1596">
+          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/components/Error/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/components/Error/Terminal/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/components/Footer/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="966">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/components/Map/DateRange.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/components/Map/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/components/Map/PointMap/PointMap.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/components/Map/HeatMap3D/HeatMap3D.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="214" lean-forward="true" selection-start-line="214" selection-end-line="214" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#62#103#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/components/Map/HeatMap/HeatMap.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1775">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/components/Map/HeatMap/heatmapLayer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/components/Messages/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="57" column="27" selection-start-line="57" selection-start-column="27" selection-end-line="57" selection-end-column="27" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#42#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/components/Failures/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1491">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#43#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/components/Loading/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -598,118 +536,102 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/components/Messages/index.jsx">
+    <entry file="file://$PROJECT_DIR$/view/components/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="2488">
+          <caret line="189" lean-forward="true" selection-start-line="189" selection-end-line="189" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/components/Account/RefreshPassword.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="e#42#68#0" expanded="true" />
+            <element signature="e#27#68#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/components/Map/index.jsx">
+    <entry file="file://$PROJECT_DIR$/helpers/actionFromNLP.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="441">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/components/Map/DateRange.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-242">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/components/Map/HeatMap/heatmapLayer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/components/Map/HeatMap/HeatMap.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/components/Loading/index.jsx">
+    <entry file="file://$PROJECT_DIR$/helpers/isAlreadyScraped.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/components/Footer/index.jsx">
+    <entry file="file://$PROJECT_DIR$/helpers/ISODate.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helpers/geolocation/geocodeLocations.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <caret line="76" column="20" lean-forward="true" selection-start-line="76" selection-start-column="20" selection-end-line="76" selection-end-column="20" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/components/Failures/index.jsx">
+    <entry file="file://$PROJECT_DIR$/view/helpers/localStorageSet.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11">
+        <state relative-caret-position="84">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/components/Error/index.jsx">
+    <entry file="file://$PROJECT_DIR$/view/components/Account/SignUp/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="126">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/components/Error/Terminal/index.jsx">
+    <entry file="file://$PROJECT_DIR$/view/components/Account/SignUp/SignUpForm.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="52" selection-start-line="52" selection-end-line="60" selection-end-column="2" />
+        <state relative-caret-position="819">
+          <caret line="39" column="49" lean-forward="true" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#27#68#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/components/Charts/AreaChart.jsx">
+    <entry file="file://$PROJECT_DIR$/view/components/Account/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="21">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
           <folding>
-            <element signature="e#0#45#0" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#27#53#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/components/Map/PointMap/PointMap.jsx">
+    <entry file="file://$PROJECT_DIR$/config/config.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-935">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="262">
+          <caret line="38" column="34" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -723,20 +645,131 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/constants/propTypes.js">
+    <entry file="file://$PROJECT_DIR$/view/.eslintrc.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="63">
+          <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/components/Map/HeatMap3D/HeatMap3D.jsx">
+    <entry file="file://$PROJECT_DIR$/view/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1313">
-          <caret line="131" lean-forward="true" selection-start-line="131" selection-end-line="131" />
+        <state relative-caret-position="1281">
+          <caret line="61" column="38" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/components/Account/SignIn/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1565">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/components/Account/SignOut/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="26" column="42" lean-forward="true" selection-start-line="23" selection-start-column="7" selection-end-line="26" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/helpers/findInputNode.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/constants/propTypes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/components/Admin/AccessControl/DeleteRole/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#62#103#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/components/Admin/AccessControl/AddRoleAction/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1712">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/components/Admin/AccessControl/DeleteRoleAction/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1229">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/components/Admin/AccessControl/Action.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/components/Admin/AccessControl/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1827">
+          <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/components/Admin/AccessControl/Role.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/components/Admin/helpers/Pagination.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/components/Admin/constants/queries.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/components/Admin/AccessControl/AddRole/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>

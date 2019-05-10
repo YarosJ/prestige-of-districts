@@ -3,6 +3,7 @@ import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import ErrorMessage from '../../../Error/index';
 import confirmDialog from '../../../../helpers/confirmDialog';
+import { rolePropType, childrenPropType } from '../../../../constants/propTypes';
 
 const DELETE_ROLE = gql`
   mutation($role: String!) {
@@ -21,6 +22,10 @@ const GET_ROLES = gql`
     }
   }
 `;
+
+const confirm = async (deleteRole) => {
+  await confirmDialog({ action: 'role', onConfirm: deleteRole });
+};
 
 const DeleteRole = ({ role, children }) => (
   <Mutation
@@ -47,9 +52,11 @@ const DeleteRole = ({ role, children }) => (
     }
   >
     {(deleteRole, { error }) => (
-      <div onClick={async () => {
-        await confirmDialog({ action: 'role', onConfirm: deleteRole });
-      }}
+      <div
+        role="button"
+        tabIndex="-1"
+        onClick={async () => confirm(deleteRole)}
+        onKeyPress={async () => confirm(deleteRole)}
       >
         {children}
         {error && <ErrorMessage error={error} />}
@@ -57,5 +64,18 @@ const DeleteRole = ({ role, children }) => (
     )}
   </Mutation>
 );
+
+DeleteRole.propTypes = {
+  role: rolePropType,
+  children: childrenPropType,
+};
+
+DeleteRole.defaultProps = {
+  role: {
+    role: null,
+    actions: [],
+  },
+  children: null,
+};
 
 export default DeleteRole;

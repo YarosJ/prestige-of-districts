@@ -1,7 +1,9 @@
 import React from 'react';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
+import PropTypes from 'prop-types';
 import ErrorMessage from '../../../Error/index';
+import { rolePropType, childrenPropType } from '../../../../constants/propTypes';
 
 const DELETE_ROLE_ACTION = gql`
   mutation($role: String!, $action: String!) {
@@ -35,29 +37,49 @@ const DeleteRoleAction = ({ role, action, children }) => (
       }
     }
     update={
-      (proxy, { data: { deleteAction } }) => {
-        const data = proxy.readQuery({ query: GET_ROLES });
+      (cache, { data: { deleteAction } }) => {
+        const data = cache.readQuery({ query: GET_ROLES });
 
-        data.roles.map((r) => {
+        data.roles.forEach((r, index) => {
           if (r.role === deleteAction.role) {
-            r.actions = deleteAction.actions;
+            data.roles[index].actions = deleteAction.actions;
           }
         });
 
-        proxy.writeQuery({
+        cache.writeQuery({
           query: GET_ROLES,
           data,
         });
       }
     }
   >
-    {(deleteAction, { data, loading, error }) => (
-      <div onClick={deleteAction}>
+    {(deleteAction, { error }) => (
+      <div
+        role="button"
+        tabIndex="-1"
+        onClick={deleteAction}
+        onKeyPress={deleteAction}
+      >
         {children}
         {error && <ErrorMessage error={error} />}
       </div>
     )}
   </Mutation>
 );
+
+DeleteRoleAction.propTypes = {
+  role: rolePropType,
+  action: PropTypes.string,
+  children: childrenPropType,
+};
+
+DeleteRoleAction.defaultProps = {
+  role: {
+    role: null,
+    actions: [],
+  },
+  action: null,
+  children: null,
+};
 
 export default DeleteRoleAction;

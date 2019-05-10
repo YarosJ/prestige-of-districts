@@ -5,7 +5,7 @@ import { StaticMap } from 'react-map-gl';
 import DeckGL, { HexagonLayer } from 'deck.gl';
 import { Query } from 'react-apollo';
 import PropTypes from 'prop-types';
-import { failuresPropTypes } from '../../../constants/propTypes';
+import { failuresPropType } from '../../../constants/propTypes';
 import { GET_FAILURES } from '../../../constants/queries';
 import Loading from '../../Loading/index';
 import ChooseService from '../../../helpers/ChooseService';
@@ -182,7 +182,7 @@ class HeatMap extends Component {
 }
 
 HeatMap.propTypes = {
-  data: failuresPropTypes,
+  data: failuresPropType,
   radius: PropTypes.number,
   upperPercentile: PropTypes.number,
   coverage: PropTypes.number,

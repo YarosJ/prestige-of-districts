@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import Swal from 'sweetalert2';
+import PropTypes from 'prop-types';
 import ErrorMessage from '../../../Error/index';
+import findInputNode from '../../../../helpers/findInputNode';
+import { childrenPropType } from '../../../../constants/propTypes';
 
 const ADD_ROLE = gql`
   mutation($role: String!) {
@@ -22,27 +25,11 @@ const GET_ROLES = gql`
   }
 `;
 
-const findInputNode = (target) => {
-  let input = null;
-
-  target.childNodes.forEach((n) => {
-    if (!n || input) return null;
-    if (n.nodeName === 'INPUT') {
-      input = n;
-      return null;
-    }
-    if (n.childNodes) input = findInputNode(n);
-    return null;
-  });
-
-  return input;
-};
-
 class AddRole extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      role: undefined,
+      role: null,
     };
 
     this.submitAdd = async (e, addRole) => {
@@ -61,15 +48,17 @@ class AddRole extends Component {
   }
 
   render() {
-    const { style } = this.props;
+    const { style, children } = this.props;
+    const { role } = this.state;
+
     return (
       <Mutation
         mutation={ADD_ROLE}
-        variables={{ role: this.state.role }}
+        variables={{ role }}
         optimisticResponse={
           {
             addRole: {
-              role: this.state.role,
+              role,
               actions: [],
               __typename: 'Permission',
             },
@@ -86,9 +75,15 @@ class AddRole extends Component {
           }
         }
       >
-        {(addRole, { data, loading, error }) => (
-          <div onClick={e => this.submitAdd(e, addRole)} style={style}>
-            { this.props.children }
+        {(addRole, { error }) => (
+          <div
+            role="button"
+            tabIndex="-1"
+            onClick={e => this.submitAdd(e, addRole)}
+            onKeyPress={e => this.submitAdd(e, addRole)}
+            style={style}
+          >
+            { children }
             { error && <ErrorMessage error={error} /> }
           </div>
         )}
@@ -96,5 +91,15 @@ class AddRole extends Component {
     );
   }
 }
+
+AddRole.propTypes = {
+  style: PropTypes.objectOf(PropTypes.any),
+  children: childrenPropType,
+};
+
+AddRole.defaultProps = {
+  style: {},
+  children: null,
+};
 
 export default AddRole;

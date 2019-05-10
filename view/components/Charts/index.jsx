@@ -14,6 +14,6 @@ export default () => (
     overflow: 'auto',
   }}
   >
-    {services.map((service, key) => <AreaChart key={key} services={[service]} />)}
+    {services.map(service => <AreaChart key={service} service={service} />)}
   </div>
 );

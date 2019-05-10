@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import {
   AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Brush, Legend,
 } from 'recharts';
@@ -6,14 +7,15 @@ import { Query } from 'react-apollo';
 import { GET_FAILURES } from '../../constants/queries';
 import Loading from '../Loading';
 
-const offset = 0.5;
+const OFFSET = 0.5;
 
-export default class AreaChartComponent extends PureComponent {
+class AreaChartComponent extends PureComponent {
   render() {
-    const { services } = this.props;
+    const { service } = this.props;
+    if (!service) return <Loading />;
 
     return (
-      <Query query={GET_FAILURES} variables={{ services }}>
+      <Query query={GET_FAILURES} variables={{ services: [service] }}>
         {({ loading, error, data }) => {
           const { failures } = data;
 
@@ -45,12 +47,12 @@ export default class AreaChartComponent extends PureComponent {
                 <XAxis dataKey="name" />
                 <YAxis />
                 <Tooltip />
-                <Legend verticalAlign="top" height={36} content={() => services[0]} />
+                <Legend verticalAlign="top" height={36} content={() => service} />
                 <Brush style={{ marginTop: '50px' }} />
                 <defs>
                   <linearGradient id="splitColor" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset={offset} stopColor="red" stopOpacity={1} />
-                    <stop offset={offset} stopColor="green" stopOpacity={1} />
+                    <stop offset={OFFSET} stopColor="red" stopOpacity={1} />
+                    <stop offset={OFFSET} stopColor="green" stopOpacity={1} />
                   </linearGradient>
                 </defs>
                 <Area type="monotone" dataKey="uv" stroke="#000" fill="url(#splitColor)" />
@@ -62,3 +64,13 @@ export default class AreaChartComponent extends PureComponent {
     );
   }
 }
+
+AreaChartComponent.propTypes = {
+  service: PropTypes.string,
+};
+
+AreaChartComponent.defaultProps = {
+  service: null,
+};
+
+export default AreaChartComponent;

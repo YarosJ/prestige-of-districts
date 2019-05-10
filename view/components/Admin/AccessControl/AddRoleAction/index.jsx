@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import ErrorMessage from '../../../Error/index';
+import findInputNode from '../../../../helpers/findInputNode';
+import { rolePropType, childrenPropType } from '../../../../constants/propTypes';
 
 const ADD_ROLE_ACTION = gql`
   mutation($role: String!, $action: String!) {
@@ -25,61 +27,63 @@ class AddRoleAction extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      action: undefined,
+      action: null,
     };
 
     this.submitAdd = async (e, addRoleAction) => {
       const { target, currentTarget } = e;
       if (target.nodeName === 'BUTTON') {
-        let input = currentTarget.childNodes[0];
-        while (input.nodeName !== 'INPUT') {
-          input
-            ? input = input.childNodes[0]
-            : () => {throw('Input not found')};
-        }
-        await this.setState({ action: input.value });
+        await this.setState({ action: findInputNode(currentTarget).value });
         addRoleAction();
       }
     };
   }
 
   render() {
+    const { children, role } = this.props;
+    const { action } = this.state;
+
     return (
       <Mutation
         mutation={ADD_ROLE_ACTION}
-        variables={{ role: this.props.role.role, action: this.state.action }}
+        variables={{ role: role.role, action }}
         optimisticResponse={
           {
             addAction: {
-              role: this.props.role.role,
+              role: role.role,
               actions: [
-                ...this.props.role.actions,
-                this.state.action,
+                ...role.actions,
+                action,
               ],
               __typename: 'Permission',
             },
           }
         }
         update={
-          (proxy, { data: { addAction } }) => {
-            const data = proxy.readQuery({ query: GET_ROLES });
+          (cache, { data: { addAction } }) => {
+            const data = cache.readQuery({ query: GET_ROLES });
 
-            data.roles.map((role) => {
-              if (role.role === addAction.role) {
-                role.actions = addAction.actions;
+            data.roles.forEach((r, index) => {
+              if (r.role === addAction.role) {
+                data.roles[index].actions = addAction.actions;
               }
             });
 
-            proxy.writeQuery({
+            cache.writeQuery({
               query: GET_ROLES,
               data,
             });
           }
         }
       >
-        {(addRoleAction, { data, loading, error }) => (
-          <div onClick={e => this.submitAdd(e, addRoleAction)}>
-            { this.props.children }
+        {(addRoleAction, { error }) => (
+          <div
+            role="button"
+            tabIndex="-1"
+            onClick={e => this.submitAdd(e, addRoleAction)}
+            onKeyPress={e => this.submitAdd(e, addRoleAction)}
+          >
+            { children }
             { error && <ErrorMessage error={error} /> }
           </div>
         )}
@@ -87,5 +91,18 @@ class AddRoleAction extends Component {
     );
   }
 }
+
+AddRoleAction.propTypes = {
+  role: rolePropType,
+  children: childrenPropType,
+};
+
+AddRoleAction.defaultProps = {
+  role: {
+    role: null,
+    actions: [],
+  },
+  children: null,
+};
 
 export default AddRoleAction;
