@@ -24,6 +24,7 @@
       <w>mapboxgl</w>
       <w>maxzoom</w>
       <w>offc</w>
+      <w>pickable</w>
       <w>pointmap</w>
       <w>polygonpoints</w>
       <w>refetch</w>

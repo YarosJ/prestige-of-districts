@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 import { StaticMap } from 'react-map-gl';
 import DeckGL, { HexagonLayer } from 'deck.gl';
 import { Query } from 'react-apollo';
+import PropTypes from 'prop-types';
+import { failuresPropTypes } from '../../../constants/propTypes';
 import { GET_FAILURES } from '../../../constants/queries';
 import Loading from '../../Loading/index';
 import ChooseService from '../../../helpers/ChooseService';
@@ -39,7 +41,7 @@ const colorRange = [
 
 const elevationScale = { min: 1, max: 50 };
 
-export default class App extends Component {
+class HeatMap extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -50,54 +52,59 @@ export default class App extends Component {
     this.startAnimationTimer = null;
     this.intervalTimer = null;
 
-    this._startAnimate = this._startAnimate.bind(this);
-    this._animateHeight = this._animateHeight.bind(this);
+    this.startAnimate = this.startAnimate.bind(this);
+    this.animateHeight = this.animateHeight.bind(this);
   }
 
   componentDidMount() {
-    this._animate();
+    this.animate();
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.data && this.props.data && nextProps.data.length !== this.props.data.length) {
-      this._animate();
+    const { data } = nextProps;
+    const { props } = this;
+
+    if (data && props.data && data.length !== props.data.length) {
+      this.animate();
     }
   }
 
   componentWillUnmount() {
-    this._stopAnimate();
+    this.stopAnimate();
   }
 
   handleServiceChange = (e, { value }) => this.setState({ services: value });
 
-  _animate() {
-    this._stopAnimate();
+  animate() {
+    this.stopAnimate();
 
     // wait 1.5 secs to start animation so that all data are loaded
-    this.startAnimationTimer = window.setTimeout(this._startAnimate, 1500);
+    this.startAnimationTimer = window.setTimeout(this.startAnimate, 1500);
   }
 
-  _startAnimate() {
-    this.intervalTimer = window.setInterval(this._animateHeight, 20);
+  startAnimate() {
+    this.intervalTimer = window.setInterval(this.animateHeight, 20);
   }
 
-  _stopAnimate() {
+  stopAnimate() {
     window.clearTimeout(this.startAnimationTimer);
     window.clearTimeout(this.intervalTimer);
   }
 
-  _animateHeight() {
-    if (this.state.elevationScale === elevationScale.max) {
-      this._stopAnimate();
+  animateHeight() {
+    const { state } = this;
+    if (state.elevationScale === elevationScale.max) {
+      this.stopAnimate();
     } else {
-      this.setState({ elevationScale: this.state.elevationScale + 1 });
+      this.setState({ elevationScale: state.elevationScale + 1 });
     }
   }
 
-  _renderLayers(data) {
+  renderLayers(data) {
     const {
-      radius = 500, upperPercentile = 100, coverage = 1, onHover,
+      radius, upperPercentile, coverage, onHover,
     } = this.props;
+    const { state } = this;
 
     return [
       new HexagonLayer({
@@ -106,7 +113,7 @@ export default class App extends Component {
         coverage,
         data,
         elevationRange: [0, 30],
-        elevationScale: this.state.elevationScale,
+        elevationScale: state.elevationScale,
         extruded: true,
         getPosition: d => d,
         lightSettings: LIGHT_SETTINGS,
@@ -121,7 +128,7 @@ export default class App extends Component {
 
   render() {
     const { services } = this.state;
-    const { viewState, controller = true, baseMap = true } = this.props;
+    const { viewState, controller, baseMap } = this.props;
 
     return (
       <Query
@@ -152,7 +159,7 @@ export default class App extends Component {
                 }}
               />
               <DeckGL
-                layers={this._renderLayers(fData)}
+                layers={this.renderLayers(fData)}
                 initialViewState={INITIAL_VIEW_STATE}
                 viewState={viewState}
                 controller={controller}
@@ -173,3 +180,35 @@ export default class App extends Component {
     );
   }
 }
+
+HeatMap.propTypes = {
+  data: failuresPropTypes,
+  radius: PropTypes.number,
+  upperPercentile: PropTypes.number,
+  coverage: PropTypes.number,
+  onHover: PropTypes.func,
+  viewState: PropTypes.shape({
+    latitude: PropTypes.number,
+    longitude: PropTypes.number,
+    zoom: PropTypes.number,
+    minZoom: PropTypes.number,
+    maxZoom: PropTypes.number,
+    pitch: PropTypes.number,
+    bearing: PropTypes.number,
+  }),
+  controller: PropTypes.bool,
+  baseMap: PropTypes.bool,
+};
+
+HeatMap.defaultProps = {
+  data: [],
+  radius: 500,
+  upperPercentile: 100,
+  coverage: 1,
+  onHover: null,
+  viewState: null,
+  controller: true,
+  baseMap: true,
+};
+
+export default HeatMap;

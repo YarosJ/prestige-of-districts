@@ -71,7 +71,7 @@ export default async ({ query, mutate }) => {
 
         // eslint-disable-next-line no-undef
         it('failures was found', async () => {
-          assert(response.failures.length > 0, "failures wasn't found");
+          assert(response.propTypes.length > 0, "failures wasn't found");
         });
       });
 
@@ -95,7 +95,7 @@ export default async ({ query, mutate }) => {
 
         // eslint-disable-next-line no-undef
         it('failures was found', async () => {
-          assert(response.failures.length > 0, "failures wasn't found");
+          assert(response.propTypes.length > 0, "failures wasn't found");
         });
       });
     });

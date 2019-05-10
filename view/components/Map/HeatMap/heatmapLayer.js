@@ -1,5 +1,6 @@
 export default (id, source) => {
   const MAX_ZOOM_LEVEL = 24;
+
   return {
     id,
     source,

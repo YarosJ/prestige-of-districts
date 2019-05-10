@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
-import PropTypes from 'prop-types';
+import { failuresPropTypes } from '../../../constants/propTypes';
 import config from '../../../config.json';
 
 class Cluster extends Component {
@@ -166,14 +166,7 @@ class Cluster extends Component {
 }
 
 Cluster.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.shape({
-    failureType: PropTypes.string,
-    text: PropTypes.string,
-    locations: PropTypes.arrayOf(PropTypes.shape({
-      longitude: PropTypes.number,
-      latitude: PropTypes.number,
-    })),
-  })),
+  data: failuresPropTypes,
 };
 
 Cluster.defaultProps = {
