@@ -1,7 +1,8 @@
-import React, {Component, Fragment} from 'react';
-import gql from "graphql-tag";
-import {Query} from "react-apollo";
-import Loading from "../../../Loading/index";
+import React, { Component } from 'react';
+import gql from 'graphql-tag';
+import { Query } from 'react-apollo';
+import PropTypes from 'prop-types';
+import Loading from '../../../Loading/index';
 
 const GET_ROLES = gql`
  query {
@@ -14,16 +15,19 @@ const GET_ROLES = gql`
 
 class SelectPanel extends Component {
   updateUser(e) {
-    this.props.updateUser(e.target.options[e.target.selectedIndex].value);
+    const { updateUser } = this.props;
+    updateUser(e.target.options[e.target.selectedIndex].value);
   }
 
   render() {
+    const { value } = this.props;
+
     return (
       <Query
         query={GET_ROLES}
       >
         {({
-          data, loading, error,
+          data, loading,
         }) => {
           const { roles } = data;
           if (loading || !roles) {
@@ -37,10 +41,13 @@ class SelectPanel extends Component {
                 padding: '3px',
                 background: 'aliceblue',
               }}
-              value={this.props.value}
-              onChange={this.updateUser.bind(this)}>
-              {roles.map((role, key) => (
-                <option key={key} style={{ background: 'aliceblue' }} value={role.role}>{role.role}</option>
+              value={value}
+              onChange={this.updateUser.bind(this)}
+            >
+              {roles.map(role => (
+                <option key={role.role} style={{ background: 'aliceblue' }} value={role.role}>
+                  {role.role}
+                </option>
               ))}
             </select>
           );
@@ -49,5 +56,15 @@ class SelectPanel extends Component {
     );
   }
 }
+
+SelectPanel.propTypes = {
+  updateUser: PropTypes.func,
+  value: PropTypes.string,
+};
+
+SelectPanel.defaultProps = {
+  updateUser: null,
+  value: null,
+};
 
 export default SelectPanel;

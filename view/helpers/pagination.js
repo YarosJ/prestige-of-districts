@@ -4,8 +4,8 @@ const [LIMIT, CURSOR] = ['15', '0'];
 
 function currentPagination() {
   return {
-    limit: localStorage.getItem('limit') || LIMIT,
-    cursor: localStorage.getItem('cursor') || CURSOR,
+    limit: parseInt(localStorage.getItem('limit') || LIMIT, 10),
+    cursor: parseInt(localStorage.getItem('cursor') || CURSOR, 10),
   };
 }
 

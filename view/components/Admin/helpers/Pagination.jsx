@@ -1,19 +1,18 @@
 import React from 'react';
 import { Query } from 'react-apollo';
 import { Container, Pagination } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 import { GET_TOTAL } from '../../../constants/queries';
 
-export default ({ cursor, limit, onPageChange }) => (
+const PaginationComponent = ({ cursor, limit, onPageChange }) => (
   <Query
     query={GET_TOTAL}
     variables={{ target: 'Users' }}
   >
-    {({
-      data, loading, error,
-    }) => {
+    {({ data }) => {
       const { total } = data;
       let count = limit;
-      if (total) count = total.count;
+      if (total) ({ count } = total);
 
       return (
         <Container style={{
@@ -31,3 +30,17 @@ export default ({ cursor, limit, onPageChange }) => (
     }}
   </Query>
 );
+
+PaginationComponent.propTypes = {
+  cursor: PropTypes.number,
+  limit: PropTypes.number,
+  onPageChange: PropTypes.func,
+};
+
+PaginationComponent.defaultProps = {
+  cursor: 0,
+  limit: 15,
+  onPageChange: null,
+};
+
+export default PaginationComponent;
