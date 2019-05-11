@@ -1,8 +1,8 @@
 import React from 'react';
 import { ApolloConsumer } from 'react-apollo';
-import PropTypes from 'prop-types';
+import { childrenPropType } from '../../../constants/propTypes';
 import localStorageSet from '../../../helpers/localStorageSet';
-import * as routes from '../../../constants/routes';
+import { routes } from '../../../config.json';
 import history from '../../../constants/history';
 
 const signOut = async (client) => {
@@ -34,7 +34,11 @@ const SignOutButton = ({ children }) => (
 );
 
 SignOutButton.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: childrenPropType,
+};
+
+SignOutButton.defaultProps = {
+  children: null,
 };
 
 export { signOut };

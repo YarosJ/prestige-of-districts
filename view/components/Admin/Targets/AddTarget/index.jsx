@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Modal from '../../../../helpers/Modal';
+import Modal from '../../../../helpers/components/Modal';
 import AddTags from '../Tags/AddTags';
 import Basics from './Basics';
 

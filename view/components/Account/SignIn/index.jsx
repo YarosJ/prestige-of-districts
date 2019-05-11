@@ -5,9 +5,9 @@ import gql from 'graphql-tag';
 import {
   Grid, Image, Form, Button, Segment, Header,
 } from 'semantic-ui-react';
-import PropTypes from 'prop-types';
+import ReactRouterPropTypes from 'react-router-prop-types';
 import localStorageSet from '../../../helpers/localStorageSet';
-import * as routes from '../../../constants/routes';
+import { routes } from '../../../config.json';
 import ErrorMessage from '../../Error/index';
 
 const SIGN_IN = gql`
@@ -141,11 +141,7 @@ class SignInPage extends Component {
 }
 
 SignInPage.propTypes = {
-  history: PropTypes.objectOf(PropTypes.any),
-};
-
-SignInPage.defaultProps = {
-  history: {},
+  history: ReactRouterPropTypes.history.isRequired,
 };
 
 export default withRouter(SignInPage);

@@ -1,5 +1,3 @@
-/* eslint-disable no-underscore-dangle */
-
 import React from 'react';
 import { Query } from 'react-apollo';
 import moment from 'moment';
@@ -9,7 +7,7 @@ import {
 import { GET_FAILURES } from '../../constants/queries';
 import Loading from '../Loading/index';
 import Footer from '../Footer/index';
-import ChooseService from '../../helpers/ChooseService';
+import ChooseService from '../../helpers/components/ChooseService';
 
 class Messages extends React.Component {
   state = { services: [] };

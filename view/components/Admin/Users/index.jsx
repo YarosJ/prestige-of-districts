@@ -5,13 +5,13 @@ import { Query } from 'react-apollo';
 import { Container } from 'semantic-ui-react';
 import scrollIntoView from 'scroll-into-view';
 import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
+import ReactRouterPropTypes from 'react-router-prop-types';
 import Loading from '../../Loading/index';
-import { GET_USERS } from '../constants/queries';
+import { GET_USERS } from '../queries';
 import checkPermission from '../../../helpers/checkPermission';
 import pagination, { changePagination } from '../../../helpers/pagination';
 import UsersList from './UsersList';
-import Pagination from '../helpers/Pagination';
+import Pagination from '../../../helpers/components/Pagination';
 import Footer from '../../Footer/index';
 
 class Users extends Component {
@@ -78,11 +78,7 @@ class Users extends Component {
 }
 
 Users.propTypes = {
-  history: PropTypes.objectOf(PropTypes.any),
-};
-
-Users.defaultProps = {
-  history: {},
+  history: ReactRouterPropTypes.history.isRequired,
 };
 
 export default Users;

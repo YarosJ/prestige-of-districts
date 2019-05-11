@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Grid, Header, Image, Segment,
 } from 'semantic-ui-react';
-import PropTypes from 'prop-types';
+import ReactRouterPropTypes from 'react-router-prop-types';
 import SignUpForm from './SignUpForm';
 
 const SignUpPage = ({ history }) => (
@@ -45,11 +45,7 @@ const SignUpPage = ({ history }) => (
 );
 
 SignUpPage.propTypes = {
-  history: PropTypes.objectOf(PropTypes.any),
-};
-
-SignUpPage.defaultProps = {
-  history: {},
+  history: ReactRouterPropTypes.history.isRequired,
 };
 
 export default SignUpPage;

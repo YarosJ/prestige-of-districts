@@ -2,7 +2,7 @@ import React from 'react';
 import { Query } from 'react-apollo';
 import { Container, Pagination } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { GET_TOTAL } from '../../../constants/queries';
+import { GET_TOTAL } from '../../constants/queries';
 
 const PaginationComponent = ({ cursor, limit, onPageChange }) => (
   <Query

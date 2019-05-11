@@ -5,8 +5,8 @@ import { withRouter } from 'react-router-dom';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import { Button, Form } from 'semantic-ui-react';
-import PropTypes from 'prop-types';
-import * as routes from '../../../constants/routes';
+import ReactRouterPropTypes from 'react-router-prop-types';
+import { routes } from '../../../config.json';
 import ErrorMessage from '../../Error/index';
 
 const SIGN_UP = gql`
@@ -110,11 +110,7 @@ class SignUpForm extends Component {
 }
 
 SignUpForm.propTypes = {
-  history: PropTypes.objectOf(PropTypes.any),
-};
-
-SignUpForm.defaultProps = {
-  history: {},
+  history: ReactRouterPropTypes.history.isRequired,
 };
 
 export default withRouter(SignUpForm);

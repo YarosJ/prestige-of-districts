@@ -3,7 +3,7 @@ import { Router, Route, Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import PropTypes from 'prop-types';
 import history from '../constants/history';
-import * as routes from '../constants/routes';
+import { routes } from '../config.json';
 import Loading from './Loading';
 
 const Maps = Loadable({
@@ -139,17 +139,17 @@ class App extends React.Component {
 
               <Route
                 exact
-                path={routes.USERS}
+                path={routes.admin.USERS}
                 component={() => <Users history={history} />}
               />
               <Route
                 exact
-                path={routes.ACCESS_CONTROL}
+                path={routes.admin.ACCESS_CONTROL}
                 component={() => <Access history={history} />}
               />
               <Route
                 exact
-                path={routes.TARGETS}
+                path={routes.admin.TARGETS}
                 component={() => (
                   <Targets
                     history={history}
@@ -162,7 +162,7 @@ class App extends React.Component {
 
               <Route
                 exact
-                path={routes.FORBIDDEN}
+                path={routes.errors.FORBIDDEN}
                 component={() => (
                   <Terminal
                     code={403}

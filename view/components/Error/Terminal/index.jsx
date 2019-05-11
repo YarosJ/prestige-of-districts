@@ -1,14 +1,19 @@
+/* global window */
+
 import React from 'react';
 import Terminal from 'terminal-in-react';
 import PropTypes from 'prop-types';
-import { aardvarksay, dragonsay, tuxsay } from './animalSay';
+import {
+  aardvarksay, dragonsay, tuxsay, fourHundredFour, forbidden,
+} from './animalSay';
 
 const directError = ({ code, message }) => {
+  const mobile = window.innerWidth > 550;
   switch (code) {
     case 404:
-      return aardvarksay(message);
+      return mobile ? aardvarksay(message) : fourHundredFour;
     case 403:
-      return dragonsay(message);
+      return mobile ? dragonsay(message) : forbidden;
     default:
       return tuxsay(message);
   }
@@ -17,7 +22,6 @@ const directError = ({ code, message }) => {
 const TerminalComponent = ({ code, message }) => (
   <div
     style={{
-      minWidth: 'max-content',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',

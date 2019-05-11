@@ -66,11 +66,7 @@ class AreaChartComponent extends PureComponent {
 }
 
 AreaChartComponent.propTypes = {
-  service: PropTypes.string,
-};
-
-AreaChartComponent.defaultProps = {
-  service: null,
+  service: PropTypes.string.isRequired,
 };
 
 export default AreaChartComponent;

@@ -3,10 +3,10 @@
 import React from 'react';
 import posed from 'react-pose';
 import 'react-input-range/lib/css/index.css';
-import PropTypes from 'prop-types';
 import { Icon, List } from 'semantic-ui-react';
+import ReactRouterPropTypes from 'react-router-prop-types';
 import ProfileControl from './ProfileControl';
-import * as routes from '../../constants/routes';
+import { routes } from '../../config.json';
 import checkPermission from '../../helpers/checkPermission';
 
 const Hoverable = posed.div({
@@ -56,21 +56,21 @@ const Navigation = ({ history }) => {
           </Hoverable>
         </List.Item>
         {isAdmin && (
-          <List.Item style={{ marginBottom: '10px' }} onClick={() => history.push(routes.USERS)}>
+          <List.Item style={{ marginBottom: '10px' }} onClick={() => history.push(routes.admin.USERS)}>
             <Hoverable>
               <Icon name="address card" size="large" color={iconColor} />
             </Hoverable>
           </List.Item>
         )}
         {isAdmin && (
-          <List.Item style={{ marginBottom: '10px' }} onClick={() => history.push(routes.TARGETS)}>
+          <List.Item style={{ marginBottom: '10px' }} onClick={() => history.push(routes.admin.TARGETS)}>
             <Hoverable>
               <Icon name="map signs" size="large" color={iconColor} />
             </Hoverable>
           </List.Item>
         )}
         {isAdmin && (
-          <List.Item style={{ marginBottom: '10px' }} onClick={() => history.push(routes.ACCESS_CONTROL)}>
+          <List.Item style={{ marginBottom: '10px' }} onClick={() => history.push(routes.admin.ACCESS_CONTROL)}>
             <Hoverable>
               <Icon name="unlock alternate" size="large" color={iconColor} />
             </Hoverable>
@@ -82,11 +82,7 @@ const Navigation = ({ history }) => {
 };
 
 Navigation.propTypes = {
-  history: PropTypes.objectOf(PropTypes.any),
-};
-
-Navigation.defaultProps = {
-  history: {},
+  history: ReactRouterPropTypes.history.isRequired,
 };
 
 export default Navigation;

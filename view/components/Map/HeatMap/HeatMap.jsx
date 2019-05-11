@@ -7,7 +7,7 @@ import mapboxgl from 'mapbox-gl';
 import Loading from '../../Loading/index';
 import { GET_FAILURES } from '../../../constants/queries';
 import heatmapLayer from './heatmapLayer';
-import ChooseService from '../../../helpers/ChooseService';
+import ChooseService from '../../../helpers/components/ChooseService';
 import DateRange from '../DateRange';
 import config from '../../../config.json';
 

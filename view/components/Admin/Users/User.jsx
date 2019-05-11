@@ -3,7 +3,7 @@ import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import { Icon, Table } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { GET_USERS } from '../constants/queries';
+import { GET_USERS } from '../queries';
 import SelectRole from './SelectRole';
 import DeleteUser from './DeleteUser';
 

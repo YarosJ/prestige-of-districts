@@ -21,20 +21,6 @@ export const aardvarksay = message => `
                                                                  \`''---::::'       
  `;
 
-export const tuxsay = message => `
-${message}
-     \\
-      \\
-        .--.
-       |o_o |
-       |:_/ |
-      //   \\ \\
-     (|     | )
-    /'\\_   _/\`\\
-    \\___)=(___/
-                
- `;
-
 export const dragonsay = message => `
        ${message}
             \\                    / \\  //\\
@@ -54,3 +40,43 @@ export const dragonsay = message => `
                      ///-._ _ _ _ _ _ _}^ - - - - ~                     ~-- ,.-~
                                                                         /.-~
   `;
+
+export const tuxsay = message => `
+${message}
+     \\
+      \\
+        .--.
+       |o_o |
+       |:_/ |
+      //   \\ \\
+     (|     | )
+    /'\\_   _/\`\\
+    \\___)=(___/
+                
+ `;
+
+export const fourHundredFour = `
+
+  _  _      ___    _  _   
+ | || |    / _ \\  | || |  
+ | || |_  | | | | | || |_ 
+ |__   _| | | | | |__   _|
+    | |   | |_| |    | |  
+    |_|    \\___/     |_|  
+                          
+      Page Not Found
+
+`;
+
+export const forbidden = `
+
+  _  _      ___    ____  
+ | || |    / _ \\  |___ \\ 
+ | || |_  | | | |   __) |
+ |__   _| | | | |  |__ < 
+    | |   | |_| |  ___) |
+    |_|    \\___/  |____/ 
+                         
+         Forbidden
+
+`;

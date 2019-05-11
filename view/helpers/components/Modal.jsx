@@ -1,12 +1,15 @@
 /* global document */
+
 import React, { Component } from 'react';
 import {
   Modal,
   Button,
   TransitionablePortal,
 } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
+import { childrenPropType } from '../../constants/propTypes';
 
-class Add extends Component {
+class ModalComponent extends Component {
   state = { open: false };
 
   handleOpen = () => {
@@ -50,7 +53,12 @@ class Add extends Component {
 
         {activateContent
           ? (
-            <div onClick={this.handleOpen}>
+            <div
+              role="button"
+              tabIndex="-1"
+              onClick={this.handleOpen}
+              onKeyPress={this.handleOpen}
+            >
               {activateContent}
             </div>
           )
@@ -58,7 +66,7 @@ class Add extends Component {
             <Button
               content={buttonContent}
               color={buttonColor}
-              size={buttonSize || 'tiny'}
+              size={buttonSize}
               compact
               style={{ marginTop: '15px', marginBottom: '20px' }}
               onClick={this.handleOpen}
@@ -74,7 +82,7 @@ class Add extends Component {
             open
             onClose={this.handleClose}
             closeIcon
-            style={windowStyle || {}}
+            style={windowStyle}
           >
             <Modal.Header>
               { header }
@@ -88,4 +96,29 @@ class Add extends Component {
     );
   }
 }
-export default Add;
+
+ModalComponent.propTypes = {
+  header: childrenPropType,
+  children: childrenPropType,
+  buttonContent: childrenPropType,
+  buttonSize: PropTypes.string,
+  buttonColor: PropTypes.string,
+  initiateClose: PropTypes.func,
+  activateContent: childrenPropType,
+  style: PropTypes.objectOf(PropTypes.any),
+  windowStyle: PropTypes.objectOf(PropTypes.any),
+};
+
+ModalComponent.defaultProps = {
+  header: null,
+  children: null,
+  buttonContent: null,
+  buttonSize: 'tiny',
+  buttonColor: null,
+  initiateClose: null,
+  activateContent: null,
+  style: {},
+  windowStyle: {},
+};
+
+export default ModalComponent;

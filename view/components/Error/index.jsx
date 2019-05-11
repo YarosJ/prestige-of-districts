@@ -8,12 +8,7 @@ const ErrorMessage = ({ error }) => (
 );
 
 ErrorMessage.propTypes = {
-  error: PropTypes.objectOf(PropTypes.any),
+  error: PropTypes.objectOf(PropTypes.any).isRequired,
 };
-
-ErrorMessage.defaultProps = {
-  error: {},
-};
-
 
 export default ErrorMessage;

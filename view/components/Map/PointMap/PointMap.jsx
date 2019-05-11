@@ -6,7 +6,7 @@ import { GET_FAILURES } from '../../../constants/queries';
 import Loading from '../../Loading/index';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import Cluster from './Cluster';
-import ChooseService from '../../../helpers/ChooseService';
+import ChooseService from '../../../helpers/components/ChooseService';
 
 export default class Map extends Component {
   state = {

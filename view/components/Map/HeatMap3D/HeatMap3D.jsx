@@ -1,5 +1,5 @@
 /* global window */
-/* eslint-disable no-underscore-dangle */
+
 import React, { Component } from 'react';
 import { StaticMap } from 'react-map-gl';
 import DeckGL, { HexagonLayer } from 'deck.gl';
@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import { failuresPropType } from '../../../constants/propTypes';
 import { GET_FAILURES } from '../../../constants/queries';
 import Loading from '../../Loading/index';
-import ChooseService from '../../../helpers/ChooseService';
+import ChooseService from '../../../helpers/components/ChooseService';
 import config from '../../../config.json';
 
 export const INITIAL_VIEW_STATE = {

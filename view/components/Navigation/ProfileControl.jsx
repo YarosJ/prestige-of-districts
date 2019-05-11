@@ -1,7 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Dropdown, Icon } from 'semantic-ui-react';
-import * as routes from '../../constants/routes';
+import PropTypes from 'prop-types';
+import ReactRouterPropTypes from 'react-router-prop-types';
+import { routes } from '../../config.json';
 import SignOut from '../Account/SignOut/index';
 
 const iconColor = 'blue';
@@ -42,12 +43,11 @@ const ProfileControl = ({ signed, history }) => (
 
 ProfileControl.propTypes = {
   signed: PropTypes.bool,
-  history: PropTypes.objectOf(PropTypes.any),
+  history: ReactRouterPropTypes.history.isRequired,
 };
 
 ProfileControl.defaultProps = {
   signed: false,
-  history: {},
 };
 
 export default ProfileControl;

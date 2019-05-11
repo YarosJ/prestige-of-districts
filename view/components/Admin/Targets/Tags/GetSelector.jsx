@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 import logger from 'loglevel';
 import { Query, ApolloConsumer, ApolloProvider } from 'react-apollo';
 import PropTypes from 'prop-types';
-import { GET_SCREENSHOT, GET_SELECTOR } from '../../constants/queries';
+import { GET_SCREENSHOT, GET_SELECTOR } from '../../queries';
 import Loading from '../../../Loading/index';
 
 class GetSelector extends Component {

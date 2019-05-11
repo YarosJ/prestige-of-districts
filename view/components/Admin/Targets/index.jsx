@@ -5,15 +5,15 @@ import {
 } from 'semantic-ui-react';
 import posed from 'react-pose';
 import PropTypes from 'prop-types';
+import ReactRouterPropTypes from 'react-router-prop-types';
 import AddTarget from './AddTarget';
 import UpdateTarget from './UpdateTarget';
 import EditTags from './Tags/EditTags';
 import DeleteTarget from './DeleteTarget';
 import Loading from '../../Loading/index';
-import { GET_TARGETS } from '../constants/queries';
+import { GET_TARGETS } from '../queries';
 import checkPermission from '../../../helpers/checkPermission';
 import Footer from '../../Footer/index';
-import { historyPropType } from '../../../constants/propTypes';
 
 const Hoverable = posed.div({
   hoverable: true,
@@ -115,12 +115,11 @@ class Targets extends Component {
 }
 
 Targets.propTypes = {
-  history: historyPropType,
+  history: ReactRouterPropTypes.history.isRequired,
   apolloClient: PropTypes.objectOf(PropTypes.any),
 };
 
 Targets.defaultProps = {
-  history: {},
   apolloClient: {},
 };
 

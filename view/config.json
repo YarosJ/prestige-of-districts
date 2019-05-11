@@ -8,5 +8,22 @@
       "heatmap": "mapbox://styles/mapbox/satellite-streets-v11",
       "heatmap3D": "mapbox://styles/mapbox/navigation-preview-day-v4"
     }
+  },
+  "routes": {
+    "LANDING": "/",
+    "CHARTS": "/charts",
+    "SIGN_UP": "/signup",
+    "SIGN_IN": "/signin",
+    "PROFILE": "/profile",
+    "MESSAGES": "/messages",
+    "FAILURES": "/failures",
+    "admin": {
+      "USERS": "/users",
+      "ACCESS_CONTROL": "/access",
+      "TARGETS": "/targets"
+    },
+    "errors": {
+      "FORBIDDEN": "/403"
+    }
   }
 }

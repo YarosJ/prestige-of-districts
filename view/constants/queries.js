@@ -26,36 +26,36 @@ export const GET_TOTAL = gql`
 `;
 
 export const GET_FAILURES = gql`
-      query($latitude: Float, $longitude: Float, $locRange: LocRangeInput, $dateRange: DateRangeInput, $services: [String]) {
-          failures(latitude: $latitude, longitude: $longitude, locRange: $locRange, dateRange: $dateRange, services: $services) {
-              id
-              failureType
-              service
-              text
-              happenedAt
-              locations {
-                place
-                latitude
-                longitude
-                locType
-              }
-          }
+  query($latitude: Float, $longitude: Float, $locRange: LocRangeInput, $dateRange: DateRangeInput, $services: [String]) {
+    failures(latitude: $latitude, longitude: $longitude, locRange: $locRange, dateRange: $dateRange, services: $services) {
+      id
+      failureType
+      service
+      text
+      happenedAt
+      locations {
+        place
+        latitude
+        longitude
+        locType
       }
+    }
+  }
   `;
 
 export const GET_MESSAGES = gql`
-      query($latitude: Float, $longitude: Float, $locRange: LocRangeInput, $dateRange: DateRangeInput) {
-          messages(latitude: $latitude, longitude: $longitude, locRange: $locRange, dateRange: $dateRange) {
-              id
-              service
-              text
-              happenedAt
-              locations {
-                place
-                latitude
-                longitude
-                locType
-              }
-          }
+  query($latitude: Float, $longitude: Float, $locRange: LocRangeInput, $dateRange: DateRangeInput) {
+    messages(latitude: $latitude, longitude: $longitude, locRange: $locRange, dateRange: $dateRange) {
+      id
+      service
+      text
+      happenedAt
+      locations {
+        place
+        latitude
+        longitude
+        locType
       }
-  `;
+    }
+  }
+`;

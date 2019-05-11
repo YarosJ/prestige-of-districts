@@ -4,7 +4,7 @@ import gql from 'graphql-tag';
 import {
   Button, Input, Icon, Header, Container,
 } from 'semantic-ui-react';
-import { historyPropType } from '../../../constants/propTypes';
+import ReactRouterPropTypes from 'react-router-prop-types';
 import Loading from '../../Loading/index';
 import AddRole from './AddRole/index';
 import Role from './Role';
@@ -89,11 +89,7 @@ const AccessControl = ({ history }) => (
 );
 
 AccessControl.propTypes = {
-  history: historyPropType,
-};
-
-AccessControl.defaultProps = {
-  history: null,
+  history: ReactRouterPropTypes.history.isRequired,
 };
 
 export default AccessControl;

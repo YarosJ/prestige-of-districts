@@ -1,8 +1,9 @@
 import { Query } from 'react-apollo';
 import React from 'react';
 import { Dropdown } from 'semantic-ui-react';
-import { GET_SERVICES } from '../constants/queries';
-import Loading from '../components/Loading/index';
+import PropTypes from 'prop-types';
+import { GET_SERVICES } from '../../constants/queries';
+import Loading from '../../components/Loading';
 
 const renderLabel = label => ({
   color: 'blue',
@@ -10,7 +11,9 @@ const renderLabel = label => ({
   icon: 'check',
 });
 
-export default ({ handleChange, value, style, multiple }) => (
+const ChooseService = ({
+  handleChange, value, style, multiple,
+}) => (
   <Query
     query={GET_SERVICES}
   >
@@ -37,3 +40,22 @@ export default ({ handleChange, value, style, multiple }) => (
     }}
   </Query>
 );
+
+ChooseService.propTypes = {
+  handleChange: PropTypes.func,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string),
+  ]),
+  style: PropTypes.objectOf(PropTypes.any),
+  multiple: PropTypes.bool,
+};
+
+ChooseService.defaultProps = {
+  handleChange: null,
+  value: null,
+  style: {},
+  multiple: false,
+};
+
+export default ChooseService;

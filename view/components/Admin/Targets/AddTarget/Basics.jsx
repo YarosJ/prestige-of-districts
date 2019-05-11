@@ -1,7 +1,7 @@
 import { Button, Form, Icon } from 'semantic-ui-react';
 import React from 'react';
 import PropTypes from 'prop-types';
-import ChooseService from '../../../../helpers/ChooseService';
+import ChooseService from '../../../../helpers/components/ChooseService';
 
 const Basics = ({
   nextAction, onChange, handleServiceChange, URL, city, country, service, interval,

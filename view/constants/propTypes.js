@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
 
-export const historyPropType = PropTypes.objectOf(PropTypes.any);
-
 export const failuresPropType = PropTypes.arrayOf(PropTypes.shape({
   failureType: PropTypes.string,
   text: PropTypes.string,

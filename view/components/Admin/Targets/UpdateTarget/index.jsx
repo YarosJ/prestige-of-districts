@@ -5,8 +5,8 @@ import {
 } from 'semantic-ui-react';
 import { Mutation } from 'react-apollo';
 import PropTypes from 'prop-types';
-import Modal from '../../../../helpers/Modal';
-import { GET_TARGETS, UPDATE_TARGET } from '../../constants/queries';
+import Modal from '../../../../helpers/components/Modal';
+import { GET_TARGETS, UPDATE_TARGET } from '../../queries';
 
 class UpdateTarget extends Component {
   closeModal = null;

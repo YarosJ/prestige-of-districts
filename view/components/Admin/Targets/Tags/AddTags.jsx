@@ -7,7 +7,7 @@ import {
 import { Mutation } from 'react-apollo';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import { ADD_TARGET, GET_TARGETS } from '../../constants/queries';
+import { ADD_TARGET, GET_TARGETS } from '../../queries';
 import GetSelector from './GetSelector';
 
 class AddTags extends Component {

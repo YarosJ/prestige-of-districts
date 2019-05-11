@@ -2,7 +2,7 @@ import React from 'react';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import PropTypes from 'prop-types';
-import { GET_USERS } from '../../constants/queries';
+import { GET_USERS } from '../../queries';
 import confirmDialog from '../../../../helpers/confirmDialog';
 import ErrorMessage from '../../../Error';
 import { childrenPropType } from '../../../../constants/propTypes';

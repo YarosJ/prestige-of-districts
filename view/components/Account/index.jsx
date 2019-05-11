@@ -6,8 +6,8 @@ import { Container, Header, Table } from 'semantic-ui-react';
 import { GET_USER } from '../../constants/queries';
 import Loading from '../Loading';
 import Footer from '../Footer';
-import Modal from '../../helpers/Modal';
-import RefreshPassword from './RefreshPassword';
+import Modal from '../../helpers/components/Modal';
+import RefreshPassword from './RefreshPassword/index';
 
 const Profile = () => (
   <Query
