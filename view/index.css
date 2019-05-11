@@ -26,6 +26,11 @@ body.dimmed.dimmable {
   width: 100%;
 }
 
+.terminal-base {
+  height: auto !important;
+  min-height: auto !important;
+}
+
 @media (max-width: 600px) {
   .account-form {
     margin: auto !important;
@@ -58,6 +63,29 @@ body.dimmed.dimmable {
 
   div.accordion.ui .content.active div.ui.list {
     overflow: auto;
+  }
+
+  .terminal-container {
+    display: grid !important;
+  }
+
+  .terminal-base {
+    top: 27%;
+    position: relative;
+    transform: translateY(-60%);
+     height: auto !important;
+     min-height: auto !important;
+  }
+}
+
+@media (max-width: 600px) and (max-height: 503px) {
+  .terminal-base {
+    top: unset;
+    transform: none;
+  }
+
+  .terminal-container {
+    display: flex !important;
   }
 }
 

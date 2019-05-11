@@ -8,12 +8,12 @@ import {
 } from './animalSay';
 
 const directError = ({ code, message }) => {
-  const mobile = window.innerWidth > 550;
+  const mobile = window.innerWidth < 630 || window.innerHeight < 503;
   switch (code) {
     case 404:
-      return mobile ? aardvarksay(message) : fourHundredFour;
+      return !mobile ? aardvarksay(message) : fourHundredFour;
     case 403:
-      return mobile ? dragonsay(message) : forbidden;
+      return !mobile ? dragonsay(message) : forbidden;
     default:
       return tuxsay(message);
   }
@@ -21,6 +21,7 @@ const directError = ({ code, message }) => {
 
 const TerminalComponent = ({ code, message }) => (
   <div
+    className="terminal-container"
     style={{
       display: 'flex',
       justifyContent: 'center',

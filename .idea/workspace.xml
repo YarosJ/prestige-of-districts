@@ -2,48 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e48be22d-a086-484b-9a46-2a2d4e5401ca" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Account/RefreshPassword.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Account/RefreshPassword/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Account/SignIn/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Account/SignIn/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Account/SignOut/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Account/SignOut/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Account/SignUp/SignUpForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Account/SignUp/SignUpForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Account/SignUp/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Account/SignUp/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Account/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Account/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Admin/AccessControl/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Admin/AccessControl/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Admin/Targets/AddTarget/Basics.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Admin/Targets/AddTarget/Basics.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Admin/Targets/AddTarget/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Admin/Targets/AddTarget/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Admin/Targets/DeleteTarget/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Admin/Targets/DeleteTarget/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Admin/Targets/Tags/AddTags.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Admin/Targets/Tags/AddTags.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Admin/Targets/Tags/EditTags.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Admin/Targets/Tags/EditTags.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Admin/Targets/Tags/GetSelector.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Admin/Targets/Tags/GetSelector.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Admin/Targets/UpdateTarget/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Admin/Targets/UpdateTarget/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Admin/Targets/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Admin/Targets/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Admin/Users/DeleteUser/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Admin/Users/DeleteUser/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Admin/Users/User.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Admin/Users/User.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Admin/Users/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Admin/Users/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Admin/constants/queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Admin/queries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Admin/helpers/Pagination.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/helpers/components/Pagination.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Charts/AreaChart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Charts/AreaChart.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Error/Terminal/animalSay.js" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Error/Terminal/animalSay.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/components/Error/Terminal/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Error/Terminal/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Error/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Error/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Failures/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Failures/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Map/HeatMap/HeatMap.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Map/HeatMap/HeatMap.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Map/HeatMap3D/HeatMap3D.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Map/HeatMap3D/HeatMap3D.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Map/PointMap/PointMap.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Map/PointMap/PointMap.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Messages/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Messages/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Navigation/ProfileControl.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Navigation/ProfileControl.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Navigation/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Navigation/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/view/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/constants/propTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/view/constants/propTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/constants/queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/view/constants/queries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/constants/routes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/helpers/ChooseService.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/helpers/components/ChooseService.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/helpers/Modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/helpers/components/Modal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/helpers/checkPermission.js" beforeDir="false" afterPath="$PROJECT_DIR$/view/helpers/checkPermission.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/helpers/validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/view/helpers/validate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/view/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/public/build/0.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/0.client.min.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/public/build/1.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/1.client.min.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/public/build/10.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/10.client.min.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/public/build/11.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/11.client.min.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/public/build/12.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/12.client.min.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/public/build/13.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/13.client.min.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/public/build/14.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/14.client.min.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/public/build/15.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/15.client.min.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/public/build/16.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/16.client.min.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/public/build/17.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/17.client.min.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/public/build/18.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/18.client.min.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/public/build/19.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/19.client.min.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/public/build/2.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/2.client.min.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/public/build/20.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/20.client.min.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/public/build/21.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/21.client.min.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/public/build/22.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/22.client.min.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/public/build/23.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/23.client.min.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/public/build/24.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/24.client.min.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/public/build/3.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/3.client.min.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/public/build/4.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/4.client.min.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/public/build/5.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/5.client.min.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/public/build/8.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/8.client.min.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/public/build/9.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/9.client.min.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/public/build/client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/client.min.js.gz" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -55,30 +39,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/components/Error/Terminal/index.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#20#46#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/view/components/Error/Terminal/animalSay.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -143,7 +104,6 @@
         <option value="$PROJECT_DIR$/view/helpers/isMobile.js" />
         <option value="$PROJECT_DIR$/view/components/Admin/Users/UsersList.jsx" />
         <option value="$PROJECT_DIR$/view/components/Admin/AccessControl/AddRole/index.jsx" />
-        <option value="$PROJECT_DIR$/view/index.css" />
         <option value="$PROJECT_DIR$/view/components/Messages/index.jsx" />
         <option value="$PROJECT_DIR$/view/components/Map/HeatMap3D/HeatMap3D.jsx" />
         <option value="$PROJECT_DIR$/view/components/Failures/index.jsx" />
@@ -172,6 +132,7 @@
         <option value="$PROJECT_DIR$/view/helpers/checkPermission.js" />
         <option value="$PROJECT_DIR$/view/components/Error/Terminal/animalSay.js" />
         <option value="$PROJECT_DIR$/view/components/Error/Terminal/index.jsx" />
+        <option value="$PROJECT_DIR$/view/index.css" />
       </list>
     </option>
   </component>
@@ -200,32 +161,6 @@
             <path>
               <item name="prestige-of-districts" type="b2602c69:ProjectViewProjectNode" />
               <item name="prestige-of-districts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="prestige-of-districts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="prestige-of-districts" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="prestige-of-districts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="prestige-of-districts" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="prestige-of-districts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="prestige-of-districts" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Error" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="prestige-of-districts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="prestige-of-districts" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Error" type="462c0819:PsiDirectoryNode" />
-              <item name="Terminal" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -318,16 +253,15 @@
       <workItem from="1557293381267" duration="22265000" />
       <workItem from="1557383213623" duration="1761000" />
       <workItem from="1557469961207" duration="30609000" />
-      <workItem from="1557555875992" duration="38302000" />
+      <workItem from="1557555875992" duration="43266000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="354212000" />
+    <option name="totallyTimeSpent" value="359176000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49919224" visible="true" weight="0.24720775" />
       <window_info id="Structure" order="1" sideWeight="0.50080776" side_tool="true" weight="0.24944155" />
@@ -354,16 +288,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/view/components/Charts/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/components/Admin/Users/UsersList.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-641">
@@ -776,21 +700,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/components/Error/Terminal/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#20#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/components/Error/Terminal/animalSay.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="430">
-          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
+          <caret line="82" selection-start-line="82" selection-end-line="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="85" selection-start-line="85" selection-end-line="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/components/Error/Terminal/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#21#47#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
