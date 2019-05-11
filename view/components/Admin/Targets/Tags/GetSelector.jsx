@@ -1,10 +1,11 @@
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import logger from 'loglevel';
 import { Query, ApolloConsumer, ApolloProvider } from 'react-apollo';
+import PropTypes from 'prop-types';
 import { GET_SCREENSHOT, GET_SELECTOR } from '../../constants/queries';
 import Loading from '../../../Loading/index';
 
@@ -14,6 +15,7 @@ class GetSelector extends Component {
   async componentDidUpdate() {
     const { URL, onGetSelector, editKey } = this.props;
     const { x, y, client } = this.state;
+
     if (x || y) {
       try {
         const response = await client.query({
@@ -86,5 +88,19 @@ class GetSelector extends Component {
     );
   }
 }
+
+GetSelector.propTypes = {
+  URL: PropTypes.string,
+  apolloClient: PropTypes.objectOf(PropTypes.any),
+  onGetSelector: PropTypes.func,
+  editKey: PropTypes.number,
+};
+
+GetSelector.defaultProps = {
+  URL: null,
+  apolloClient: null,
+  onGetSelector: null,
+  editKey: null,
+};
 
 export default GetSelector;

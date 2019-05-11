@@ -4,6 +4,7 @@ import {
   Icon, Accordion, List, Container,
 } from 'semantic-ui-react';
 import posed from 'react-pose';
+import PropTypes from 'prop-types';
 import AddTarget from './AddTarget';
 import UpdateTarget from './UpdateTarget';
 import EditTags from './Tags/EditTags';
@@ -12,6 +13,7 @@ import Loading from '../../Loading/index';
 import { GET_TARGETS } from '../constants/queries';
 import checkPermission from '../../../helpers/checkPermission';
 import Footer from '../../Footer/index';
+import { historyPropType } from '../../../constants/propTypes';
 
 const Hoverable = posed.div({
   hoverable: true,
@@ -24,6 +26,8 @@ class Targets extends Component {
     activeIndex: 0,
   };
 
+  rerenderTargets = () => this.forceUpdate();
+
   handleClick = (e, titleProps) => {
     const { index } = titleProps;
     const { activeIndex } = this.state;
@@ -33,24 +37,20 @@ class Targets extends Component {
   };
 
   render() {
-    const { history } = this.props;
+    const { history, apolloClient } = this.props;
+    const { activeIndex } = this.state;
 
     checkPermission({ history, redirect: true });
 
     return (
-      <Query
-        query={GET_TARGETS}
-      >
+      <Query query={GET_TARGETS}>
         {({
-          data, loading, error,
+          data, loading,
         }) => {
           const { targets } = data;
           if (loading || !targets) {
             return <Loading />;
           }
-
-          const { activeIndex } = this.state;
-          const { apolloClient } = this.props;
 
           return (
             <div style={{
@@ -62,7 +62,7 @@ class Targets extends Component {
             >
               <Accordion>
                 {targets.map((target, key) => (
-                  <div key={key} style={{ display: 'inline' }}>
+                  <div key={target.id} style={{ display: 'inline' }}>
                     <Accordion.Title
                       active={activeIndex === key}
                       index={key}
@@ -76,9 +76,10 @@ class Targets extends Component {
                         <List.Item icon="map marker alternate" content={target.city || 'Not set'} />
                         <List.Item icon="map pin" content={target.country || 'Not set'} />
                         <List.Item icon="stopwatch" content={target.freq || 'Not set'} />
-                        {target.tagPaths && target.tagPaths.map((tag, key) => (
+                        {target.tagPaths && target.tagPaths.map((tag, index) => (
                           <List.Item
-                            key={key}
+                            // eslint-disable-next-line react/no-array-index-key
+                            key={index}
                             icon="linkify"
                             content={tag}
                           />
@@ -89,7 +90,7 @@ class Targets extends Component {
                           <UpdateTarget target={target} />
                         </Hoverable>
                         <Hoverable style={{ cursor: 'pointer' }}>
-                          <EditTags target={target} />
+                          <EditTags target={target} rerenderTargets={this.rerenderTargets} />
                         </Hoverable>
                         <Hoverable style={{ margin: 'auto', marginLeft: '40px', cursor: 'pointer' }}>
                           <DeleteTarget target={target}>
@@ -112,5 +113,15 @@ class Targets extends Component {
     );
   }
 }
+
+Targets.propTypes = {
+  history: historyPropType,
+  apolloClient: PropTypes.objectOf(PropTypes.any),
+};
+
+Targets.defaultProps = {
+  history: {},
+  apolloClient: {},
+};
 
 export default Targets;

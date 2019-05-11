@@ -4,13 +4,17 @@ import {
   Form, Icon,
 } from 'semantic-ui-react';
 import { Mutation } from 'react-apollo';
+import PropTypes from 'prop-types';
 import Modal from '../../../../helpers/Modal';
 import { GET_TARGETS, UPDATE_TARGET } from '../../constants/queries';
 
 class UpdateTarget extends Component {
-  state = this.props.target;
-
   closeModal = null;
+
+  constructor(props) {
+    super(props);
+    this.state = props.target;
+  }
 
   onChange = (event, key) => {
     const { value } = event.target;
@@ -32,7 +36,7 @@ class UpdateTarget extends Component {
   };
 
   render() {
-    const { style } = this.props;
+    const { style, rerenderTargets } = this.props;
     const { URL, tagPaths } = this.state;
 
     if (!tagPaths) this.setState({ tagPaths: [] });
@@ -42,26 +46,38 @@ class UpdateTarget extends Component {
         style={style}
         header="Edit Tags"
         activateContent={<Icon name="linkify" size="large" color="orange" />}
-        initiateClose={close => this.closeModal = close}
+        initiateClose={(close) => { this.closeModal = close; }}
       >
         <Mutation
           mutation={UPDATE_TARGET}
-          variables={{
-            URL, tagPaths,
-          }}
+          variables={{ URL, tagPaths }}
           update={
-            (proxy, { data: { updateTarget } }) => {
-              const dataToUpdate = { ...proxy.readQuery({ query: GET_TARGETS }) };
+            (cache, { data: { updateTarget } }) => {
+              const dataToUpdate = cache.readQuery({ query: GET_TARGETS });
               dataToUpdate.targets = dataToUpdate.targets
                 .map(t => (t.URL === updateTarget.URL ? updateTarget : t));
-              proxy.writeQuery({ query: GET_TARGETS, data: dataToUpdate });
+              cache.writeQuery({ query: GET_TARGETS, data: dataToUpdate });
               this.closeModal();
+
+              /**
+               * Important!
+               *
+               * The following is a re-rendering of the parent component.
+               * This is far from right, but there is no solution yet.
+               * This is due to the fact that Apollo, after mutation,
+               * updates the cache but does not render.
+               *
+               * https://github.com/apollographql/apollo-client/issues/3633
+               */
+
+              rerenderTargets();
             }
           }
         >
-          {(updateTarget, { data, loading, error }) => (
+          {updateTarget => (
             <Form style={{ textAlign: 'center' }}>
               {tagPaths.map((value, key) => (
+                // eslint-disable-next-line react/no-array-index-key
                 <Form.Field key={key}>
                   <Form.Input
                     action={{ icon: 'trash alternate outline', onClick: () => this.onDeleteField(key) }}
@@ -85,5 +101,20 @@ class UpdateTarget extends Component {
     );
   }
 }
+
+UpdateTarget.propTypes = {
+  target: PropTypes.shape({
+    URL: PropTypes.string,
+    tagPaths: PropTypes.arrayOf(PropTypes.string),
+  }),
+  style: PropTypes.objectOf(PropTypes.any),
+  rerenderTargets: PropTypes.func,
+};
+
+UpdateTarget.defaultProps = {
+  target: null,
+  style: null,
+  rerenderTargets: null,
+};
 
 export default UpdateTarget;

@@ -12,7 +12,7 @@ const Role = ({ role, children }) => (
     width: '85%', maxWidth: '673px', margin: 'auto', marginBottom: '50px',
   }}
   >
-    <Table basic="very">
+    <Table basic="very" unstackable>
       <Table.Header>
         <Table.Row>
           <Table.HeaderCell colSpan="2">

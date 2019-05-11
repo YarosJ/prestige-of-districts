@@ -24,6 +24,7 @@ const roles = [
         'signIn', 'signUp', 'refreshToken', 'messages', 'failures', 'user', 'services', '__schema', 'total',
         'logOut', 'addFailure', 'removeFailure', 'addMessage', 'removeMessage',
         'tags', 'targets', 'addTarget', 'removeTarget', 'updateTarget', 'users',
+        'screenshot', 'selector',
       ],
   },
   {
@@ -34,6 +35,7 @@ const roles = [
         'logOut', 'addFailure', 'removeFailure', 'addMessage', 'removeMessage',
         'tags', 'targets', 'addTarget', 'removeTarget', 'updateTarget', 'users',
         'roles', 'actions', 'addRole', 'addAction', 'deleteRole', 'deleteAction', 'updateUser', 'deleteUser',
+        'screenshot', 'selector',
       ],
   },
 ];

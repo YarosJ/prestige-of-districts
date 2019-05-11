@@ -6,6 +6,7 @@ import {
 } from 'semantic-ui-react';
 import { Mutation } from 'react-apollo';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import { ADD_TARGET, GET_TARGETS } from '../../constants/queries';
 import GetSelector from './GetSelector';
 
@@ -57,7 +58,7 @@ class AddTags extends Component {
     const { fields } = this.state;
     const { closeModal, properties, goBasics } = this.props;
     const {
-      city, country, URL, interval, service
+      city, country, URL, interval, service,
     } = properties;
 
     return (
@@ -72,17 +73,18 @@ class AddTags extends Component {
           tagPaths: fields,
         }}
         update={
-          (proxy, { data: { addTarget } }) => {
-            const dataToUpdate = proxy.readQuery({ query: GET_TARGETS });
+          (cache, { data: { addTarget } }) => {
+            const dataToUpdate = cache.readQuery({ query: GET_TARGETS });
             dataToUpdate.targets.push(addTarget);
-            proxy.writeQuery({ query: GET_TARGETS, data: dataToUpdate });
+            cache.writeQuery({ query: GET_TARGETS, data: dataToUpdate });
             closeModal();
           }
         }
       >
-        {(addTarget, { loading, error }) => (
+        {addTarget => (
           <Form style={{ textAlign: 'center' }}>
             {fields.map((value, key) => (
+              // eslint-disable-next-line react/no-array-index-key
               <Form.Field key={key}>
                 <Form.Input
                   action
@@ -120,5 +122,28 @@ class AddTags extends Component {
     );
   }
 }
+
+AddTags.propTypes = {
+  closeModal: PropTypes.func,
+  properties: PropTypes.shape({
+    city: PropTypes.string,
+    country: PropTypes.string,
+    URL: PropTypes.string,
+    interval: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+    ]),
+    service: PropTypes.string,
+  }),
+  goBasics: PropTypes.func,
+  apolloClient: PropTypes.objectOf(PropTypes.any),
+};
+
+AddTags.defaultProps = {
+  closeModal: null,
+  properties: null,
+  goBasics: null,
+  apolloClient: null,
+};
 
 export default AddTags;

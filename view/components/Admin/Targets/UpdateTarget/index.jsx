@@ -4,13 +4,17 @@ import {
   Form, Icon,
 } from 'semantic-ui-react';
 import { Mutation } from 'react-apollo';
-import Modal from '../../../helpers/Modal';
-import { GET_TARGETS, UPDATE_TARGET } from '../constants/queries';
+import PropTypes from 'prop-types';
+import Modal from '../../../../helpers/Modal';
+import { GET_TARGETS, UPDATE_TARGET } from '../../constants/queries';
 
 class UpdateTarget extends Component {
-  state = this.props.target;
-
   closeModal = null;
+
+  constructor(props) {
+    super(props);
+    this.state = props.target;
+  }
 
   onChange = (event) => {
     const { name, value } = event.target;
@@ -22,12 +26,13 @@ class UpdateTarget extends Component {
     const {
       city, country, freq, URL,
     } = this.state;
+
     return (
       <Modal
         style={style}
         header="Edit Target"
         activateContent={<Icon name="pencil" size="large" color="green" />}
-        initiateClose={close => this.closeModal = close}
+        initiateClose={(close) => { this.closeModal = close; }}
       >
         <Mutation
           mutation={UPDATE_TARGET}
@@ -46,7 +51,7 @@ class UpdateTarget extends Component {
             }
           }
         >
-          {(updateTarget, { data, loading, error }) => (
+          {updateTarget => (
             <Form>
               <Form.Field>
                 <Form.Input
@@ -85,5 +90,18 @@ class UpdateTarget extends Component {
     );
   }
 }
+
+UpdateTarget.propTypes = {
+  target: PropTypes.shape({
+    URL: PropTypes.string,
+    tagPaths: PropTypes.arrayOf(PropTypes.string),
+  }),
+  style: PropTypes.objectOf(PropTypes.any),
+};
+
+UpdateTarget.defaultProps = {
+  target: null,
+  style: null,
+};
 
 export default UpdateTarget;
