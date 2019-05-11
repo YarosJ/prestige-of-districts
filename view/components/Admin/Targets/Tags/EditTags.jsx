@@ -60,8 +60,6 @@ class UpdateTarget extends Component {
               this.closeModal();
 
               /**
-               * Important!
-               *
                * The following is a re-rendering of the parent component.
                * This is far from right, but there is no solution yet.
                * This is due to the fact that Apollo, after mutation,

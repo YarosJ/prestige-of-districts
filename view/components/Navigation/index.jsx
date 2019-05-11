@@ -32,7 +32,7 @@ const Navigation = ({ history }) => {
       }}
     >
       <List selection verticalAlign="middle">
-        <List.Item style={{ marginBottom: '140px' }}>
+        <List.Item className="profile-control" style={{ marginBottom: '140px' }}>
           <ProfileControl history={history} signed={!!localStorage.getItem('uId')} />
         </List.Item>
         <List.Item style={{ marginBottom: '10px' }} onClick={() => history.push(routes.LANDING)}>

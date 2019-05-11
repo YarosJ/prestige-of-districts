@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import SignUpForm from './SignUpForm';
 
 const SignUpPage = ({ history }) => (
-  <div style={{ margin: '80px 45px 80px 45px', display: 'flex' }}>
+  <div className="account-form" style={{ margin: '80px 45px 80px 45px', display: 'flex' }}>
     <Segment
       style={{
         boxShadow: 'rgba(0, 0, 0, 0.75) 0px 0px 7px -4px',
@@ -15,7 +15,7 @@ const SignUpPage = ({ history }) => (
         margin: 'auto',
       }}
     >
-      <Grid columns={2}>
+      <Grid columns={2} stackable>
         <Grid.Column style={{ padding: 0 }} width={9}>
           <Image
             src="maps/pointmap-white.png"

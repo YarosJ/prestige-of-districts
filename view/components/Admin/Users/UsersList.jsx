@@ -6,7 +6,7 @@ import User from './User';
 const cellColor = '#2185d0';
 
 const UsersList = ({ users, limit, cursor }) => (
-  <Table basic="very" style={{ padding: '5%' }}>
+  <Table className="users-table" basic="very" style={{ padding: '5%' }}>
     <Table.Header>
       <Table.Row>
         <Table.HeaderCell

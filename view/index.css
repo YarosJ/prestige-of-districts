@@ -25,3 +25,51 @@ body.dimmed.dimmable {
   display: flex;
   width: 100%;
 }
+
+@media (max-width: 600px) {
+  .account-form {
+    margin: auto !important;
+  }
+
+  .ui.blue.label, .ui.blue.labels .label {
+    display: flex !important;
+  }
+
+  .ui.vertical.labeled.icon.ui.overlay.right.wide.sidebar.menu {
+    width: auto;
+  }
+
+  .users-table {
+    text-align: center !important;
+  }
+
+  .access-control-header {
+    display: block !important;
+  }
+  .access-control-header input {
+    margin-bottom: 16px !important;
+  }
+
+  div.accordion.ui .title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  div.accordion.ui .content.active div.ui.list {
+    overflow: auto;
+  }
+}
+
+@media (max-height: 503px) {
+  .profile-control {
+    margin-bottom: 20px !important;
+  }
+
+}
+
+@media (max-height: 400px) {
+  .ui.selection.list > .item {
+    padding: 3px 2px !important;
+  }
+}

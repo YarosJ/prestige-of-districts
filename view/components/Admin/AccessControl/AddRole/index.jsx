@@ -48,7 +48,7 @@ class AddRole extends Component {
   }
 
   render() {
-    const { style, children } = this.props;
+    const { style, className, children } = this.props;
     const { role } = this.state;
 
     return (
@@ -82,6 +82,7 @@ class AddRole extends Component {
             onClick={e => this.submitAdd(e, addRole)}
             onKeyPress={e => this.submitAdd(e, addRole)}
             style={style}
+            className={className}
           >
             { children }
             { error && <ErrorMessage error={error} /> }
@@ -94,11 +95,13 @@ class AddRole extends Component {
 
 AddRole.propTypes = {
   style: PropTypes.objectOf(PropTypes.any),
+  className: PropTypes.string,
   children: childrenPropType,
 };
 
 AddRole.defaultProps = {
   style: {},
+  className: null,
   children: null,
 };
 

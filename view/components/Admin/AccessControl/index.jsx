@@ -43,14 +43,16 @@ const AccessControl = ({ history }) => (
           paddingTop: '20px',
         }}
         >
-          <AddRole style={{
-            width: '85%',
-            margin: 'auto',
-            textAlign: 'center',
-            marginBottom: '50px',
-            display: 'flex',
-            maxWidth: '700px',
-          }}
+          <AddRole
+            className="access-control-header"
+            style={{
+              width: '85%',
+              margin: 'auto',
+              textAlign: 'center',
+              marginBottom: '50px',
+              display: 'flex',
+              maxWidth: '700px',
+            }}
           >
             <Header
               color="blue"
@@ -65,7 +67,7 @@ const AccessControl = ({ history }) => (
               <Header.Content>
                   Access control
                 <Header.Subheader>
-                    You can edit roles or create new role:
+                    Be careful editing roles or creating new:
                 </Header.Subheader>
               </Header.Content>
             </Header>
