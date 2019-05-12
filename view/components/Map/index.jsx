@@ -2,10 +2,24 @@ import React, { Component } from 'react';
 import {
   Icon, Segment, Sidebar, Menu, Header, Button,
 } from 'semantic-ui-react';
-import HeatMap from './HeatMap/HeatMap';
-import HeatMap3D from './HeatMap3D/HeatMap3D';
-import PointMap from './PointMap/PointMap';
+import Loadable from 'react-loadable';
+import Loading from '../Loading';
 import 'mapbox-gl/dist/mapbox-gl.css';
+
+const HeatMap = Loadable({
+  loader: () => import('./HeatMap/HeatMap'),
+  loading: Loading,
+});
+
+const HeatMap3D = Loadable({
+  loader: () => import('./HeatMap3D/HeatMap3D'),
+  loading: Loading,
+});
+
+const PointMap = Loadable({
+  loader: () => import('./PointMap/PointMap'),
+  loading: Loading,
+});
 
 class Map extends Component {
   state = {

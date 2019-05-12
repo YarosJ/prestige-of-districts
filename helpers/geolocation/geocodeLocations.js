@@ -20,12 +20,14 @@ const hereGeocoder = async ({ place, city, country }) => {
   const parentPlace = await geocoder.geocode(parentPlaceString);
   const { latitude, longitude } = parentPlace[0];
   const data = await geocoder.geocode(`${place}, ${parentPlaceString}`);
+
   if (data.length !== 0) {
     return {
       locations: data.filter(loc => loc.latitude !== latitude && loc.longitude !== longitude),
       parentLoc: { latitude, longitude },
     };
   }
+
   return { locations: [], parentLoc: { latitude, longitude } };
 };
 
@@ -56,12 +58,14 @@ const OSMGeocoder = async ({ place, city, country }) => {
       }
       return { latitude: loc.lat, longitude: loc.lon };
     });
+
   if (data.length !== 0) {
     return {
       locations: [...locations, ...points],
       parentLoc: { lat, lon },
     };
   }
+
   return { locations: [], parentLoc: { latitude: lat, longitude: lon } };
 };
 
@@ -74,6 +78,7 @@ const OSMGeocoder = async ({ place, city, country }) => {
  */
 export default async function (places, country = defaultCountry, city = defaultCity) {
   const result = [];
+
   await Promise.all(places.map(async (place) => {
     const fullNamedPlace = replaceAbbreviations(place);
     const geoLocatedOSM = await OSMGeocoder({
@@ -100,5 +105,6 @@ export default async function (places, country = defaultCountry, city = defaultC
       }
     }
   }));
+
   return result;
 }
