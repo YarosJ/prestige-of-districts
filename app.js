@@ -7,7 +7,7 @@ import mongoose from 'mongoose';
 import resolvers from './controllers/graphql/resolvers';
 import typeDefs from './controllers/graphql/schema';
 import mongooseConnect from './config/mongooseConnect';
-import startParser from './config/startParser';
+import startParser from './config/startParser.ts';
 import context from './helpers/authentication/apolloContext';
 import { serverPort, endpoint } from './config/config.json';
 import seedDB from './config/seedDB';

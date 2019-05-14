@@ -15,7 +15,6 @@ function getGraphQLAction(queryString) {
 
 /**
  * Authorization by session or JWT, depending of the header "Authorization"
- * @param myAcl
  * @returns {Function}
  */
 export default async ({ req, res, connection }) => {

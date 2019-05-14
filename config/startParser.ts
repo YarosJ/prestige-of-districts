@@ -21,12 +21,12 @@ const TaskModel = mongoose.model('Task');
 
 /**
  * Starts parser
- * @returns {Promise<TaskScheduler>}
  */
-export default async () => {
-  const tasks = await TaskModel.find(); // Get all tasks from DB
+export default async (): Promise <TaskScheduler> => {
+  const tasks: object[] = await TaskModel.find(); // Get all tasks from DB
+
   // Adapting tasks from DB for TaskScheduler
-  const queueTasks = tasks.map(t => ({
+  const queueTasks: object[] = tasks.map((t): object => ({
     body: {
       URL: t.URL,
       tagPaths: t.tagPaths,
@@ -37,46 +37,48 @@ export default async () => {
     interval: t.freq,
   }));
 
-  const scraper = await new Scraper(); // Initialise scraper
+  const scraper: object = await new Scraper(); // Initialise scraper
 
   // Initialise nlpChannel message broker
-  const nlpChannel = await new AMQPChannel({
+  const nlpChannel: object = await new AMQPChannel({
     queueName: NLP_QUEUE_NAME,
     host: HOST,
   });
 
   // Initialise nlpOutputChannel message broker
-  const nlpOutputChannel = await new AMQPChannel({
+  const nlpOutputChannel: object = await new AMQPChannel({
     queueName: NLP_OUTPUT_QUEUE_NAME,
     host: HOST,
   });
 
-  nlpOutputChannel.consume((data) => {
+  nlpOutputChannel.consume((data): void => {
     // Get action with payload from NLP results and dispatch
     ActionDispatcher.dispatch(actionFromNLP(data));
   });
 
-  /**
-   * Starting TaskScheduler with scraper
-   * @type {TaskScheduler}
-   */
-  const scheduler = new TaskScheduler(queueTasks, { precision: 5 }, async (data) => {
-    // Parse text by URL and tags paths
-    const parsedTextArray = await scraper.getText(data.URL, data.tagPaths);
-    // Send parsed text to NLP
-    parsedTextArray.forEach(async (text) => {
-      if (!await alreadyScraped(text)) {
-        nlpChannel.sendToQueue({
-          text,
-          payload: {
-            city: data.city,
-            country: data.country,
-            service: data.service,
-          },
-        });
-      }
+  // Starting TaskScheduler with scraper
+  const scheduler = new TaskScheduler(queueTasks,
+    { precision: 5 },
+    async (data): Promise <void> => {
+      // Parse text by URL and tags paths
+      const parsedTextArray: string[] = await scraper.getText(data.URL, data.tagPaths);
+
+      // Send parsed text to NLP
+      parsedTextArray.forEach(async (text): Promise <void> => {
+        if (!await alreadyScraped(text)) {
+          nlpChannel.sendToQueue({
+            text,
+            payload: {
+              city: data.city,
+              country: data.country,
+              service: data.service,
+            },
+          });
+        }
+      });
     });
-  });
+
   global.taskScheduler = scheduler; // making taskScheduler exemplar accessible for DB hooks
-  return (scheduler);
+
+  return scheduler;
 };

@@ -17,7 +17,9 @@ export default class TaskScheduler {
   public addTasks(tasks): void {
     tasks.forEach((t): void => {
       const { interval, body } = t;
+
       if (!body || !interval) throw new Error('Invalid task body or interval');
+
       this.myCache.set(JSON.stringify(body), {
         body, interval,
       }, interval);
