@@ -1,7 +1,5 @@
 /* global document */
 
-// @ts-ignore
-// eslint-disable-next-line no-unused-vars
 import puppeteer, { Browser, Page } from 'puppeteer';
 
 /**
@@ -12,11 +10,11 @@ import puppeteer, { Browser, Page } from 'puppeteer';
  *  scraper.close();
  */
 class Scraper {
-  browser: Browser;
+  public browser: Browser;
 
-  page: Page;
+  public page: Page;
 
-  async openBrowser() {
+  public async openBrowser(): Promise<Scraper> {
     this.browser = await puppeteer.launch({
       executablePath: '/usr/bin/chromium-browser',
       headless: true,
@@ -24,40 +22,47 @@ class Scraper {
     });
 
     this.page = await this.browser.newPage();
+
     return this;
   }
 
-  async getText(URL: string, patches: Array<string>): Promise<Array<string>> {
-    const results: Array<string> = [];
+  public async getText(URL: string, patches: string[]): Promise<string[]> {
+    const results: string[] = [];
+
     await this.goTo(URL);
-    await patches.forEach(async (tag: string) => {
-      results.push(await this.page.evaluate((receivedTag: string) => {
-        let result: string = '';
+
+    await patches.forEach(async (tag: string): void => {
+      results.push(await this.page.evaluate((receivedTag: string): string => {
+        let result = '';
+
         document.querySelectorAll(receivedTag)
-          .forEach((element) => {
-            // eslint-disable-next-line no-undef
-            element.childNodes.forEach((childNode: HTMLElement) => {
+          .forEach((element): void => {
+            element.childNodes.forEach((childNode: HTMLElement): void => {
               if (childNode.innerText) result += childNode.innerText;
             });
           });
+
         return result;
       }, tag));
     });
+
     await this.page.waitFor(5000);
+
     return results;
   }
 
-  closeBrowser() {
+  public closeBrowser(): void {
     this.browser.close();
   }
 
-  protected async goTo(URL: string) {
+  protected async goTo(URL: string): Promise<Page> {
     await this.page.goto(URL, { waitUntil: 'domcontentloaded' });
   }
 }
 
-export default async () => {
+export default async (): Promise<Scraper> => {
   const scraper = await new Scraper();
   await scraper.openBrowser();
+
   return scraper;
 };
