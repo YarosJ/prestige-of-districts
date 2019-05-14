@@ -1,9 +1,12 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import express from 'express';
-import http from 'http';
+import * as http from 'http';
 import path from 'path';
 import { ApolloServer } from 'apollo-server-express';
 import { RedisCache } from 'apollo-server-cache-redis';
 import mongoose from 'mongoose';
+import { express as voyagerMiddleware } from 'graphql-voyager/middleware';
 import resolvers from './controllers/graphql/resolvers';
 import typeDefs from './controllers/graphql/schema';
 import mongooseConnect from './config/mongooseConnect';
@@ -12,17 +15,16 @@ import context from './helpers/authentication/apolloContext';
 import { serverPort, endpoint } from './config/config.json';
 import seedDB from './config/seedDB';
 
-const { express: voyagerMiddleware } = require('graphql-voyager/middleware');
-
 const debugServer = require('debug')('Server');
 
-const app = express();
+const app: Express.Application = express();
 
 /**
  * Connecting mongoose middleware
  * and starting NLP and Parser
  */
-mongooseConnect(mongoose, process, () => {
+
+mongooseConnect(mongoose, process, (): void => {
   seedDB();
   startParser();
 
@@ -36,7 +38,7 @@ mongooseConnect(mongoose, process, () => {
     }));
   }
 
-  app.get('*.js', (req, res, next) => {
+  app.get('*.js', (req, res, next): void => {
     req.url += '.gz';
     res.set('Content-Encoding', 'gzip');
     res.set('Content-Type', 'text/javascript');
@@ -46,11 +48,8 @@ mongooseConnect(mongoose, process, () => {
   app.use(express.static(path.join(__dirname, './view/public')));
   app.use(express.static(path.join(__dirname, './view/public/build')));
 
-  app.use((req, res) => {
-    const contentType = req.headers['content-type'];
-    if (contentType && contentType.indexOf('application/json') > -1) {
-      res.status(404).json({ message: 'Resource not found' });
-    } else res.sendFile(path.join(__dirname, './view/public/index.html'));
+  app.use((req, res): void => {
+    res.sendFile(path.join(__dirname, './view/public/index.html'));
   });
 });
 
@@ -58,14 +57,15 @@ mongooseConnect(mongoose, process, () => {
  * creating ApolloServer
  * @type {ApolloServer}
  */
-const server = new ApolloServer({
+
+const server: ApolloServer = new ApolloServer({
   typeDefs,
   resolvers,
   context,
   cache: new RedisCache({
     host: process.env.REDIS_HOST || '127.0.0.1',
     port: process.env.REDIS_PORT || 6379,
-  }),
+  }) as any,
   cacheControl: true,
 });
 
@@ -75,19 +75,21 @@ const server = new ApolloServer({
 server.applyMiddleware({
   app,
   endpoint,
-});
+} as any);
 
 /**
  * Creating server and adding subscriptions
  * @type {Server | Http2Server | Promise<any>}
  */
+
 const httpServer = http.createServer(app);
 server.installSubscriptionHandlers(httpServer);
 
 /**
  * Listening server port
  */
-httpServer.listen(serverPort, () => {
+
+httpServer.listen(serverPort, (): void => {
   debugServer(
     `🚀 Server ready at http://localhost:${serverPort}${server.graphqlPath}`,
   );

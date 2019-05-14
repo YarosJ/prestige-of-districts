@@ -8,7 +8,7 @@
     "email": "jaroslawjuk@gmail.com",
     "url": "https://github.com/YarosJ"
   },
-  "main": "app.js",
+  "main": "app.ts",
   "graphdoc": {
     "endpoint": "http://localhost:5000/graphql",
     "output": "./PdGraphDoc"
@@ -38,7 +38,7 @@
     "puppeteer": "^1.12.1"
   },
   "scripts": {
-    "server": "nodemon --exec babel-node --extensions '.js,.ts' app.js",
+    "server": "nodemon --exec babel-node --extensions '.js,.ts' app.ts",
     "start": "npm run server",
     "test": "mocha --require ./node_modules/@babel/register tests"
   },
