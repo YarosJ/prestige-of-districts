@@ -1,6 +1,6 @@
 import debug from 'debug';
 import messages from '../../NLP/libs/NLP/classification/corpuses/faults_classification_corpus';
-import AMQPChannel from '../../libs/AMQPChannel';
+import AMQPChannel from '../../libs/AMQPChannel/index.ts';
 import config from '../config';
 
 const debugFailures = debug('seedDB');

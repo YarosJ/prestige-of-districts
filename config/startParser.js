@@ -1,8 +1,8 @@
 import mongoose from 'mongoose';
 import '../models/Task';
-import TaskScheduler from '../libs/TaskScheduler.ts';
-import Scraper from '../libs/Scraper.ts';
-import AMQPChannel from '../libs/AMQPChannel';
+import TaskScheduler from '../libs/TaskScheduler/index.ts';
+import Scraper from '../libs/Scraper/index.ts';
+import AMQPChannel from '../libs/AMQPChannel/index.ts';
 import actionFromNLP from '../helpers/actionFromNLP';
 import alreadyScraped from '../helpers/isAlreadyScraped';
 import ActionDispatcher from '../controllers/ActionDispatcher';
@@ -28,7 +28,7 @@ export default async () => {
   // Adapting tasks from DB for TaskScheduler
   const queueTasks = tasks.map(t => ({
     body: {
-      URL: t.URL, // + '/index.php?start=3',
+      URL: t.URL,
       tagPaths: t.tagPaths,
       city: t.city,
       country: t.country,

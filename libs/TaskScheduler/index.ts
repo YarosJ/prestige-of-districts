@@ -1,8 +1,9 @@
 import NodeCache from 'node-cache';
 
 /**
- * Class TaskScheduler
+ * Runs callback by given interval and data for each tasks
  */
+
 export default class TaskScheduler {
   public constructor(tasks, config, callback) {
     this.myCache = new NodeCache({

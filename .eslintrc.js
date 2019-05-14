@@ -21,7 +21,7 @@ module.exports = {
       rules: Object.assign(typescriptEslintRecommended.rules, {
         '@typescript-eslint/no-unused-vars': 'off',
         '@typescript-eslint/indent': [2, 2],
-      })
+      }),
     }
   ],
 };
