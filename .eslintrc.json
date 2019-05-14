@@ -6,6 +6,11 @@
         "node": true
     },
     "parserOptions": {
-        "ecmaVersion": 10
-    }
+        "ecmaVersion": 2018
+    },
+    "overrides": [{
+        "files": ["*.ts"],
+        "parser": "@typescript-eslint/parser",
+        "plugins": ["@typescript-eslint"]
+    }]
 }

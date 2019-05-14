@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import '../models/Task';
 import TaskScheduler from '../libs/TaskScheduler';
-import Scraper from '../libs/Scraper';
+import Scraper from '../libs/Scraper.ts';
 import AMQPChannel from '../libs/AMQPChannel';
 import actionFromNLP from '../helpers/actionFromNLP';
 import alreadyScraped from '../helpers/isAlreadyScraped';

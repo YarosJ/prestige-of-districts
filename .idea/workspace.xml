@@ -2,43 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e48be22d-a086-484b-9a46-2a2d4e5401ca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/view/public/build/26.client.min.js.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/public/build/27.client.min.js.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/public/build/28.client.min.js.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/public/build/29.client.min.js.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/public/build/30.client.min.js.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/public/build/31.client.min.js.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/public/build/32.client.min.js.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/yaroslaw.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/yaroslaw.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/geolocation/geocodeLocations.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/geolocation/geocodeLocations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/components/Map/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/view/components/Map/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/public/build/0.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/0.client.min.js.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/public/build/1.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/1.client.min.js.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/public/build/11.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/11.client.min.js.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/public/build/12.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/12.client.min.js.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/public/build/13.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/13.client.min.js.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/public/build/14.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/14.client.min.js.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/public/build/15.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/15.client.min.js.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/public/build/16.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/16.client.min.js.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/public/build/17.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/17.client.min.js.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/public/build/18.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/18.client.min.js.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/public/build/19.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/19.client.min.js.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/public/build/2.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/2.client.min.js.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/public/build/20.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/20.client.min.js.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/public/build/21.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/21.client.min.js.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/public/build/22.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/22.client.min.js.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/public/build/23.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/23.client.min.js.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/public/build/24.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/24.client.min.js.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/public/build/25.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/25.client.min.js.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/public/build/3.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/3.client.min.js.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/public/build/4.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/4.client.min.js.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/public/build/5.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/5.client.min.js.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/public/build/6.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/6.client.min.js.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/public/build/7.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/7.client.min.js.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/public/build/8.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/8.client.min.js.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/public/build/9.client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/9.client.min.js.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/public/build/client.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/view/public/build/client.min.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/startParser.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/startParser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/Scraper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nodemon.json" beforeDir="false" afterPath="$PROJECT_DIR$/nodemon.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -50,12 +23,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="TypeScript File" />
+        <option value="tsconfig.json" />
       </list>
     </option>
   </component>
@@ -93,14 +68,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/view/components/Admin/Users/SelectRole/index.jsx" />
-        <option value="$PROJECT_DIR$/view/components/Admin/Users/User.jsx" />
-        <option value="$PROJECT_DIR$/view/helpers/pagination.js" />
-        <option value="$PROJECT_DIR$/config/seedDB/accessControl.js" />
-        <option value="$PROJECT_DIR$/docker-compose.yml" />
-        <option value="$PROJECT_DIR$/view/components/Admin/Targets/AddTarget/AddTarget.jsx" />
-        <option value="$PROJECT_DIR$/view/components/Admin/AccessControl/Role.jsx" />
-        <option value="$PROJECT_DIR$/view/components/Admin/Targets/Tags/GetSelector.jsx" />
         <option value="$PROJECT_DIR$/view/components/Admin/Targets/UpdateTarget.jsx" />
         <option value="$PROJECT_DIR$/view/components/Admin/Targets/AddTarget/Basics.jsx" />
         <option value="$PROJECT_DIR$/view/components/Admin/Targets/DeleteTarget.jsx" />
@@ -144,8 +111,21 @@
         <option value="$PROJECT_DIR$/view/index.css" />
         <option value="$PROJECT_DIR$/view/components/Map/index.jsx" />
         <option value="$PROJECT_DIR$/helpers/geolocation/geocodeLocations.js" />
+        <option value="$PROJECT_DIR$/nodemon.json" />
+        <option value="$PROJECT_DIR$/.babelrc" />
+        <option value="$PROJECT_DIR$/config/startParser.js" />
+        <option value="$PROJECT_DIR$/tsconfig.json" />
+        <option value="$PROJECT_DIR$/.eslintrc.json" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/libs/Scraper.ts" />
       </list>
     </option>
+  </component>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="" />
+    <bower.json value="" />
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -174,6 +154,11 @@
               <item name="prestige-of-districts" type="b2602c69:ProjectViewProjectNode" />
               <item name="prestige-of-districts" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="prestige-of-districts" type="b2602c69:ProjectViewProjectNode" />
+              <item name="prestige-of-districts" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -195,8 +180,8 @@
     <property name="node.js.selected.package.jscs" value="" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
-    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -267,11 +252,15 @@
       <workItem from="1557469961207" duration="30609000" />
       <workItem from="1557555875992" duration="46173000" />
       <workItem from="1557644032482" duration="370000" />
+      <workItem from="1557726867237" duration="252000" />
+      <workItem from="1557747991216" duration="583000" />
+      <workItem from="1557756866693" duration="28964000" />
+      <workItem from="1557817339065" duration="3091000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="362453000" />
+    <option name="totallyTimeSpent" value="395343000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="6" />
@@ -301,47 +290,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/view/components/Failures/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="69" column="33" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/helpers/components/ChooseService.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1281">
-          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/helpers/validate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/constants/history.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/constants/propTypes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/constants/routes.js" />
     <entry file="file://$PROJECT_DIR$/view/constants/queries.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -482,13 +430,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/NLP/app.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -516,16 +457,6 @@
     <entry file="file://$PROJECT_DIR$/models/User.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/Scraper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1470">
-          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/AMQPChannel/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -549,9 +480,6 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helpers/actionFromNLP.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/helpers/graphQL/paginate.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -618,9 +546,6 @@
         <state relative-caret-position="-1008" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/helpers/geolocation/geocodeLocations.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2310">
@@ -628,6 +553,69 @@
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/Scraper.js" />
+    <entry file="file://$PROJECT_DIR$/helpers/actionFromNLP.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/startParser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nodemon.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1869">
+          <caret line="89" column="37" lean-forward="true" selection-start-line="89" selection-start-column="37" selection-end-line="89" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.babelrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.eslintrc.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/Scraper.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
