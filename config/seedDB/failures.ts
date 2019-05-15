@@ -13,18 +13,18 @@ const {
   },
 } = config;
 
-export default async () => {
+export default async (): Promise <void> => {
   // Initialise nlpChannel message broker
-  const nlpChannel = await new AMQPChannel({
+  const nlpChannel: object = await new AMQPChannel({
     queueName: NLP_QUEUE_NAME,
     host: HOST,
   });
 
   debugFailures('🚧 Start seeding failures');
 
-  const shuffledMessages = messages.sort(() => Math.random() - 0.5);
+  const shuffledMessages = messages.sort((): number => Math.random() - 0.5);
 
-  shuffledMessages.forEach(m => nlpChannel.sendToQueue({
+  shuffledMessages.forEach((m): void => nlpChannel.sendToQueue({
     text: m.text,
     payload: {
       city: defaultCity,

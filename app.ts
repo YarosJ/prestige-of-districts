@@ -9,7 +9,7 @@ import mongoose from 'mongoose';
 import { express as voyagerMiddleware } from 'graphql-voyager/middleware';
 import resolvers from './controllers/graphql/resolvers';
 import typeDefs from './controllers/graphql/schema';
-import mongooseConnect from './config/mongooseConnect';
+import mongooseConnect from './config/mongooseConnect.ts';
 import startParser from './config/startParser.ts';
 import context from './helpers/authentication/apolloContext';
 import { serverPort, endpoint } from './config/config.json';
@@ -100,7 +100,7 @@ httpServer.listen(serverPort, (): void => {
   );
   if (process.env.UML === 'true') {
     debugServer(
-      `🗂 GraphQL UML diagrams ready at http://localhost:${serverPort}/voyager`,
+      `🔍 GraphQL UML diagrams ready at http://localhost:${serverPort}/voyager`,
     );
   }
 });

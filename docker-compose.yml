@@ -28,7 +28,7 @@ services:
       - DEBUG=mongoose,ChildProcess,Server,seedDB,failuresController,messagesController
       - seedAccessControl=false
       - seedAdmin=false
-      - seedFailures=false
+      - seedFailures=true
       - permanentSeed=true # if you give true all users and accessControl will be deleted
       - UML=true
     command: npm run server

@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import '../../../models/Task';
+import '../../../models/Task.ts';
 import config from '../../../config/config';
 
 const TaskModel = mongoose.model('Task');

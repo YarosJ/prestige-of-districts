@@ -12,7 +12,7 @@ export default class ActionDispatcher {
     TOXIC: addFailure,
     REPAIR: addMessage,
     INFO: addMessage,
-    default: (): void => null, // Unexpected action
+    default: (): void => undefined, // Unexpected action
   };
 
   /**

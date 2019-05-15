@@ -2,8 +2,10 @@
   <dictionary name="yaroslaw">
     <words>
       <w>aardvarksay</w>
+      <w>addressdetails</w>
       <w>amqp</w>
       <w>axios</w>
+      <w>bcrypt</w>
       <w>checkmark</w>
       <w>checkperiod</w>
       <w>containerport</w>
@@ -39,6 +41,7 @@
       <w>transparancy</w>
       <w>tuxsay</w>
       <w>unclustered</w>
+      <w>yaroslaw</w>
       <w>yosay</w>
     </words>
   </dictionary>

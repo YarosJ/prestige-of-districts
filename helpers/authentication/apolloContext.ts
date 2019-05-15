@@ -1,26 +1,25 @@
 import jwt from 'jsonwebtoken';
 import { AuthenticationError } from 'apollo-server-express';
 import gql from 'graphql-tag';
-import checkPermissions from './checkPermissions';
+import { ServerResponse } from 'http';
+import checkPermissions from './checkPermissions.ts';
 import { secret } from '../../config/config.json';
 
 /**
  * Returns GraphQL action from string
- * @returns {string}
- * @param queryString
  */
-function getGraphQLAction(queryString) {
-  return gql(queryString).definitions[0].selectionSet.selections[0].name.value;
-}
+
+const getGraphQLAction = (queryString: string): string => gql(queryString)
+  .definitions[0].selectionSet.selections[0].name.value;
 
 /**
  * Authorization by session or JWT, depending of the header "Authorization"
- * @returns {Function}
  */
-export default async ({ req, res, connection }) => {
+
+export default async ({ req, res, connection }): Promise <ServerResponse | {}> => {
   if (connection) return {};
 
-  let role;
+  let role: string;
   let allowed = false;
   const { query } = req.body;
   const action = getGraphQLAction(query);

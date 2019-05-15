@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
-import '../../../models/Failure';
-import '../../../models/Message';
-import '../../../models/User';
+import '../../../models/Failure.ts';
+import '../../../models/Message.ts';
+import '../../../models/User.ts';
 
 const FailureModel = mongoose.model('Failure');
 const MessageModel = mongoose.model('Message');

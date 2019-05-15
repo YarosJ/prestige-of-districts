@@ -11,7 +11,7 @@ import ChooseService from '../../../helpers/components/ChooseService';
 import DateRange from '../DateRange';
 import config from '../../../config.json';
 
-const HEATMAP_SOURCE_ID = 'failures';
+const HEATMAP_SOURCE_ID = 'failures.ts';
 
 export default class Map extends Component {
   state = {

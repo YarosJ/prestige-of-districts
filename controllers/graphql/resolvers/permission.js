@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import '../../../models/Permission';
+import '../../../models/Permission.ts';
 
 const PermissionModel = mongoose.model('Permission');
 

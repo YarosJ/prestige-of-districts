@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken';
 import { UserInputError } from 'apollo-server-express';
 import { secret } from '../../../config/config.json';
 import paginate from '../../../helpers/graphQL/paginate';
-import '../../../models/User';
+import '../../../models/User.ts';
 
 const UserModel = mongoose.model('User');
 
@@ -106,7 +106,6 @@ export default {
      * @returns {Promise<boolean>}
      */
     async logOut(parent, { accessToken, refreshToken }) {
-      console.log({ accessToken, refreshToken });
       return true; // Add to blacklist
     },
 

@@ -1,16 +1,16 @@
 /* eslint-disable no-useless-escape,quote-props */
 // noinspection NonAsciiCharacters
-// noinspection JSNonASCIINames
 
 const patterns = {
   '\Д+\/+\с': 'Детский сад',
   'ОШ': 'Школа',
 }; // From config
 
-export default (text) => {
-  let result = text;
-  Object.keys(patterns).map((pattern) => {
+export default (text: string): string => {
+  let result: string = text;
+  Object.keys(patterns).forEach((pattern): void => {
     result = result.replace(new RegExp(pattern, 'g'), patterns[pattern]);
   });
+
   return result;
 };

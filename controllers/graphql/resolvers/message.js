@@ -5,7 +5,7 @@ import geocodeLocations from '../../../helpers/geolocation/geocodeLocations';
 import validate from '../../../helpers/graphQL/validateInput';
 import ISODate from '../../../helpers/ISODate';
 import dateQueryFromRange from './partials/dateQueryFromRange';
-import '../../../models/Message';
+import '../../../models/Message.ts';
 
 const MessageModel = mongoose.model('Message');
 const pubSub = new PubSub();

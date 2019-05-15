@@ -1,8 +1,9 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
+import bcrypt from 'bcryptjs';
+
 mongoose.Promise = require('bluebird');
 
 const { Schema } = mongoose;
-const bcrypt = require('bcryptjs');
 
 /**
  * Schema for target sub field
@@ -29,7 +30,7 @@ const UserSchema = new Schema({
   },
   role: {
     type: String,
-    required: false, // Must be true!
+    required: true, // Must be true!
     unique: false,
   },
   hashedPassword: { type: String, required: true },
@@ -39,7 +40,7 @@ const UserSchema = new Schema({
 }, { usePushEach: true });
 
 // eslint-disable-next-line func-names
-UserSchema.virtual('password').set(function (password) {
+UserSchema.virtual('password').set(function (password): void {
   this.salt = bcrypt.genSaltSync(10);
   this.hashedPassword = this.encryptPassword(password);
 });
@@ -50,7 +51,7 @@ UserSchema.methods = {
    * @param password
    * @returns {string|?string}
    */
-  encryptPassword(password) {
+  encryptPassword(password): string {
     return bcrypt.hashSync(password, this.salt);
   },
 
@@ -59,7 +60,7 @@ UserSchema.methods = {
    * @param password
    * @returns {boolean}
    */
-  validPassword(password) {
+  validPassword(password): boolean {
     return bcrypt.compareSync(password, this.hashedPassword);
   },
 };

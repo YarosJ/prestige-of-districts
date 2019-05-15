@@ -1,19 +1,19 @@
 import mongoose from 'mongoose';
 import debug from 'debug';
-import '../../models/Permission';
+import '../../models/Permission.ts';
 
 const debugAccessControl = debug('seedDB');
 
 const roles = [
   {
     role: 'guest',
-    actions: ['signIn', 'signUp', 'refreshToken', 'messages', 'failures', 'services', '__schema', 'total'],
+    actions: ['signIn', 'signUp', 'refreshToken', 'messages', 'failures.ts', 'services', '__schema', 'total'],
   },
   {
     role: 'user',
     actions:
       [
-        'signIn', 'signUp', 'refreshToken', 'messages', 'failures', 'user', 'services', '__schema', 'total',
+        'signIn', 'signUp', 'refreshToken', 'messages', 'failures.ts', 'user', 'services', '__schema', 'total',
         'logOut', 'addFailure', 'removeFailure', 'addMessage', 'removeMessage',
       ],
   },
@@ -21,7 +21,7 @@ const roles = [
     role: 'admin',
     actions:
       [
-        'signIn', 'signUp', 'refreshToken', 'messages', 'failures', 'user', 'services', '__schema', 'total',
+        'signIn', 'signUp', 'refreshToken', 'messages', 'failures.ts', 'user', 'services', '__schema', 'total',
         'logOut', 'addFailure', 'removeFailure', 'addMessage', 'removeMessage',
         'tags', 'targets', 'addTarget', 'removeTarget', 'updateTarget', 'users',
         'screenshot', 'selector',
@@ -31,7 +31,7 @@ const roles = [
     role: 'superAdmin',
     actions:
       [
-        'signIn', 'signUp', 'refreshToken', 'messages', 'failures', 'user', 'services', '__schema', 'total',
+        'signIn', 'signUp', 'refreshToken', 'messages', 'failures.ts', 'user', 'services', '__schema', 'total',
         'logOut', 'addFailure', 'removeFailure', 'addMessage', 'removeMessage',
         'tags', 'targets', 'addTarget', 'removeTarget', 'updateTarget', 'users',
         'roles', 'actions', 'addRole', 'addAction', 'deleteRole', 'deleteAction', 'updateUser', 'deleteUser',
@@ -42,10 +42,11 @@ const roles = [
 
 const PermissionModel = mongoose.model('Permission');
 
-export default async (permanent) => {
+export default async (permanent): Promise <void> => {
   if (permanent) await PermissionModel.remove();
+
   if (await PermissionModel.count() === 0) {
-    await Promise.all(roles.map(async (r) => {
+    await Promise.all(roles.map(async (r): Promise <void> => {
       const { role, actions } = r;
       const roleDoc = new PermissionModel({ role, actions });
       await roleDoc.save();

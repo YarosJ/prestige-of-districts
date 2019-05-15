@@ -1,10 +1,10 @@
-import accessControl from './accessControl';
-import admin from './admin';
-import failures from './failures';
+import accessControl from './accessControl.ts';
+import admin from './admin.ts';
+import failures from './failures.ts';
 
-export default async () => {
+export default async (): Promise <void> => {
   const { permanentSeed } = process.env;
-  const isPermanent = permanentSeed === 'true';
+  const isPermanent: boolean = (permanentSeed === 'true');
 
   if (process.env.seedAccessControl === 'true') accessControl(isPermanent);
   if (process.env.seedAdmin === 'true') admin(isPermanent);

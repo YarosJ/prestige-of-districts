@@ -37,7 +37,7 @@ const TaskSchema = new Schema({
  * NEED ADAPTER!!!
  */
 
-TaskSchema.post('save', (doc) => {
+TaskSchema.post('save', (doc): void => {
   if (global.taskScheduler) {
     global.taskScheduler.addTasks([{
       body: {
@@ -51,7 +51,7 @@ TaskSchema.post('save', (doc) => {
   }
 });
 
-TaskSchema.post('remove', (doc) => {
+TaskSchema.post('remove', (doc): void => {
   if (global.taskScheduler) {
     global.taskScheduler.deleteTasks([{
       URL: doc.URL,

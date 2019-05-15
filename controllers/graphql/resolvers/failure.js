@@ -5,7 +5,7 @@ import geocodeLocations from '../../../helpers/geolocation/geocodeLocations';
 import validate from '../../../helpers/graphQL/validateInput';
 import ISODate from '../../../helpers/ISODate';
 import dateQueryFromRange from './partials/dateQueryFromRange';
-import '../../../models/Failure';
+import '../../../models/Failure.ts';
 
 const FailureModel = mongoose.model('Failure');
 const pubSub = new PubSub();
