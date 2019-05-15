@@ -14,7 +14,7 @@ const DELETE_USER = gql`
 `;
 
 const confirmAndDelete = async (deleteUser) => {
-  await confirmDialog({ action: 'user', onConfirm: deleteUser });
+  await confirmDialog({ action: 'user.ts', onConfirm: deleteUser });
 };
 
 const UserDelete = ({

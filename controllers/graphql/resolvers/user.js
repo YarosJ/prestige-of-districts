@@ -48,7 +48,7 @@ export default {
       const user = new UserModel({
         email,
         password,
-        role: 'user',
+        role: 'user.ts',
         targets: [],
         createdAt: new Date(),
       });

@@ -1,11 +1,11 @@
 import mongoose from 'mongoose';
-import '../models/Task';
+import '../models/Task.ts';
 import TaskScheduler from '../libs/TaskScheduler/index.ts';
 import Scraper from '../libs/Scraper/index.ts';
 import AMQPChannel from '../libs/AMQPChannel/index.ts';
-import actionFromNLP from '../helpers/actionFromNLP';
-import alreadyScraped from '../helpers/isAlreadyScraped';
-import ActionDispatcher from '../controllers/ActionDispatcher';
+import actionFromNLP from '../helpers/actionFromNLP.ts';
+import alreadyScraped from '../helpers/isAlreadyScraped.ts';
+import ActionDispatcher from '../controllers/ActionDispatcher.ts';
 import config from './config';
 
 // Get configs for message broker and scheduler

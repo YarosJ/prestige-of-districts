@@ -7,11 +7,31 @@ export default gql`
   }
 
   extend type Mutation {
-    signUp(email: String!, password: String!): User!
-    signIn(email: String!, password: String!): Authorization!
+    signUp(
+      email: String!,
+      password: String!
+    ): User!
+
+    signIn(
+      email: String!,
+      password: String!
+    ): Authorization!
+
     refreshToken(refreshToken: String!): Authorization!
-    logOut(refreshToken: String!, accessToken: String!): User!
-    updateUser(id: ID!, email: String, previousPassword: String, newPassword: String, role: String): User!
+
+    logOut(
+      refreshToken: String!,
+      accessToken: String!
+    ): User!
+
+    updateUser(
+      id: ID!,
+      email: String,
+      previousPassword: String,
+      newPassword: String,
+      role: String
+    ): User!
+
     deleteUser(id: ID!): Boolean!
   }
 

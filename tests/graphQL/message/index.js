@@ -25,7 +25,7 @@ export default async ({ query, mutate }) => {
     },
   });
 
-  describe('message', () => {
+  describe('message.ts', () => {
     describe('add', () => {
       // eslint-disable-next-line no-undef
       it('without errors', async () => {

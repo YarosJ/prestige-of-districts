@@ -4,7 +4,7 @@ import asAdmin from './asAdmin';
 
 export default async ({ query, mutate }) => {
 
-  describe('user', async () => {
+  describe('user.ts', async () => {
     await asUser({ query, mutate });
     await asAdmin({ query, mutate });
   });
