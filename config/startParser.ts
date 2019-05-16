@@ -1,12 +1,12 @@
 import mongoose from 'mongoose';
-import '../models/Task.ts';
-import TaskScheduler from '../libs/TaskScheduler/index.ts';
-import Scraper from '../libs/Scraper/index.ts';
-import AMQPChannel from '../libs/AMQPChannel/index.ts';
-import actionFromNLP from '../helpers/actionFromNLP.ts';
-import alreadyScraped from '../helpers/isAlreadyScraped.ts';
-import ActionDispatcher from '../controllers/ActionDispatcher.ts';
-import config from './config';
+import '../models/Task';
+import TaskScheduler from '../libs/TaskScheduler';
+import Scraper from '../libs/Scraper';
+import AMQPChannel from '../libs/AMQPChannel';
+import actionFromNLP from '../helpers/actionFromNLP';
+import alreadyScraped from '../helpers/isAlreadyScraped';
+import ActionDispatcher from '../controllers/ActionDispatcher';
+import config from './config.json';
 
 // Get configs for message broker and scheduler
 const {
@@ -19,14 +19,25 @@ const {
 
 const TaskModel = mongoose.model('Task');
 
+interface Task {
+  body: {
+    URL: string;
+    tagPaths: string[];
+    city: string;
+    country: string;
+    service: string;
+  };
+  interval: number;
+}
+
 /**
  * Starts parser
  */
 export default async (): Promise <TaskScheduler> => {
-  const tasks: object[] = await TaskModel.find(); // Get all tasks from DB
+  const tasks = await TaskModel.find(); // Get all tasks from DB
 
   // Adapting tasks from DB for TaskScheduler
-  const queueTasks: object[] = tasks.map((t): object => ({
+  const queueTasks: Task[] = tasks.map((t): Task => ({
     body: {
       URL: t.URL,
       tagPaths: t.tagPaths,
@@ -37,16 +48,16 @@ export default async (): Promise <TaskScheduler> => {
     interval: t.freq,
   }));
 
-  const scraper: object = await new Scraper(); // Initialise scraper
+  const scraper = await new Scraper(); // Initialise scraper
 
   // Initialise nlpChannel message broker
-  const nlpChannel: object = await new AMQPChannel({
+  const nlpChannel = await new AMQPChannel({
     queueName: NLP_QUEUE_NAME,
     host: HOST,
   });
 
   // Initialise nlpOutputChannel message broker
-  const nlpOutputChannel: object = await new AMQPChannel({
+  const nlpOutputChannel = await new AMQPChannel({
     queueName: NLP_OUTPUT_QUEUE_NAME,
     host: HOST,
   });
@@ -78,7 +89,7 @@ export default async (): Promise <TaskScheduler> => {
       });
     });
 
-  global.taskScheduler = scheduler; // making taskScheduler exemplar accessible for DB hooks
+  (global as any).taskScheduler = scheduler; // making taskScheduler exemplar accessible for DB hooks
 
   return scheduler;
 };

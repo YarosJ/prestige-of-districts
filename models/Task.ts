@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import * as mongoose from 'mongoose';
 
 mongoose.Promise = require('bluebird');
 
@@ -38,8 +38,8 @@ const TaskSchema = new Schema({
  */
 
 TaskSchema.post('save', (doc): void => {
-  if (global.taskScheduler) {
-    global.taskScheduler.addTasks([{
+  if ((global as any).taskScheduler) {
+    (global as any).taskScheduler.addTasks([{
       body: {
         URL: doc.URL,
         tagPaths: doc.tagPaths,
@@ -52,8 +52,8 @@ TaskSchema.post('save', (doc): void => {
 });
 
 TaskSchema.post('remove', (doc): void => {
-  if (global.taskScheduler) {
-    global.taskScheduler.deleteTasks([{
+  if ((global as any).taskScheduler) {
+    (global as any).taskScheduler.deleteTasks([{
       URL: doc.URL,
       tagPaths: doc.tagPaths,
       city: doc.city,

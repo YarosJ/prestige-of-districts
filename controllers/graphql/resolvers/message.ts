@@ -1,11 +1,11 @@
-import mongoose from 'mongoose';
+import * as mongoose from 'mongoose';
 import debug from 'debug';
 import { PubSub } from 'apollo-server-express';
 import geocodeLocations from '../../../helpers/geolocation/geocodeLocations';
 import validate from '../../../helpers/graphQL/validateInput';
 import ISODate from '../../../helpers/ISODate';
 import dateQueryFromRange from './partials/dateQueryFromRange';
-import '../../../models/Message.ts';
+import '../../../models/Message';
 
 const MessageModel = mongoose.model('Message');
 const pubSub = new PubSub();

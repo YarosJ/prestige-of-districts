@@ -16,7 +16,7 @@ const DELETE_TARGET = gql`
 `;
 
 const confirmAndDelete = async (deleteTarget) => {
-  await confirmDialog({ action: 'target.ts', onConfirm: deleteTarget });
+  await confirmDialog({ action: 'target.ts.ts', onConfirm: deleteTarget });
 };
 
 const DeleteTarget = ({

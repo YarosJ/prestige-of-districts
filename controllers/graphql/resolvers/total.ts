@@ -1,15 +1,19 @@
-import mongoose from 'mongoose';
-import '../../../models/Failure.ts';
-import '../../../models/Message.ts';
-import '../../../models/User.ts';
+import * as mongoose from 'mongoose';
+import '../../../models/Failure';
+import '../../../models/Message';
+import '../../../models/User';
 
 const FailureModel = mongoose.model('Failure');
 const MessageModel = mongoose.model('Message');
 const UserModel = mongoose.model('User');
 
+interface Total {
+  count: number;
+}
+
 export default {
   Query: {
-    async total(parent, { target }) {
+    async total(parent, { target }): Promise <Total> {
       switch (target) {
         case 'Failures':
           return { count: await FailureModel.count() };

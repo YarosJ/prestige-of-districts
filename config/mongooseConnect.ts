@@ -1,5 +1,5 @@
-import { db } from './config';
-import debugMongooseConnection from './debugMongooseConnection.ts';
+import { db } from './config.json';
+import debugMongooseConnection from './debugMongooseConnection';
 
 /**
  * Configure a mongoose connection

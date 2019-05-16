@@ -1,10 +1,16 @@
 /* eslint no-underscore-dangle: ["error", { "allow": ["_id"] }] */
-import mongoose from 'mongoose';
+
+import * as mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
 import { UserInputError } from 'apollo-server-express';
 import { secret } from '../../../config/config.json';
 import paginate from '../../../helpers/graphQL/paginate';
-import '../../../models/User.ts';
+import '../../../models/User';
+
+interface RefreshToken {
+  accessToken: string;
+  refreshToken: string;
+}
 
 const UserModel = mongoose.model('User');
 
@@ -17,7 +23,8 @@ export default {
      * @param limit
      * @returns {*}
      */
-    users(parent, { cursor, limit }) {
+
+    users(parent, { cursor, limit }): object {
       return UserModel.find({}, {
         role: 1, createdAt: 1, email: 1, dates: 1,
       }, paginate(cursor, limit));
@@ -29,7 +36,7 @@ export default {
      * @param id
      * @returns {Promise}
      */
-    user(parent, { id }) {
+    user(parent, { id }): object {
       return UserModel.findById(id, {
         role: 1, createdAt: 1, email: 1, targets: 1,
       });
@@ -44,11 +51,11 @@ export default {
      * @param password
      * @returns {Promise<*>}
      */
-    async signUp(parent, { email, password }) {
+    async signUp(parent, { email, password }): Promise <object> {
       const user = new UserModel({
         email,
         password,
-        role: 'user.ts',
+        role: 'user',
         targets: [],
         createdAt: new Date(),
       });
@@ -90,7 +97,7 @@ export default {
      * @param refreshToken
      * @returns {Promise<{accessToken: *}>}
      */
-    async refreshToken(parent, { refreshToken }) {
+    async refreshToken(parent, { refreshToken }): Promise <RefreshToken> {
       const { _id, role } = jwt.verify(refreshToken, secret);
       return {
         accessToken: jwt.sign({ _id, role }, secret, { expiresIn: 900 }),

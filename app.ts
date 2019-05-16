@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import express from 'express';
+import * as express from 'express';
 import * as http from 'http';
 import path from 'path';
 import { ApolloServer } from 'apollo-server-express';
@@ -9,15 +9,15 @@ import mongoose from 'mongoose';
 import { express as voyagerMiddleware } from 'graphql-voyager/middleware';
 import resolvers from './controllers/graphql/resolvers';
 import typeDefs from './controllers/graphql/schema';
-import mongooseConnect from './config/mongooseConnect.ts';
-import startParser from './config/startParser.ts';
+import mongooseConnect from './config/mongooseConnect';
+import startParser from './config/startParser';
 import context from './helpers/authentication/apolloContext';
 import { serverPort, endpoint } from './config/config.json';
 import seedDB from './config/seedDB';
 
 const debugServer = require('debug')('Server');
 
-const app: Express.Application = express();
+const app: express.Application = express();
 
 /**
  * Connecting mongoose middleware

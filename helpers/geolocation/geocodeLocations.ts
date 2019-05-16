@@ -1,10 +1,10 @@
 import NodeGeocoder from 'node-geocoder';
 import axios from 'axios';
-import replaceAbbreviations from './replaceAbbreviations.ts';
-import config from '../../config/config';
+import replaceAbbreviations from './replaceAbbreviations';
+import * as config from '../../config/config.json';
 
 // Get default configs
-const { defaultCity, defaultCountry } = config.geolocation;
+const { geolocation: { defaultCity, defaultCountry } } = config;
 const configGeocoders = config.geolocation.geocoders;
 
 interface Location {
@@ -52,7 +52,7 @@ const hereGeocoder = async ({ place, city, country }): Promise <ResultLocations>
 
 const OSMGeocoder = async ({ place, city, country }): Promise <ResultLocations> => {
   // To prevent 429 (too many requests) error
-  await new Promise((res): number => setTimeout(res, 4000));
+  await new Promise((res): NodeJS.Timeout => setTimeout(res, 4000));
   const parentLoc = await axios
     .get(encodeURI(`https://nominatim.openstreetmap.org/search?q=${city}, ${country}&format=json`));
   const { lat, lon } = parentLoc.data[0];
@@ -92,7 +92,7 @@ const OSMGeocoder = async ({ place, city, country }): Promise <ResultLocations> 
 export default async (places, country = defaultCountry, city = defaultCity): Promise <Place[]> => {
   const result = [];
 
-  await Promise.all(places.map(async (place): Promise <Place[]> => {
+  await Promise.all(places.map(async (place): Promise <void> => {
     const fullNamedPlace = replaceAbbreviations(place);
     const geoLocatedOSM = await OSMGeocoder({
       city,

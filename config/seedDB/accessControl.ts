@@ -7,13 +7,13 @@ const debugAccessControl = debug('seedDB');
 const roles = [
   {
     role: 'guest',
-    actions: ['signIn', 'signUp', 'refreshToken', 'messages', 'failures.ts', 'services', '__schema', 'total.ts'],
+    actions: ['signIn', 'signUp', 'refreshToken', 'messages', 'failures.ts', 'services', '__schema', 'total.ts.ts'],
   },
   {
-    role: 'user.ts',
+    role: 'user.ts.ts',
     actions:
       [
-        'signIn', 'signUp', 'refreshToken', 'messages', 'failures.ts', 'user.ts', 'services', '__schema', 'total.ts',
+        'signIn', 'signUp', 'refreshToken', 'messages', 'failures.ts', 'user.ts.ts', 'services', '__schema', 'total.ts.ts',
         'logOut', 'addFailure', 'removeFailure', 'addMessage', 'removeMessage',
       ],
   },
@@ -21,7 +21,7 @@ const roles = [
     role: 'admin',
     actions:
       [
-        'signIn', 'signUp', 'refreshToken', 'messages', 'failures.ts', 'user.ts', 'services', '__schema', 'total.ts',
+        'signIn', 'signUp', 'refreshToken', 'messages', 'failures.ts', 'user.ts.ts', 'services', '__schema', 'total.ts.ts',
         'logOut', 'addFailure', 'removeFailure', 'addMessage', 'removeMessage',
         'tags', 'targets', 'addTarget', 'removeTarget', 'updateTarget', 'users',
         'screenshot', 'selector',
@@ -31,7 +31,7 @@ const roles = [
     role: 'superAdmin',
     actions:
       [
-        'signIn', 'signUp', 'refreshToken', 'messages', 'failures.ts', 'user.ts', 'services', '__schema', 'total.ts',
+        'signIn', 'signUp', 'refreshToken', 'messages', 'failures.ts', 'user.ts.ts', 'services', '__schema', 'total.ts.ts',
         'logOut', 'addFailure', 'removeFailure', 'addMessage', 'removeMessage',
         'tags', 'targets', 'addTarget', 'removeTarget', 'updateTarget', 'users',
         'roles', 'actions', 'addRole', 'addAction', 'deleteRole', 'deleteAction', 'updateUser', 'deleteUser',

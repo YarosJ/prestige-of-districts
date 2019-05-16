@@ -33,7 +33,7 @@ const Profile = () => (
               </Table.Row>
               <Table.Row>
                 <Table.Cell>Role</Table.Cell>
-                <Table.Cell>{user.role || 'user.ts'}</Table.Cell>
+                <Table.Cell>{user.role || 'user.ts.ts'}</Table.Cell>
               </Table.Row>
               <Table.Row>
                 <Table.Cell>Created At</Table.Cell>

@@ -38,8 +38,9 @@
     "puppeteer": "^1.12.1"
   },
   "scripts": {
-    "server": "nodemon --exec babel-node --extensions '.js,.ts' app.ts",
-    "start": "npm run server",
+    "build": "tsc -p .",
+    "dev": "nodemon --exec 'ts-node' app.ts",
+    "start": "npm run build && node ./build/app.js",
     "test": "mocha --require ./node_modules/@babel/register tests"
   },
   "devDependencies": {
@@ -48,23 +49,18 @@
     "@babel/node": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.3.3",
     "@babel/plugin-transform-runtime": "^7.3.4",
-    "@babel/preset-typescript": "^7.3.3",
     "@babel/register": "^7.0.0",
     "@babel/runtime": "^7.3.4",
     "@typescript-eslint/eslint-plugin": "^1.9.0",
     "@typescript-eslint/parser": "^1.9.0",
-    "babel-eslint": "^10.0.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^7.0.0-beta.3",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^2.0.0-alpha.20",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.0.0",
-    "eslint-plugin-babel": "^5.3.0",
-    "eslint-plugin-import": "^2.17.2",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-react": "^7.13.0",
     "jsdoc": "^3.5.5",
+    "ts-node": "^8.1.0",
     "typescript": "^3.4.5"
   }
 }

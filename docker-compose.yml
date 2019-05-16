@@ -31,7 +31,7 @@ services:
       - seedFailures=true
       - permanentSeed=true # if you give true all users and accessControl will be deleted
       - UML=true
-    command: npm run server
+    command: npm run dev
     volumes:
       - .:/app
       - /app/node_modules/
