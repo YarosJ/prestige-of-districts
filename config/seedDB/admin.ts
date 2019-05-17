@@ -1,7 +1,7 @@
-import mongoose from 'mongoose';
+import * as mongoose from 'mongoose';
 import debug from 'debug';
-import config from '../config';
-import '../../models/User.ts';
+import * as config from '../config.json';
+import '../../models/User';
 
 const debugAdmin = debug('seedDB');
 

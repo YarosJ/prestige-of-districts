@@ -1,5 +1,5 @@
 import * as mongoose from 'mongoose';
-import bcrypt from 'bcryptjs';
+import * as bcrypt from 'bcryptjs';
 
 mongoose.Promise = require('bluebird');
 

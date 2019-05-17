@@ -1,4 +1,4 @@
-import NodeGeocoder from 'node-geocoder';
+import * as NodeGeocoder from 'node-geocoder';
 import axios from 'axios';
 import replaceAbbreviations from './replaceAbbreviations';
 import * as config from '../../config/config.json';

@@ -1,10 +1,12 @@
-import NodeCache from 'node-cache';
+import * as NodeCache from 'node-cache';
 
 /**
  * Runs callback by given interval and data for each tasks
  */
 
 export default class TaskScheduler {
+  protected myCache: NodeCache;
+
   public constructor(tasks, config, callback) {
     this.myCache = new NodeCache({
       checkperiod: config.precision || 15, // seconds

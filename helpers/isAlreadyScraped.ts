@@ -1,5 +1,5 @@
-import mongoose from 'mongoose';
-import '../models/LastScraped.ts';
+import * as mongoose from 'mongoose';
+import '../models/LastScraped';
 
 const LastScrapedModel = mongoose.model('LastScraped');
 

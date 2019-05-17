@@ -1,6 +1,6 @@
-import accessControl from './accessControl.ts';
-import admin from './admin.ts';
-import failures from './failures.ts';
+import accessControl from './accessControl';
+import admin from './admin';
+import failures from './failures';
 
 export default async (): Promise <void> => {
   const { permanentSeed } = process.env;

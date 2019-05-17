@@ -1,7 +1,7 @@
 /* eslint no-underscore-dangle: ["error", { "allow": ["_id"] }] */
 
 import * as mongoose from 'mongoose';
-import jwt from 'jsonwebtoken';
+import * as jwt from 'jsonwebtoken';
 import { UserInputError } from 'apollo-server-express';
 import { secret } from '../../../config/config.json';
 import paginate from '../../../helpers/graphQL/paginate';

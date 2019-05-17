@@ -2,10 +2,10 @@
 
 import * as express from 'express';
 import * as http from 'http';
-import path from 'path';
+import * as path from 'path';
 import { ApolloServer } from 'apollo-server-express';
 import { RedisCache } from 'apollo-server-cache-redis';
-import mongoose from 'mongoose';
+import * as mongoose from 'mongoose';
 import { express as voyagerMiddleware } from 'graphql-voyager/middleware';
 import resolvers from './controllers/graphql/resolvers';
 import typeDefs from './controllers/graphql/schema';
@@ -60,7 +60,7 @@ mongooseConnect(mongoose, process, (): void => {
 
 const server: ApolloServer = new ApolloServer({
   typeDefs,
-  resolvers,
+  resolvers: resolvers as any,
   context,
   cache: new RedisCache({
     host: process.env.REDIS_HOST || '127.0.0.1',

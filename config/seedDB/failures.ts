@@ -1,7 +1,7 @@
 import debug from 'debug';
-import messages from '../../NLP/libs/NLP/classification/corpuses/faults_classification_corpus';
-import AMQPChannel from '../../libs/AMQPChannel/index.ts';
-import config from '../config';
+import * as messages from '../../NLP/libs/NLP/classification/corpuses/faults_classification_corpus.json';
+import AMQPChannel from '../../libs/AMQPChannel';
+import * as config from '../config.json';
 
 const debugFailures = debug('seedDB');
 
@@ -15,16 +15,18 @@ const {
 
 export default async (): Promise <void> => {
   // Initialise nlpChannel message broker
-  const nlpChannel: object = await new AMQPChannel({
+  const nlpChannel = new AMQPChannel({
     queueName: NLP_QUEUE_NAME,
     host: HOST,
   });
+
+  await nlpChannel.connect();
 
   debugFailures('🚧 Start seeding failures');
 
   const shuffledMessages = messages.sort((): number => Math.random() - 0.5);
 
-  shuffledMessages.forEach((m): void => nlpChannel.sendToQueue({
+  shuffledMessages.forEach((m): AMQPChannel => nlpChannel.sendToQueue({
     text: m.text,
     payload: {
       city: defaultCity,

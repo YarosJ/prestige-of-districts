@@ -1,6 +1,6 @@
-import mongoose from 'mongoose';
+import * as mongoose from 'mongoose';
 import debug from 'debug';
-import '../../models/Permission.ts';
+import '../../models/Permission';
 
 const debugAccessControl = debug('seedDB');
 

@@ -1,6 +1,6 @@
 import * as mongoose from 'mongoose';
 import '../../../models/Task';
-import config from '../../../config/config.json';
+import * as config from '../../../config/config.json';
 
 const TaskModel = mongoose.model('Task');
 

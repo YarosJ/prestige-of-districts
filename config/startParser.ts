@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import * as mongoose from 'mongoose';
 import '../models/Task';
 import TaskScheduler from '../libs/TaskScheduler';
 import Scraper from '../libs/Scraper';
@@ -6,7 +6,7 @@ import AMQPChannel from '../libs/AMQPChannel';
 import actionFromNLP from '../helpers/actionFromNLP';
 import alreadyScraped from '../helpers/isAlreadyScraped';
 import ActionDispatcher from '../controllers/ActionDispatcher';
-import config from './config.json';
+import * as config from './config.json';
 
 // Get configs for message broker and scheduler
 const {
@@ -49,6 +49,7 @@ export default async (): Promise <TaskScheduler> => {
   }));
 
   const scraper = await new Scraper(); // Initialise scraper
+  await scraper.openBrowser();
 
   // Initialise nlpChannel message broker
   const nlpChannel = await new AMQPChannel({
@@ -56,11 +57,15 @@ export default async (): Promise <TaskScheduler> => {
     host: HOST,
   });
 
+  await nlpChannel.connect();
+
   // Initialise nlpOutputChannel message broker
   const nlpOutputChannel = await new AMQPChannel({
     queueName: NLP_OUTPUT_QUEUE_NAME,
     host: HOST,
   });
+
+  await nlpOutputChannel.connect();
 
   nlpOutputChannel.consume((data): void => {
     // Get action with payload from NLP results and dispatch

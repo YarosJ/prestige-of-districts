@@ -1,8 +1,8 @@
-import jwt from 'jsonwebtoken';
+import * as jwt from 'jsonwebtoken';
 import { AuthenticationError } from 'apollo-server-express';
 import gql from 'graphql-tag';
 import { ServerResponse } from 'http';
-import checkPermissions from './checkPermissions.ts';
+import checkPermissions from './checkPermissions';
 import { secret } from '../../config/config.json';
 
 /**

@@ -29,9 +29,11 @@
       <w>mapboxgl</w>
       <w>maxzoom</w>
       <w>offc</w>
+      <w>openstreetmap</w>
       <w>pickable</w>
       <w>pointmap</w>
       <w>polygonpoints</w>
+      <w>rabbitmq</w>
       <w>refetch</w>
       <w>screenshot</w>
       <w>signin</w>

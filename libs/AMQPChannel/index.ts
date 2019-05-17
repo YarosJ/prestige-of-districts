@@ -1,5 +1,5 @@
-import amqp from 'amqplib';
-import { QUEUE_NAME, HOST } from './config';
+import * as amqp from 'amqplib';
+import { QUEUE_NAME, HOST } from './config.json';
 
 /**
  * Establishes AMQP connection and make able to send
@@ -11,19 +11,21 @@ export default class AMQPChannel {
 
   public host: string;
 
+  protected channel;
+
   public constructor(config) {
     this.queueName = config.queueName || QUEUE_NAME;
     this.host = config.host || HOST;
+  }
 
-    return (async (): Promise <AMQPChannel> => {
-      const conn = await amqp.connect(this.host);
-      const ch = await conn.createChannel();
+  public async connect(): Promise <AMQPChannel> {
+    const conn = await amqp.connect(this.host);
+    const ch = await conn.createChannel();
 
-      ch.assertQueue(this.queueName, { durable: true, autoDelete: true });
-      this.channel = ch;
+    ch.assertQueue(this.queueName, { durable: true, autoDelete: true });
+    this.channel = ch;
 
-      return this;
-    })();
+    return this;
   }
 
   public consume(callback): AMQPChannel {

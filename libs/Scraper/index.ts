@@ -1,15 +1,15 @@
 /* global document */
 
-import puppeteer, { Browser, Page } from 'puppeteer';
+import * as puppeteer from 'puppeteer';
 
 /**
  * Scrapes data from given sites by given selectors
  */
 
-class Scraper {
-  public browser: Browser;
+export default class Scraper {
+  public browser: puppeteer.Browser;
 
-  public page: Page;
+  public page: puppeteer.Page;
 
   public async openBrowser(): Promise <Scraper> {
     this.browser = await puppeteer.launch({
@@ -52,14 +52,7 @@ class Scraper {
     this.browser.close();
   }
 
-  protected async goTo(URL: string): Promise <Page> {
+  protected async goTo(URL: string): Promise <puppeteer.Page> {
     await this.page.goto(URL, { waitUntil: 'domcontentloaded' });
   }
 }
-
-export default async (): Promise <Scraper> => {
-  const scraper = await new Scraper();
-  await scraper.openBrowser();
-
-  return scraper;
-};

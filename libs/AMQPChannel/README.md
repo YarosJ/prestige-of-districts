@@ -10,6 +10,8 @@ const channel = await new AMQPChannel({
   host: '<Your RabbitMQ Host>',
 });
 
+await channel.connect();
+
 channel.sendToQueue({
   foo: 'bar',
 });
