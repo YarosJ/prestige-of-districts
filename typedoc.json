@@ -4,6 +4,7 @@
   "ignoreCompilerErrors": true,
   "tsconfig": "./tsconfig.json",
   "readme": "./README.md",
-  "out": "./PDTypeDoc",
-  "excludeExternals": true
+  "out": "./PdTypeDoc",
+  "excludeExternals": true,
+  "disableOutputCheck": true
 }
