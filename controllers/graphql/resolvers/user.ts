@@ -1,30 +1,29 @@
 /* eslint no-underscore-dangle: ["error", { "allow": ["_id"] }] */
 
-import * as mongoose from 'mongoose';
 import * as jwt from 'jsonwebtoken';
 import { UserInputError } from 'apollo-server-express';
 import { secret } from '../../../config/config.json';
 import paginate from '../../../helpers/graphQL/paginate';
-import '../../../models/User';
+import { User, UserModel } from '../../../models/User';
 
 interface RefreshToken {
   accessToken: string;
   refreshToken: string;
 }
 
-const UserModel = mongoose.model('User');
+interface SignIn {
+  accessToken: string;
+  refreshToken: string;
+  user: User;
+}
 
 export default {
   Query: {
     /**
      * Finds users and paginate by cursor and limit
-     * @param parent
-     * @param cursor
-     * @param limit
-     * @returns {*}
      */
 
-    users(parent, { cursor, limit }): object {
+    users(parent, { cursor, limit }): User[] {
       return UserModel.find({}, {
         role: 1, createdAt: 1, email: 1, dates: 1,
       }, paginate(cursor, limit));
@@ -32,11 +31,9 @@ export default {
 
     /**
      * Finds user by given id
-     * @param parent
-     * @param id
-     * @returns {Promise}
      */
-    user(parent, { id }): object {
+
+    user(parent, { id }): User {
       return UserModel.findById(id, {
         role: 1, createdAt: 1, email: 1, targets: 1,
       });
@@ -46,12 +43,9 @@ export default {
   Mutation: {
     /**
      * Creates new user in DB
-     * @param parent
-     * @param email
-     * @param password
-     * @returns {Promise<*>}
      */
-    async signUp(parent, { email, password }): Promise <object> {
+
+    async signUp(parent, { email, password }): Promise <User> {
       const user = new UserModel({
         email,
         password,
@@ -59,19 +53,18 @@ export default {
         targets: [],
         createdAt: new Date(),
       });
+
       return user.save();
     },
 
     /**
      * Checks given email and password and
      * returns new access and refresh token
-     * @param parent
-     * @param email
-     * @param password
-     * @returns {Promise<{accessToken: *, refreshToken: *, user}>}
      */
-    async signIn(parent, { email, password }) {
+
+    async signIn(parent, { email, password }): Promise <SignIn> {
       const user = await UserModel.findOne({ email });
+
       if (!user) {
         throw new UserInputError('Incorrect email');
       } else if (!user.validPassword(password)) {
@@ -82,6 +75,7 @@ export default {
         const refreshToken = jwt.sign({ _id, role }, secret, { expiresIn: 420000 });
         const loggedUser = await UserModel.findOneAndUpdate({ _id },
           { refreshToken }, { new: true });
+
         return {
           accessToken: jwt.sign({ _id: loggedUser._id.toString(), role },
             secret, { expiresIn: 900 }),
@@ -93,12 +87,11 @@ export default {
 
     /**
      * Returns new access token by refresh token
-     * @param parent
-     * @param refreshToken
-     * @returns {Promise<{accessToken: *}>}
      */
+
     async refreshToken(parent, { refreshToken }): Promise <RefreshToken> {
       const { _id, role } = jwt.verify(refreshToken, secret);
+
       return {
         accessToken: jwt.sign({ _id, role }, secret, { expiresIn: 900 }),
         refreshToken,
@@ -107,30 +100,25 @@ export default {
 
     /**
      * Adds access and refresh token to blacklist
-     * @param parent
-     * @param accessToken
-     * @param refreshToken
-     * @returns {Promise<boolean>}
      */
-    async logOut(parent, { accessToken, refreshToken }) {
-      return true; // Add to blacklist
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    async logOut(parent, { accessToken, refreshToken }): Promise <boolean> {
+      // Add to blacklist
+      return true;
     },
 
     /**
      * Finds user by given id and
      * update him by given params
-     * @param parent
-     * @param id
-     * @param role
-     * @param previousPassword
-     * @param newPassword
-     * @returns {Promise<void>}
      */
+
     async updateUser(parent, {
       id, role, previousPassword, newPassword,
-    }) {
+    }): Promise <User> {
       if (previousPassword && newPassword) {
         const user = await UserModel.findOne({ _id: id });
+
         if (!user) {
           throw new UserInputError('Incorrect user ID');
         } else if (!user.validPassword(previousPassword)) {
@@ -141,16 +129,15 @@ export default {
       } else {
         await UserModel.findById(id).update({ role });
       }
+
       return UserModel.findById(id);
     },
 
     /**
      * Deletes user by given id
-     * @param parent
-     * @param id
-     * @returns {Promise<Query>}
      */
-    async deleteUser(parent, { id }) {
+
+    async deleteUser(parent, { id }): Promise <User> {
       return UserModel.findById(id).remove();
     },
   },

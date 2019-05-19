@@ -1,43 +1,13 @@
 import * as mongoose from 'mongoose';
+import { prop, post, Typegoose } from 'typegoose';
 
 mongoose.Promise = require('bluebird');
 
-const { Schema } = mongoose;
-
 /**
- * @description :: A model definition. Represents a database tasks.
- * @type {*|Mongoose.Schema}
+ * A model definition. Represents a database tasks.
  */
 
-const TaskSchema = new Schema({
-  URL: {
-    type: String,
-    required: true,
-  },
-  tagPaths: [String],
-  freq: {
-    type: Number,
-    required: false,
-  },
-  service: {
-    type: String,
-    required: false,
-  },
-  city: {
-    type: String,
-    required: false,
-  },
-  country: {
-    type: String,
-    required: false,
-  },
-}, { usePushEach: true });
-
-/**
- * NEED ADAPTER!!!
- */
-
-TaskSchema.post('save', (doc): void => {
+@post<Task>('save', (doc): void => {
   if ((global as any).taskScheduler) {
     (global as any).taskScheduler.addTasks([{
       body: {
@@ -49,9 +19,9 @@ TaskSchema.post('save', (doc): void => {
       interval: doc.freq,
     }]);
   }
-});
+})
 
-TaskSchema.post('remove', (doc): void => {
+@post<Task>('remove', (doc): void => {
   if ((global as any).taskScheduler) {
     (global as any).taskScheduler.deleteTasks([{
       URL: doc.URL,
@@ -60,6 +30,29 @@ TaskSchema.post('remove', (doc): void => {
       country: doc.country,
     }]);
   }
-});
+})
 
-export default mongoose.model('Task', TaskSchema);
+export class Task extends Typegoose {
+  @prop({ required: true })
+  public URL: string;
+
+  @prop({ default: [] })
+  public tagPaths?: string[];
+
+  @prop()
+  public freq?: number;
+
+  @prop()
+  public service?: string;
+
+  @prop()
+  public city?: string;
+
+  @prop()
+  public country?: string;
+}
+
+export const TaskModel = new Task().getModelForClass(Task, {
+  existingMongoose: mongoose,
+  schemaOptions: { usePushEach: true },
+});
