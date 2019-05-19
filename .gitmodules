@@ -1,6 +1,3 @@
 [submodule "PdGraphDoc"]
 	path = PdGraphDoc
 	url = https://github.com/YarosJ/PdGraphDoc.git
-[submodule "PdTypeDoc"]
-	path = PdTypeDoc
-	url = https://github.com/YarosJ/PdTypeDoc.git
