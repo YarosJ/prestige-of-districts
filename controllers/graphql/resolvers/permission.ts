@@ -1,62 +1,52 @@
-import * as mongoose from 'mongoose';
-import '../../../models/Permission';
-
-const PermissionModel = mongoose.model('Permission');
+import { Permission, PermissionModel } from '../../../models/Permission';
 
 export default {
   Query: {
+
     /**
      * Returns all roles
-     * @returns {*}
      */
-    roles() {
+
+    roles(): Promise <Permission[]> {
       return PermissionModel.find({}).exec();
     },
 
     /**
      * Returns permission by role
-     * @param parent
-     * @param role
-     * @returns {Promise}
      */
-    actions(parent, { role }) {
+
+    actions(parent, { role }): Promise <Permission> {
       return PermissionModel.findOne({ role }).exec();
     },
   },
 
   Mutation: {
+
     /**
      * Creates new permission by role and actions
-     * @param parent
-     * @param role
-     * @param actions
-     * @returns {Promise<*>}
      */
-    async addRole(parent, { role, actions }) {
+
+    async addRole(parent, { role, actions }): Promise <Permission> {
       const roleDoc = new PermissionModel({ role, actions });
       return roleDoc.save();
     },
 
     /**
      * Finds permission and pushes into this new action
-     * @param parent
-     * @param role
-     * @param action
-     * @returns {Promise<*>}
      */
-    async addAction(parent, { role, action }) {
+
+    async addAction(parent, { role, action }): Promise <Permission> {
       const roleDoc = await PermissionModel.findOne({ role });
-      await roleDoc.actions.push(action);
-      return roleDoc.save();
+      return PermissionModel.findOneAndUpdate({ role }, {
+        actions: [...roleDoc.actions, action],
+      }, { new: true });
     },
 
     /**
      * Deletes permission by given role
-     * @param parent
-     * @param role
-     * @returns {Promise<void>}
      */
-    async deleteRole(parent, { role }) {
+
+    async deleteRole(parent, { role }): Promise <Permission> {
       const roleDoc = await PermissionModel.findOne({ role });
       roleDoc.remove();
       return roleDoc;
@@ -64,15 +54,13 @@ export default {
 
     /**
      * Finds permission and pulls from this given action
-     * @param parent
-     * @param role
-     * @param action
-     * @returns {Promise<*>}
      */
-    async deleteAction(parent, { role, action }) {
+
+    async deleteAction(parent, { role, action }): Promise <Permission> {
       const roleDoc = await PermissionModel.findOne({ role });
-      roleDoc.actions.pull(action);
-      return roleDoc.save();
+      return PermissionModel.findOneAndUpdate({ role }, {
+        actions: roleDoc.actions.filter((a): boolean => a !== action),
+      }, { new: true });
     },
   },
 };

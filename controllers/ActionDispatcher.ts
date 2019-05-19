@@ -12,14 +12,13 @@ export default class ActionDispatcher {
     TOXIC: addFailure,
     REPAIR: addMessage,
     INFO: addMessage,
-    default: (): void => undefined, // Unexpected action
+    default: (): void => undefined,
   };
 
   /**
-   * Dispatcher method, dispatches action
-   * @param action
-   * @returns {*|void}
+   * Dispatches action depending on the action type
    */
+
   public static dispatch(action): void {
     const entities: string[] = Object.keys(action.payload.entities);
     const sanitizedLocations: string[] = entities.map((e): string => sanitizeLocation(e));

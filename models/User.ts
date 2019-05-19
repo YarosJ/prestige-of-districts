@@ -80,5 +80,5 @@ export class User extends Typegoose {
 
 export const UserModel = new User().getModelForClass(User, {
   existingMongoose: mongoose,
-  schemaOptions: { usePushEach: true },
+  schemaOptions: { usePushEach: true }, // Currently is not supported by typegoose
 });

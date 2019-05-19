@@ -1,22 +1,24 @@
-import * as mongoose from 'mongoose';
 import debug from 'debug';
-import { PubSub } from 'apollo-server-express';
+import { Failure, FailureModel } from '../../../models/Failure';
 import geocodeLocations from '../../../helpers/geolocation/geocodeLocations';
-import validate from '../../../helpers/graphQL/validateInput';
+import validate from './partials/validateQuery';
 import ISODate from '../../../helpers/ISODate';
 import dateQueryFromRange from './partials/dateQueryFromRange';
-import '../../../models/Failure';
 
-const FailureModel = mongoose.model('Failure');
-const pubSub = new PubSub();
 const debugFailures = debug('failuresController');
 
 export default {
   Query: {
+
+    /**
+     * Returns failures filtered by given params
+     */
+
     async failures(parent, {
       latitude, longitude, services, failureType, locRange, locType, dateRange,
-    }) {
+    }): Promise <Failure[]> {
       const happenedAt = dateQueryFromRange(dateRange);
+
       if (!locRange) {
         return FailureModel.find({
           happenedAt,
@@ -27,9 +29,11 @@ export default {
           'locations.locType': validate(locType),
         }, null, { sort: { happenedAt: 1 } });
       }
+
       const {
         maxLatitude, minLatitude, maxLongitude, minLongitude,
       } = locRange;
+
       return FailureModel.find({
         happenedAt,
         service: validate(services ? { $in: services } : null),
@@ -41,9 +45,14 @@ export default {
     },
   },
   Mutation: {
+
+    /**
+     *  Creates new failure by given params
+     */
+
     async addFailure(parent, {
       country, city, locations, failureType, service, text, date,
-    }) {
+    }): Promise <Failure> {
       // Geocode
       const geoLocated = await geocodeLocations(locations, country, city);
       // Write to DB
@@ -55,12 +64,17 @@ export default {
         happenedAt: ISODate(date),
       }).save();
       debugFailures('➕ Added new failure:', addedFailure);
-      pubSub.publish('FAILURE_ADDED', { failureAdded: addedFailure });
+
       return addedFailure;
     },
+
+    /**
+     * Deletes failure by id or another given params
+     */
+
     async removeFailure(parent, {
       date, latitude, longitude, id, locType,
-    }) {
+    }): Promise <Failure> {
       let failure;
       if (id) {
         failure = await FailureModel.findById(id);
@@ -76,16 +90,8 @@ export default {
         failure = await FailureModel.findOne(query);
         await FailureModel.deleteMany(query);
       }
-      pubSub.publish('FAILURE_REMOVED', { failureRemoved: failure });
+
       return failure;
-    },
-  },
-  Subscription: {
-    failureAdded: {
-      subscribe: () => pubSub.asyncIterator(['FAILURE_ADDED']),
-    },
-    failureRemoved: {
-      subscribe: () => pubSub.asyncIterator(['FAILURE_REMOVED']),
     },
   },
 };

@@ -3,7 +3,7 @@
 import * as jwt from 'jsonwebtoken';
 import { UserInputError } from 'apollo-server-express';
 import { secret } from '../../../config/config.json';
-import paginate from '../../../helpers/graphQL/paginate';
+import paginate from './partials/paginate';
 import { User, UserModel } from '../../../models/User';
 
 interface RefreshToken {
@@ -19,6 +19,7 @@ interface SignIn {
 
 export default {
   Query: {
+
     /**
      * Finds users and paginate by cursor and limit
      */
@@ -41,6 +42,7 @@ export default {
   },
 
   Mutation: {
+
     /**
      * Creates new user in DB
      */

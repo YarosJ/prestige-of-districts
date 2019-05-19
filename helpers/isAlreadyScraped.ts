@@ -1,7 +1,4 @@
-import * as mongoose from 'mongoose';
-import '../models/LastScraped';
-
-const LastScrapedModel = mongoose.model('LastScraped');
+import { LastScrapedModel } from '../models/LastScraped';
 
 export default async (text): Promise <boolean> => {
   await LastScrapedModel.deleteMany({

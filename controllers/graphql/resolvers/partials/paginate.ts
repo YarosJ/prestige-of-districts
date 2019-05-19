@@ -3,9 +3,14 @@ interface Paginate {
   limit?: number;
 }
 
+/**
+ * Returns pagination query depending on cursor and/or limit
+ */
+
 export default (cr, lt): Paginate => {
-  let limit = lt;
-  let cursor = cr;
+  let limit: number = lt;
+  let cursor: number = cr;
+
   if (!cursor && !limit) return {};
   if (!cursor) cursor = 1;
   if (!limit) limit = 5;

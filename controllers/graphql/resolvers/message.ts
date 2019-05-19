@@ -1,22 +1,24 @@
-import * as mongoose from 'mongoose';
 import debug from 'debug';
-import { PubSub } from 'apollo-server-express';
+import { Message, MessageModel } from '../../../models/Message';
 import geocodeLocations from '../../../helpers/geolocation/geocodeLocations';
-import validate from '../../../helpers/graphQL/validateInput';
+import validate from './partials/validateQuery';
 import ISODate from '../../../helpers/ISODate';
 import dateQueryFromRange from './partials/dateQueryFromRange';
-import '../../../models/Message';
 
-const MessageModel = mongoose.model('Message');
-const pubSub = new PubSub();
 const debugMessages = debug('messagesController');
 
 export default {
   Query: {
+
+    /**
+     *  Returns messages filtered by given params
+     */
+
     async messages(parent, {
       latitude, longitude, service, locRange, locType, dateRange,
-    }) {
+    }): Promise <Message[]> {
       const happenedAt = dateQueryFromRange(dateRange);
+
       if (!locRange) {
         return MessageModel.find({
           happenedAt,
@@ -26,9 +28,11 @@ export default {
           'locations.locType': validate(locType),
         });
       }
+
       const {
         maxLatitude, minLatitude, maxLongitude, minLongitude,
       } = locRange;
+
       return MessageModel.find({
         happenedAt,
         service: validate(service),
@@ -39,9 +43,14 @@ export default {
     },
   },
   Mutation: {
+
+    /**
+     * Creates new message by given params
+     */
+
     async addMessage(parent, {
       country, city, locations, service, text, date,
-    }) {
+    }): Promise <Message> {
       // Geocode
       const geoLocated = await geocodeLocations(locations, country, city);
       // Write to DB
@@ -52,13 +61,19 @@ export default {
         happenedAt: ISODate(date),
       }).save();
       debugMessages('➕ Added new message:', addedMessage);
-      pubSub.publish('MESSAGE_ADDED', { messageAdded: addedMessage });
+
       return addedMessage;
     },
+
+    /**
+     *  Deletes message by id or another given params
+     */
+
     async removeMessage(parent, {
       date, latitude, longitude, id, locType,
-    }) {
+    }): Promise <Message> {
       let message;
+
       if (id) {
         message = await MessageModel.findById(id);
         await message.remove();
@@ -73,16 +88,8 @@ export default {
         message = await MessageModel.findOne(query);
         await MessageModel.deleteMany(query);
       }
-      pubSub.publish('MESSAGE_REMOVED', { messageRemoved: message });
+
       return message;
-    },
-  },
-  Subscription: {
-    messageAdded: {
-      subscribe: () => pubSub.asyncIterator(['MESSAGE_ADDED']),
-    },
-    messageRemoved: {
-      subscribe: () => pubSub.asyncIterator(['MESSAGE_REMOVED']),
     },
   },
 };

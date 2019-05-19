@@ -1,5 +1,7 @@
-import * as mongoose from 'mongoose';
-import '../models/Task';
+// eslint-disable-next-line
+/// <reference path="../index.d.ts" />
+
+import { TargetModel } from '../models/Target';
 import TaskScheduler from '../libs/TaskScheduler';
 import Scraper from '../libs/Scraper';
 import AMQPChannel from '../libs/AMQPChannel';
@@ -17,8 +19,6 @@ const {
   },
 } = config;
 
-const TaskModel = mongoose.model('Task');
-
 interface Task {
   body: {
     URL: string;
@@ -33,8 +33,9 @@ interface Task {
 /**
  * Starts parser
  */
+
 export default async (): Promise <TaskScheduler> => {
-  const tasks = await TaskModel.find(); // Get all tasks from DB
+  const tasks = await TargetModel.find(); // Get all tasks from DB
 
   // Adapting tasks from DB for TaskScheduler
   const queueTasks: Task[] = tasks.map((t): Task => ({
@@ -94,7 +95,7 @@ export default async (): Promise <TaskScheduler> => {
       });
     });
 
-  (global as any).taskScheduler = scheduler; // making taskScheduler exemplar accessible for DB hooks
+  global.taskScheduler = scheduler; // making taskScheduler exemplar accessible for DB hooks
 
   return scheduler;
 };

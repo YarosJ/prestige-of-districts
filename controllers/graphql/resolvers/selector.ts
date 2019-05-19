@@ -10,6 +10,11 @@ interface Selector {
 
 export default {
   Query: {
+
+    /**
+     * Returns selector by given site URL and coordinates of element
+     */
+
     async selector(parent, { URL, x, y }): Promise <Selector> {
       const result = {
         resultSelector: await getSelector({
@@ -20,10 +25,17 @@ export default {
         URL,
       };
       pubSub.publish('SELECTOR_RECEIVED', { selectorReceived: result });
+
       return result;
     },
   },
+
   Subscription: {
+
+    /**
+     * Subscription (uses websocket) because this operation can be too much long
+     */
+
     selectorReceived: {
       subscribe: (): AsyncIterator <symbol> => pubSub.asyncIterator(['SELECTOR_RECEIVED']),
     },

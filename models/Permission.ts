@@ -1,24 +1,21 @@
 import * as mongoose from 'mongoose';
+import { prop, Typegoose } from 'typegoose';
 
 mongoose.Promise = require('bluebird');
 
-const { Schema } = mongoose;
-
 /**
- * @description :: A model definition.  Represents a database for permissions.
- * @type {*|Mongoose.Schema}
+ * A model definition. Represents a database for permissions.
  */
 
-const PermissionSchema = new Schema({
-  role: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  actions: [{
-    type: String,
-    unique: false,
-  }],
-}, { usePushEach: true });
+export class Permission extends Typegoose {
+  @prop({ required: true, unique: true })
+  public role: string;
 
-export default mongoose.model('Permission', PermissionSchema);
+  @prop({ unique: true, default: [] })
+  public actions: string[];
+}
+
+export const PermissionModel = new Permission().getModelForClass(Permission, {
+  existingMongoose: mongoose,
+  schemaOptions: { usePushEach: true }, // Currently is not supported by typegoose
+});

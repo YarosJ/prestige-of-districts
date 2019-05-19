@@ -1,11 +1,6 @@
-import * as mongoose from 'mongoose';
-import '../../../models/Failure';
-import '../../../models/Message';
-import '../../../models/User';
-
-const FailureModel = mongoose.model('Failure');
-const MessageModel = mongoose.model('Message');
-const UserModel = mongoose.model('User');
+import { FailureModel } from '../../../models/Failure';
+import { MessageModel } from '../../../models/Message';
+import { UserModel } from '../../../models/User';
 
 interface Total {
   count: number;
@@ -13,6 +8,11 @@ interface Total {
 
 export default {
   Query: {
+
+    /**
+     *  Returns count documents of target
+     */
+
     async total(parent, { target }): Promise <Total> {
       switch (target) {
         case 'Failures':

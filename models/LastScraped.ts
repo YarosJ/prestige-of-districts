@@ -1,21 +1,21 @@
 import * as mongoose from 'mongoose';
+import { prop, Typegoose } from 'typegoose';
 
 mongoose.Promise = require('bluebird');
 
-const { Schema } = mongoose;
-
 /**
- * @description :: A model definition. Represents a database of last scraped text messages.
- * @type {*|Mongoose.Schema}
+ * A model definition. Represents a database of last scraped text messages.
  */
 
-const LastScrapedSchema = new Schema({
-  text: [String],
-  dateToDelete: {
-    required: true,
-    type: Date,
-    default: Date.now,
-  },
-}, { usePushEach: true });
+export class LastScraped extends Typegoose {
+  @prop({ required: true })
+  public text: string;
 
-export default mongoose.model('LastScraped', LastScrapedSchema);
+  @prop({ required: true, default: Date.now })
+  public dateToDelete: Date;
+}
+
+export const LastScrapedModel = new LastScraped().getModelForClass(LastScraped, {
+  existingMongoose: mongoose,
+  schemaOptions: { usePushEach: true }, // Currently is not supported by typegoose
+});

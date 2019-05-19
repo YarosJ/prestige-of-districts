@@ -1,34 +1,28 @@
 import * as mongoose from 'mongoose';
+import { prop, Typegoose } from 'typegoose';
+import * as Location from './subfields/Location';
 
 mongoose.Promise = require('bluebird');
 
-const { Schema } = mongoose;
-
 /**
- * @description :: A model definition. Represents a database messages.
- * @type {*|Mongoose.Schema}
+ * A model definition. Represents a database messages.
  */
 
-const MessageSchema = new Schema({
-  text: {
-    type: String,
-    required: true,
-  },
-  service: {
-    type: String,
-    required: true,
-  },
-  locations: [{
-    place: String,
-    latitude: Number,
-    longitude: Number,
-    locType: String,
-  }],
-  happenedAt: {
-    required: true,
-    type: Date,
-    default: Date.now,
-  },
-}, { usePushEach: true });
+export class Message extends Typegoose {
+  @prop({ required: true })
+  public text: string;
 
-export default mongoose.model('Message', MessageSchema);
+  @prop({ required: true })
+  public service: string;
+
+  @prop()
+  public locations: Location[];
+
+  @prop({ required: true, default: Date.now })
+  public happenedAt: Date;
+}
+
+export const MessageModel = new Message().getModelForClass(Message, {
+  existingMongoose: mongoose,
+  schemaOptions: { usePushEach: true }, // Currently is not supported by typegoose
+});

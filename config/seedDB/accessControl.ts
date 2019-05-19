@@ -1,19 +1,18 @@
-import * as mongoose from 'mongoose';
 import debug from 'debug';
-import '../../models/Permission';
+import { PermissionModel } from '../../models/Permission';
 
 const debugAccessControl = debug('seedDB');
 
 const roles = [
   {
     role: 'guest',
-    actions: ['signIn', 'signUp', 'refreshToken', 'messages', 'failures.ts', 'services', '__schema', 'total.ts.ts'],
+    actions: ['signIn', 'signUp', 'refreshToken', 'messages', 'failures', 'services', '__schema', 'total'],
   },
   {
-    role: 'user.ts.ts',
+    role: 'user',
     actions:
       [
-        'signIn', 'signUp', 'refreshToken', 'messages', 'failures.ts', 'user.ts.ts', 'services', '__schema', 'total.ts.ts',
+        'signIn', 'signUp', 'refreshToken', 'messages', 'failures', 'user', 'services', '__schema', 'total',
         'logOut', 'addFailure', 'removeFailure', 'addMessage', 'removeMessage',
       ],
   },
@@ -21,7 +20,7 @@ const roles = [
     role: 'admin',
     actions:
       [
-        'signIn', 'signUp', 'refreshToken', 'messages', 'failures.ts', 'user.ts.ts', 'services', '__schema', 'total.ts.ts',
+        'signIn', 'signUp', 'refreshToken', 'messages', 'failures', 'user', 'services', '__schema', 'total',
         'logOut', 'addFailure', 'removeFailure', 'addMessage', 'removeMessage',
         'tags', 'targets', 'addTarget', 'removeTarget', 'updateTarget', 'users',
         'screenshot', 'selector',
@@ -31,7 +30,7 @@ const roles = [
     role: 'superAdmin',
     actions:
       [
-        'signIn', 'signUp', 'refreshToken', 'messages', 'failures.ts', 'user.ts.ts', 'services', '__schema', 'total.ts.ts',
+        'signIn', 'signUp', 'refreshToken', 'messages', 'failures', 'user', 'services', '__schema', 'total',
         'logOut', 'addFailure', 'removeFailure', 'addMessage', 'removeMessage',
         'tags', 'targets', 'addTarget', 'removeTarget', 'updateTarget', 'users',
         'roles', 'actions', 'addRole', 'addAction', 'deleteRole', 'deleteAction', 'updateUser', 'deleteUser',
@@ -39,8 +38,6 @@ const roles = [
       ],
   },
 ];
-
-const PermissionModel = mongoose.model('Permission');
 
 export default async (permanent): Promise <void> => {
   if (permanent) await PermissionModel.remove();
@@ -52,5 +49,6 @@ export default async (permanent): Promise <void> => {
       await roleDoc.save();
     }));
   }
+
   debugAccessControl('Seed access control ✅');
 };

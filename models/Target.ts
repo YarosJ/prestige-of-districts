@@ -1,15 +1,18 @@
+// eslint-disable-next-line
+/// <reference path="../index.d.ts" />
+
 import * as mongoose from 'mongoose';
 import { prop, post, Typegoose } from 'typegoose';
 
 mongoose.Promise = require('bluebird');
 
 /**
- * A model definition. Represents a database tasks.
+ * A model definition. Represents a database targets.
  */
 
-@post<Task>('save', (doc): void => {
-  if ((global as any).taskScheduler) {
-    (global as any).taskScheduler.addTasks([{
+@post<Target>('save', (doc): void => {
+  if (global.taskScheduler) {
+    global.taskScheduler.addTasks([{
       body: {
         URL: doc.URL,
         tagPaths: doc.tagPaths,
@@ -21,9 +24,9 @@ mongoose.Promise = require('bluebird');
   }
 })
 
-@post<Task>('remove', (doc): void => {
-  if ((global as any).taskScheduler) {
-    (global as any).taskScheduler.deleteTasks([{
+@post<Target>('remove', (doc): void => {
+  if (global.taskScheduler) {
+    global.taskScheduler.deleteTasks([{
       URL: doc.URL,
       tagPaths: doc.tagPaths,
       city: doc.city,
@@ -32,8 +35,8 @@ mongoose.Promise = require('bluebird');
   }
 })
 
-export class Task extends Typegoose {
-  @prop({ required: true })
+export class Target extends Typegoose {
+  @prop({ required: true, unique: true })
   public URL: string;
 
   @prop({ default: [] })
@@ -52,7 +55,7 @@ export class Task extends Typegoose {
   public country?: string;
 }
 
-export const TaskModel = new Task().getModelForClass(Task, {
+export const TargetModel = new Target().getModelForClass(Target, {
   existingMongoose: mongoose,
-  schemaOptions: { usePushEach: true },
+  schemaOptions: { usePushEach: true }, // Currently is not supported by typegoose
 });
