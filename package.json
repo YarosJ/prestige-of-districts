@@ -21,7 +21,6 @@
     "axios": "^0.18.0",
     "bcryptjs": "^2.4.3",
     "bluebird": "^3.5.1",
-    "chai": "^4.2.0",
     "crossdomain-selector": "^1.1.4",
     "debug": "^3.1.0",
     "express": "^4.15.4",
@@ -30,7 +29,6 @@
     "graphql-tag": "^2.10.1",
     "graphql-voyager": "^1.0.0-rc.27",
     "jsonwebtoken": "^8.3.0",
-    "mocha": "^6.0.2",
     "mongoose": "^4.13.12",
     "node-cache": "^4.2.0",
     "node-geocoder": "^3.22.0",
@@ -42,9 +40,12 @@
     "build": "tsc -p .",
     "dev": "nodemon --exec 'ts-node' app.ts",
     "start": "npm run build && node ./build/app.js",
-    "test": "mocha --require ./node_modules/@babel/register tests"
+    "test": "mocha --require ./node_modules/@babel/register tests",
+    "typedoc": "typedoc",
+    "graphDoc": "graphdoc"
   },
   "devDependencies": {
+    "@2fd/graphdoc": "^2.4.0",
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
     "@babel/node": "^7.2.2",
@@ -58,13 +59,15 @@
     "babel-plugin-transform-object-rest-spread": "^7.0.0-beta.3",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^2.0.0-alpha.20",
+    "chai": "^4.2.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.13.0",
-    "jsdoc": "^3.5.5",
+    "mocha": "^6.0.2",
     "ts-node": "^8.1.0",
+    "typedoc": "^0.14.2",
     "typescript": "^3.4.5"
   }
 }

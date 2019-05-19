@@ -1,0 +1,9 @@
+{
+  "entryPoint": "./app.ts",
+  "exclude": ["./node_modules", "./tests", "view"],
+  "ignoreCompilerErrors": true,
+  "tsconfig": "./tsconfig.json",
+  "readme": "./README.md",
+  "out": "./PDTypeDoc",
+  "excludeExternals": true
+}
