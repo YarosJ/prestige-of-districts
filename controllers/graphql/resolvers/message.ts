@@ -7,7 +7,12 @@ import dateQueryFromRange from './partials/dateQueryFromRange';
 
 const debugMessages = debug('messagesController');
 
-export default {
+/**
+ * Messages resolver.
+ * Accepts input and converts it to commands for the messages model.
+ */
+
+const messageResolver = {
   Query: {
 
     /**
@@ -93,3 +98,5 @@ export default {
     },
   },
 };
+
+export default messageResolver;

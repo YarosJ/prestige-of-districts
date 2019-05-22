@@ -17,7 +17,12 @@ interface SignIn {
   user: User;
 }
 
-export default {
+/**
+ * Users resolver.
+ * Accepts input and converts it to commands for the users model.
+ */
+
+const userResolver = {
   Query: {
 
     /**
@@ -144,3 +149,5 @@ export default {
     },
   },
 };
+
+export default userResolver;

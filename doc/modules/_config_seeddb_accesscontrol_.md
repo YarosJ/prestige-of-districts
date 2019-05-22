@@ -9,6 +9,10 @@
 * [debugAccessControl](_config_seeddb_accesscontrol_.md#debugaccesscontrol)
 * [roles](_config_seeddb_accesscontrol_.md#roles)
 
+### Functions
+
+* [seedAccessControl](_config_seeddb_accesscontrol_.md#seedaccesscontrol)
+
 ---
 
 ## Variables
@@ -19,7 +23,7 @@
 
 **● debugAccessControl**: *`any`* =  debug('seedDB')
 
-*Defined in [config/seedDB/accessControl.ts:4](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/config/seedDB/accessControl.ts#L4)*
+*Defined in [config/seedDB/accessControl.ts:4](https://github.com/YarosJ/prestige-of-districts/blob/828e334/config/seedDB/accessControl.ts#L4)*
 
 ___
 <a id="roles"></a>
@@ -62,7 +66,29 @@ ___
   },
 ]
 
-*Defined in [config/seedDB/accessControl.ts:6](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/config/seedDB/accessControl.ts#L6)*
+*Defined in [config/seedDB/accessControl.ts:6](https://github.com/YarosJ/prestige-of-districts/blob/828e334/config/seedDB/accessControl.ts#L6)*
+
+___
+
+## Functions
+
+<a id="seedaccesscontrol"></a>
+
+### `<Const>` seedAccessControl
+
+▸ **seedAccessControl**(permanent: *`any`*): `Promise`<`void`>
+
+*Defined in [config/seedDB/accessControl.ts:47](https://github.com/YarosJ/prestige-of-districts/blob/828e334/config/seedDB/accessControl.ts#L47)*
+
+Sowing access control
+
+**Parameters:**
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| permanent | `any` |  if this parameter true all old access control will be deleted |
+
+**Returns:** `Promise`<`void`>
 
 ___
 

@@ -39,7 +39,12 @@ const roles = [
   },
 ];
 
-export default async (permanent): Promise <void> => {
+/**
+ * Sowing access control
+ * @param permanent - if this parameter true all old access control will be deleted
+ */
+
+const seedAccessControl = async (permanent): Promise <void> => {
   if (permanent) await PermissionModel.remove();
 
   if (await PermissionModel.count() === 0) {
@@ -52,3 +57,5 @@ export default async (permanent): Promise <void> => {
 
   debugAccessControl('Seed access control ✅');
 };
+
+export default seedAccessControl;

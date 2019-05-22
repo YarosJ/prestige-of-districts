@@ -27,7 +27,7 @@ Schema for target sub field
 
 **● latitude**: *`number`*
 
-*Defined in [models/User.ts:16](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/models/User.ts#L16)*
+*Defined in [models/User.ts:16](https://github.com/YarosJ/prestige-of-districts/blob/828e334/models/User.ts#L16)*
 
 ___
 <a id="longitude"></a>
@@ -36,7 +36,7 @@ ___
 
 **● longitude**: *`number`*
 
-*Defined in [models/User.ts:18](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/models/User.ts#L18)*
+*Defined in [models/User.ts:18](https://github.com/YarosJ/prestige-of-districts/blob/828e334/models/User.ts#L18)*
 
 ___
 <a id="radius"></a>
@@ -45,7 +45,7 @@ ___
 
 **● radius**: *`number`*
 
-*Defined in [models/User.ts:20](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/models/User.ts#L20)*
+*Defined in [models/User.ts:20](https://github.com/YarosJ/prestige-of-districts/blob/828e334/models/User.ts#L20)*
 
 ___
 <a id="tag"></a>
@@ -54,7 +54,7 @@ ___
 
 **● tag**: *`string`*
 
-*Defined in [models/User.ts:14](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/models/User.ts#L14)*
+*Defined in [models/User.ts:14](https://github.com/YarosJ/prestige-of-districts/blob/828e334/models/User.ts#L14)*
 
 ___
 

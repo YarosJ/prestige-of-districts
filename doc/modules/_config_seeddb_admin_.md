@@ -11,6 +11,10 @@
 * [password](_config_seeddb_admin_.md#password)
 * [role](_config_seeddb_admin_.md#role)
 
+### Functions
+
+* [seedAdmin](_config_seeddb_admin_.md#seedadmin)
+
 ---
 
 ## Variables
@@ -21,7 +25,7 @@
 
 **● debugAdmin**: *`any`* =  debug('seedDB')
 
-*Defined in [config/seedDB/admin.ts:5](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/config/seedDB/admin.ts#L5)*
+*Defined in [config/seedDB/admin.ts:5](https://github.com/YarosJ/prestige-of-districts/blob/828e334/config/seedDB/admin.ts#L5)*
 
 ___
 <a id="email"></a>
@@ -30,7 +34,7 @@ ___
 
 **● email**: *`string`*
 
-*Defined in [config/seedDB/admin.ts:7](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/config/seedDB/admin.ts#L7)*
+*Defined in [config/seedDB/admin.ts:7](https://github.com/YarosJ/prestige-of-districts/blob/828e334/config/seedDB/admin.ts#L7)*
 
 ___
 <a id="password"></a>
@@ -39,7 +43,7 @@ ___
 
 **● password**: *`string`*
 
-*Defined in [config/seedDB/admin.ts:7](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/config/seedDB/admin.ts#L7)*
+*Defined in [config/seedDB/admin.ts:7](https://github.com/YarosJ/prestige-of-districts/blob/828e334/config/seedDB/admin.ts#L7)*
 
 ___
 <a id="role"></a>
@@ -48,7 +52,29 @@ ___
 
 **● role**: *`string`*
 
-*Defined in [config/seedDB/admin.ts:7](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/config/seedDB/admin.ts#L7)*
+*Defined in [config/seedDB/admin.ts:7](https://github.com/YarosJ/prestige-of-districts/blob/828e334/config/seedDB/admin.ts#L7)*
+
+___
+
+## Functions
+
+<a id="seedadmin"></a>
+
+### `<Const>` seedAdmin
+
+▸ **seedAdmin**(permanent: *`any`*): `Promise`<`void`>
+
+*Defined in [config/seedDB/admin.ts:14](https://github.com/YarosJ/prestige-of-districts/blob/828e334/config/seedDB/admin.ts#L14)*
+
+Sowing admin user
+
+**Parameters:**
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| permanent | `any` |  if this parameter true all old access control will be deleted |
+
+**Returns:** `Promise`<`void`>
 
 ___
 

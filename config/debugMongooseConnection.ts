@@ -2,11 +2,9 @@ const debugMongoose = require('debug')('mongoose');
 
 /**
  * Indicates the status of a mongoose connection
- * @param mongoose
- * @param process
  */
 
-export default (mongoose, process): void => {
+const debug = (mongoose, process): void => {
   mongoose.connection.on('open', (): void => {
     debugMongoose('Mongoose connection open');
   });
@@ -22,3 +20,5 @@ export default (mongoose, process): void => {
     });
   });
 };
+
+export default debug;

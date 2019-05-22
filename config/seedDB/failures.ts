@@ -13,7 +13,11 @@ const {
   },
 } = config;
 
-export default async (): Promise <void> => {
+/**
+ * Seed failures
+ */
+
+const seedFailures = async (): Promise <void> => {
   // Initialise nlpChannel message broker
   const nlpChannel = new AMQPChannel({
     queueName: NLP_QUEUE_NAME,
@@ -36,3 +40,5 @@ export default async (): Promise <void> => {
     },
   }));
 };
+
+export default seedFailures;

@@ -23,7 +23,7 @@
 
 **● URL**: *`string`*
 
-*Defined in [controllers/graphql/resolvers/screenshot.ts:9](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/controllers/graphql/resolvers/screenshot.ts#L9)*
+*Defined in [controllers/graphql/resolvers/screenshot.ts:9](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/graphql/resolvers/screenshot.ts#L9)*
 
 ___
 <a id="resultdata"></a>
@@ -32,7 +32,7 @@ ___
 
 **● resultData**: *`HexBase64BinaryEncoding`*
 
-*Defined in [controllers/graphql/resolvers/screenshot.ts:8](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/controllers/graphql/resolvers/screenshot.ts#L8)*
+*Defined in [controllers/graphql/resolvers/screenshot.ts:8](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/graphql/resolvers/screenshot.ts#L8)*
 
 ___
 

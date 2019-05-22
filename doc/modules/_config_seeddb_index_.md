@@ -4,5 +4,25 @@
 
 ## Index
 
+### Functions
+
+* [seedDB](_config_seeddb_index_.md#seeddb)
+
 ---
+
+## Functions
+
+<a id="seeddb"></a>
+
+### `<Const>` seedDB
+
+▸ **seedDB**(): `Promise`<`void`>
+
+*Defined in [config/seedDB/index.ts:9](https://github.com/YarosJ/prestige-of-districts/blob/828e334/config/seedDB/index.ts#L9)*
+
+Seed DB
+
+**Returns:** `Promise`<`void`>
+
+___
 

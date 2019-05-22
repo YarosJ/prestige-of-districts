@@ -34,7 +34,7 @@ interface Task {
  * Starts parser
  */
 
-export default async (): Promise <TaskScheduler> => {
+const startParser = async (): Promise <TaskScheduler> => {
   const tasks = await TargetModel.find(); // Get all tasks from DB
 
   // Adapting tasks from DB for TaskScheduler
@@ -99,3 +99,5 @@ export default async (): Promise <TaskScheduler> => {
 
   return scheduler;
 };
+
+export default startParser;

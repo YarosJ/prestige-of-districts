@@ -23,7 +23,7 @@
 
 **● locations**: *[Location](_helpers_geolocation_geocodelocations_.location.md)[]*
 
-*Defined in [helpers/geolocation/geocodeLocations.ts:16](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/helpers/geolocation/geocodeLocations.ts#L16)*
+*Defined in [helpers/geolocation/geocodeLocations.ts:16](https://github.com/YarosJ/prestige-of-districts/blob/828e334/helpers/geolocation/geocodeLocations.ts#L16)*
 
 ___
 <a id="parentloc"></a>
@@ -32,7 +32,7 @@ ___
 
 **● parentLoc**: *[Location](_helpers_geolocation_geocodelocations_.location.md)*
 
-*Defined in [helpers/geolocation/geocodeLocations.ts:17](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/helpers/geolocation/geocodeLocations.ts#L17)*
+*Defined in [helpers/geolocation/geocodeLocations.ts:17](https://github.com/YarosJ/prestige-of-districts/blob/828e334/helpers/geolocation/geocodeLocations.ts#L17)*
 
 ___
 

@@ -9,7 +9,9 @@ interface DateQuery {
  * for all dates if dateRange not given
  */
 
-export default (dateRange): DateQuery => (dateRange ? {
+const query = (dateRange): DateQuery => (dateRange ? {
   $lt: new Date(dateRange.maxDate).toISOString(),
   $gt: new Date(dateRange.minDate).toISOString(),
 } : { $type: 'date' });
+
+export default query;

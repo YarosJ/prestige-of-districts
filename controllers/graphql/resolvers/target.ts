@@ -1,7 +1,12 @@
 import { Target, TargetModel } from '../../../models/Target';
 import * as config from '../../../config/config.json';
 
-export default {
+/**
+ * Targets resolver.
+ * Accepts input and converts it to commands for the targets model.
+ */
+
+const targetResolver = {
   Query: {
 
     /**
@@ -72,3 +77,5 @@ export default {
     },
   },
 };
+
+export default targetResolver;

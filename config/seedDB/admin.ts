@@ -6,7 +6,12 @@ const debugAdmin = debug('seedDB');
 
 const { email, password, role } = config.admin;
 
-export default async (permanent): Promise <void> => {
+/**
+ * Sowing admin user
+ * @param permanent - if this parameter true all old access control will be deleted
+ */
+
+const seedAdmin = async (permanent): Promise <void> => {
   if (permanent) await UserModel.remove();
 
   if (await UserModel.count() === 0) {
@@ -21,3 +26,5 @@ export default async (permanent): Promise <void> => {
 
   debugAdmin('Seed admin ✅');
 };
+
+export default seedAdmin;

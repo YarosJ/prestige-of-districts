@@ -21,7 +21,7 @@
 
 **● app**: *`express.Application`* =  express()
 
-*Defined in [app.ts:20](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/app.ts#L20)*
+*Defined in [app.ts:20](https://github.com/YarosJ/prestige-of-districts/blob/828e334/app.ts#L20)*
 
 ___
 <a id="debugserver"></a>
@@ -30,7 +30,7 @@ ___
 
 **● debugServer**: *`any`* =  require('debug')('Server')
 
-*Defined in [app.ts:18](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/app.ts#L18)*
+*Defined in [app.ts:18](https://github.com/YarosJ/prestige-of-districts/blob/828e334/app.ts#L18)*
 
 ___
 <a id="httpserver"></a>
@@ -39,11 +39,9 @@ ___
 
 **● httpServer**: *`Server`* =  http.createServer(app)
 
-*Defined in [app.ts:85](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/app.ts#L85)*
+*Defined in [app.ts:84](https://github.com/YarosJ/prestige-of-districts/blob/828e334/app.ts#L84)*
 
 Creating server and adding subscriptions
-
-*__type__*: {Server \| Http2Server \| Promise}
 
 ___
 <a id="server"></a>
@@ -61,11 +59,9 @@ ___
   cacheControl: true,
 })
 
-*Defined in [app.ts:61](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/app.ts#L61)*
+*Defined in [app.ts:60](https://github.com/YarosJ/prestige-of-districts/blob/828e334/app.ts#L60)*
 
 creating ApolloServer
-
-*__type__*: {ApolloServer}
 
 ___
 

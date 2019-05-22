@@ -23,7 +23,7 @@
 
 **● limit**: *`number`*
 
-*Defined in [controllers/graphql/resolvers/partials/paginate.ts:3](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/controllers/graphql/resolvers/partials/paginate.ts#L3)*
+*Defined in [controllers/graphql/resolvers/partials/paginate.ts:3](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/graphql/resolvers/partials/paginate.ts#L3)*
 
 ___
 <a id="skip"></a>
@@ -32,7 +32,7 @@ ___
 
 **● skip**: *`number`*
 
-*Defined in [controllers/graphql/resolvers/partials/paginate.ts:2](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/controllers/graphql/resolvers/partials/paginate.ts#L2)*
+*Defined in [controllers/graphql/resolvers/partials/paginate.ts:2](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/graphql/resolvers/partials/paginate.ts#L2)*
 
 ___
 

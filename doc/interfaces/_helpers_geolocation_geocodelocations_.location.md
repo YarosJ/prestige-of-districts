@@ -23,7 +23,7 @@
 
 **● latitude**: *`number`*
 
-*Defined in [helpers/geolocation/geocodeLocations.ts:11](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/helpers/geolocation/geocodeLocations.ts#L11)*
+*Defined in [helpers/geolocation/geocodeLocations.ts:11](https://github.com/YarosJ/prestige-of-districts/blob/828e334/helpers/geolocation/geocodeLocations.ts#L11)*
 
 ___
 <a id="longitude"></a>
@@ -32,7 +32,7 @@ ___
 
 **● longitude**: *`number`*
 
-*Defined in [helpers/geolocation/geocodeLocations.ts:12](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/helpers/geolocation/geocodeLocations.ts#L12)*
+*Defined in [helpers/geolocation/geocodeLocations.ts:12](https://github.com/YarosJ/prestige-of-districts/blob/828e334/helpers/geolocation/geocodeLocations.ts#L12)*
 
 ___
 

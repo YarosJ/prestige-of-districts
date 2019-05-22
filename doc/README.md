@@ -1,26 +1,5 @@
 
-### TaskScheduler class
-
-Runs callback by given interval and data for each tasks
-
-#### Usage:
-
-```js
-
-const tasks = [
-  {
-     body: {
-       foo: 'bar',
-     },
-     interval: 60, // 1 minute
-  }
-];
-
-const scheduler = new TaskScheduler(tasks, { precision: 30 }, async (data) => {
-  console.log(data); // { foo: 'bar' }
-});
-
-```
+#  prestige-of-districts
 
 ## Index
 
@@ -65,6 +44,7 @@ const scheduler = new TaskScheduler(tasks, { precision: 30 }, async (data) => {
 * ["helpers/geolocation/replaceAbbreviations"](modules/_helpers_geolocation_replaceabbreviations_.md)
 * ["helpers/geolocation/sanitizeLocation"](modules/_helpers_geolocation_sanitizelocation_.md)
 * ["helpers/isAlreadyScraped"](modules/_helpers_isalreadyscraped_.md)
+* ["index.d"](modules/_index_d_.md)
 * ["libs/AMQPChannel/index"](modules/_libs_amqpchannel_index_.md)
 * ["libs/Scraper/index"](modules/_libs_scraper_index_.md)
 * ["libs/TaskScheduler/index"](modules/_libs_taskscheduler_index_.md)

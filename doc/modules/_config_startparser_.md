@@ -15,6 +15,10 @@
 * [NLP_QUEUE_NAME](_config_startparser_.md#nlp_queue_name)
 * [messageBroker](_config_startparser_.md#messagebroker)
 
+### Functions
+
+* [startParser](_config_startparser_.md#startparser)
+
 ---
 
 ## Variables
@@ -25,7 +29,7 @@
 
 **● HOST**: *`string`*
 
-*Defined in [config/startParser.ts:16](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/config/startParser.ts#L16)*
+*Defined in [config/startParser.ts:16](https://github.com/YarosJ/prestige-of-districts/blob/828e334/config/startParser.ts#L16)*
 
 ___
 <a id="nlp_output_queue_name"></a>
@@ -34,7 +38,7 @@ ___
 
 **● NLP_OUTPUT_QUEUE_NAME**: *`string`*
 
-*Defined in [config/startParser.ts:18](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/config/startParser.ts#L18)*
+*Defined in [config/startParser.ts:18](https://github.com/YarosJ/prestige-of-districts/blob/828e334/config/startParser.ts#L18)*
 
 ___
 <a id="nlp_queue_name"></a>
@@ -43,7 +47,7 @@ ___
 
 **● NLP_QUEUE_NAME**: *`string`*
 
-*Defined in [config/startParser.ts:17](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/config/startParser.ts#L17)*
+*Defined in [config/startParser.ts:17](https://github.com/YarosJ/prestige-of-districts/blob/828e334/config/startParser.ts#L17)*
 
 ___
 <a id="messagebroker"></a>
@@ -52,7 +56,7 @@ ___
 
 **● messageBroker**: *`object`*
 
-*Defined in [config/startParser.ts:19](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/config/startParser.ts#L19)*
+*Defined in [config/startParser.ts:19](https://github.com/YarosJ/prestige-of-districts/blob/828e334/config/startParser.ts#L19)*
 
 #### Type declaration
 
@@ -61,6 +65,22 @@ ___
  NLP_OUTPUT_QUEUE_NAME: `string`
 
  NLP_QUEUE_NAME: `string`
+
+___
+
+## Functions
+
+<a id="startparser"></a>
+
+### `<Const>` startParser
+
+▸ **startParser**(): `Promise`<[TaskScheduler](../classes/_libs_taskscheduler_index_.taskscheduler.md)>
+
+*Defined in [config/startParser.ts:37](https://github.com/YarosJ/prestige-of-districts/blob/828e334/config/startParser.ts#L37)*
+
+Starts parser
+
+**Returns:** `Promise`<[TaskScheduler](../classes/_libs_taskscheduler_index_.taskscheduler.md)>
 
 ___
 

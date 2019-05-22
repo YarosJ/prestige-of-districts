@@ -55,7 +55,6 @@ mongooseConnect(mongoose, process, (): void => {
 
 /**
  * creating ApolloServer
- * @type {ApolloServer}
  */
 
 const server: ApolloServer = new ApolloServer({
@@ -72,6 +71,7 @@ const server: ApolloServer = new ApolloServer({
 /**
  * Adding middleware
  */
+
 server.applyMiddleware({
   app,
   endpoint,
@@ -79,7 +79,6 @@ server.applyMiddleware({
 
 /**
  * Creating server and adding subscriptions
- * @type {Server | Http2Server | Promise<any>}
  */
 
 const httpServer = http.createServer(app);

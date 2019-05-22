@@ -32,7 +32,7 @@ Scrapes data from given sites by given selectors
 
 **● browser**: *`puppeteer.Browser`*
 
-*Defined in [libs/Scraper/index.ts:10](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/libs/Scraper/index.ts#L10)*
+*Defined in [libs/Scraper/index.ts:10](https://github.com/YarosJ/prestige-of-districts/blob/828e334/libs/Scraper/index.ts#L10)*
 
 ___
 <a id="page"></a>
@@ -41,7 +41,7 @@ ___
 
 **● page**: *`puppeteer.Page`*
 
-*Defined in [libs/Scraper/index.ts:12](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/libs/Scraper/index.ts#L12)*
+*Defined in [libs/Scraper/index.ts:12](https://github.com/YarosJ/prestige-of-districts/blob/828e334/libs/Scraper/index.ts#L12)*
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 ▸ **closeBrowser**(): `void`
 
-*Defined in [libs/Scraper/index.ts:51](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/libs/Scraper/index.ts#L51)*
+*Defined in [libs/Scraper/index.ts:51](https://github.com/YarosJ/prestige-of-districts/blob/828e334/libs/Scraper/index.ts#L51)*
 
 **Returns:** `void`
 
@@ -64,7 +64,7 @@ ___
 
 ▸ **getText**(URL: *`string`*, patches: *`string`[]*): `Promise`<`string`[]>
 
-*Defined in [libs/Scraper/index.ts:26](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/libs/Scraper/index.ts#L26)*
+*Defined in [libs/Scraper/index.ts:26](https://github.com/YarosJ/prestige-of-districts/blob/828e334/libs/Scraper/index.ts#L26)*
 
 **Parameters:**
 
@@ -82,7 +82,7 @@ ___
 
 ▸ **goTo**(URL: *`string`*): `Promise`<`puppeteer.Page`>
 
-*Defined in [libs/Scraper/index.ts:55](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/libs/Scraper/index.ts#L55)*
+*Defined in [libs/Scraper/index.ts:55](https://github.com/YarosJ/prestige-of-districts/blob/828e334/libs/Scraper/index.ts#L55)*
 
 **Parameters:**
 
@@ -99,7 +99,7 @@ ___
 
 ▸ **openBrowser**(): `Promise`<[Scraper](_libs_scraper_index_.scraper.md)>
 
-*Defined in [libs/Scraper/index.ts:14](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/libs/Scraper/index.ts#L14)*
+*Defined in [libs/Scraper/index.ts:14](https://github.com/YarosJ/prestige-of-districts/blob/828e334/libs/Scraper/index.ts#L14)*
 
 **Returns:** `Promise`<[Scraper](_libs_scraper_index_.scraper.md)>
 

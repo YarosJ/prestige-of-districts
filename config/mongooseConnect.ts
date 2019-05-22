@@ -3,12 +3,10 @@ import { db } from './config.json';
 
 /**
  * Configure a mongoose connection
- * @param mongoose
- * @param process
- * @param callback (callback)
+ * @param callback - callback that fires after connecting
  */
 
-export default (mongoose, process, callback): void => {
+const connect = (mongoose, process, callback): void => {
   mongoose.connect(process.env.DB || `mongodb://${db.host}:${db.port}/${db.name}`, {
     useMongoClient: true,
     reconnectTries: Number.MAX_VALUE,
@@ -19,3 +17,5 @@ export default (mongoose, process, callback): void => {
 
   debugMongooseConnection(mongoose, process);
 };
+
+export default connect;

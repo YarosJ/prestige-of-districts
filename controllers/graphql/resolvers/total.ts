@@ -6,7 +6,12 @@ interface Total {
   count: number;
 }
 
-export default {
+/**
+ * Total resolver.
+ * Returns database entry count for received model name.
+ */
+
+const totalResolver = {
   Query: {
 
     /**
@@ -27,3 +32,5 @@ export default {
     },
   },
 };
+
+export default totalResolver;

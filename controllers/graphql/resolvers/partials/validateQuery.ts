@@ -3,4 +3,6 @@
  * on the presence given query in params
  */
 
-export default (input): object | RegExp => input || /./;
+const query = (input): object | RegExp => input || /./;
+
+export default query;

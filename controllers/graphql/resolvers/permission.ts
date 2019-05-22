@@ -1,6 +1,11 @@
 import { Permission, PermissionModel } from '../../../models/Permission';
 
-export default {
+/**
+ * Permissions resolver.
+ * Accepts input and converts it to commands for the permissions model.
+ */
+
+const permissionResolver = {
   Query: {
 
     /**
@@ -64,3 +69,5 @@ export default {
     },
   },
 };
+
+export default permissionResolver;

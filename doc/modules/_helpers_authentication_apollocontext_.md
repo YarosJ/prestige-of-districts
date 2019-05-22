@@ -18,7 +18,7 @@
 
 ▸ **getGraphQLAction**(queryString: *`string`*): `string`
 
-*Defined in [helpers/authentication/apolloContext.ts:12](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/helpers/authentication/apolloContext.ts#L12)*
+*Defined in [helpers/authentication/apolloContext.ts:12](https://github.com/YarosJ/prestige-of-districts/blob/828e334/helpers/authentication/apolloContext.ts#L12)*
 
 Returns GraphQL action from string
 

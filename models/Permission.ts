@@ -11,7 +11,7 @@ export class Permission extends Typegoose {
   @prop({ required: true, unique: true })
   public role: string;
 
-  @prop({ unique: true, default: [] })
+  @prop({ default: [] })
   public actions: string[];
 }
 

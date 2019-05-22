@@ -8,7 +8,12 @@ interface Selector {
   URL: string;
 }
 
-export default {
+/**
+ * Selector resolver.
+ * Returns selector depending on the input.
+ */
+
+const selectorResolver = {
   Query: {
 
     /**
@@ -41,3 +46,5 @@ export default {
     },
   },
 };
+
+export default selectorResolver;

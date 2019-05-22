@@ -7,7 +7,7 @@ interface Paginate {
  * Returns pagination query depending on cursor and/or limit
  */
 
-export default (cr, lt): Paginate => {
+const paginate = (cr, lt): Paginate => {
   let limit: number = lt;
   let cursor: number = cr;
 
@@ -20,3 +20,5 @@ export default (cr, lt): Paginate => {
     limit,
   };
 };
+
+export default paginate;

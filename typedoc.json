@@ -3,6 +3,8 @@
   "ignoreCompilerErrors": true,
   "tsconfig": "./tsconfig.json",
   "out": "./doc",
+  "readme": "none",
+  "includeDeclarations": true,
   "excludeExternals": true,
   "theme": "markdown"
 }

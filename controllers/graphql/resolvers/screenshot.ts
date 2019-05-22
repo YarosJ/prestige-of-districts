@@ -9,7 +9,12 @@ interface Screenshot {
   URL: string;
 }
 
-export default {
+/**
+ * Screenshot resolver.
+ * Returns Base64 image string depending on the input.
+ */
+
+const screenshotResolver = {
   Query: {
 
     /**
@@ -38,3 +43,5 @@ export default {
     },
   },
 };
+
+export default screenshotResolver;

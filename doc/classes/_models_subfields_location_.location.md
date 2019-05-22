@@ -27,7 +27,7 @@ Schema for location sub field
 
 **● latitude**: *`number`*
 
-*Defined in [models/subfields/Location.ts:8](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/models/subfields/Location.ts#L8)*
+*Defined in [models/subfields/Location.ts:8](https://github.com/YarosJ/prestige-of-districts/blob/828e334/models/subfields/Location.ts#L8)*
 
 ___
 <a id="loctype"></a>
@@ -36,7 +36,7 @@ ___
 
 **● locType**: *`string`*
 
-*Defined in [models/subfields/Location.ts:12](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/models/subfields/Location.ts#L12)*
+*Defined in [models/subfields/Location.ts:12](https://github.com/YarosJ/prestige-of-districts/blob/828e334/models/subfields/Location.ts#L12)*
 
 ___
 <a id="longitude"></a>
@@ -45,7 +45,7 @@ ___
 
 **● longitude**: *`number`*
 
-*Defined in [models/subfields/Location.ts:10](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/models/subfields/Location.ts#L10)*
+*Defined in [models/subfields/Location.ts:10](https://github.com/YarosJ/prestige-of-districts/blob/828e334/models/subfields/Location.ts#L10)*
 
 ___
 <a id="place"></a>
@@ -54,7 +54,7 @@ ___
 
 **● place**: *`string`*
 
-*Defined in [models/subfields/Location.ts:6](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/models/subfields/Location.ts#L6)*
+*Defined in [models/subfields/Location.ts:6](https://github.com/YarosJ/prestige-of-districts/blob/828e334/models/subfields/Location.ts#L6)*
 
 ___
 

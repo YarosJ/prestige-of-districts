@@ -8,6 +8,10 @@
 
 * [debugMongoose](_config_debugmongooseconnection_.md#debugmongoose)
 
+### Functions
+
+* [debug](_config_debugmongooseconnection_.md#debug)
+
 ---
 
 ## Variables
@@ -18,7 +22,30 @@
 
 **● debugMongoose**: *`any`* =  require('debug')('mongoose')
 
-*Defined in [config/debugMongooseConnection.ts:1](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/config/debugMongooseConnection.ts#L1)*
+*Defined in [config/debugMongooseConnection.ts:1](https://github.com/YarosJ/prestige-of-districts/blob/828e334/config/debugMongooseConnection.ts#L1)*
+
+___
+
+## Functions
+
+<a id="debug"></a>
+
+### `<Const>` debug
+
+▸ **debug**(mongoose: *`any`*, process: *`any`*): `void`
+
+*Defined in [config/debugMongooseConnection.ts:7](https://github.com/YarosJ/prestige-of-districts/blob/828e334/config/debugMongooseConnection.ts#L7)*
+
+Indicates the status of a mongoose connection
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| mongoose | `any` |
+| process | `any` |
+
+**Returns:** `void`
 
 ___
 

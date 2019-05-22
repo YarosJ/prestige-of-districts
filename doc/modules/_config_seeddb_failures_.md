@@ -13,6 +13,10 @@
 * [defaultCountry](_config_seeddb_failures_.md#defaultcountry)
 * [messageBroker](_config_seeddb_failures_.md#messagebroker)
 
+### Functions
+
+* [seedFailures](_config_seeddb_failures_.md#seedfailures)
+
 ---
 
 ## Variables
@@ -23,7 +27,7 @@
 
 **● HOST**: *`string`*
 
-*Defined in [config/seedDB/failures.ts:11](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/config/seedDB/failures.ts#L11)*
+*Defined in [config/seedDB/failures.ts:11](https://github.com/YarosJ/prestige-of-districts/blob/828e334/config/seedDB/failures.ts#L11)*
 
 ___
 <a id="nlp_queue_name"></a>
@@ -32,7 +36,7 @@ ___
 
 **● NLP_QUEUE_NAME**: *`string`*
 
-*Defined in [config/seedDB/failures.ts:12](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/config/seedDB/failures.ts#L12)*
+*Defined in [config/seedDB/failures.ts:12](https://github.com/YarosJ/prestige-of-districts/blob/828e334/config/seedDB/failures.ts#L12)*
 
 ___
 <a id="debugfailures"></a>
@@ -41,7 +45,7 @@ ___
 
 **● debugFailures**: *`any`* =  debug('seedDB')
 
-*Defined in [config/seedDB/failures.ts:6](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/config/seedDB/failures.ts#L6)*
+*Defined in [config/seedDB/failures.ts:6](https://github.com/YarosJ/prestige-of-districts/blob/828e334/config/seedDB/failures.ts#L6)*
 
 ___
 <a id="defaultcity"></a>
@@ -50,7 +54,7 @@ ___
 
 **● defaultCity**: *`string`*
 
-*Defined in [config/seedDB/failures.ts:8](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/config/seedDB/failures.ts#L8)*
+*Defined in [config/seedDB/failures.ts:8](https://github.com/YarosJ/prestige-of-districts/blob/828e334/config/seedDB/failures.ts#L8)*
 
 ___
 <a id="defaultcountry"></a>
@@ -59,7 +63,7 @@ ___
 
 **● defaultCountry**: *`string`*
 
-*Defined in [config/seedDB/failures.ts:8](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/config/seedDB/failures.ts#L8)*
+*Defined in [config/seedDB/failures.ts:8](https://github.com/YarosJ/prestige-of-districts/blob/828e334/config/seedDB/failures.ts#L8)*
 
 ___
 <a id="messagebroker"></a>
@@ -68,13 +72,29 @@ ___
 
 **● messageBroker**: *`object`*
 
-*Defined in [config/seedDB/failures.ts:13](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/config/seedDB/failures.ts#L13)*
+*Defined in [config/seedDB/failures.ts:13](https://github.com/YarosJ/prestige-of-districts/blob/828e334/config/seedDB/failures.ts#L13)*
 
 #### Type declaration
 
  HOST: `string`
 
  NLP_QUEUE_NAME: `string`
+
+___
+
+## Functions
+
+<a id="seedfailures"></a>
+
+### `<Const>` seedFailures
+
+▸ **seedFailures**(): `Promise`<`void`>
+
+*Defined in [config/seedDB/failures.ts:20](https://github.com/YarosJ/prestige-of-districts/blob/828e334/config/seedDB/failures.ts#L20)*
+
+Seed failures
+
+**Returns:** `Promise`<`void`>
 
 ___
 

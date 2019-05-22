@@ -43,7 +43,7 @@ A model definition. Represents a database for users.
 
 **● createdAt**: *`Date`*
 
-*Defined in [models/User.ts:51](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/models/User.ts#L51)*
+*Defined in [models/User.ts:51](https://github.com/YarosJ/prestige-of-districts/blob/828e334/models/User.ts#L51)*
 
 ___
 <a id="email"></a>
@@ -52,7 +52,7 @@ ___
 
 **● email**: *`string`*
 
-*Defined in [models/User.ts:36](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/models/User.ts#L36)*
+*Defined in [models/User.ts:36](https://github.com/YarosJ/prestige-of-districts/blob/828e334/models/User.ts#L36)*
 
 ___
 <a id="hashedpassword"></a>
@@ -61,7 +61,7 @@ ___
 
 **● hashedPassword**: *`string`*
 
-*Defined in [models/User.ts:45](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/models/User.ts#L45)*
+*Defined in [models/User.ts:45](https://github.com/YarosJ/prestige-of-districts/blob/828e334/models/User.ts#L45)*
 
 ___
 <a id="refreshtoken"></a>
@@ -70,7 +70,7 @@ ___
 
 **● refreshToken**: *`string`*
 
-*Defined in [models/User.ts:48](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/models/User.ts#L48)*
+*Defined in [models/User.ts:48](https://github.com/YarosJ/prestige-of-districts/blob/828e334/models/User.ts#L48)*
 
 ___
 <a id="role"></a>
@@ -79,7 +79,7 @@ ___
 
 **● role**: *`string`*
 
-*Defined in [models/User.ts:42](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/models/User.ts#L42)*
+*Defined in [models/User.ts:42](https://github.com/YarosJ/prestige-of-districts/blob/828e334/models/User.ts#L42)*
 
 ___
 <a id="salt"></a>
@@ -88,7 +88,7 @@ ___
 
 **● salt**: *`string`*
 
-*Defined in [models/User.ts:28](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/models/User.ts#L28)*
+*Defined in [models/User.ts:28](https://github.com/YarosJ/prestige-of-districts/blob/828e334/models/User.ts#L28)*
 
 ___
 <a id="targets"></a>
@@ -97,7 +97,7 @@ ___
 
 **● targets**: *[Target](_models_user_.target.md)[]*
 
-*Defined in [models/User.ts:54](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/models/User.ts#L54)*
+*Defined in [models/User.ts:54](https://github.com/YarosJ/prestige-of-districts/blob/828e334/models/User.ts#L54)*
 
 ___
 
@@ -109,7 +109,7 @@ ___
 
 **set password**(password: *`any`*): `void`
 
-*Defined in [models/User.ts:57](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/models/User.ts#L57)*
+*Defined in [models/User.ts:57](https://github.com/YarosJ/prestige-of-districts/blob/828e334/models/User.ts#L57)*
 
 **Parameters:**
 
@@ -129,7 +129,7 @@ ___
 
 ▸ **encryptPassword**(this: *`ModelType`<[User](_models_user_.user.md)> & [User](_models_user_.user.md)*, password: *`string`*): `string`
 
-*Defined in [models/User.ts:67](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/models/User.ts#L67)*
+*Defined in [models/User.ts:67](https://github.com/YarosJ/prestige-of-districts/blob/828e334/models/User.ts#L67)*
 
 Encrypting given password
 
@@ -205,7 +205,7 @@ ___
 
 ▸ **validPassword**(this: *`ModelType`<[User](_models_user_.user.md)> & [User](_models_user_.user.md)*, password: *`string`*): `boolean`
 
-*Defined in [models/User.ts:76](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/models/User.ts#L76)*
+*Defined in [models/User.ts:76](https://github.com/YarosJ/prestige-of-districts/blob/828e334/models/User.ts#L76)*
 
 Comparing given password with hashed password
 

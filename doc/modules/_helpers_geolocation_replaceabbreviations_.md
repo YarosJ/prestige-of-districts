@@ -18,7 +18,7 @@
 
 **patterns**: *`object`*
 
-*Defined in [helpers/geolocation/replaceAbbreviations.ts:4](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/helpers/geolocation/replaceAbbreviations.ts#L4)*
+*Defined in [helpers/geolocation/replaceAbbreviations.ts:4](https://github.com/YarosJ/prestige-of-districts/blob/828e334/helpers/geolocation/replaceAbbreviations.ts#L4)*
 
 <a id="patterns._____"></a>
 
@@ -26,7 +26,7 @@
 
 **● Д+/+с**: *`string`* = "Детский сад"
 
-*Defined in [helpers/geolocation/replaceAbbreviations.ts:5](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/helpers/geolocation/replaceAbbreviations.ts#L5)*
+*Defined in [helpers/geolocation/replaceAbbreviations.ts:5](https://github.com/YarosJ/prestige-of-districts/blob/828e334/helpers/geolocation/replaceAbbreviations.ts#L5)*
 
 ___
 <a id="patterns.__"></a>
@@ -35,7 +35,7 @@ ___
 
 **● ОШ**: *`string`* = "Школа"
 
-*Defined in [helpers/geolocation/replaceAbbreviations.ts:6](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/helpers/geolocation/replaceAbbreviations.ts#L6)*
+*Defined in [helpers/geolocation/replaceAbbreviations.ts:6](https://github.com/YarosJ/prestige-of-districts/blob/828e334/helpers/geolocation/replaceAbbreviations.ts#L6)*
 
 ___
 

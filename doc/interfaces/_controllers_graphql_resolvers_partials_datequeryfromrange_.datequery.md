@@ -24,7 +24,7 @@
 
 **● $gt**: *`string`*
 
-*Defined in [controllers/graphql/resolvers/partials/dateQueryFromRange.ts:4](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/controllers/graphql/resolvers/partials/dateQueryFromRange.ts#L4)*
+*Defined in [controllers/graphql/resolvers/partials/dateQueryFromRange.ts:4](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/graphql/resolvers/partials/dateQueryFromRange.ts#L4)*
 
 ___
 <a id="_lt"></a>
@@ -33,7 +33,7 @@ ___
 
 **● $lt**: *`string`*
 
-*Defined in [controllers/graphql/resolvers/partials/dateQueryFromRange.ts:3](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/controllers/graphql/resolvers/partials/dateQueryFromRange.ts#L3)*
+*Defined in [controllers/graphql/resolvers/partials/dateQueryFromRange.ts:3](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/graphql/resolvers/partials/dateQueryFromRange.ts#L3)*
 
 ___
 <a id="_type"></a>
@@ -42,7 +42,7 @@ ___
 
 **● $type**: *`string`*
 
-*Defined in [controllers/graphql/resolvers/partials/dateQueryFromRange.ts:2](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/controllers/graphql/resolvers/partials/dateQueryFromRange.ts#L2)*
+*Defined in [controllers/graphql/resolvers/partials/dateQueryFromRange.ts:2](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/graphql/resolvers/partials/dateQueryFromRange.ts#L2)*
 
 ___
 

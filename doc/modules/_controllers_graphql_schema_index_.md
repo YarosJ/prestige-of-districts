@@ -30,7 +30,7 @@
   }
 `
 
-*Defined in [controllers/graphql/schema/index.ts:12](https://github.com/YarosJ/prestige-of-districts/blob/dea42b4/controllers/graphql/schema/index.ts#L12)*
+*Defined in [controllers/graphql/schema/index.ts:12](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/graphql/schema/index.ts#L12)*
 
 ___
 

@@ -7,7 +7,12 @@ import dateQueryFromRange from './partials/dateQueryFromRange';
 
 const debugFailures = debug('failuresController');
 
-export default {
+/**
+ * Failures resolver.
+ * Accepts input and converts it to commands for the failures model.
+ */
+
+const failureResolver = {
   Query: {
 
     /**
@@ -95,3 +100,5 @@ export default {
     },
   },
 };
+
+export default failureResolver;

@@ -7,7 +7,11 @@ import screenshot from './screenshot';
 import selector from './selector';
 import total from './total';
 
-export default [
+/**
+ * Here export resolvers for apollo server.
+ */
+
+const resolvers = [
   taskResolvers,
   failureResolvers,
   messageResolvers,
@@ -17,3 +21,5 @@ export default [
   selector,
   total,
 ];
+
+export default resolvers;
