@@ -34,7 +34,7 @@ A model definition. Represents a database messages.
 
 **● happenedAt**: *`Date`*
 
-*Defined in [models/Message.ts:22](https://github.com/YarosJ/prestige-of-districts/blob/828e334/models/Message.ts#L22)*
+*Defined in [models/Message.ts:22](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/models/Message.ts#L22)*
 
 ___
 <a id="locations"></a>
@@ -43,7 +43,7 @@ ___
 
 **● locations**: *`Location`[]*
 
-*Defined in [models/Message.ts:19](https://github.com/YarosJ/prestige-of-districts/blob/828e334/models/Message.ts#L19)*
+*Defined in [models/Message.ts:19](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/models/Message.ts#L19)*
 
 ___
 <a id="service"></a>
@@ -52,7 +52,7 @@ ___
 
 **● service**: *`string`*
 
-*Defined in [models/Message.ts:16](https://github.com/YarosJ/prestige-of-districts/blob/828e334/models/Message.ts#L16)*
+*Defined in [models/Message.ts:16](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/models/Message.ts#L16)*
 
 ___
 <a id="text"></a>
@@ -61,7 +61,7 @@ ___
 
 **● text**: *`string`*
 
-*Defined in [models/Message.ts:13](https://github.com/YarosJ/prestige-of-districts/blob/828e334/models/Message.ts#L13)*
+*Defined in [models/Message.ts:13](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/models/Message.ts#L13)*
 
 ___
 

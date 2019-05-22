@@ -23,7 +23,7 @@
 
 **● payload**: *`object`*
 
-*Defined in [helpers/actionFromNLP.ts:6](https://github.com/YarosJ/prestige-of-districts/blob/828e334/helpers/actionFromNLP.ts#L6)*
+*Defined in [helpers/actionFromNLP.ts:6](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/helpers/actionFromNLP.ts#L6)*
 
 #### Type declaration
 
@@ -46,7 +46,7 @@ ___
 
 **● type**: *`string`*
 
-*Defined in [helpers/actionFromNLP.ts:5](https://github.com/YarosJ/prestige-of-districts/blob/828e334/helpers/actionFromNLP.ts#L5)*
+*Defined in [helpers/actionFromNLP.ts:5](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/helpers/actionFromNLP.ts#L5)*
 
 ___
 

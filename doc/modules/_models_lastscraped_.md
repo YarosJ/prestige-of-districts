@@ -25,7 +25,7 @@
   schemaOptions: { usePushEach: true }, // Currently is not supported by typegoose
 })
 
-*Defined in [models/LastScraped.ts:18](https://github.com/YarosJ/prestige-of-districts/blob/828e334/models/LastScraped.ts#L18)*
+*Defined in [models/LastScraped.ts:18](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/models/LastScraped.ts#L18)*
 
 ___
 

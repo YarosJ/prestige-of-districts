@@ -1,5 +1,9 @@
 import { gql } from 'apollo-server-express';
 
+/**
+ * Schema definition for failures
+ */
+
 export default gql`
   extend type Query {
     failures(

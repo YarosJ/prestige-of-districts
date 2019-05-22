@@ -1,5 +1,9 @@
 import { gql } from 'apollo-server-express';
 
+/**
+ * Schema definition for messages
+ */
+
 export default gql`
   extend type Query {
     messages(

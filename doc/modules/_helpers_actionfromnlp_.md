@@ -22,7 +22,7 @@
 
 ▸ **sortCategories**(cats: *`any`*): `string`[]
 
-*Defined in [helpers/actionFromNLP.ts:1](https://github.com/YarosJ/prestige-of-districts/blob/828e334/helpers/actionFromNLP.ts#L1)*
+*Defined in [helpers/actionFromNLP.ts:1](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/helpers/actionFromNLP.ts#L1)*
 
 **Parameters:**
 

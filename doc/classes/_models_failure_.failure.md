@@ -35,7 +35,7 @@ A model definition. Represents a database failures.
 
 **● failureType**: *`string`*
 
-*Defined in [models/Failure.ts:19](https://github.com/YarosJ/prestige-of-districts/blob/828e334/models/Failure.ts#L19)*
+*Defined in [models/Failure.ts:19](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/models/Failure.ts#L19)*
 
 ___
 <a id="happenedat"></a>
@@ -44,7 +44,7 @@ ___
 
 **● happenedAt**: *`Date`*
 
-*Defined in [models/Failure.ts:25](https://github.com/YarosJ/prestige-of-districts/blob/828e334/models/Failure.ts#L25)*
+*Defined in [models/Failure.ts:25](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/models/Failure.ts#L25)*
 
 ___
 <a id="locations"></a>
@@ -53,7 +53,7 @@ ___
 
 **● locations**: *`Location`[]*
 
-*Defined in [models/Failure.ts:22](https://github.com/YarosJ/prestige-of-districts/blob/828e334/models/Failure.ts#L22)*
+*Defined in [models/Failure.ts:22](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/models/Failure.ts#L22)*
 
 ___
 <a id="service"></a>
@@ -62,7 +62,7 @@ ___
 
 **● service**: *`string`*
 
-*Defined in [models/Failure.ts:16](https://github.com/YarosJ/prestige-of-districts/blob/828e334/models/Failure.ts#L16)*
+*Defined in [models/Failure.ts:16](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/models/Failure.ts#L16)*
 
 ___
 <a id="text"></a>
@@ -71,7 +71,7 @@ ___
 
 **● text**: *`string`*
 
-*Defined in [models/Failure.ts:13](https://github.com/YarosJ/prestige-of-districts/blob/828e334/models/Failure.ts#L13)*
+*Defined in [models/Failure.ts:13](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/models/Failure.ts#L13)*
 
 ___
 

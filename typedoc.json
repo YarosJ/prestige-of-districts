@@ -1,5 +1,5 @@
 {
-  "exclude": ["./node_modules", "./tests", "view"],
+  "exclude": ["./node_modules/*", "./tests/*", "./view/*", "./controllers/graphql/schema/*"],
   "ignoreCompilerErrors": true,
   "tsconfig": "./tsconfig.json",
   "out": "./doc",

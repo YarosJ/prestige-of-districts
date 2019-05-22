@@ -22,7 +22,7 @@
 
 **● count**: *`number`*
 
-*Defined in [controllers/graphql/resolvers/total.ts:6](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/graphql/resolvers/total.ts#L6)*
+*Defined in [controllers/graphql/resolvers/total.ts:6](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/total.ts#L6)*
 
 ___
 

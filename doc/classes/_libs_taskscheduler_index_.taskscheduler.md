@@ -34,7 +34,7 @@ Runs callback by given interval and data for each tasks
 
 ⊕ **new TaskScheduler**(tasks: *`any`*, config: *`any`*, callback: *`any`*): [TaskScheduler](_libs_taskscheduler_index_.taskscheduler.md)
 
-*Defined in [libs/TaskScheduler/index.ts:8](https://github.com/YarosJ/prestige-of-districts/blob/828e334/libs/TaskScheduler/index.ts#L8)*
+*Defined in [libs/TaskScheduler/index.ts:8](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/libs/TaskScheduler/index.ts#L8)*
 
 **Parameters:**
 
@@ -56,7 +56,7 @@ ___
 
 **● myCache**: *`NodeCache`*
 
-*Defined in [libs/TaskScheduler/index.ts:8](https://github.com/YarosJ/prestige-of-districts/blob/828e334/libs/TaskScheduler/index.ts#L8)*
+*Defined in [libs/TaskScheduler/index.ts:8](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/libs/TaskScheduler/index.ts#L8)*
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 ▸ **addTasks**(tasks: *`any`*): `void`
 
-*Defined in [libs/TaskScheduler/index.ts:19](https://github.com/YarosJ/prestige-of-districts/blob/828e334/libs/TaskScheduler/index.ts#L19)*
+*Defined in [libs/TaskScheduler/index.ts:19](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/libs/TaskScheduler/index.ts#L19)*
 
 **Parameters:**
 
@@ -85,7 +85,7 @@ ___
 
 ▸ **deleteTasks**(tasks: *`any`*): `void`
 
-*Defined in [libs/TaskScheduler/index.ts:31](https://github.com/YarosJ/prestige-of-districts/blob/828e334/libs/TaskScheduler/index.ts#L31)*
+*Defined in [libs/TaskScheduler/index.ts:31](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/libs/TaskScheduler/index.ts#L31)*
 
 **Parameters:**
 
@@ -102,7 +102,7 @@ ___
 
 ▸ **taskManager**(callback: *`any`*): `void`
 
-*Defined in [libs/TaskScheduler/index.ts:37](https://github.com/YarosJ/prestige-of-districts/blob/828e334/libs/TaskScheduler/index.ts#L37)*
+*Defined in [libs/TaskScheduler/index.ts:37](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/libs/TaskScheduler/index.ts#L37)*
 
 **Parameters:**
 

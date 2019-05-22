@@ -23,7 +23,7 @@
 
 **● accessToken**: *`string`*
 
-*Defined in [controllers/graphql/resolvers/user.ts:10](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/graphql/resolvers/user.ts#L10)*
+*Defined in [controllers/graphql/resolvers/user.ts:10](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/user.ts#L10)*
 
 ___
 <a id="refreshtoken"></a>
@@ -32,7 +32,7 @@ ___
 
 **● refreshToken**: *`string`*
 
-*Defined in [controllers/graphql/resolvers/user.ts:11](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/graphql/resolvers/user.ts#L11)*
+*Defined in [controllers/graphql/resolvers/user.ts:11](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/user.ts#L11)*
 
 ___
 

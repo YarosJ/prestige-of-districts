@@ -18,7 +18,7 @@
 
 ▸ **seedDB**(): `Promise`<`void`>
 
-*Defined in [config/seedDB/index.ts:9](https://github.com/YarosJ/prestige-of-districts/blob/828e334/config/seedDB/index.ts#L9)*
+*Defined in [config/seedDB/index.ts:9](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/config/seedDB/index.ts#L9)*
 
 Seed DB
 

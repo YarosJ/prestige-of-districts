@@ -5,7 +5,7 @@ import messageResolvers from './graphql/resolvers/message';
 const { addFailure } = failureResolvers.Mutation;
 const { addMessage } = messageResolvers.Mutation;
 
-export default class ActionDispatcher {
+class ActionDispatcher {
   // Directing actions
   public static actions = {
     FAULT: addFailure,
@@ -39,3 +39,5 @@ export default class ActionDispatcher {
     (this.actions[action.type] || this.actions.default)(null, args);
   }
 }
+
+export default ActionDispatcher;

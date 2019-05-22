@@ -1,5 +1,9 @@
 import { gql } from 'apollo-server-express';
 
+/**
+ * Schema definition for user
+ */
+
 export default gql`
   extend type Query {
     users(cursor: Int, limit: Int): [User!]

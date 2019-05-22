@@ -22,7 +22,7 @@
 
 **● debugMessages**: *`any`* =  debug('messagesController')
 
-*Defined in [controllers/graphql/resolvers/message.ts:8](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/graphql/resolvers/message.ts#L8)*
+*Defined in [controllers/graphql/resolvers/message.ts:8](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/message.ts#L8)*
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 **messageResolver**: *`object`*
 
-*Defined in [controllers/graphql/resolvers/message.ts:15](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/graphql/resolvers/message.ts#L15)*
+*Defined in [controllers/graphql/resolvers/message.ts:15](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/message.ts#L15)*
 
 Messages resolver. Accepts input and converts it to commands for the messages model.
 
@@ -44,7 +44,7 @@ Messages resolver. Accepts input and converts it to commands for the messages mo
 
 **Mutation**: *`object`*
 
-*Defined in [controllers/graphql/resolvers/message.ts:50](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/graphql/resolvers/message.ts#L50)*
+*Defined in [controllers/graphql/resolvers/message.ts:50](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/message.ts#L50)*
 
 <a id="messageresolver.mutation.addmessage"></a>
 
@@ -52,7 +52,7 @@ Messages resolver. Accepts input and converts it to commands for the messages mo
 
 ▸ **addMessage**(parent: *`any`*, __namedParameters: *`object`*): `Promise`<[Message](../classes/_models_message_.message.md)>
 
-*Defined in [controllers/graphql/resolvers/message.ts:56](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/graphql/resolvers/message.ts#L56)*
+*Defined in [controllers/graphql/resolvers/message.ts:56](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/message.ts#L56)*
 
 Creates new message by given params
 
@@ -80,7 +80,7 @@ ___
 
 ▸ **removeMessage**(parent: *`any`*, __namedParameters: *`object`*): `Promise`<[Message](../classes/_models_message_.message.md)>
 
-*Defined in [controllers/graphql/resolvers/message.ts:77](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/graphql/resolvers/message.ts#L77)*
+*Defined in [controllers/graphql/resolvers/message.ts:77](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/message.ts#L77)*
 
 Deletes message by id or another given params
 
@@ -109,7 +109,7 @@ ___
 
 **Query**: *`object`*
 
-*Defined in [controllers/graphql/resolvers/message.ts:16](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/graphql/resolvers/message.ts#L16)*
+*Defined in [controllers/graphql/resolvers/message.ts:16](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/message.ts#L16)*
 
 <a id="messageresolver.query.messages"></a>
 
@@ -117,7 +117,7 @@ ___
 
 ▸ **messages**(parent: *`any`*, __namedParameters: *`object`*): `Promise`<[Message](../classes/_models_message_.message.md)[]>
 
-*Defined in [controllers/graphql/resolvers/message.ts:22](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/graphql/resolvers/message.ts#L22)*
+*Defined in [controllers/graphql/resolvers/message.ts:22](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/message.ts#L22)*
 
 Returns messages filtered by given params
 

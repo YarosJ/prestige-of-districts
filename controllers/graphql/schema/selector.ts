@@ -1,5 +1,9 @@
 import { gql } from 'apollo-server-express';
 
+/**
+ * Schema definition for selector
+ */
+
 export default gql`
   extend type Query {
     selector(URL: String!, x: String!, y: String!): Selector!

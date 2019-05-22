@@ -26,7 +26,7 @@
 
 ▸ **dispatch**(action: *`any`*): `void`
 
-*Defined in [controllers/ActionDispatcher.ts:22](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/ActionDispatcher.ts#L22)*
+*Defined in [controllers/ActionDispatcher.ts:22](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/ActionDispatcher.ts#L22)*
 
 Dispatches action depending on the action type
 
@@ -48,7 +48,7 @@ ___
 
 **actions**: *`object`*
 
-*Defined in [controllers/ActionDispatcher.ts:10](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/ActionDispatcher.ts#L10)*
+*Defined in [controllers/ActionDispatcher.ts:10](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/ActionDispatcher.ts#L10)*
 
 <a id="actions.fault"></a>
 
@@ -56,7 +56,7 @@ ___
 
 **● FAULT**: *[addFailure](../modules/_controllers_graphql_resolvers_failure_.md#failureresolver.mutation.addfailure)* =  addFailure
 
-*Defined in [controllers/ActionDispatcher.ts:11](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/ActionDispatcher.ts#L11)*
+*Defined in [controllers/ActionDispatcher.ts:11](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/ActionDispatcher.ts#L11)*
 
 ___
 <a id="actions.info"></a>
@@ -65,7 +65,7 @@ ___
 
 **● INFO**: *[addMessage](../modules/_controllers_graphql_resolvers_message_.md#messageresolver.mutation.addmessage)* =  addMessage
 
-*Defined in [controllers/ActionDispatcher.ts:14](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/ActionDispatcher.ts#L14)*
+*Defined in [controllers/ActionDispatcher.ts:14](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/ActionDispatcher.ts#L14)*
 
 ___
 <a id="actions.repair"></a>
@@ -74,7 +74,7 @@ ___
 
 **● REPAIR**: *[addMessage](../modules/_controllers_graphql_resolvers_message_.md#messageresolver.mutation.addmessage)* =  addMessage
 
-*Defined in [controllers/ActionDispatcher.ts:13](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/ActionDispatcher.ts#L13)*
+*Defined in [controllers/ActionDispatcher.ts:13](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/ActionDispatcher.ts#L13)*
 
 ___
 <a id="actions.toxic"></a>
@@ -83,7 +83,7 @@ ___
 
 **● TOXIC**: *[addFailure](../modules/_controllers_graphql_resolvers_failure_.md#failureresolver.mutation.addfailure)* =  addFailure
 
-*Defined in [controllers/ActionDispatcher.ts:12](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/ActionDispatcher.ts#L12)*
+*Defined in [controllers/ActionDispatcher.ts:12](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/ActionDispatcher.ts#L12)*
 
 ___
 <a id="actions.default"></a>
@@ -92,7 +92,7 @@ ___
 
 ▸ **default**(): `void`
 
-*Defined in [controllers/ActionDispatcher.ts:15](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/ActionDispatcher.ts#L15)*
+*Defined in [controllers/ActionDispatcher.ts:15](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/ActionDispatcher.ts#L15)*
 
 **Returns:** `void`
 

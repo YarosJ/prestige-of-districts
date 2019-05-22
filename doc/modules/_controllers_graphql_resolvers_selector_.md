@@ -26,7 +26,7 @@
 
 **● pubSub**: *`PubSub`* =  new PubSub()
 
-*Defined in [controllers/graphql/resolvers/selector.ts:4](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/graphql/resolvers/selector.ts#L4)*
+*Defined in [controllers/graphql/resolvers/selector.ts:4](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/selector.ts#L4)*
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 **selectorResolver**: *`object`*
 
-*Defined in [controllers/graphql/resolvers/selector.ts:16](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/graphql/resolvers/selector.ts#L16)*
+*Defined in [controllers/graphql/resolvers/selector.ts:16](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/selector.ts#L16)*
 
 Selector resolver. Returns selector depending on the input.
 
@@ -48,7 +48,7 @@ Selector resolver. Returns selector depending on the input.
 
 **Query**: *`object`*
 
-*Defined in [controllers/graphql/resolvers/selector.ts:17](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/graphql/resolvers/selector.ts#L17)*
+*Defined in [controllers/graphql/resolvers/selector.ts:17](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/selector.ts#L17)*
 
 <a id="selectorresolver.query.selector-1"></a>
 
@@ -56,7 +56,7 @@ Selector resolver. Returns selector depending on the input.
 
 ▸ **selector**(parent: *`any`*, __namedParameters: *`object`*): `Promise`<[Selector](../interfaces/_controllers_graphql_resolvers_selector_.selector.md)>
 
-*Defined in [controllers/graphql/resolvers/selector.ts:23](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/graphql/resolvers/selector.ts#L23)*
+*Defined in [controllers/graphql/resolvers/selector.ts:23](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/selector.ts#L23)*
 
 Returns selector by given site URL and coordinates of element
 
@@ -83,7 +83,7 @@ ___
 
 **Subscription**: *`object`*
 
-*Defined in [controllers/graphql/resolvers/selector.ts:38](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/graphql/resolvers/selector.ts#L38)*
+*Defined in [controllers/graphql/resolvers/selector.ts:38](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/selector.ts#L38)*
 
 <a id="selectorresolver.subscription.selectorreceived"></a>
 
@@ -91,7 +91,7 @@ ___
 
 **selectorReceived**: *`object`*
 
-*Defined in [controllers/graphql/resolvers/selector.ts:44](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/graphql/resolvers/selector.ts#L44)*
+*Defined in [controllers/graphql/resolvers/selector.ts:44](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/selector.ts#L44)*
 
 Subscription (uses websocket) because this operation can be too much long
 
@@ -101,7 +101,7 @@ Subscription (uses websocket) because this operation can be too much long
 
 ▸ **subscribe**(): `AsyncIterator`<`symbol`>
 
-*Defined in [controllers/graphql/resolvers/selector.ts:45](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/graphql/resolvers/selector.ts#L45)*
+*Defined in [controllers/graphql/resolvers/selector.ts:45](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/selector.ts#L45)*
 
 **Returns:** `AsyncIterator`<`symbol`>
 

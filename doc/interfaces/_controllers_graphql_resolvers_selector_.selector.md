@@ -23,7 +23,7 @@
 
 **● URL**: *`string`*
 
-*Defined in [controllers/graphql/resolvers/selector.ts:8](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/graphql/resolvers/selector.ts#L8)*
+*Defined in [controllers/graphql/resolvers/selector.ts:8](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/selector.ts#L8)*
 
 ___
 <a id="resultselector"></a>
@@ -32,7 +32,7 @@ ___
 
 **● resultSelector**: *`string`*
 
-*Defined in [controllers/graphql/resolvers/selector.ts:7](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/graphql/resolvers/selector.ts#L7)*
+*Defined in [controllers/graphql/resolvers/selector.ts:7](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/selector.ts#L7)*
 
 ___
 

@@ -22,7 +22,7 @@
 
 **● taskScheduler**: *[TaskScheduler](../classes/_libs_taskscheduler_index_.taskscheduler.md)*
 
-*Defined in [index.d.ts:7](https://github.com/YarosJ/prestige-of-districts/blob/828e334/index.d.ts#L7)*
+*Defined in [index.d.ts:7](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/index.d.ts#L7)*
 
 ___
 

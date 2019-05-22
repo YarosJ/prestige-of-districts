@@ -9,6 +9,10 @@ import screenshot from './screenshot';
 import selector from './selector';
 import total from './total';
 
+/**
+ * Main schema definition
+ */
+
 const linkSchema = gql`
   type Query {
     _: Boolean

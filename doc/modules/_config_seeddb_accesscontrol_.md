@@ -23,7 +23,7 @@
 
 **● debugAccessControl**: *`any`* =  debug('seedDB')
 
-*Defined in [config/seedDB/accessControl.ts:4](https://github.com/YarosJ/prestige-of-districts/blob/828e334/config/seedDB/accessControl.ts#L4)*
+*Defined in [config/seedDB/accessControl.ts:4](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/config/seedDB/accessControl.ts#L4)*
 
 ___
 <a id="roles"></a>
@@ -66,7 +66,7 @@ ___
   },
 ]
 
-*Defined in [config/seedDB/accessControl.ts:6](https://github.com/YarosJ/prestige-of-districts/blob/828e334/config/seedDB/accessControl.ts#L6)*
+*Defined in [config/seedDB/accessControl.ts:6](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/config/seedDB/accessControl.ts#L6)*
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 ▸ **seedAccessControl**(permanent: *`any`*): `Promise`<`void`>
 
-*Defined in [config/seedDB/accessControl.ts:47](https://github.com/YarosJ/prestige-of-districts/blob/828e334/config/seedDB/accessControl.ts#L47)*
+*Defined in [config/seedDB/accessControl.ts:47](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/config/seedDB/accessControl.ts#L47)*
 
 Sowing access control
 

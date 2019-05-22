@@ -18,7 +18,7 @@
 
 ▸ **query**(input: *`any`*): `object` \| `RegExp`
 
-*Defined in [controllers/graphql/resolvers/partials/validateQuery.ts:6](https://github.com/YarosJ/prestige-of-districts/blob/828e334/controllers/graphql/resolvers/partials/validateQuery.ts#L6)*
+*Defined in [controllers/graphql/resolvers/partials/validateQuery.ts:6](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/partials/validateQuery.ts#L6)*
 
 Returns query depending on the presence given query in params
 

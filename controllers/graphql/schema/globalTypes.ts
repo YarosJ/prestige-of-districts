@@ -1,5 +1,9 @@
 import { gql } from 'apollo-server-express';
 
+/**
+ * Definition of common schemas types
+ */
+
 export default gql`
   input LocRangeInput {
     maxLatitude: Float

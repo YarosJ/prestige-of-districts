@@ -32,7 +32,7 @@ A model definition. Represents a database of last scraped text messages.
 
 **● dateToDelete**: *`Date`*
 
-*Defined in [models/LastScraped.ts:15](https://github.com/YarosJ/prestige-of-districts/blob/828e334/models/LastScraped.ts#L15)*
+*Defined in [models/LastScraped.ts:15](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/models/LastScraped.ts#L15)*
 
 ___
 <a id="text"></a>
@@ -41,7 +41,7 @@ ___
 
 **● text**: *`string`*
 
-*Defined in [models/LastScraped.ts:12](https://github.com/YarosJ/prestige-of-districts/blob/828e334/models/LastScraped.ts#L12)*
+*Defined in [models/LastScraped.ts:12](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/models/LastScraped.ts#L12)*
 
 ___
 
