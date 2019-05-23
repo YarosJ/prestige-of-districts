@@ -21,7 +21,7 @@ class Target {
 }
 
 /**
- * A model definition.  Represents a database for users.
+ * A model definition.  Represents a database for users
  */
 
 export class User extends Typegoose {

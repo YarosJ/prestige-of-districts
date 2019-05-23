@@ -5,7 +5,7 @@ import * as Location from './subfields/Location';
 mongoose.Promise = require('bluebird');
 
 /**
- * A model definition. Represents a database failures.
+ * A model definition. Represents a database failures
  */
 
 export class Failure extends Typegoose {

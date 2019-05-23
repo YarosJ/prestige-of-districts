@@ -22,7 +22,7 @@
 
 **● debugMongoose**: *`any`* =  require('debug')('mongoose')
 
-*Defined in [config/debugMongooseConnection.ts:1](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/config/debugMongooseConnection.ts#L1)*
+*Defined in [config/debugMongooseConnection.ts:1](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/config/debugMongooseConnection.ts#L1)*
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 ▸ **debug**(mongoose: *`any`*, process: *`any`*): `void`
 
-*Defined in [config/debugMongooseConnection.ts:7](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/config/debugMongooseConnection.ts#L7)*
+*Defined in [config/debugMongooseConnection.ts:7](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/config/debugMongooseConnection.ts#L7)*
 
 Indicates the status of a mongoose connection
 

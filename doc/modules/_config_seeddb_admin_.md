@@ -25,7 +25,7 @@
 
 **● debugAdmin**: *`any`* =  debug('seedDB')
 
-*Defined in [config/seedDB/admin.ts:5](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/config/seedDB/admin.ts#L5)*
+*Defined in [config/seedDB/admin.ts:5](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/config/seedDB/admin.ts#L5)*
 
 ___
 <a id="email"></a>
@@ -34,7 +34,7 @@ ___
 
 **● email**: *`string`*
 
-*Defined in [config/seedDB/admin.ts:7](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/config/seedDB/admin.ts#L7)*
+*Defined in [config/seedDB/admin.ts:7](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/config/seedDB/admin.ts#L7)*
 
 ___
 <a id="password"></a>
@@ -43,7 +43,7 @@ ___
 
 **● password**: *`string`*
 
-*Defined in [config/seedDB/admin.ts:7](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/config/seedDB/admin.ts#L7)*
+*Defined in [config/seedDB/admin.ts:7](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/config/seedDB/admin.ts#L7)*
 
 ___
 <a id="role"></a>
@@ -52,7 +52,7 @@ ___
 
 **● role**: *`string`*
 
-*Defined in [config/seedDB/admin.ts:7](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/config/seedDB/admin.ts#L7)*
+*Defined in [config/seedDB/admin.ts:7](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/config/seedDB/admin.ts#L7)*
 
 ___
 
@@ -64,9 +64,9 @@ ___
 
 ▸ **seedAdmin**(permanent: *`any`*): `Promise`<`void`>
 
-*Defined in [config/seedDB/admin.ts:14](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/config/seedDB/admin.ts#L14)*
+*Defined in [config/seedDB/admin.ts:14](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/config/seedDB/admin.ts#L14)*
 
-Sowing admin user
+Seed admin user
 
 **Parameters:**
 

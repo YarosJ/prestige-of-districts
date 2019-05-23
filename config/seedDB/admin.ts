@@ -7,7 +7,7 @@ const debugAdmin = debug('seedDB');
 const { email, password, role } = config.admin;
 
 /**
- * Sowing admin user
+ * Seed admin user
  * @param permanent - if this parameter true all old access control will be deleted
  */
 

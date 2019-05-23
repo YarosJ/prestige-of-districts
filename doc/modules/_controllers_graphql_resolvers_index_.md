@@ -27,9 +27,9 @@
   total,
 ]
 
-*Defined in [controllers/graphql/resolvers/index.ts:14](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/index.ts#L14)*
+*Defined in [controllers/graphql/resolvers/index.ts:14](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/index.ts#L14)*
 
-Here export resolvers for apollo server.
+Here export resolvers for apollo server
 
 ___
 

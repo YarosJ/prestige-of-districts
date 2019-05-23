@@ -7,8 +7,8 @@ interface Total {
 }
 
 /**
- * Total resolver.
- * Returns database entry count for received model name.
+ * Total resolver
+ * Returns database entry count for received model name
  */
 
 const totalResolver = {

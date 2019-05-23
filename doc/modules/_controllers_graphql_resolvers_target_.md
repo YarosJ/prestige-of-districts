@@ -18,9 +18,9 @@
 
 **targetResolver**: *`object`*
 
-*Defined in [controllers/graphql/resolvers/target.ts:9](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/target.ts#L9)*
+*Defined in [controllers/graphql/resolvers/target.ts:9](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/target.ts#L9)*
 
-Targets resolver. Accepts input and converts it to commands for the targets model.
+Targets resolver Accepts input and converts it to commands for the targets model
 
 <a id="targetresolver.mutation"></a>
 
@@ -28,7 +28,7 @@ Targets resolver. Accepts input and converts it to commands for the targets mode
 
 **Mutation**: *`object`*
 
-*Defined in [controllers/graphql/resolvers/target.ts:36](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/target.ts#L36)*
+*Defined in [controllers/graphql/resolvers/target.ts:36](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/target.ts#L36)*
 
 <a id="targetresolver.mutation.addtarget"></a>
 
@@ -36,7 +36,7 @@ Targets resolver. Accepts input and converts it to commands for the targets mode
 
 ▸ **addTarget**(parent: *`any`*, __namedParameters: *`object`*): `Promise`<[Target](../classes/_models_target_.target.md)>
 
-*Defined in [controllers/graphql/resolvers/target.ts:42](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/target.ts#L42)*
+*Defined in [controllers/graphql/resolvers/target.ts:42](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/target.ts#L42)*
 
 Creates new target (site that will be parsed) by given params
 
@@ -64,7 +64,7 @@ ___
 
 ▸ **removeTarget**(parent: *`any`*, __namedParameters: *`object`*): `Promise`<[Target](../classes/_models_target_.target.md)>
 
-*Defined in [controllers/graphql/resolvers/target.ts:54](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/target.ts#L54)*
+*Defined in [controllers/graphql/resolvers/target.ts:54](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/target.ts#L54)*
 
 Deletes target by given URL
 
@@ -87,7 +87,7 @@ ___
 
 ▸ **updateTarget**(parent: *`any`*, __namedParameters: *`object`*): `Promise`<[Target](../classes/_models_target_.target.md)>
 
-*Defined in [controllers/graphql/resolvers/target.ts:66](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/target.ts#L66)*
+*Defined in [controllers/graphql/resolvers/target.ts:66](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/target.ts#L66)*
 
 Updates target by given URL and params
 
@@ -116,7 +116,7 @@ ___
 
 **Query**: *`object`*
 
-*Defined in [controllers/graphql/resolvers/target.ts:10](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/target.ts#L10)*
+*Defined in [controllers/graphql/resolvers/target.ts:10](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/target.ts#L10)*
 
 <a id="targetresolver.query.services"></a>
 
@@ -124,7 +124,7 @@ ___
 
 ▸ **services**(): `string`[]
 
-*Defined in [controllers/graphql/resolvers/target.ts:24](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/target.ts#L24)*
+*Defined in [controllers/graphql/resolvers/target.ts:24](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/target.ts#L24)*
 
 Returns all supported services
 
@@ -137,7 +137,7 @@ ___
 
 ▸ **tags**(): `string`[]
 
-*Defined in [controllers/graphql/resolvers/target.ts:16](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/target.ts#L16)*
+*Defined in [controllers/graphql/resolvers/target.ts:16](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/target.ts#L16)*
 
 Returns all supported entities
 
@@ -150,7 +150,7 @@ ___
 
 ▸ **targets**(): [Target](../classes/_models_target_.target.md)[]
 
-*Defined in [controllers/graphql/resolvers/target.ts:32](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/target.ts#L32)*
+*Defined in [controllers/graphql/resolvers/target.ts:32](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/target.ts#L32)*
 
 Returns all targets
 

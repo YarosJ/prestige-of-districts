@@ -18,8 +18,8 @@ interface SignIn {
 }
 
 /**
- * Users resolver.
- * Accepts input and converts it to commands for the users model.
+ * Users resolver
+ * Accepts input and converts it to commands for the users model
  */
 
 const userResolver = {

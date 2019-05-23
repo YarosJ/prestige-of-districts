@@ -9,8 +9,8 @@ interface Selector {
 }
 
 /**
- * Selector resolver.
- * Returns selector depending on the input.
+ * Selector resolver
+ * Returns selector depending on the input
  */
 
 const selectorResolver = {

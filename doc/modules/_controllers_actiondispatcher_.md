@@ -23,7 +23,7 @@
 
 **● addFailure**: *[addFailure](_controllers_graphql_resolvers_failure_.md#failureresolver.mutation.addfailure)*
 
-*Defined in [controllers/ActionDispatcher.ts:5](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/ActionDispatcher.ts#L5)*
+*Defined in [controllers/ActionDispatcher.ts:5](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/ActionDispatcher.ts#L5)*
 
 ___
 <a id="addmessage"></a>
@@ -32,7 +32,7 @@ ___
 
 **● addMessage**: *[addMessage](_controllers_graphql_resolvers_message_.md#messageresolver.mutation.addmessage)*
 
-*Defined in [controllers/ActionDispatcher.ts:6](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/ActionDispatcher.ts#L6)*
+*Defined in [controllers/ActionDispatcher.ts:6](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/ActionDispatcher.ts#L6)*
 
 ___
 

@@ -4,7 +4,7 @@ import { prop, Typegoose } from 'typegoose';
 mongoose.Promise = require('bluebird');
 
 /**
- * A model definition. Represents a database of last scraped text messages.
+ * A model definition. Represents a database of last scraped text messages
  */
 
 export class LastScraped extends Typegoose {

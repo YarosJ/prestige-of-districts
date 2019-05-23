@@ -8,8 +8,8 @@ import dateQueryFromRange from './partials/dateQueryFromRange';
 const debugFailures = debug('failuresController');
 
 /**
- * Failures resolver.
- * Accepts input and converts it to commands for the failures model.
+ * Failures resolver
+ * Accepts input and converts it to commands for the failures model
  */
 
 const failureResolver = {

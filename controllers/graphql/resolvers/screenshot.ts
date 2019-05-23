@@ -10,8 +10,8 @@ interface Screenshot {
 }
 
 /**
- * Screenshot resolver.
- * Returns Base64 image string depending on the input.
+ * Screenshot resolver
+ * Returns Base64 image string depending on the input
  */
 
 const screenshotResolver = {

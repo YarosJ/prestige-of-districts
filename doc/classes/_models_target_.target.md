@@ -2,7 +2,7 @@
 
 # Class: Target
 
-A model definition. Represents a database targets.
+A model definition. Represents a database targets
 
 ## Hierarchy
 
@@ -36,7 +36,7 @@ A model definition. Represents a database targets.
 
 **● URL**: *`string`*
 
-*Defined in [models/Target.ts:40](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/models/Target.ts#L40)*
+*Defined in [models/Target.ts:40](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/models/Target.ts#L40)*
 
 ___
 <a id="city"></a>
@@ -45,7 +45,7 @@ ___
 
 **● city**: *`string`*
 
-*Defined in [models/Target.ts:52](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/models/Target.ts#L52)*
+*Defined in [models/Target.ts:52](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/models/Target.ts#L52)*
 
 ___
 <a id="country"></a>
@@ -54,7 +54,7 @@ ___
 
 **● country**: *`string`*
 
-*Defined in [models/Target.ts:55](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/models/Target.ts#L55)*
+*Defined in [models/Target.ts:55](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/models/Target.ts#L55)*
 
 ___
 <a id="freq"></a>
@@ -63,7 +63,7 @@ ___
 
 **● freq**: *`number`*
 
-*Defined in [models/Target.ts:46](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/models/Target.ts#L46)*
+*Defined in [models/Target.ts:46](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/models/Target.ts#L46)*
 
 ___
 <a id="service"></a>
@@ -72,7 +72,7 @@ ___
 
 **● service**: *`string`*
 
-*Defined in [models/Target.ts:49](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/models/Target.ts#L49)*
+*Defined in [models/Target.ts:49](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/models/Target.ts#L49)*
 
 ___
 <a id="tagpaths"></a>
@@ -81,7 +81,7 @@ ___
 
 **● tagPaths**: *`string`[]*
 
-*Defined in [models/Target.ts:43](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/models/Target.ts#L43)*
+*Defined in [models/Target.ts:43](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/models/Target.ts#L43)*
 
 ___
 

@@ -18,9 +18,9 @@
 
 **permissionResolver**: *`object`*
 
-*Defined in [controllers/graphql/resolvers/permission.ts:8](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/permission.ts#L8)*
+*Defined in [controllers/graphql/resolvers/permission.ts:8](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/permission.ts#L8)*
 
-Permissions resolver. Accepts input and converts it to commands for the permissions model.
+Permissions resolver Accepts input and converts it to commands for the permissions model
 
 <a id="permissionresolver.mutation"></a>
 
@@ -28,7 +28,7 @@ Permissions resolver. Accepts input and converts it to commands for the permissi
 
 **Mutation**: *`object`*
 
-*Defined in [controllers/graphql/resolvers/permission.ts:28](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/permission.ts#L28)*
+*Defined in [controllers/graphql/resolvers/permission.ts:28](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/permission.ts#L28)*
 
 <a id="permissionresolver.mutation.addaction"></a>
 
@@ -36,7 +36,7 @@ Permissions resolver. Accepts input and converts it to commands for the permissi
 
 ▸ **addAction**(parent: *`any`*, __namedParameters: *`object`*): `Promise`<[Permission](../classes/_models_permission_.permission.md)>
 
-*Defined in [controllers/graphql/resolvers/permission.ts:43](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/permission.ts#L43)*
+*Defined in [controllers/graphql/resolvers/permission.ts:43](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/permission.ts#L43)*
 
 Finds permission and pushes into this new action
 
@@ -60,7 +60,7 @@ ___
 
 ▸ **addRole**(parent: *`any`*, __namedParameters: *`object`*): `Promise`<[Permission](../classes/_models_permission_.permission.md)>
 
-*Defined in [controllers/graphql/resolvers/permission.ts:34](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/permission.ts#L34)*
+*Defined in [controllers/graphql/resolvers/permission.ts:34](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/permission.ts#L34)*
 
 Creates new permission by role and actions
 
@@ -84,7 +84,7 @@ ___
 
 ▸ **deleteAction**(parent: *`any`*, __namedParameters: *`object`*): `Promise`<[Permission](../classes/_models_permission_.permission.md)>
 
-*Defined in [controllers/graphql/resolvers/permission.ts:64](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/permission.ts#L64)*
+*Defined in [controllers/graphql/resolvers/permission.ts:64](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/permission.ts#L64)*
 
 Finds permission and pulls from this given action
 
@@ -108,7 +108,7 @@ ___
 
 ▸ **deleteRole**(parent: *`any`*, __namedParameters: *`object`*): `Promise`<[Permission](../classes/_models_permission_.permission.md)>
 
-*Defined in [controllers/graphql/resolvers/permission.ts:54](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/permission.ts#L54)*
+*Defined in [controllers/graphql/resolvers/permission.ts:54](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/permission.ts#L54)*
 
 Deletes permission by given role
 
@@ -133,7 +133,7 @@ ___
 
 **Query**: *`object`*
 
-*Defined in [controllers/graphql/resolvers/permission.ts:9](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/permission.ts#L9)*
+*Defined in [controllers/graphql/resolvers/permission.ts:9](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/permission.ts#L9)*
 
 <a id="permissionresolver.query.actions"></a>
 
@@ -141,7 +141,7 @@ ___
 
 ▸ **actions**(parent: *`any`*, __namedParameters: *`object`*): `Promise`<[Permission](../classes/_models_permission_.permission.md)>
 
-*Defined in [controllers/graphql/resolvers/permission.ts:23](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/permission.ts#L23)*
+*Defined in [controllers/graphql/resolvers/permission.ts:23](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/permission.ts#L23)*
 
 Returns permission by role
 
@@ -164,7 +164,7 @@ ___
 
 ▸ **roles**(): `Promise`<[Permission](../classes/_models_permission_.permission.md)[]>
 
-*Defined in [controllers/graphql/resolvers/permission.ts:15](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/permission.ts#L15)*
+*Defined in [controllers/graphql/resolvers/permission.ts:15](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/permission.ts#L15)*
 
 Returns all roles
 

@@ -23,7 +23,7 @@
 
 **● body**: *`object`*
 
-*Defined in [config/startParser.ts:23](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/config/startParser.ts#L23)*
+*Defined in [config/startParser.ts:23](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/config/startParser.ts#L23)*
 
 #### Type declaration
 
@@ -44,7 +44,7 @@ ___
 
 **● interval**: *`number`*
 
-*Defined in [config/startParser.ts:30](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/config/startParser.ts#L30)*
+*Defined in [config/startParser.ts:30](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/config/startParser.ts#L30)*
 
 ___
 

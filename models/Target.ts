@@ -7,7 +7,7 @@ import { prop, post, Typegoose } from 'typegoose';
 mongoose.Promise = require('bluebird');
 
 /**
- * A model definition. Represents a database targets.
+ * A model definition. Represents a database targets
  */
 
 @post<Target>('save', (doc): void => {

@@ -89,7 +89,11 @@ const OSMGeocoder = async ({ place, city, country }): Promise <ResultLocations> 
  * Geocode given locations
  */
 
-export default async (places, country = defaultCountry, city = defaultCity): Promise <Place[]> => {
+const geocodeLocations = async (
+  places: string[],
+  country = defaultCountry,
+  city = defaultCity,
+): Promise <Place[]> => {
   const result = [];
 
   await Promise.all(places.map(async (place): Promise <void> => {
@@ -123,3 +127,5 @@ export default async (places, country = defaultCountry, city = defaultCity): Pro
 
   return result;
 };
+
+export default geocodeLocations;

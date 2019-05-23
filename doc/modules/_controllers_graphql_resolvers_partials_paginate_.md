@@ -22,7 +22,7 @@
 
 ▸ **paginate**(cr: *`any`*, lt: *`any`*): [Paginate](../interfaces/_controllers_graphql_resolvers_partials_paginate_.paginate.md)
 
-*Defined in [controllers/graphql/resolvers/partials/paginate.ts:10](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/partials/paginate.ts#L10)*
+*Defined in [controllers/graphql/resolvers/partials/paginate.ts:10](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/partials/paginate.ts#L10)*
 
 Returns pagination query depending on cursor and/or limit
 

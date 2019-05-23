@@ -4,7 +4,7 @@ import { prop, Typegoose } from 'typegoose';
 mongoose.Promise = require('bluebird');
 
 /**
- * A model definition. Represents a database for permissions.
+ * A model definition. Represents a database for permissions
  */
 
 export class Permission extends Typegoose {

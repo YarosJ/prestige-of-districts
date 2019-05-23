@@ -25,7 +25,7 @@
   schemaOptions: { usePushEach: true }, // Currently is not supported by typegoose
 })
 
-*Defined in [models/Failure.ts:28](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/models/Failure.ts#L28)*
+*Defined in [models/Failure.ts:28](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/models/Failure.ts#L28)*
 
 ___
 

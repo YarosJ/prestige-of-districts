@@ -22,7 +22,7 @@
 
 **● debugFailures**: *`any`* =  debug('failuresController')
 
-*Defined in [controllers/graphql/resolvers/failure.ts:8](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/failure.ts#L8)*
+*Defined in [controllers/graphql/resolvers/failure.ts:8](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/failure.ts#L8)*
 
 ___
 
@@ -34,9 +34,9 @@ ___
 
 **failureResolver**: *`object`*
 
-*Defined in [controllers/graphql/resolvers/failure.ts:15](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/failure.ts#L15)*
+*Defined in [controllers/graphql/resolvers/failure.ts:15](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/failure.ts#L15)*
 
-Failures resolver. Accepts input and converts it to commands for the failures model.
+Failures resolver Accepts input and converts it to commands for the failures model
 
 <a id="failureresolver.mutation"></a>
 
@@ -44,7 +44,7 @@ Failures resolver. Accepts input and converts it to commands for the failures mo
 
 **Mutation**: *`object`*
 
-*Defined in [controllers/graphql/resolvers/failure.ts:52](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/failure.ts#L52)*
+*Defined in [controllers/graphql/resolvers/failure.ts:52](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/failure.ts#L52)*
 
 <a id="failureresolver.mutation.addfailure"></a>
 
@@ -52,7 +52,7 @@ Failures resolver. Accepts input and converts it to commands for the failures mo
 
 ▸ **addFailure**(parent: *`any`*, __namedParameters: *`object`*): `Promise`<[Failure](../classes/_models_failure_.failure.md)>
 
-*Defined in [controllers/graphql/resolvers/failure.ts:58](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/failure.ts#L58)*
+*Defined in [controllers/graphql/resolvers/failure.ts:58](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/failure.ts#L58)*
 
 Creates new failure by given params
 
@@ -81,7 +81,7 @@ ___
 
 ▸ **removeFailure**(parent: *`any`*, __namedParameters: *`object`*): `Promise`<[Failure](../classes/_models_failure_.failure.md)>
 
-*Defined in [controllers/graphql/resolvers/failure.ts:80](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/failure.ts#L80)*
+*Defined in [controllers/graphql/resolvers/failure.ts:80](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/failure.ts#L80)*
 
 Deletes failure by id or another given params
 
@@ -110,7 +110,7 @@ ___
 
 **Query**: *`object`*
 
-*Defined in [controllers/graphql/resolvers/failure.ts:16](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/failure.ts#L16)*
+*Defined in [controllers/graphql/resolvers/failure.ts:16](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/failure.ts#L16)*
 
 <a id="failureresolver.query.failures"></a>
 
@@ -118,7 +118,7 @@ ___
 
 ▸ **failures**(parent: *`any`*, __namedParameters: *`object`*): `Promise`<[Failure](../classes/_models_failure_.failure.md)[]>
 
-*Defined in [controllers/graphql/resolvers/failure.ts:22](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/failure.ts#L22)*
+*Defined in [controllers/graphql/resolvers/failure.ts:22](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/failure.ts#L22)*
 
 Returns failures filtered by given params
 

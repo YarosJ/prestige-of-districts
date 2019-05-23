@@ -8,8 +8,8 @@ import dateQueryFromRange from './partials/dateQueryFromRange';
 const debugMessages = debug('messagesController');
 
 /**
- * Messages resolver.
- * Accepts input and converts it to commands for the messages model.
+ * Messages resolver
+ * Accepts input and converts it to commands for the messages model
  */
 
 const messageResolver = {

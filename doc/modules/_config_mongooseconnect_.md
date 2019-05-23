@@ -18,7 +18,7 @@
 
 ▸ **connect**(mongoose: *`any`*, process: *`any`*, callback: *`any`*): `void`
 
-*Defined in [config/mongooseConnect.ts:9](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/config/mongooseConnect.ts#L9)*
+*Defined in [config/mongooseConnect.ts:9](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/config/mongooseConnect.ts#L9)*
 
 Configure a mongoose connection
 

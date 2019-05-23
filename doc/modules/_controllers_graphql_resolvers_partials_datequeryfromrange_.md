@@ -22,7 +22,7 @@
 
 ▸ **query**(dateRange: *`any`*): [DateQuery](../interfaces/_controllers_graphql_resolvers_partials_datequeryfromrange_.datequery.md)
 
-*Defined in [controllers/graphql/resolvers/partials/dateQueryFromRange.ts:12](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/partials/dateQueryFromRange.ts#L12)*
+*Defined in [controllers/graphql/resolvers/partials/dateQueryFromRange.ts:12](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/partials/dateQueryFromRange.ts#L12)*
 
 Returns query by dateRange or for all dates if dateRange not given
 

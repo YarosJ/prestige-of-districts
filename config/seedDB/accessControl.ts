@@ -40,7 +40,7 @@ const roles = [
 ];
 
 /**
- * Sowing access control
+ * Seed access control
  * @param permanent - if this parameter true all old access control will be deleted
  */
 

@@ -22,9 +22,9 @@
 
 **totalResolver**: *`object`*
 
-*Defined in [controllers/graphql/resolvers/total.ts:14](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/total.ts#L14)*
+*Defined in [controllers/graphql/resolvers/total.ts:14](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/total.ts#L14)*
 
-Total resolver. Returns database entry count for received model name.
+Total resolver Returns database entry count for received model name
 
 <a id="totalresolver.query"></a>
 
@@ -32,7 +32,7 @@ Total resolver. Returns database entry count for received model name.
 
 **Query**: *`object`*
 
-*Defined in [controllers/graphql/resolvers/total.ts:15](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/total.ts#L15)*
+*Defined in [controllers/graphql/resolvers/total.ts:15](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/total.ts#L15)*
 
 <a id="totalresolver.query.total-1"></a>
 
@@ -40,7 +40,7 @@ Total resolver. Returns database entry count for received model name.
 
 ▸ **total**(parent: *`any`*, __namedParameters: *`object`*): `Promise`<[Total](../interfaces/_controllers_graphql_resolvers_total_.total.md)>
 
-*Defined in [controllers/graphql/resolvers/total.ts:21](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/total.ts#L21)*
+*Defined in [controllers/graphql/resolvers/total.ts:21](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/total.ts#L21)*
 
 Returns count documents of target
 

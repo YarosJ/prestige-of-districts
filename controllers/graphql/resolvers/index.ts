@@ -8,7 +8,7 @@ import selector from './selector';
 import total from './total';
 
 /**
- * Here export resolvers for apollo server.
+ * Here export resolvers for apollo server
  */
 
 const resolvers = [

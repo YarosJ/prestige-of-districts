@@ -36,7 +36,7 @@ Establishes AMQP connection and make able to send and receive messages from queu
 
 ⊕ **new AMQPChannel**(config: *`any`*): [AMQPChannel](_libs_amqpchannel_index_.amqpchannel.md)
 
-*Defined in [libs/AMQPChannel/index.ts:14](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/libs/AMQPChannel/index.ts#L14)*
+*Defined in [libs/AMQPChannel/index.ts:14](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/libs/AMQPChannel/index.ts#L14)*
 
 **Parameters:**
 
@@ -56,7 +56,7 @@ ___
 
 **● channel**: *`any`*
 
-*Defined in [libs/AMQPChannel/index.ts:14](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/libs/AMQPChannel/index.ts#L14)*
+*Defined in [libs/AMQPChannel/index.ts:14](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/libs/AMQPChannel/index.ts#L14)*
 
 ___
 <a id="host"></a>
@@ -65,7 +65,7 @@ ___
 
 **● host**: *`string`*
 
-*Defined in [libs/AMQPChannel/index.ts:12](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/libs/AMQPChannel/index.ts#L12)*
+*Defined in [libs/AMQPChannel/index.ts:12](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/libs/AMQPChannel/index.ts#L12)*
 
 ___
 <a id="queuename"></a>
@@ -74,7 +74,7 @@ ___
 
 **● queueName**: *`string`*
 
-*Defined in [libs/AMQPChannel/index.ts:10](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/libs/AMQPChannel/index.ts#L10)*
+*Defined in [libs/AMQPChannel/index.ts:10](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/libs/AMQPChannel/index.ts#L10)*
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 ▸ **connect**(): `Promise`<[AMQPChannel](_libs_amqpchannel_index_.amqpchannel.md)>
 
-*Defined in [libs/AMQPChannel/index.ts:21](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/libs/AMQPChannel/index.ts#L21)*
+*Defined in [libs/AMQPChannel/index.ts:21](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/libs/AMQPChannel/index.ts#L21)*
 
 **Returns:** `Promise`<[AMQPChannel](_libs_amqpchannel_index_.amqpchannel.md)>
 
@@ -97,7 +97,7 @@ ___
 
 ▸ **consume**(callback: *`any`*): [AMQPChannel](_libs_amqpchannel_index_.amqpchannel.md)
 
-*Defined in [libs/AMQPChannel/index.ts:31](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/libs/AMQPChannel/index.ts#L31)*
+*Defined in [libs/AMQPChannel/index.ts:31](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/libs/AMQPChannel/index.ts#L31)*
 
 **Parameters:**
 
@@ -114,7 +114,7 @@ ___
 
 ▸ **sendToQueue**(data: *`any`*): [AMQPChannel](_libs_amqpchannel_index_.amqpchannel.md)
 
-*Defined in [libs/AMQPChannel/index.ts:39](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/libs/AMQPChannel/index.ts#L39)*
+*Defined in [libs/AMQPChannel/index.ts:39](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/libs/AMQPChannel/index.ts#L39)*
 
 **Parameters:**
 

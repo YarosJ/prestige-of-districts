@@ -1,8 +1,8 @@
 import { Permission, PermissionModel } from '../../../models/Permission';
 
 /**
- * Permissions resolver.
- * Accepts input and converts it to commands for the permissions model.
+ * Permissions resolver
+ * Accepts input and converts it to commands for the permissions model
  */
 
 const permissionResolver = {

@@ -20,6 +20,7 @@
 ### Functions
 
 * [OSMGeocoder](_helpers_geolocation_geocodelocations_.md#osmgeocoder)
+* [geocodeLocations](_helpers_geolocation_geocodelocations_.md#geocodelocations)
 * [hereGeocoder](_helpers_geolocation_geocodelocations_.md#heregeocoder)
 
 ---
@@ -32,7 +33,7 @@
 
 **● configGeocoders**: *`object`* =  config.geolocation.geocoders
 
-*Defined in [helpers/geolocation/geocodeLocations.ts:8](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/helpers/geolocation/geocodeLocations.ts#L8)*
+*Defined in [helpers/geolocation/geocodeLocations.ts:8](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/helpers/geolocation/geocodeLocations.ts#L8)*
 
 #### Type declaration
 
@@ -55,7 +56,7 @@ ___
 
 **● defaultCity**: *`string`*
 
-*Defined in [helpers/geolocation/geocodeLocations.ts:7](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/helpers/geolocation/geocodeLocations.ts#L7)*
+*Defined in [helpers/geolocation/geocodeLocations.ts:7](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/helpers/geolocation/geocodeLocations.ts#L7)*
 
 ___
 <a id="defaultcountry"></a>
@@ -64,7 +65,7 @@ ___
 
 **● defaultCountry**: *`string`*
 
-*Defined in [helpers/geolocation/geocodeLocations.ts:7](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/helpers/geolocation/geocodeLocations.ts#L7)*
+*Defined in [helpers/geolocation/geocodeLocations.ts:7](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/helpers/geolocation/geocodeLocations.ts#L7)*
 
 ___
 <a id="geolocation"></a>
@@ -73,7 +74,7 @@ ___
 
 **● geolocation**: *`object`*
 
-*Defined in [helpers/geolocation/geocodeLocations.ts:7](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/helpers/geolocation/geocodeLocations.ts#L7)*
+*Defined in [helpers/geolocation/geocodeLocations.ts:7](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/helpers/geolocation/geocodeLocations.ts#L7)*
 
 #### Type declaration
 
@@ -91,7 +92,7 @@ ___
 
 ▸ **OSMGeocoder**(__namedParameters: *`object`*): `Promise`<[ResultLocations](../interfaces/_helpers_geolocation_geocodelocations_.resultlocations.md)>
 
-*Defined in [helpers/geolocation/geocodeLocations.ts:53](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/helpers/geolocation/geocodeLocations.ts#L53)*
+*Defined in [helpers/geolocation/geocodeLocations.ts:53](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/helpers/geolocation/geocodeLocations.ts#L53)*
 
 Geocode place using OSM API
 
@@ -108,13 +109,34 @@ Geocode place using OSM API
 **Returns:** `Promise`<[ResultLocations](../interfaces/_helpers_geolocation_geocodelocations_.resultlocations.md)>
 
 ___
+<a id="geocodelocations"></a>
+
+### `<Const>` geocodeLocations
+
+▸ **geocodeLocations**(places: *`string`[]*, country?: *`string`*, city?: *`string`*): `Promise`<[Place](../interfaces/_helpers_geolocation_geocodelocations_.place.md)[]>
+
+*Defined in [helpers/geolocation/geocodeLocations.ts:92](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/helpers/geolocation/geocodeLocations.ts#L92)*
+
+Geocode given locations
+
+**Parameters:**
+
+| Name | Type | Default value |
+| ------ | ------ | ------ |
+| places | `string`[] | - |
+| `Default value` country | `string` |  defaultCountry |
+| `Default value` city | `string` |  defaultCity |
+
+**Returns:** `Promise`<[Place](../interfaces/_helpers_geolocation_geocodelocations_.place.md)[]>
+
+___
 <a id="heregeocoder"></a>
 
 ### `<Const>` hereGeocoder
 
 ▸ **hereGeocoder**(__namedParameters: *`object`*): `Promise`<[ResultLocations](../interfaces/_helpers_geolocation_geocodelocations_.resultlocations.md)>
 
-*Defined in [helpers/geolocation/geocodeLocations.ts:31](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/helpers/geolocation/geocodeLocations.ts#L31)*
+*Defined in [helpers/geolocation/geocodeLocations.ts:31](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/helpers/geolocation/geocodeLocations.ts#L31)*
 
 Geocode place using here API
 

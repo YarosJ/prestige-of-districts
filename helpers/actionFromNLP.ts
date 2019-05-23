@@ -1,3 +1,8 @@
+/**
+ * Sorts categories descending
+ * @param cats
+ */
+
 const sortCategories = (cats): string[] => Object.keys(cats)
   .sort((a, b): number => cats[b] - cats[a]);
 
@@ -13,7 +18,12 @@ interface Action {
   };
 }
 
-export default (data): Action => {
+/**
+ * Returns action with bigger value from NLP with payload
+ * @param data - NLP data
+ */
+
+const action = (data): Action => {
   // Adapting received data for dispatcher
   const jsonData = JSON.parse(data);
   const sortedCats = sortCategories(jsonData.result_cats);
@@ -31,3 +41,5 @@ export default (data): Action => {
     },
   });
 };
+
+export default action;

@@ -23,9 +23,9 @@
 
 **userResolver**: *`object`*
 
-*Defined in [controllers/graphql/resolvers/user.ts:25](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/user.ts#L25)*
+*Defined in [controllers/graphql/resolvers/user.ts:25](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/user.ts#L25)*
 
-Users resolver. Accepts input and converts it to commands for the users model.
+Users resolver Accepts input and converts it to commands for the users model
 
 <a id="userresolver.mutation"></a>
 
@@ -33,7 +33,7 @@ Users resolver. Accepts input and converts it to commands for the users model.
 
 **Mutation**: *`object`*
 
-*Defined in [controllers/graphql/resolvers/user.ts:49](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/user.ts#L49)*
+*Defined in [controllers/graphql/resolvers/user.ts:49](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/user.ts#L49)*
 
 <a id="userresolver.mutation.deleteuser"></a>
 
@@ -41,7 +41,7 @@ Users resolver. Accepts input and converts it to commands for the users model.
 
 ▸ **deleteUser**(parent: *`any`*, __namedParameters: *`object`*): `Promise`<[User](../classes/_models_user_.user.md)>
 
-*Defined in [controllers/graphql/resolvers/user.ts:147](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/user.ts#L147)*
+*Defined in [controllers/graphql/resolvers/user.ts:147](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/user.ts#L147)*
 
 Deletes user by given id
 
@@ -64,7 +64,7 @@ ___
 
 ▸ **logOut**(parent: *`any`*, __namedParameters: *`object`*): `Promise`<`boolean`>
 
-*Defined in [controllers/graphql/resolvers/user.ts:113](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/user.ts#L113)*
+*Defined in [controllers/graphql/resolvers/user.ts:113](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/user.ts#L113)*
 
 Adds access and refresh token to blacklist
 
@@ -88,7 +88,7 @@ ___
 
 ▸ **refreshToken**(parent: *`any`*, __namedParameters: *`object`*): `Promise`<[RefreshToken](../interfaces/_controllers_graphql_resolvers_user_.refreshtoken.md)>
 
-*Defined in [controllers/graphql/resolvers/user.ts:99](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/user.ts#L99)*
+*Defined in [controllers/graphql/resolvers/user.ts:99](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/user.ts#L99)*
 
 Returns new access token by refresh token
 
@@ -111,7 +111,7 @@ ___
 
 ▸ **signIn**(parent: *`any`*, __namedParameters: *`object`*): `Promise`<[SignIn](../interfaces/_controllers_graphql_resolvers_user_.signin.md)>
 
-*Defined in [controllers/graphql/resolvers/user.ts:72](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/user.ts#L72)*
+*Defined in [controllers/graphql/resolvers/user.ts:72](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/user.ts#L72)*
 
 Checks given email and password and returns new access and refresh token
 
@@ -135,7 +135,7 @@ ___
 
 ▸ **signUp**(parent: *`any`*, __namedParameters: *`object`*): `Promise`<[User](../classes/_models_user_.user.md)>
 
-*Defined in [controllers/graphql/resolvers/user.ts:55](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/user.ts#L55)*
+*Defined in [controllers/graphql/resolvers/user.ts:55](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/user.ts#L55)*
 
 Creates new user in DB
 
@@ -159,7 +159,7 @@ ___
 
 ▸ **updateUser**(parent: *`any`*, __namedParameters: *`object`*): `Promise`<[User](../classes/_models_user_.user.md)>
 
-*Defined in [controllers/graphql/resolvers/user.ts:123](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/user.ts#L123)*
+*Defined in [controllers/graphql/resolvers/user.ts:123](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/user.ts#L123)*
 
 Finds user by given id and update him by given params
 
@@ -187,7 +187,7 @@ ___
 
 **Query**: *`object`*
 
-*Defined in [controllers/graphql/resolvers/user.ts:26](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/user.ts#L26)*
+*Defined in [controllers/graphql/resolvers/user.ts:26](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/user.ts#L26)*
 
 <a id="userresolver.query.user"></a>
 
@@ -195,7 +195,7 @@ ___
 
 ▸ **user**(parent: *`any`*, __namedParameters: *`object`*): [User](../classes/_models_user_.user.md)
 
-*Defined in [controllers/graphql/resolvers/user.ts:42](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/user.ts#L42)*
+*Defined in [controllers/graphql/resolvers/user.ts:42](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/user.ts#L42)*
 
 Finds user by given id
 
@@ -218,7 +218,7 @@ ___
 
 ▸ **users**(parent: *`any`*, __namedParameters: *`object`*): [User](../classes/_models_user_.user.md)[]
 
-*Defined in [controllers/graphql/resolvers/user.ts:32](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/user.ts#L32)*
+*Defined in [controllers/graphql/resolvers/user.ts:32](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/user.ts#L32)*
 
 Finds users and paginate by cursor and limit
 

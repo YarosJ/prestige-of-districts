@@ -13,10 +13,10 @@ const getGraphQLAction = (queryString: string): string => gql(queryString)
   .definitions[0].selectionSet.selections[0].name.value;
 
 /**
- * Authorization by session or JWT, depending of the header "Authorization"
+ * Authorization by JWT from the header "Authorization"
  */
 
-export default async ({ req, res, connection }): Promise <ServerResponse | {}> => {
+const context = async ({ req, res, connection }): Promise <ServerResponse | {}> => {
   if (connection) return {};
 
   let role: string;
@@ -42,3 +42,5 @@ export default async ({ req, res, connection }): Promise <ServerResponse | {}> =
 
   return res;
 };
+
+export default context;

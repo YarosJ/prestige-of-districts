@@ -2,18 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e48be22d-a086-484b-9a46-2a2d4e5401ca" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/controllers/ActionDispatcher.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ActionDispatcher.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/graphql/schema/failure.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/graphql/schema/failure.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/graphql/schema/globalTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/graphql/schema/globalTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/graphql/schema/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/graphql/schema/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/graphql/schema/message.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/graphql/schema/message.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/graphql/schema/permission.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/graphql/schema/permission.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/graphql/schema/screenshot.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/graphql/schema/screenshot.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/graphql/schema/selector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/graphql/schema/selector.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/graphql/schema/target.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/graphql/schema/target.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/graphql/schema/total.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/graphql/schema/total.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/graphql/schema/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/graphql/schema/user.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/seedDB/accessControl.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config/seedDB/accessControl.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/seedDB/admin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config/seedDB/admin.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/startParser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config/startParser.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/graphql/resolvers/failure.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/graphql/resolvers/failure.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/graphql/resolvers/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/graphql/resolvers/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/graphql/resolvers/message.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/graphql/resolvers/message.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/graphql/resolvers/permission.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/graphql/resolvers/permission.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/graphql/resolvers/screenshot.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/graphql/resolvers/screenshot.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/graphql/resolvers/selector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/graphql/resolvers/selector.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/graphql/resolvers/target.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/graphql/resolvers/target.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/graphql/resolvers/total.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/graphql/resolvers/total.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/graphql/resolvers/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/graphql/resolvers/user.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/classes/_controllers_actiondispatcher_.actiondispatcher.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/classes/_controllers_actiondispatcher_.actiondispatcher.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/classes/_libs_amqpchannel_index_.amqpchannel.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/classes/_libs_amqpchannel_index_.amqpchannel.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/classes/_libs_scraper_index_.scraper.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/classes/_libs_scraper_index_.scraper.md" afterDir="false" />
@@ -60,27 +62,34 @@
       <change beforePath="$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_target_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_target_.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_total_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_total_.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_user_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_user_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_controllers_graphql_schema_failure_.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_controllers_graphql_schema_globaltypes_.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_controllers_graphql_schema_index_.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_controllers_graphql_schema_message_.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_controllers_graphql_schema_permission_.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_controllers_graphql_schema_screenshot_.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_controllers_graphql_schema_selector_.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_controllers_graphql_schema_target_.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_controllers_graphql_schema_total_.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_controllers_graphql_schema_user_.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/modules/_helpers_actionfromnlp_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_helpers_actionfromnlp_.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/modules/_helpers_authentication_apollocontext_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_helpers_authentication_apollocontext_.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/modules/_helpers_authentication_checkpermissions_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_helpers_authentication_checkpermissions_.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/modules/_helpers_geolocation_geocodelocations_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_helpers_geolocation_geocodelocations_.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/modules/_helpers_geolocation_replaceabbreviations_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_helpers_geolocation_replaceabbreviations_.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/modules/_helpers_geolocation_sanitizelocation_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_helpers_geolocation_sanitizelocation_.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/modules/_helpers_isalreadyscraped_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_helpers_isalreadyscraped_.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/modules/_helpers_isodate_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_helpers_isodate_.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/modules/_models_failure_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_models_failure_.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/modules/_models_lastscraped_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_models_lastscraped_.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/modules/_models_message_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_models_message_.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/modules/_models_permission_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_models_permission_.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/modules/_models_target_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_models_target_.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/modules/_models_user_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_models_user_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/typedoc.json" beforeDir="false" afterPath="$PROJECT_DIR$/typedoc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/ISODate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/ISODate.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/actionFromNLP.ts" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/actionFromNLP.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/authentication/apolloContext.ts" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/authentication/apolloContext.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/authentication/checkPermissions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/authentication/checkPermissions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/geolocation/geocodeLocations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/geolocation/geocodeLocations.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/geolocation/replaceAbbreviations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/geolocation/replaceAbbreviations.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/geolocation/sanitizeLocation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/geolocation/sanitizeLocation.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/isAlreadyScraped.ts" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/isAlreadyScraped.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Failure.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/Failure.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/LastScraped.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/LastScraped.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Message.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/Message.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Permission.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/Permission.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Target.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/Target.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -94,10 +103,13 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/typedoc.json">
+        <entry file="file://$PROJECT_DIR$/config/startParser.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="231">
+              <caret line="84" column="12" selection-start-line="84" selection-start-column="12" selection-end-line="84" selection-end-column="12" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -115,14 +127,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>BUILD_DIR</find>
-      <find>refetch</find>
-      <find>data</find>
-      <find>elevationScale</find>
-      <find>viewState</find>
-      <find>role</find>
-      <find>action</find>
-      <find>user</find>
       <find>key</find>
       <find>apolloClient</find>
       <find>routes</find>
@@ -145,6 +149,14 @@
       <find>seedFailures</find>
       <find>seedAdmin</find>
       <find>seedAccessControl</find>
+      <find>scraped</find>
+      <find>action</find>
+      <find>sanitize</find>
+      <find>replace</find>
+      <find>geocoder</find>
+      <find>geocodeLo</find>
+      <find>geocodeLocations</find>
+      <find>context</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -153,45 +165,18 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/controllers/graphql/schema/subfields/Location.ts" />
-        <option value="$PROJECT_DIR$/helpers/graphQL/paginate.ts" />
-        <option value="$PROJECT_DIR$/controllers/graphql/resolvers/partials/validateInput.ts" />
-        <option value="$PROJECT_DIR$/models/Message.ts" />
-        <option value="$PROJECT_DIR$/models/User.ts" />
-        <option value="$PROJECT_DIR$/models/LastScraped.ts" />
-        <option value="$PROJECT_DIR$/types/index.d.ts" />
-        <option value="$PROJECT_DIR$/types/global.d.ts" />
-        <option value="$PROJECT_DIR$/global.d.ts" />
-        <option value="$PROJECT_DIR$/tsconfig.json" />
         <option value="$PROJECT_DIR$/index.d.ts" />
         <option value="$PROJECT_DIR$/.eslintrc.json" />
-        <option value="$PROJECT_DIR$/models/Target.ts" />
-        <option value="$PROJECT_DIR$/helpers/isAlreadyScraped.ts" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/.gitmodules" />
-        <option value="$PROJECT_DIR$/models/Permission.ts" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
-        <option value="$PROJECT_DIR$/app.ts" />
-        <option value="$PROJECT_DIR$/models/Failure.ts" />
         <option value="$PROJECT_DIR$/config/debugMongooseConnection.ts" />
         <option value="$PROJECT_DIR$/config/mongooseConnect.ts" />
-        <option value="$PROJECT_DIR$/config/startParser.ts" />
-        <option value="$PROJECT_DIR$/controllers/graphql/resolvers/failure.ts" />
-        <option value="$PROJECT_DIR$/controllers/graphql/resolvers/message.ts" />
-        <option value="$PROJECT_DIR$/controllers/graphql/resolvers/permission.ts" />
-        <option value="$PROJECT_DIR$/controllers/graphql/resolvers/screenshot.ts" />
-        <option value="$PROJECT_DIR$/controllers/graphql/resolvers/selector.ts" />
-        <option value="$PROJECT_DIR$/controllers/graphql/resolvers/target.ts" />
-        <option value="$PROJECT_DIR$/controllers/graphql/resolvers/total.ts" />
-        <option value="$PROJECT_DIR$/controllers/graphql/resolvers/user.ts" />
         <option value="$PROJECT_DIR$/controllers/graphql/resolvers/partials/dateQueryFromRange.ts" />
         <option value="$PROJECT_DIR$/controllers/graphql/resolvers/partials/paginate.ts" />
         <option value="$PROJECT_DIR$/controllers/graphql/resolvers/partials/validateQuery.ts" />
-        <option value="$PROJECT_DIR$/controllers/graphql/resolvers/index.ts" />
         <option value="$PROJECT_DIR$/config/seedDB/index.ts" />
         <option value="$PROJECT_DIR$/config/seedDB/failures.ts" />
-        <option value="$PROJECT_DIR$/config/seedDB/admin.ts" />
-        <option value="$PROJECT_DIR$/config/seedDB/accessControl.ts" />
         <option value="$PROJECT_DIR$/controllers/ActionDispatcher.ts" />
         <option value="$PROJECT_DIR$/controllers/graphql/schema/failure.ts" />
         <option value="$PROJECT_DIR$/controllers/graphql/schema/globalTypes.ts" />
@@ -204,6 +189,33 @@
         <option value="$PROJECT_DIR$/controllers/graphql/schema/total.ts" />
         <option value="$PROJECT_DIR$/controllers/graphql/schema/user.ts" />
         <option value="$PROJECT_DIR$/typedoc.json" />
+        <option value="$PROJECT_DIR$/helpers/actionFromNLP.ts" />
+        <option value="$PROJECT_DIR$/helpers/geolocation/geocodeLocations.ts" />
+        <option value="$PROJECT_DIR$/helpers/authentication/apolloContext.ts" />
+        <option value="$PROJECT_DIR$/helpers/authentication/checkPermissions.ts" />
+        <option value="$PROJECT_DIR$/helpers/geolocation/replaceAbbreviations.ts" />
+        <option value="$PROJECT_DIR$/helpers/geolocation/sanitizeLocation.ts" />
+        <option value="$PROJECT_DIR$/helpers/isAlreadyScraped.ts" />
+        <option value="$PROJECT_DIR$/helpers/ISODate.ts" />
+        <option value="$PROJECT_DIR$/models/Failure.ts" />
+        <option value="$PROJECT_DIR$/models/LastScraped.ts" />
+        <option value="$PROJECT_DIR$/models/Message.ts" />
+        <option value="$PROJECT_DIR$/models/Permission.ts" />
+        <option value="$PROJECT_DIR$/models/Target.ts" />
+        <option value="$PROJECT_DIR$/models/User.ts" />
+        <option value="$PROJECT_DIR$/controllers/graphql/resolvers/failure.ts" />
+        <option value="$PROJECT_DIR$/controllers/graphql/resolvers/index.ts" />
+        <option value="$PROJECT_DIR$/controllers/graphql/resolvers/message.ts" />
+        <option value="$PROJECT_DIR$/controllers/graphql/resolvers/permission.ts" />
+        <option value="$PROJECT_DIR$/controllers/graphql/resolvers/screenshot.ts" />
+        <option value="$PROJECT_DIR$/controllers/graphql/resolvers/selector.ts" />
+        <option value="$PROJECT_DIR$/controllers/graphql/resolvers/target.ts" />
+        <option value="$PROJECT_DIR$/controllers/graphql/resolvers/total.ts" />
+        <option value="$PROJECT_DIR$/controllers/graphql/resolvers/user.ts" />
+        <option value="$PROJECT_DIR$/config/seedDB/admin.ts" />
+        <option value="$PROJECT_DIR$/config/seedDB/accessControl.ts" />
+        <option value="$PROJECT_DIR$/app.ts" />
+        <option value="$PROJECT_DIR$/config/startParser.ts" />
       </list>
     </option>
   </component>
@@ -241,12 +253,7 @@
             <path>
               <item name="prestige-of-districts" type="b2602c69:ProjectViewProjectNode" />
               <item name="prestige-of-districts" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="prestige-of-districts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="prestige-of-districts" type="462c0819:PsiDirectoryNode" />
-              <item name="doc" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -359,12 +366,13 @@
       <workItem from="1558390602084" duration="1757000" />
       <workItem from="1558430291924" duration="555000" />
       <workItem from="1558461877840" duration="6735000" />
-      <workItem from="1558539885899" duration="11308000" />
+      <workItem from="1558539885899" duration="12000000" />
+      <workItem from="1558590950826" duration="4930000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="567355000" />
+    <option name="totallyTimeSpent" value="572977000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="6" />
@@ -396,362 +404,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/doc/classes/location.md" />
-    <entry file="file://$PROJECT_DIR$/doc/classes/actiondispatcher.md" />
-    <entry file="file://$PROJECT_DIR$/doc/modules/_config_debugmongooseconnection_.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/modules/_config_mongooseconnect_.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/interfaces/_config_startparser_.task.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="https://schemastore.azurewebsites.net/schemas/json/typedoc.json">
-      <provider selected="true" editor-type-id="httpFileEditor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/interfaces/_controllers_graphql_resolvers_screenshot_.screenshot.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/modules/_helpers_authentication_apollocontext_.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/modules/_config_startparser_.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="185">
-            <caret line="54" selection-start-line="54" selection-end-line="54" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/debugMongooseConnection.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/mongooseConnect.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="e#0#64#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/startParser.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="33" column="16" lean-forward="true" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#68#115#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/modules/_config_seeddb_admin_.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/classes/_controllers_actiondispatcher_.actiondispatcher.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/graphql/resolvers/partials/dateQueryFromRange.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/graphql/resolvers/partials/paginate.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/graphql/resolvers/partials/validateQuery.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/graphql/resolvers/failure.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/graphql/resolvers/message.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2142">
-          <caret line="102" selection-start-line="102" selection-end-line="102" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/graphql/resolvers/permission.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/graphql/resolvers/screenshot.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/graphql/resolvers/selector.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/graphql/resolvers/target.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#0#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/graphql/resolvers/total.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/graphql/resolvers/user.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#68#104#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_permission_.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/modules/_controllers_actiondispatcher_.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="185">
-            <caret line="21" selection-start-line="21" selection-end-line="21" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_failure_.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="147">
-            <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/graphql/resolvers/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_index_.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/modules/_app_.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/seedDB/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/seedDB/failures.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/seedDB/admin.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/seedDB/accessControl.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#146#1370#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/modules/_config_seeddb_index_.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/ActionDispatcher.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#0#71#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/graphql/schema/failure.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/graphql/schema/globalTypes.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/graphql/schema/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/graphql/schema/message.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/graphql/schema/permission.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/graphql/schema/screenshot.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/graphql/schema/selector.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
@@ -783,7 +435,346 @@
     <entry file="file://$PROJECT_DIR$/tsconfig.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/doc/modules/_controllers_graphql_schema_failure_.md">
+    <entry file="file://$PROJECT_DIR$/doc/modules/_controllers_graphql_schema_failure_.md" />
+    <entry file="file://$PROJECT_DIR$/typedoc.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helpers/authentication/apolloContext.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-221">
+          <caret line="15" column="55" lean-forward="true" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helpers/authentication/checkPermissions.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="66" selection-start-line="3" selection-start-column="66" selection-end-line="3" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helpers/geolocation/geocodeLocations.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helpers/geolocation/replaceAbbreviations.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="80" selection-start-line="9" selection-start-column="80" selection-end-line="9" selection-end-column="80" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helpers/geolocation/sanitizeLocation.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="61" selection-start-line="3" selection-start-column="61" selection-end-line="3" selection-end-column="61" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helpers/actionFromNLP.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helpers/isAlreadyScraped.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-74">
+          <caret line="3" column="75" lean-forward="true" selection-start-line="3" selection-start-column="75" selection-end-line="3" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helpers/ISODate.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="29" lean-forward="true" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/AMQPChannel/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-536">
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/LastScraped.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="74" lean-forward="true" selection-start-line="6" selection-start-column="74" selection-end-line="6" selection-end-column="74" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Message.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11">
+          <caret line="7" column="53" lean-forward="true" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Permission.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="60" lean-forward="true" selection-start-line="6" selection-start-column="60" selection-end-line="6" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Target.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="52" lean-forward="true" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#68#105#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/User.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="23" column="55" lean-forward="true" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/graphql/resolvers/failure.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/graphql/resolvers/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="10" column="42" lean-forward="true" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/graphql/resolvers/message.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="67" lean-forward="true" selection-start-line="11" selection-start-column="67" selection-end-line="11" selection-end-column="67" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/graphql/resolvers/permission.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="70" lean-forward="true" selection-start-line="4" selection-start-column="70" selection-end-line="4" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/graphql/resolvers/screenshot.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" column="53" lean-forward="true" selection-start-line="13" selection-start-column="53" selection-end-line="13" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/graphql/resolvers/selector.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/graphql/resolvers/target.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="66" lean-forward="true" selection-start-line="5" selection-start-column="66" selection-end-line="5" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/graphql/resolvers/total.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/graphql/resolvers/user.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#68#104#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/graphql/resolvers/partials/dateQueryFromRange.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/graphql/resolvers/partials/paginate.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/graphql/resolvers/partials/validateQuery.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/graphql/schema/failure.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/ActionDispatcher.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#0#71#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/debugMongooseConnection.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/mongooseConnect.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/config.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/seedDB/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/seedDB/failures.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/seedDB/admin.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/seedDB/accessControl.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="44" column="3" lean-forward="true" selection-start-line="44" selection-start-column="3" selection-end-line="44" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#146#1370#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/classes/_models_subfields_location_.location.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/modules/_models_subfields_location_.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Failure.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/classes/_models_failure_.failure.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/modules/_models_failure_.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor />
@@ -801,10 +792,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/typedoc.json">
+    <entry file="file://$PROJECT_DIR$/models/subfields/Location.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="105">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/startParser.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="84" column="12" selection-start-line="84" selection-start-column="12" selection-end-line="84" selection-end-column="12" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

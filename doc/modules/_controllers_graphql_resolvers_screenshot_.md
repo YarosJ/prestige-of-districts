@@ -26,7 +26,7 @@
 
 **● pubSub**: *`PubSub`* =  new PubSub()
 
-*Defined in [controllers/graphql/resolvers/screenshot.ts:5](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/screenshot.ts#L5)*
+*Defined in [controllers/graphql/resolvers/screenshot.ts:5](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/screenshot.ts#L5)*
 
 ___
 
@@ -38,9 +38,9 @@ ___
 
 **screenshotResolver**: *`object`*
 
-*Defined in [controllers/graphql/resolvers/screenshot.ts:17](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/screenshot.ts#L17)*
+*Defined in [controllers/graphql/resolvers/screenshot.ts:17](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/screenshot.ts#L17)*
 
-Screenshot resolver. Returns Base64 image string depending on the input.
+Screenshot resolver Returns Base64 image string depending on the input
 
 <a id="screenshotresolver.query"></a>
 
@@ -48,7 +48,7 @@ Screenshot resolver. Returns Base64 image string depending on the input.
 
 **Query**: *`object`*
 
-*Defined in [controllers/graphql/resolvers/screenshot.ts:18](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/screenshot.ts#L18)*
+*Defined in [controllers/graphql/resolvers/screenshot.ts:18](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/screenshot.ts#L18)*
 
 <a id="screenshotresolver.query.screenshot-1"></a>
 
@@ -56,7 +56,7 @@ Screenshot resolver. Returns Base64 image string depending on the input.
 
 ▸ **screenshot**(parent: *`any`*, __namedParameters: *`object`*): `Promise`<[Screenshot](../interfaces/_controllers_graphql_resolvers_screenshot_.screenshot.md)>
 
-*Defined in [controllers/graphql/resolvers/screenshot.ts:24](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/screenshot.ts#L24)*
+*Defined in [controllers/graphql/resolvers/screenshot.ts:24](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/screenshot.ts#L24)*
 
 Returns screenshot of site by given URL in Base64 encoding
 
@@ -81,7 +81,7 @@ ___
 
 **Subscription**: *`object`*
 
-*Defined in [controllers/graphql/resolvers/screenshot.ts:35](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/screenshot.ts#L35)*
+*Defined in [controllers/graphql/resolvers/screenshot.ts:35](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/screenshot.ts#L35)*
 
 <a id="screenshotresolver.subscription.screenshotreceived"></a>
 
@@ -89,7 +89,7 @@ ___
 
 **screenshotReceived**: *`object`*
 
-*Defined in [controllers/graphql/resolvers/screenshot.ts:41](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/screenshot.ts#L41)*
+*Defined in [controllers/graphql/resolvers/screenshot.ts:41](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/screenshot.ts#L41)*
 
 Subscription (uses websocket) because this operation can be too much long
 
@@ -99,7 +99,7 @@ Subscription (uses websocket) because this operation can be too much long
 
 ▸ **subscribe**(): `AsyncIterator`<`symbol`>
 
-*Defined in [controllers/graphql/resolvers/screenshot.ts:42](https://github.com/YarosJ/prestige-of-districts/blob/17f0d7b/controllers/graphql/resolvers/screenshot.ts#L42)*
+*Defined in [controllers/graphql/resolvers/screenshot.ts:42](https://github.com/YarosJ/prestige-of-districts/blob/a1ae45e/controllers/graphql/resolvers/screenshot.ts#L42)*
 
 **Returns:** `AsyncIterator`<`symbol`>
 

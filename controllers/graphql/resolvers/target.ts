@@ -2,8 +2,8 @@ import { Target, TargetModel } from '../../../models/Target';
 import * as config from '../../../config/config.json';
 
 /**
- * Targets resolver.
- * Accepts input and converts it to commands for the targets model.
+ * Targets resolver
+ * Accepts input and converts it to commands for the targets model
  */
 
 const targetResolver = {

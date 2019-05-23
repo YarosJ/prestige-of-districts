@@ -6,7 +6,11 @@ const patterns = {
   'ОШ': 'Школа',
 }; // From config
 
-export default (text: string): string => {
+/**
+ * Replaces abbreviations in the given string to understandable for the geocoder
+ */
+
+const replace = (text: string): string => {
   let result: string = text;
   Object.keys(patterns).forEach((pattern): void => {
     result = result.replace(new RegExp(pattern, 'g'), patterns[pattern]);
@@ -14,3 +18,5 @@ export default (text: string): string => {
 
   return result;
 };
+
+export default replace;
