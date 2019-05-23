@@ -17,6 +17,9 @@ def train_data(*args, coefficient: float = 20):
         for document in arr:
             categories_counts[document["categories"][0]] += 1
 
+        categories_counts['INFO'] = categories_counts['INFO'] * 1.3 # temporal fix multi language classification problem
+        categories_counts['TOXIC'] = categories_counts['TOXIC'] / 1.5  # temporal fix multi language classification problem
+
         print(categories_counts)
         min_cat_count: float = min(categories_counts.items(), key=operator.itemgetter(1))[1]
 

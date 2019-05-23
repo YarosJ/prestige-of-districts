@@ -1,96 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e48be22d-a086-484b-9a46-2a2d4e5401ca" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/seedDB/accessControl.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config/seedDB/accessControl.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/seedDB/admin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config/seedDB/admin.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/startParser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config/startParser.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/graphql/resolvers/failure.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/graphql/resolvers/failure.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/graphql/resolvers/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/graphql/resolvers/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/graphql/resolvers/message.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/graphql/resolvers/message.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/graphql/resolvers/permission.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/graphql/resolvers/permission.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/graphql/resolvers/screenshot.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/graphql/resolvers/screenshot.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/graphql/resolvers/selector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/graphql/resolvers/selector.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/graphql/resolvers/target.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/graphql/resolvers/target.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/graphql/resolvers/total.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/graphql/resolvers/total.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/graphql/resolvers/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/graphql/resolvers/user.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/classes/_controllers_actiondispatcher_.actiondispatcher.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/classes/_controllers_actiondispatcher_.actiondispatcher.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/classes/_libs_amqpchannel_index_.amqpchannel.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/classes/_libs_amqpchannel_index_.amqpchannel.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/classes/_libs_scraper_index_.scraper.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/classes/_libs_scraper_index_.scraper.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/classes/_libs_taskscheduler_index_.taskscheduler.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/classes/_libs_taskscheduler_index_.taskscheduler.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/classes/_models_failure_.failure.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/classes/_models_failure_.failure.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/classes/_models_lastscraped_.lastscraped.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/classes/_models_lastscraped_.lastscraped.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/classes/_models_message_.message.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/classes/_models_message_.message.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/classes/_models_permission_.permission.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/classes/_models_permission_.permission.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/classes/_models_subfields_location_.location.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/classes/_models_subfields_location_.location.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/classes/_models_target_.target.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/classes/_models_target_.target.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/classes/_models_user_.target.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/classes/_models_user_.target.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/classes/_models_user_.user.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/classes/_models_user_.user.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/interfaces/_config_startparser_.task.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/interfaces/_config_startparser_.task.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/interfaces/_controllers_graphql_resolvers_partials_datequeryfromrange_.datequery.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/interfaces/_controllers_graphql_resolvers_partials_datequeryfromrange_.datequery.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/interfaces/_controllers_graphql_resolvers_partials_paginate_.paginate.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/interfaces/_controllers_graphql_resolvers_partials_paginate_.paginate.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/interfaces/_controllers_graphql_resolvers_screenshot_.screenshot.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/interfaces/_controllers_graphql_resolvers_screenshot_.screenshot.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/interfaces/_controllers_graphql_resolvers_selector_.selector.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/interfaces/_controllers_graphql_resolvers_selector_.selector.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/interfaces/_controllers_graphql_resolvers_total_.total.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/interfaces/_controllers_graphql_resolvers_total_.total.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/interfaces/_controllers_graphql_resolvers_user_.refreshtoken.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/interfaces/_controllers_graphql_resolvers_user_.refreshtoken.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/interfaces/_controllers_graphql_resolvers_user_.signin.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/interfaces/_controllers_graphql_resolvers_user_.signin.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/interfaces/_helpers_actionfromnlp_.action.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/interfaces/_helpers_actionfromnlp_.action.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/interfaces/_helpers_geolocation_geocodelocations_.location.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/interfaces/_helpers_geolocation_geocodelocations_.location.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/interfaces/_helpers_geolocation_geocodelocations_.place.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/interfaces/_helpers_geolocation_geocodelocations_.place.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/interfaces/_helpers_geolocation_geocodelocations_.resultlocations.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/interfaces/_helpers_geolocation_geocodelocations_.resultlocations.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/interfaces/_index_d_.__global.nodejs.global.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/interfaces/_index_d_.__global.nodejs.global.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_app_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_app_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_config_debugmongooseconnection_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_config_debugmongooseconnection_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_config_mongooseconnect_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_config_mongooseconnect_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_config_seeddb_accesscontrol_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_config_seeddb_accesscontrol_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_config_seeddb_admin_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_config_seeddb_admin_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_config_seeddb_failures_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_config_seeddb_failures_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_config_seeddb_index_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_config_seeddb_index_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_config_startparser_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_config_startparser_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_controllers_actiondispatcher_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_controllers_actiondispatcher_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_failure_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_failure_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_index_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_index_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_message_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_message_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_partials_datequeryfromrange_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_partials_datequeryfromrange_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_partials_paginate_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_partials_paginate_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_partials_validatequery_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_partials_validatequery_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_permission_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_permission_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_screenshot_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_screenshot_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_selector_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_selector_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_target_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_target_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_total_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_total_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_user_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_controllers_graphql_resolvers_user_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_helpers_actionfromnlp_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_helpers_actionfromnlp_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_helpers_authentication_apollocontext_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_helpers_authentication_apollocontext_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_helpers_authentication_checkpermissions_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_helpers_authentication_checkpermissions_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_helpers_geolocation_geocodelocations_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_helpers_geolocation_geocodelocations_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_helpers_geolocation_replaceabbreviations_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_helpers_geolocation_replaceabbreviations_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_helpers_geolocation_sanitizelocation_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_helpers_geolocation_sanitizelocation_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_helpers_isalreadyscraped_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_helpers_isalreadyscraped_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_helpers_isodate_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_helpers_isodate_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_models_failure_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_models_failure_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_models_lastscraped_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_models_lastscraped_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_models_message_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_models_message_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_models_permission_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_models_permission_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_models_target_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_models_target_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/modules/_models_user_.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/modules/_models_user_.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/ISODate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/ISODate.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/actionFromNLP.ts" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/actionFromNLP.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/authentication/apolloContext.ts" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/authentication/apolloContext.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/authentication/checkPermissions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/authentication/checkPermissions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/geolocation/geocodeLocations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/geolocation/geocodeLocations.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/geolocation/replaceAbbreviations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/geolocation/replaceAbbreviations.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/geolocation/sanitizeLocation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/geolocation/sanitizeLocation.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/isAlreadyScraped.ts" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/isAlreadyScraped.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Failure.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/Failure.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/LastScraped.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/LastScraped.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Message.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/Message.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Permission.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/Permission.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Target.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/Target.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.ts" afterDir="false" />
-    </list>
+    <list default="true" id="e48be22d-a086-484b-9a46-2a2d4e5401ca" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -101,20 +12,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config/startParser.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="84" column="12" selection-start-line="84" selection-start-column="12" selection-end-line="84" selection-end-column="12" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -250,11 +148,6 @@
               <item name="prestige-of-districts" type="b2602c69:ProjectViewProjectNode" />
               <item name="prestige-of-districts" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="prestige-of-districts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="prestige-of-districts" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -367,16 +260,15 @@
       <workItem from="1558430291924" duration="555000" />
       <workItem from="1558461877840" duration="6735000" />
       <workItem from="1558539885899" duration="12000000" />
-      <workItem from="1558590950826" duration="4930000" />
+      <workItem from="1558590950826" duration="5789000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="572977000" />
+    <option name="totallyTimeSpent" value="573836000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49834436" visible="true" weight="0.19434103" />
       <window_info id="Structure" order="1" sideWeight="0.50165564" side_tool="true" weight="0.24720775" />
@@ -807,8 +699,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/startParser.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="84" column="12" selection-start-line="84" selection-start-column="12" selection-end-line="84" selection-end-column="12" />
+        <state relative-caret-position="168">
+          <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
