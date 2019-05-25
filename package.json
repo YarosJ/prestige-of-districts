@@ -21,7 +21,7 @@
     "axios": "^0.18.0",
     "bcryptjs": "^2.4.3",
     "bluebird": "^3.5.1",
-    "crossdomain-selector": "^1.1.4",
+    "crossdomain-selector": "^1.1.5",
     "debug": "^3.1.0",
     "express": "^4.15.4",
     "github-current-user": "^2.5.0",
