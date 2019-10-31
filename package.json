@@ -29,7 +29,7 @@
     "graphql-tag": "^2.10.1",
     "graphql-voyager": "^1.0.0-rc.27",
     "jsonwebtoken": "^8.3.0",
-    "mongoose": "^4.13.12",
+    "mongoose": "^5.7.7",
     "node-cache": "^4.2.0",
     "node-geocoder": "^3.22.0",
     "path": "^0.12.7",
